@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcb66504f8a6a044862edfb951af900, type: 3}
   m_Name: Main Inventory
   m_EditorClassIdentifier: 
+  <IsSorted>k__BackingField: 1
   inventoryItems:
-  - quantity: 25
+  - quantity: 2
+    item: {fileID: 11400000, guid: 6a5069d795ce1ff4e88192cbf8f14029, type: 2}
+  - quantity: 76
+    item: {fileID: 11400000, guid: 61789fcbaa5131142a96307aad1921ea, type: 2}
+  - quantity: 99
     item: {fileID: 11400000, guid: 61789fcbaa5131142a96307aad1921ea, type: 2}
   - quantity: 1
     item: {fileID: 11400000, guid: 6a5069d795ce1ff4e88192cbf8f14029, type: 2}
+  - quantity: 99
+    item: {fileID: 11400000, guid: 61789fcbaa5131142a96307aad1921ea, type: 2}

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Wooden Sword
   <RarityState>k__BackingField: 1
+  <EquipSlot>k__BackingField: 8
   <Description>k__BackingField: Just An Wooden Sword
   <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 2
   <ItemSprite>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}

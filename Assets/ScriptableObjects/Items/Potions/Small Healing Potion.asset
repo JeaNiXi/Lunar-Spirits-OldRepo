@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Small Healing Potion
   <RarityState>k__BackingField: 0
+  <EquipSlot>k__BackingField: 12
   <Description>k__BackingField: This is a really small healing potion.
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
