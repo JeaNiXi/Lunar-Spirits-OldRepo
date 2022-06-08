@@ -12,6 +12,8 @@ public class InventoryController : MonoBehaviour
     private void Awake()
     {
         FindInventory();
+        CorrectQuantityInSO();
+        ResetGridEnd();
         ToggleInventory(false);
         InitializeMainUI();
         mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
@@ -22,6 +24,14 @@ public class InventoryController : MonoBehaviour
     private void FindInventory()
     {
         mainInventorySO = mainCharacter.GetComponent<MainCharacter>().GetInventorySO();
+    }
+    private void CorrectQuantityInSO()
+    {
+        mainInventorySO.CorrectQuantity();
+    }
+    private void ResetGridEnd()
+    {
+        mainInventorySO.CheckForInventoryGridEnd();
     }
     private void InitializeMainUI()
     {

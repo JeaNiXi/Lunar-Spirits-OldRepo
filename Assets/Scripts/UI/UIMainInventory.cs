@@ -17,20 +17,30 @@ public class UIMainInventory : MonoBehaviour
     {
         for (int i = 0; i < itemList.Count; i++)
         {
-            if (!itemList[i].IsEmpty)
+            if (itemList[i].IsEmpty)
             {
-                UIMainItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                UIMainItem uiItem = CreateItem();
+                uiItem.transform.SetParent(contentPanel);
+                uiItem.SetData();
+                uiItemsList.Add(uiItem);
+            }
+            else
+            {
+                UIMainItem uiItem = CreateItem();
                 uiItem.transform.SetParent(contentPanel);
                 uiItem.SetData(itemList[i].item.ItemImage, itemList[i].quantity);
                 uiItemsList.Add(uiItem);
             }
         }
     }
+    private UIMainItem CreateItem() => Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+
     public void ClearInventory()
     {
         foreach(UIMainItem item in uiItemsList)
         {
             Destroy(item.gameObject);
         }
+        uiItemsList.Clear();
     }
 }

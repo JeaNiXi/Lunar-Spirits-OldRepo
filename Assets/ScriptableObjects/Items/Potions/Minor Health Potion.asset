@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Minor Health Potion
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Minor Health Potion
+  <MaxStackSize>k__BackingField: 99
   <Description>k__BackingField: Restores X health.
   <ItemType>k__BackingField: 1
   <ItemImage>k__BackingField: {fileID: 6997616985800771554, guid: b0b0d2349b457904b8c4fc0cfdd74a5a, type: 3}
