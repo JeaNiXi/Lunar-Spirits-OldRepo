@@ -18,6 +18,10 @@ public class InputController : MonoBehaviour
             float direction = Input.GetAxis("Horizontal");
             mainCharacter.Move(direction);
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            MainInventoryController.RemoveItem();
+        }
     }
 }
 

@@ -34,13 +34,84 @@ public class UIMainInventory : MonoBehaviour
         }
     }
     private UIMainItem CreateItem() => Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
-
-    public void ClearInventory()
+    public void UpdateInventoryUI(Dictionary<int, InventoryItem> newDictionary)
     {
-        foreach(UIMainItem item in uiItemsList)
+        if (newDictionary.Count == uiItemsList.Count)
         {
-            Destroy(item.gameObject);
+            for (int i = 0; i < newDictionary.Count; i++)
+            {
+                if (newDictionary[i].IsEmpty)
+                {
+                    uiItemsList[i].SetData();
+                }
+                else
+                {
+                    uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
+                }
+            }
+            return;
         }
-        uiItemsList.Clear();
+        else if (newDictionary.Count > uiItemsList.Count)
+        {
+            int startIndex = uiItemsList.Count;
+            for (int i = 0; i < uiItemsList.Count; i++)
+            {
+                if (newDictionary[i].IsEmpty)
+                {
+                    uiItemsList[i].SetData();
+                }
+                else
+                {
+                    uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
+                }
+            }
+            for (int i = startIndex; i < newDictionary.Count; i++)
+            {
+                if (newDictionary[i].IsEmpty)
+                {
+                    UIMainItem newItem = CreateItem();
+                    newItem.transform.SetParent(contentPanel);
+                    newItem.SetData();
+                    uiItemsList.Add(newItem);
+                }
+                else
+                {
+                    UIMainItem newItem = CreateItem();
+                    newItem.transform.SetParent(contentPanel);
+                    newItem.SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
+                    uiItemsList.Add(newItem);
+                }
+            }
+            return;
+        }
+        else
+        {
+            int reminder = (uiItemsList.Count - newDictionary.Count) - 1;
+            int startPoint = uiItemsList.Count - 1;
+            for (int i = 0; i < newDictionary.Count; i++)
+            {
+                if (newDictionary[i].IsEmpty)
+                {
+                    uiItemsList[i].SetData();
+                }
+                else
+                {
+                    uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
+                }
+            }
+            for (int j = startPoint; j > reminder; j--) 
+            {
+                uiItemsList[j].DeleteObject();
+                uiItemsList.RemoveAt(j);
+            }
+        }
     }
+    //public void ClearInventory()
+    //{
+    //    foreach(UIMainItem item in uiItemsList)
+    //    {
+    //        Destroy(item.gameObject);
+    //    }
+    //    uiItemsList.Clear();
+    //}
 }

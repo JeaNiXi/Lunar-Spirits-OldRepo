@@ -11,43 +11,41 @@ public class InventoryController : MonoBehaviour
 
     private void Awake()
     {
-        FindInventory();
-        CorrectQuantityInSO();
-        ResetGridEnd();
+        InitializeInventorySO();
         ToggleInventory(false);
         InitializeMainUI();
         mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
     }
 
-
-
-    private void FindInventory()
+    //Debug()
+    public void RemoveItem()
+    {
+        mainInventorySO.RemoveItem("WEAPON");
+    }
+    private void InitializeInventorySO()
     {
         mainInventorySO = mainCharacter.GetComponent<MainCharacter>().GetInventorySO();
-    }
-    private void CorrectQuantityInSO()
-    {
         mainInventorySO.CorrectQuantity();
-    }
-    private void ResetGridEnd()
-    {
         mainInventorySO.CheckForInventoryGridEnd();
+
     }
     private void InitializeMainUI()
     {
         uiMainInventory.InitializeInventoryData(mainInventorySO.GetItemList());
     }
-    private void ClearMainUI()
-    {
-        uiMainInventory.ClearInventory();
-    }
+    //private void ClearMainUI()
+    //{
+    //    uiMainInventory.ClearInventory();
+    //}
 
 
 
     private void HandleInventoryChange()
     {
-        ClearMainUI();
-        InitializeMainUI();
+        //This is working.
+        //ClearMainUI();
+        //InitializeMainUI();
+        uiMainInventory.UpdateInventoryUI(mainInventorySO.GetCurrentInventoryState());
     }
     //Activating/Deactivating Inventory Screen
     public void ToggleInventory()

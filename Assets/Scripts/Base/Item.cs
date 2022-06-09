@@ -16,6 +16,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         collision.GetComponent<MainCharacter>().GetInventorySO().AddItem(this.itemSO, this.Quanitity);
         Destroy(this.gameObject);
     }
