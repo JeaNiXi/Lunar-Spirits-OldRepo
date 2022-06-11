@@ -54,6 +54,7 @@ public class InventorySO : ScriptableObject
                     }
                     else
                     {
+                        //Should be remade. No Empty Slots, nowhere to stack. Debug Inventory Full!
                         if (sizeToAdd > item.MaxStackSize)
                         {
                             Container.Add(new InventoryItem(item, item.MaxStackSize));
@@ -81,6 +82,7 @@ public class InventorySO : ScriptableObject
                 }
                 else
                 {
+                    //Should be remade. No Empty Slots, nowhere add. Debug Inventory Full!
                     Container.Add(new InventoryItem(item, item.MaxStackSize));
                     sizeToAdd -= item.MaxStackSize;
                 }
