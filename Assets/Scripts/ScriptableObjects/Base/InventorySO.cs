@@ -8,13 +8,14 @@ using UnityEngine;
 public class InventorySO : ScriptableObject
 {
     public event Action OnInventoryUpdated;
+
     [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
     private int Rows { get => Container.Count / 6; }
     private const int MAX_ITEM_SLOTS = 42;
     public int GetInventorySize() => Container.Count;
     public List<InventoryItem> GetItemList() => Container;
 
-    public void AddItem(ItemSO item, int quantity)
+    public int AddItem(ItemSO item, int quantity)
     {
         if (item.MaxStackSize > 1)
         {
@@ -34,7 +35,9 @@ public class InventorySO : ScriptableObject
                     {
                         int addSize = Container[index].quantity + sizeToAdd;
                         Container[index] = new InventoryItem(item, addSize);
-                        sizeToAdd = 0;
+                        InformUI();
+                        return 0;
+                        //sizeToAdd = 0;
                     }
                 }
                 else
@@ -49,22 +52,28 @@ public class InventorySO : ScriptableObject
                         else
                         {
                             Container[index] = new InventoryItem(item, sizeToAdd);
-                            sizeToAdd = 0;
+                            InformUI();
+                            return 0;
+                            //sizeToAdd = 0;
                         }
                     }
                     else
                     {
                         //Should be remade. No Empty Slots, nowhere to stack. Debug Inventory Full!
-                        if (sizeToAdd > item.MaxStackSize)
-                        {
-                            Container.Add(new InventoryItem(item, item.MaxStackSize));
-                            sizeToAdd -= item.MaxStackSize;
-                        }
-                        else
-                        {
-                            Container.Add(new InventoryItem(item, sizeToAdd));
-                            sizeToAdd = 0;
-                        }
+                        Debug.Log("STACKABLE Inventory Full!");
+                        InformUI();
+                        return sizeToAdd;
+                        //sizeToAdd = 0;
+                        //if (sizeToAdd > item.MaxStackSize)
+                        //{
+                        //    Container.Add(new InventoryItem(item, item.MaxStackSize));
+                        //    sizeToAdd -= item.MaxStackSize;
+                        //}
+                        //else
+                        //{
+                        //    Container.Add(new InventoryItem(item, sizeToAdd));
+                        //    sizeToAdd = 0;
+                        //}
                     }
                 }
             }
@@ -83,12 +92,17 @@ public class InventorySO : ScriptableObject
                 else
                 {
                     //Should be remade. No Empty Slots, nowhere add. Debug Inventory Full!
-                    Container.Add(new InventoryItem(item, item.MaxStackSize));
-                    sizeToAdd -= item.MaxStackSize;
+                    Debug.Log("NO STACKABLE FULL");
+                    InformUI();
+                    return sizeToAdd;
+                    //sizeToAdd = 0;
+                    //Container.Add(new InventoryItem(item, item.MaxStackSize));
+                    //sizeToAdd -= item.MaxStackSize;
                 }
             }
         }
         InformUI();
+        return 0;
     }
     public void RemoveItem(ItemSO item, int quantity, int index)
     {
@@ -229,7 +243,6 @@ public class InventorySO : ScriptableObject
         bool stopSearch = false;
         do
         {
-            Debug.Log(Rows);
             //Rows = Container.Count / 6;
             if (Rows > 4)
             {

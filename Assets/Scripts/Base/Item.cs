@@ -4,24 +4,45 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] ItemSO itemSO;
-    [field: SerializeField] int Quanitity { get; set; }
-    private SpriteRenderer spriteRenderer;
-    [ExecuteInEditMode]
+    [SerializeField] private ItemSO itemSO;
+    [field: SerializeField] private int quantity;
+
+    private float animationDuration = 0.3f;
+
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = itemSO.ItemImage;
+        Debug.Log(itemSO.ID + " " + gameObject.name);
     }
- 
-    private void SetSprite()
+    public ItemSO GetItem()
     {
+        return itemSO;
+    }
+    public int GetQuantity()
+    {
+        return quantity;
+    }
+    public void SetQuantity(int quantity)
+    {
+        this.quantity = quantity;
+    }
 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void DeleteItem()
     {
-        //collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        collision.GetComponent<MainCharacter>().GetInventorySO().AddItem(this.itemSO, this.Quanitity);
-        Destroy(this.gameObject);
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(PickupAnimation());
+    }
+
+    public IEnumerator PickupAnimation()
+    {
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = Vector3.zero;
+        float currentTime = 0;
+        while (currentTime < animationDuration)
+        {
+            currentTime += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(startScale, endScale, currentTime / animationDuration);
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }
