@@ -118,15 +118,26 @@ public class InventorySO : ScriptableObject
     }
     public void RemoveItem(int index, int quantity)
     {
-
+        if (Container[index].IsEmpty)
+            return;
+        if (Container[index].quantity > 1)
+        {
+            Container[index] = new InventoryItem(Container[index].item, Container[index].quantity - quantity);
+        }
+        else
+            Container[index] = InventoryItem.GetEmptyItem();
+        InformUI();
     }
     public void RemoveItem(int index)
     {
-
+        if (Container[index].IsEmpty)
+            return;
+        Container[index] = InventoryItem.GetEmptyItem();
+        InformUI();
     }
     public void RemoveItem(string itemType, string itemName)
     {
-
+        
     }
     public void RemoveItem(string itemType)
     {
@@ -265,6 +276,10 @@ public class InventorySO : ScriptableObject
             }
         }
         while (!stopSearch);
+    }
+    public InventoryItem GetItemAt(int index)
+    {
+        return Container[index];
     }
     public Dictionary<int, InventoryItem> GetCurrentInventoryState()
     {

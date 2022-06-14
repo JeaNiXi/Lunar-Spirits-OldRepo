@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,4 +29,10 @@ public abstract class ItemSO : ScriptableObject
     [field: SerializeField] [field: TextArea] public string Description { get; set; }
     [field: SerializeField] public ItemTypes ItemType { get; set; }
     [field: SerializeField] public Sprite ItemImage { get; set; }
+}
+[Serializable]
+public class ModifierType
+{
+    public ModifiersSO Modifier;
+    public int Value;
 }

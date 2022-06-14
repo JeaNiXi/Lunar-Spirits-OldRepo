@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,11 @@ using UnityEngine;
 public class UIMainInventory : MonoBehaviour
 {
     [SerializeField] private UIMainItem itemPrefab;
+    [SerializeField] private UIItemActionPanel itemActionPanel;
     [SerializeField] private RectTransform contentPanel;
+
+    public Action<int> 
+        OnItemRMBClicked;
 
     private List<UIMainItem> uiItemsList = new List<UIMainItem>();
 
@@ -22,6 +27,7 @@ public class UIMainInventory : MonoBehaviour
                 UIMainItem uiItem = CreateItem();
                 uiItem.transform.SetParent(contentPanel);
                 uiItem.SetData();
+                uiItem.OnItemRMBClicked += HandleRMBClick;
                 uiItemsList.Add(uiItem);
             }
             else
@@ -29,10 +35,14 @@ public class UIMainInventory : MonoBehaviour
                 UIMainItem uiItem = CreateItem();
                 uiItem.transform.SetParent(contentPanel);
                 uiItem.SetData(itemList[i].item.ItemImage, itemList[i].quantity);
+                uiItem.OnItemRMBClicked += HandleRMBClick;
                 uiItemsList.Add(uiItem);
             }
         }
     }
+
+
+
     private UIMainItem CreateItem() => Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
     public void UpdateInventoryUI(Dictionary<int, InventoryItem> newDictionary)
     {
@@ -72,6 +82,7 @@ public class UIMainInventory : MonoBehaviour
                     UIMainItem newItem = CreateItem();
                     newItem.transform.SetParent(contentPanel);
                     newItem.SetData();
+                    newItem.OnItemRMBClicked += HandleRMBClick;
                     uiItemsList.Add(newItem);
                 }
                 else
@@ -79,6 +90,7 @@ public class UIMainInventory : MonoBehaviour
                     UIMainItem newItem = CreateItem();
                     newItem.transform.SetParent(contentPanel);
                     newItem.SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
+                    newItem.OnItemRMBClicked += HandleRMBClick;
                     uiItemsList.Add(newItem);
                 }
             }
@@ -99,13 +111,37 @@ public class UIMainInventory : MonoBehaviour
                     uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity);
                 }
             }
-            for (int j = startPoint; j > reminder; j--) 
+            for (int j = startPoint; j > reminder; j--)
             {
+                uiItemsList[j].OnItemRMBClicked -= HandleRMBClick;
                 uiItemsList[j].DeleteObject();
                 uiItemsList.RemoveAt(j);
             }
         }
     }
+    private void HandleRMBClick(UIMainItem obj)
+    {
+        int index = uiItemsList.IndexOf(obj);
+        if (index == -1)
+            return;
+        OnItemRMBClicked?.Invoke(index);
+    }
+
+    public void ToggleActionPanel(bool value)
+    {
+        itemActionPanel.TogglePanel(value);
+    }
+
+
+    public void AddButton(string name, Action onClickAction)
+    {
+        itemActionPanel.AddButton(name, onClickAction);
+    }
+    public bool IsPanelActive()
+    {
+        return itemActionPanel.IsPanelActive();
+    }
+
     //public void ClearInventory()
     //{
     //    foreach(UIMainItem item in uiItemsList)
