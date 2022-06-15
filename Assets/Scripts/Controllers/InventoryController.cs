@@ -12,10 +12,12 @@ public class InventoryController : MonoBehaviour
     {
         Use,
         Remove,
+        RemoveAll,
     }
     private readonly string[] ActionButtonsStrings =
     {
         "Use Item",
+        "Remove",
         "Remove All"
     };
     private void Awake()
@@ -25,6 +27,8 @@ public class InventoryController : MonoBehaviour
         InitializeMainUI();
         mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
         uiMainInventory.OnItemRMBClicked += HandleItemRMBClick;
+        uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
+        uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
     }
 
 
@@ -53,6 +57,14 @@ public class InventoryController : MonoBehaviour
             uiMainInventory.ToggleActionPanel(false);
             return;
         }
+        if (uiMainInventory.IsConfirmationPanelActive() == true)
+        {
+            return;
+        }
+        if (uiMainInventory.IsConfirmationQuantityPanelActive() == true)
+        {
+            return;
+        }
         InventoryItem inventoryItem = mainInventorySO.GetItemAt(index);
         if (inventoryItem.IsEmpty)
         {
@@ -64,13 +76,23 @@ public class InventoryController : MonoBehaviour
         {
             uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter.gameObject, mainInventorySO, index));
         }
+        if(inventoryItem.item is IRemovableQuantity iRemovableQuantity)
+        {
+            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => uiMainInventory.ToggleConfirmQuantityPanel(true, index, inventoryItem.quantity));
+        }
         if(inventoryItem.item is IRemovable iRemovable)
         {
-            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => iRemovable.RemoveItem(mainInventorySO, index));
+            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index));
         }
     }
-
-
+    private void HandleRemoveAllConfirmation(int index)
+    {
+        mainInventorySO.RemoveItem(index);
+    }
+    private void HandleRemoveQuantityConfirmation(int index, int quantity)
+    {
+        mainInventorySO.RemoveItem(index, quantity);
+    }
     //Activating/Deactivating Inventory Screen
     public void ToggleInventory()
     {

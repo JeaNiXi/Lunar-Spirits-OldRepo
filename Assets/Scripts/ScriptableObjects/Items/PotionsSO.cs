@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "New Potion", menuName = "Inventory/Items/Potion Item")]
-public class PotionsSO : ItemSO, IUsable, IRemovable
+public class PotionsSO : ItemSO, IUsable, IRemovable, IRemovableQuantity
 {
     [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
 
@@ -20,10 +20,5 @@ public class PotionsSO : ItemSO, IUsable, IRemovable
     public void DeleteUsedItem(InventorySO mainInventory, int index, int quantity)
     {
         mainInventory.RemoveItem(index, quantity);
-    }
-
-    public void RemoveItem(InventorySO mainInventory, int index)
-    {
-        mainInventory.RemoveItem(index);
     }
 }

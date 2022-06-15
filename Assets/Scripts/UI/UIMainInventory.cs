@@ -7,10 +7,15 @@ public class UIMainInventory : MonoBehaviour
 {
     [SerializeField] private UIMainItem itemPrefab;
     [SerializeField] private UIItemActionPanel itemActionPanel;
+    [SerializeField] private UIConfirmAllPanel confirmationPanel;
+    [SerializeField] private UIConfirmQuantityPanel confirmationQuantityPanel;
     [SerializeField] private RectTransform contentPanel;
 
-    public Action<int> 
-        OnItemRMBClicked;
+    public Action<int>
+        OnItemRMBClicked,
+        OnRemoveAllConfirmed;
+    public Action<int, int>
+        OnRemoveQuantityConfirmed;
 
     private List<UIMainItem> uiItemsList = new List<UIMainItem>();
 
@@ -131,8 +136,6 @@ public class UIMainInventory : MonoBehaviour
     {
         itemActionPanel.TogglePanel(value);
     }
-
-
     public void AddButton(string name, Action onClickAction)
     {
         itemActionPanel.AddButton(name, onClickAction);
@@ -141,7 +144,35 @@ public class UIMainInventory : MonoBehaviour
     {
         return itemActionPanel.IsPanelActive();
     }
-
+    public bool IsConfirmationPanelActive()
+    {
+        return confirmationPanel.IsConfirmationPanelActive();
+    }
+    public bool IsConfirmationQuantityPanelActive()
+    {
+        return confirmationQuantityPanel.IsConfirmationQuantityPanelActive();
+    }
+    public void ToggleConfirmationPanel(bool value, int index)
+    {
+        confirmationPanel.ToggleConfirmationPanel(value, index);
+    }
+    public void ConfirmRemovingAll(int index)
+    {
+        confirmationPanel.ToggleConfirmationPanel(false, -1);
+        OnRemoveAllConfirmed?.Invoke(index);
+    }
+    public void ToggleConfirmQuantityPanel(bool value, int index, int maxRemoveSize)
+    {
+        confirmationQuantityPanel.ToggleConfirmQuantityPanel(value, index, maxRemoveSize);
+    }
+    public void ConfirmRemovingQuantity(int index, int quantity)
+    {
+        confirmationQuantityPanel.ToggleConfirmQuantityPanel(false, -1, -1);
+        if (quantity == 0)
+            return;
+        else
+            OnRemoveQuantityConfirmed?.Invoke(index, quantity);
+    }
     //public void ClearInventory()
     //{
     //    foreach(UIMainItem item in uiItemsList)
