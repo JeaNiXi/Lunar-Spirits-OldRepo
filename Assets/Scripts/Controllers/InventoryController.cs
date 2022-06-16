@@ -11,12 +11,16 @@ public class InventoryController : MonoBehaviour
     private enum ActionButtons
     {
         Use,
+        QuickEquip,
+        Unequip,
         Remove,
         RemoveAll,
     }
     private readonly string[] ActionButtonsStrings =
     {
         "Use Item",
+        "Equip to Quick Slot",
+        "Unequip Item",
         "Remove",
         "Remove All"
     };
@@ -25,10 +29,15 @@ public class InventoryController : MonoBehaviour
         InitializeInventorySO();
         ToggleInventory(false);
         InitializeMainUI();
+        InitializeQuickSlotUI();
         mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
+        mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
         uiMainInventory.OnItemRMBClicked += HandleItemRMBClick;
+        uiMainInventory.OnQuickSlotItemRMBClicked += HandleQuickSlotRMBClick;
         uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
         uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
+        uiMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
+        uiMainInventory.OnQuickSlotItemUnequipConfirmed += HandleQuickSlotUnequipConfirmation;
     }
 
 
@@ -38,52 +47,95 @@ public class InventoryController : MonoBehaviour
         mainInventorySO = mainCharacter.GetComponent<MainCharacter>().GetInventorySO();
         mainInventorySO.CorrectQuantity();
         mainInventorySO.CheckForInventoryGridEnd();
+        mainInventorySO.CorrectQuickSlotQuantity();
     }
     private void InitializeMainUI()
     {
         uiMainInventory.InitializeInventoryData(mainInventorySO.GetItemList());
     }
-
+    private void InitializeQuickSlotUI()
+    {
+        uiMainInventory.InitializeQuickSlotsData(mainInventorySO.GetQuickSlotList());
+    }
 
 
     private void HandleInventoryChange()
     {
         uiMainInventory.UpdateInventoryUI(mainInventorySO.GetCurrentInventoryState());
     }
+    private void HandleQuickSlotChange()
+    {
+        uiMainInventory.UpdateQuickSlotsUI(mainInventorySO.GetQuickSlotList());
+    }
     private void HandleItemRMBClick(int index)
+    {
+        if (AreAllPanelsClosed())
+        {
+            InventoryItem inventoryItem = mainInventorySO.GetItemAt(index);
+            if (inventoryItem.IsEmpty)
+            {
+                return;
+            }
+            uiMainInventory.ToggleActionPanel(true);
+
+            if (inventoryItem.item is IUsable iUsable)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter.gameObject, mainInventorySO, index));
+            }
+            if (inventoryItem.item is IQuickEquipable iQuickEquipable)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.QuickEquip], () => uiMainInventory.ToggleConfirmQuickSlotPanel(true, index));
+            }
+            if (inventoryItem.item is IRemovableQuantity iRemovableQuantity)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => uiMainInventory.ToggleConfirmQuantityPanel(true, index, inventoryItem.quantity));
+            }
+            if (inventoryItem.item is IRemovable iRemovable)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index));
+            }
+        }
+    }
+    private void HandleQuickSlotRMBClick(int index)
+    {
+        if(AreAllPanelsClosed())
+        {
+            QuickSlotItem quickSlotItem = mainInventorySO.GetQuickSlotItemAt(index);
+            if(quickSlotItem.IsEmpty)
+            {
+                return;
+            }
+            uiMainInventory.ToggleActionPanel(true);
+            if(quickSlotItem.item is IUsableQuickSlot iUsableQuickSlot)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsableQuickSlot.UseItemInQuickSlot(mainCharacter.gameObject, mainInventorySO, index));
+            }
+            if(quickSlotItem.item is IQuickUnequipable iQuickUnequipable)
+            {
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => uiMainInventory.UnequipQuickSlot(index));
+            }
+        }
+    }
+    private bool AreAllPanelsClosed()
     {
         if (uiMainInventory.IsPanelActive() == true)
         {
             uiMainInventory.ToggleActionPanel(false);
-            return;
+            return false;
         }
         if (uiMainInventory.IsConfirmationPanelActive() == true)
         {
-            return;
+            return false;
         }
         if (uiMainInventory.IsConfirmationQuantityPanelActive() == true)
         {
-            return;
+            return false;
         }
-        InventoryItem inventoryItem = mainInventorySO.GetItemAt(index);
-        if (inventoryItem.IsEmpty)
+        if(uiMainInventory.IsQuickSlotSelectionPanelActive())
         {
-            return;
+            return false;
         }
-        uiMainInventory.ToggleActionPanel(true);
-
-        if (inventoryItem.item is IUsable iUsable)
-        {
-            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter.gameObject, mainInventorySO, index));
-        }
-        if(inventoryItem.item is IRemovableQuantity iRemovableQuantity)
-        {
-            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => uiMainInventory.ToggleConfirmQuantityPanel(true, index, inventoryItem.quantity));
-        }
-        if(inventoryItem.item is IRemovable iRemovable)
-        {
-            uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index));
-        }
+        return true;
     }
     private void HandleRemoveAllConfirmation(int index)
     {
@@ -92,6 +144,14 @@ public class InventoryController : MonoBehaviour
     private void HandleRemoveQuantityConfirmation(int index, int quantity)
     {
         mainInventorySO.RemoveItem(index, quantity);
+    }
+    private void HandleQuickSlotEquipConfirmation(int index, int slotIndex)
+    {
+        mainInventorySO.EquipToQuickSlot(index, slotIndex);
+    }
+    private void HandleQuickSlotUnequipConfirmation(int index)
+    {
+        mainInventorySO.UnequipQuitSlot(index);
     }
     //Activating/Deactivating Inventory Screen
     public void ToggleInventory()

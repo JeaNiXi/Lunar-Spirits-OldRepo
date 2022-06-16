@@ -347,6 +347,8 @@ MonoBehaviour:
   imageComponent: {fileID: 7730359466674566055}
   itemImage: {fileID: 7730359466674566052}
   quantityText: {fileID: 7730359467172793157}
+  borderImage: {fileID: 7730359466265697448}
+  mainSlotType: 0
 --- !u!1 &7730359467172793159
 GameObject:
   m_ObjectHideFlags: 0
