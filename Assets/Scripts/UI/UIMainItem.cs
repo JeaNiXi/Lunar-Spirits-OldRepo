@@ -39,6 +39,7 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler
         _11_AMMO,
     }
     public EquipSlotType mainEquipSlotType = EquipSlotType._0_DEFAULT;
+    public List<EquipSlotType> slotTypesOfItem = new List<EquipSlotType>();
 
     public event Action<UIMainItem>
         OnItemRMBClicked,
@@ -72,16 +73,22 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler
 
     public void SetData(EquipSlotType type)
     {
+        imageComponent.gameObject.SetActive(true);
         this.itemImage.sprite = null;
+        Color tmpColor = itemImage.color;
+        tmpColor.a = 0;
+        this.itemImage.color = tmpColor;
         this.IsEmpty = true;
         this.mainSlotType = SlotType.EQUIP_SLOT;
         this.mainEquipSlotType = type;
-        imageComponent.gameObject.SetActive(false);
     }
     public void SetData(Sprite sprite, int quantity, EquipSlotType type)
     {
         imageComponent.gameObject.SetActive(true);
         this.itemImage.sprite = sprite;
+        Color tmpColor = itemImage.color;
+        tmpColor.a = 1;
+        this.itemImage.color = tmpColor;
         this.quantityText.text = quantity.ToString();
         this.mainSlotType = SlotType.EQUIP_SLOT;
         this.mainEquipSlotType = type;
@@ -106,6 +113,9 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler
     {
         Destroy(gameObject);
     }
+
+
+    public List<EquipSlotType> GetEquipSlotList() => slotTypesOfItem;
 
     public void OnPointerClick(PointerEventData eventData)
     {

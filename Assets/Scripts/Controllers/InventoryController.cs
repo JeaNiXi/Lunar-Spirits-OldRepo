@@ -136,10 +136,10 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
-    private void HandleItemDragStart(int index, string slotType)
+    private void HandleItemDragStart(int index, List<UIMainItem.EquipSlotType> slotTypes)
     {
         InventoryItem item = mainInventorySO.GetItemAt(index);
-        uiMainInventory.CreateMouseFollower(item, slotType, index);
+        uiMainInventory.CreateMouseFollower(item, slotTypes, index);
     }
     private void HandleQuickSlotItemDragStart(int index, string slotType)
     {

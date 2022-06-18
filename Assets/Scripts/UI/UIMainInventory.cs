@@ -38,8 +38,9 @@ public class UIMainInventory : MonoBehaviour
         OnItemDropRequest,
         OnMainVSMainSwapRequest;
     public Action<int, string>
-        OnItemDragStarted,
         OnQuickSlotItemDragStarted;
+    public Action<int, List<UIMainItem.EquipSlotType>>
+        OnItemDragStarted;
 
     private List<UIMainItem> uiItemsList = new List<UIMainItem>();
     private List<UIMainItem> uiQuickSlotsItems = new List<UIMainItem>();
@@ -76,6 +77,10 @@ public class UIMainInventory : MonoBehaviour
                 UIMainItem uiItem = CreateItem();
                 uiItem.transform.SetParent(contentPanel);
                 uiItem.SetData(itemList[i].item.ItemImage, itemList[i].quantity, UIMainItem.SlotType.MAIN);
+                foreach (ItemSO.EquipSlots item in itemList[i].item.SlotsToEquipIn)
+                {
+                    uiItem.slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+                }
                 uiItem.OnItemRMBClicked += HandleRMBClick;
                 uiItem.OnItemLMBClicked += HandleLMBClick;
                 uiItem.OnItemDragStart += HandleDragStart;
@@ -135,19 +140,31 @@ public class UIMainInventory : MonoBehaviour
         if (equipmentItemsList[i].IsEmpty)
         {
             UIMainItem uiItem = CreateItem();
-            uiItem.transform.SetParent(transformPanel);
             uiItem.SetData((UIMainItem.EquipSlotType)equipmentItemsList[i].slotType);
-            uiEquipmentItems.Add(uiItem);
+            SetUpEquipmentData(uiItem, transformPanel, true);
         }
         else
         {
             UIMainItem uiItem = CreateItem();
-            uiItem.transform.SetParent(transformPanel);
             uiItem.SetData(equipmentItemsList[i].item.ItemImage, equipmentItemsList[i].quantity, (UIMainItem.EquipSlotType)equipmentItemsList[i].slotType);
-            if (isQuantityDisabled)
-                uiItem.DisableQuantityPanel();
-            uiEquipmentItems.Add(uiItem);
+            foreach (ItemSO.EquipSlots item in equipmentItemsList[i].item.SlotsToEquipIn)
+            {
+                uiItem.slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+            }
+            SetUpEquipmentData(uiItem, transformPanel, isQuantityDisabled);
         }
+    }
+    public void SetUpEquipmentData(UIMainItem uiItem, RectTransform transformPanel, bool isQuantityDisabled)
+    {
+        uiItem.transform.SetParent(transformPanel);
+        uiItem.OnItemRMBClicked += HandleRMBClick;
+        uiItem.OnItemLMBClicked += HandleLMBClick;
+        uiItem.OnItemDragStart += HandleDragStart;
+        uiItem.OnItemDragEnd += HandleDragEnd;
+        uiItem.OnItemDroppedOn += HandleItemDroppedOn;
+        if (isQuantityDisabled)
+            uiItem.DisableQuantityPanel();
+        uiEquipmentItems.Add(uiItem);
     }
     private UIMainItem CreateItem() => Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
 
@@ -173,11 +190,19 @@ public class UIMainInventory : MonoBehaviour
             {
                 if (newDictionary[i].IsEmpty)
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData();
                 }
                 else
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity, UIMainItem.SlotType.MAIN);
+                    foreach (ItemSO.EquipSlots item in newDictionary[i].item.SlotsToEquipIn)
+                    {
+                        uiItemsList[i].slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+                    }
                 }
             }
             return;
@@ -190,11 +215,19 @@ public class UIMainInventory : MonoBehaviour
             {
                 if (newDictionary[i].IsEmpty)
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData();
                 }
                 else
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity, UIMainItem.SlotType.MAIN);
+                    foreach (ItemSO.EquipSlots item in newDictionary[i].item.SlotsToEquipIn)
+                    {
+                        uiItemsList[i].slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+                    }
                 }
             }
             for (int i = startIndex; i < newDictionary.Count; i++)
@@ -216,6 +249,10 @@ public class UIMainInventory : MonoBehaviour
                     UIMainItem newItem = CreateItem();
                     newItem.transform.SetParent(contentPanel);
                     newItem.SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity, UIMainItem.SlotType.MAIN);
+                    foreach (ItemSO.EquipSlots item in newDictionary[i].item.SlotsToEquipIn)
+                    {
+                        newItem.slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+                    }
                     newItem.OnItemRMBClicked += HandleRMBClick;
                     newItem.OnItemLMBClicked += HandleLMBClick;
                     newItem.OnItemDragStart += HandleDragStart;
@@ -235,11 +272,19 @@ public class UIMainInventory : MonoBehaviour
             {
                 if (newDictionary[i].IsEmpty)
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData();
                 }
                 else
                 {
+                    if (uiItemsList[i].slotTypesOfItem.Count > 0)
+                        uiItemsList[i].slotTypesOfItem.Clear();
                     uiItemsList[i].SetData(newDictionary[i].item.ItemImage, newDictionary[i].quantity, UIMainItem.SlotType.MAIN);
+                    foreach (ItemSO.EquipSlots item in newDictionary[i].item.SlotsToEquipIn)
+                    {
+                        uiItemsList[i].slotTypesOfItem.Add((UIMainItem.EquipSlotType)item);
+                    }
                 }
             }
             for (int j = startPoint; j > reminder; j--)
@@ -249,6 +294,7 @@ public class UIMainInventory : MonoBehaviour
                 uiItemsList[j].OnItemDragStart -= HandleDragStart;
                 uiItemsList[j].OnItemDragEnd -= HandleDragEnd;
                 uiItemsList[j].OnItemDroppedOn -= HandleItemDroppedOn;
+                uiItemsList[j].slotTypesOfItem.Clear();
                 uiItemsList[j].DeleteObject();
                 uiItemsList.RemoveAt(j);
             }
@@ -299,7 +345,6 @@ public class UIMainInventory : MonoBehaviour
                 return;
             DeselectAllItems();
             obj.SelectItem();
-            Debug.Log("SLOT TYPE IS : " + obj.mainSlotType);
             //OnItemLMBClicked?.Invoke(index);
         }
         if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
@@ -309,60 +354,53 @@ public class UIMainInventory : MonoBehaviour
                 return;
             DeselectAllItems();
             obj.SelectItem();
-            Debug.Log("SLOT TYPE IS : " + obj.mainSlotType);
             //OnQuickSlotItemLMBClicked?.Invoke(index);
         }
     }
     private void HandleDragStart(UIMainItem obj)
     {
-        if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
-        {
-            int index = uiQuickSlotsItems.IndexOf(obj);
-            if (index == -1)
-                return;
-            Debug.Log("Grabbed + " + obj.mainSlotType);
-            obj.SelectItem();
-            OnQuickSlotItemDragStarted?.Invoke(index, obj.mainSlotType.ToString());
-        }
         if (obj.mainSlotType == UIMainItem.SlotType.MAIN)
         {
             int index = uiItemsList.IndexOf(obj);
             if (index == -1)
                 return;
-            Debug.Log("Grabbed + " + obj.mainSlotType);
             obj.SelectItem();
-            OnItemDragStarted?.Invoke(index, obj.mainSlotType.ToString());
+            OnItemDragStarted?.Invoke(index, obj.GetEquipSlotList());
         }
+        if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
+        {
+            int index = uiQuickSlotsItems.IndexOf(obj);
+            if (index == -1)
+                return;
+            obj.SelectItem();
+            OnQuickSlotItemDragStarted?.Invoke(index, obj.mainSlotType.ToString());
+        }
+
     }
     private void HandleDragEnd(UIMainItem obj) // returns the dragged item origin// SHOULD REMAKE TO JUST DESELECT AND TOGGLE
     {
-        if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
-        {
-            ToggleMouseFollower(false);
-            DeselectAllItems();
-        }
         if (obj.mainSlotType == UIMainItem.SlotType.MAIN)
         {
             ToggleMouseFollower(false);
             DeselectAllItems();
         }
+        if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
+        {
+            ToggleMouseFollower(false);
+            DeselectAllItems();
+        }
+
     }
     private void HandleItemDroppedOn(UIMainItem obj)
     {
-        //if (GetMouseFollowerSlotType() == SlotTypeTemplates.MAIN.ToString())
-        //{
-        //    if (obj.mainSlotType == UIMainItem.SlotType.MAIN)
-        //    {
-        //        int index = uiItemsList.IndexOf(obj);
-        //        if (index == -1)
-        //            return;
-        //        OnMainVSMainSwapRequest?.Invoke(GetMouseFollowerIndex(), index);
-        //    }
-        //    if(obj.mainSlotType==UIMainItem.SlotType.QUICK_SLOT)
-        //    {
-        //        Debug.Log("check if item can be quick slot and swap");
-        //    }
-        //}
+        Debug.Log("Dropped on mainslottype  = " + obj.mainSlotType);
+        Debug.Log("Dropped on mainequip slot type  = " + obj.mainEquipSlotType);
+        Debug.Log("GetMouseFollowerType " + GetMouseFollowerType());
+        foreach(UIMouseFollower.EquipSlots slotType in mouseFollower.slotsToEquip)
+        {
+            Debug.Log("can be equipped in " + slotType);
+        }
+
     }
 
 
@@ -377,12 +415,15 @@ public class UIMainInventory : MonoBehaviour
         itemActionPanel.AddButton(name, onClickAction);
     }
 
-    public void CreateMouseFollower(InventoryItem item, string slotType, int index)
+    public void CreateMouseFollower(InventoryItem item, List<UIMainItem.EquipSlotType> slotTypes, int index)
     {
         mouseFollower.ToggleMouseFollower(true);
         mouseFollower.SetUpData(item.item.ItemImage, item.quantity);
         mouseFollower.FollowerType = item.item.ItemType.ToString();
-        mouseFollower.FollowerSlotType = slotType;
+        foreach(UIMainItem.EquipSlotType slotType in slotTypes)
+        {
+            mouseFollower.slotsToEquip.Add((UIMouseFollower.EquipSlots)slotType);
+        }
         mouseFollower.ItemIndex = index;
     }
     public void CreateMouseFollower(QuickSlotItem item, string slotType, int index)
@@ -390,13 +431,13 @@ public class UIMainInventory : MonoBehaviour
         mouseFollower.ToggleMouseFollower(true);
         mouseFollower.SetUpData(item.item.ItemImage, item.quantity);
         mouseFollower.FollowerType = item.item.ItemType.ToString();
-        mouseFollower.FollowerSlotType = slotType;
+        //mouseFollower.FollowerSlotType = slotType;
         mouseFollower.ItemIndex = index;
     }
     public bool IsMouseFollowerActive() => mouseFollower.IsActive();
     public void ToggleMouseFollower(bool value) => mouseFollower.ToggleMouseFollower(value);
     private string GetMouseFollowerType() => mouseFollower.FollowerType;
-    private string GetMouseFollowerSlotType() => mouseFollower.FollowerSlotType;
+    //private string GetMouseFollowerSlotType() => mouseFollower.FollowerSlotType;
     private int GetMouseFollowerIndex() => mouseFollower.ItemIndex;
 
     public bool IsPanelActive()

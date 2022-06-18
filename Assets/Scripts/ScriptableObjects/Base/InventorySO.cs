@@ -220,10 +220,19 @@ public class InventorySO : ScriptableObject
             {
                 if (QSContainer[quickSlotIndex].quantity < QSContainer[quickSlotIndex].item.MaxStackSize)
                 {
-                    int sizeToAdd = QSContainer[quickSlotIndex].item.MaxStackSize - QSContainer[quickSlotIndex].quantity;
-                    int reminder = Container[index].quantity - sizeToAdd;
-                    QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].item.MaxStackSize);
-                    Container[index] = new InventoryItem(QSContainer[quickSlotIndex].item, reminder);
+                    int possibleSizeToAdd = QSContainer[quickSlotIndex].item.MaxStackSize - QSContainer[quickSlotIndex].quantity;
+                    if (possibleSizeToAdd >= Container[index].quantity)
+                    {
+                        int newSize = QSContainer[quickSlotIndex].quantity + Container[index].quantity;
+                        QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, newSize);
+                        Container[index] = InventoryItem.GetEmptyItem();
+                    }
+                    else
+                    {
+                        int reminder = Container[index].quantity - possibleSizeToAdd;
+                        QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].item.MaxStackSize);
+                        Container[index] = new InventoryItem(QSContainer[quickSlotIndex].item, reminder);
+                    }
                 }
                 else
                 {
