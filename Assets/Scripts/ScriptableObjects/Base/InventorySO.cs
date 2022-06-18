@@ -13,14 +13,34 @@ public class InventorySO : ScriptableObject
 
     [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
     [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
+    [SerializeField] [NonReorderable] private List<EquipmentItem> EquipContainer = new List<EquipmentItem>(11);
+
+    //[SerializeField] private EquipmentItem Equipment0Head = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment1Medalion = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment2Ring1 = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment3Ring2 = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment4Armor = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment5Bracers = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment6Boots = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment7Weapon1 = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment8Weapon2 = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment9Ranged = new EquipmentItem();
+    //[SerializeField] private EquipmentItem Equipment10Ammo = new EquipmentItem();
+
     private int Rows { get => Container.Count / 6; }
     private const int MAX_ITEM_SLOTS = 42;
     private const int MAX_QUICK_SLOTS = 2;
+    private const int MAX_EQUIPMENT_SLOTS = 11;
     public int GetInventorySize() => Container.Count;
     public List<InventoryItem> GetItemList() => Container;
     public List<QuickSlotItem> GetQuickSlotList() => QSContainer;
+    public List<EquipmentItem> GetEquipmentItemsList() => EquipContainer;
 
-
+    public void debug()
+    {
+        
+       
+    }
     public int AddItem(ItemSO item, int quantity)
     {
         if (item.MaxStackSize > 1)
@@ -110,6 +130,7 @@ public class InventorySO : ScriptableObject
         InformUI();
         return 0;
     }
+
     public void RemoveItem(ItemSO item, int quantity, int index)
     {
 
@@ -177,6 +198,13 @@ public class InventorySO : ScriptableObject
             QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
         InformQuickSlotUI();
     }
+
+    public void SwapItems(int startIndex, int endIndex)
+    {
+        //if (GetQuickSlotItemAt(endIndex).item.MaxStackSize > 1) 
+
+    }
+
     public void EquipToQuickSlot(int index, int quickSlotIndex)
     {
         if (Container[index].IsEmpty)
@@ -297,6 +325,8 @@ public class InventorySO : ScriptableObject
         InformUI();
         InformQuickSlotUI();
     }
+
+
     private bool SearchForItem(string itemType)
     {
         for (int i = 0; i < Container.Count; i++)
@@ -334,6 +364,8 @@ public class InventorySO : ScriptableObject
         index = -1;
         return false;
     }
+
+
     private void InformUI()
     {
         CheckForInventoryGridEnd();
@@ -343,6 +375,8 @@ public class InventorySO : ScriptableObject
     {
         OnQuickSlotUpdated?.Invoke();
     }
+
+
     public void CorrectQuantity()
     {
         if (Container.Count > MAX_ITEM_SLOTS)
@@ -439,6 +473,58 @@ public class InventorySO : ScriptableObject
             }
         }
     }
+    public void CorrectEquipSlotsQuantity()
+    {
+        // Correcting Number of Equip Slots
+        if (EquipContainer.Count > MAX_EQUIPMENT_SLOTS)
+        {
+            int startIndex = EquipContainer.Count - 1;
+            int reminder = EquipContainer.Count - (EquipContainer.Count - MAX_EQUIPMENT_SLOTS);
+            for (int i = startIndex; i >= reminder; i--)
+            {
+                EquipContainer.RemoveAt(i);
+            }
+        }
+        else
+            if (EquipContainer.Count < MAX_EQUIPMENT_SLOTS)
+        {
+            int reminder = MAX_EQUIPMENT_SLOTS - EquipContainer.Count;
+            for (int i = 0; i < reminder; i++)
+            {
+                EquipContainer.Add(EquipmentItem.GetEmptyEquipmentItem());
+            }
+        }
+        // Correcting Type of Slot
+        for (int i = 0; i < MAX_EQUIPMENT_SLOTS; i++)
+        {
+            EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].quantity, (EquipmentItem.SlotType)i + 1);
+        }
+        // Checking for Allowed Slot Item and Correcting quantity.
+        for (int i = 0; i < MAX_EQUIPMENT_SLOTS; i++)
+        {
+            if (EquipContainer[i].IsEmpty)
+            {
+                EquipContainer[i] = new EquipmentItem(EquipContainer[i].slotType);
+                continue;
+            }
+            else
+            {
+                if(EquipContainer[i].item.SlotsToEquipIn.Contains((ItemSO.EquipSlots)EquipContainer[i].slotType))
+                {
+                    if (EquipContainer[i].slotType != EquipmentItem.SlotType._11_AMMO)
+                        EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, 1, EquipContainer[i].slotType);
+                    else
+                        if (EquipContainer[i].quantity > EquipContainer[i].item.MaxStackSize)
+                        EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].item.MaxStackSize, EquipContainer[i].slotType);
+                }
+                else
+                {
+                    EquipContainer[i] = new EquipmentItem(EquipContainer[i].slotType);
+                }
+            }
+        }
+    }
+
     public InventoryItem GetItemAt(int index)
     {
         return Container[index];
@@ -504,6 +590,53 @@ public struct QuickSlotItem
         {
             item = null,
             quantity = 0,
+        };
+    }
+}
+[Serializable]
+public struct EquipmentItem
+{
+    public bool IsEmpty => item == null || quantity <= 0;
+
+    public enum SlotType
+    {
+        _0_DEFAULT,
+        _1_HEAD,
+        _2_MEDALION,
+        _3_RING1,
+        _4_RING2,
+        _5_ARMOR,
+        _6_BRACERS,
+        _7_BOOTS,
+        _8_WEAPON_MAIN,
+        _9_WEAPON_SECONDARY,
+        _10_RANGED,
+        _11_AMMO,
+    }
+
+    public ItemSO item;
+    public int quantity;
+    public SlotType slotType;
+
+    public EquipmentItem(ItemSO item, int quantity, SlotType type)
+    {
+        this.item = item;
+        this.quantity = quantity;
+        this.slotType = type;
+    }
+    public EquipmentItem(SlotType type)
+    {
+        item = null;
+        quantity = 0;
+        this.slotType = type;
+    }
+    public static EquipmentItem GetEmptyEquipmentItem()
+    {
+        return new EquipmentItem
+        {
+            item = null,
+            quantity = 0,
+            slotType = SlotType._0_DEFAULT,
         };
     }
 }

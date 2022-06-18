@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Main Inventory
   m_EditorClassIdentifier: 
   Container:
-  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
-    quantity: 99
-  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
-    quantity: 3
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}
@@ -62,7 +62,41 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
   QSContainer:
+  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
+    quantity: 99
+  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
+    quantity: 3
+  EquipContainer:
   - item: {fileID: 0}
     quantity: 0
+    slotType: 1
   - item: {fileID: 0}
     quantity: 0
+    slotType: 2
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 3
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 4
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 5
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 6
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 7
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 8
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 9
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 10
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 11

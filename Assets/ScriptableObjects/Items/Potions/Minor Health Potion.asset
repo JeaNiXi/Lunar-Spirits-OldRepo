@@ -15,8 +15,9 @@ MonoBehaviour:
   <Name>k__BackingField: Minor Health Potion
   <MaxStackSize>k__BackingField: 99
   <Description>k__BackingField: Restores X health.
-  <ItemType>k__BackingField: 1
+  <ItemType>k__BackingField: 0
   <ItemImage>k__BackingField: {fileID: 6997616985800771554, guid: b0b0d2349b457904b8c4fc0cfdd74a5a, type: 3}
+  SlotsToEquipIn: 0b000000
   modifierTypes:
   - Modifier: {fileID: 11400000, guid: 3569220e83e464749894625b8775a43d, type: 2}
     Value: 50

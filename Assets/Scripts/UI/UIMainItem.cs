@@ -6,9 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIMainItem : MonoBehaviour, IPointerClickHandler
+public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     [SerializeField] private Component imageComponent;
+    [SerializeField] private Component quantityComponent;
     [SerializeField] private Image itemImage;
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image borderImage;
@@ -22,11 +23,32 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler
     }
     public SlotType mainSlotType = SlotType.DEFAULT;
 
+    public enum EquipSlotType
+    {
+        _0_DEFAULT,
+        _1_HEAD,
+        _2_MEDALION,
+        _3_RING1,
+        _4_RING2,
+        _5_ARMOR,
+        _6_BRACERS,
+        _7_BOOTS,
+        _8_WEAPON_MAIN,
+        _9_WEAPON_SECONDARY,
+        _10_RANGED,
+        _11_AMMO,
+    }
+    public EquipSlotType mainEquipSlotType = EquipSlotType._0_DEFAULT;
+
     public event Action<UIMainItem>
         OnItemRMBClicked,
-        OnItemLMBClicked;
+        OnItemLMBClicked,
+        OnItemDragStart,
+        OnItemDrag,
+        OnItemDragEnd,
+        OnItemDroppedOn;
 
-    private bool IsEmpty { get; set; }
+    public bool IsEmpty { get; set; }
 
     public void SetData()
     {
@@ -44,6 +66,30 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler
         this.mainSlotType = type;
         this.IsEmpty = false;
     }
+
+
+
+
+    public void SetData(EquipSlotType type)
+    {
+        this.itemImage.sprite = null;
+        this.IsEmpty = true;
+        this.mainSlotType = SlotType.EQUIP_SLOT;
+        this.mainEquipSlotType = type;
+        imageComponent.gameObject.SetActive(false);
+    }
+    public void SetData(Sprite sprite, int quantity, EquipSlotType type)
+    {
+        imageComponent.gameObject.SetActive(true);
+        this.itemImage.sprite = sprite;
+        this.quantityText.text = quantity.ToString();
+        this.mainSlotType = SlotType.EQUIP_SLOT;
+        this.mainEquipSlotType = type;
+        this.IsEmpty = false;
+    }
+
+
+
     public void SelectItem()
     {
         borderImage.enabled = true;
@@ -51,6 +97,10 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler
     public void DeselectItem()
     {
         borderImage.enabled = false;
+    }
+    public void DisableQuantityPanel()
+    {
+        quantityComponent.gameObject.SetActive(false);
     }
     public void DeleteObject()
     {
@@ -68,5 +118,20 @@ public class UIMainItem : MonoBehaviour, IPointerClickHandler
             OnItemRMBClicked?.Invoke(this);
         }
     }
-    
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        OnItemDragStart?.Invoke(this);
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        OnItemDragEnd?.Invoke(this);
+    }
+    public void OnDrag(PointerEventData eventData)
+    {
+        //throw new NotImplementedException();
+    }
+    public void OnDrop(PointerEventData eventData)
+    {
+        OnItemDroppedOn?.Invoke(this);
+    }
 }

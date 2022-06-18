@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5376358965234703051, guid: e2bd24645f1777f4bb44e747911a1840, type: 3}
+  m_Sprite: {fileID: 5740453210667488706, guid: e2bd24645f1777f4bb44e747911a1840, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25882354, g: 0.4124731, b: 0.54901963, a: 1}
+  m_Color: {r: 0.16862746, g: 0.2509804, b: 0.33333334, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -345,10 +345,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageComponent: {fileID: 7730359466674566055}
+  quantityComponent: {fileID: 7730359466284302224}
   itemImage: {fileID: 7730359466674566052}
   quantityText: {fileID: 7730359467172793157}
   borderImage: {fileID: 7730359466265697448}
   mainSlotType: 0
+  mainEquipSlotType: 0
 --- !u!1 &7730359467172793159
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,8 @@ public class InventoryController : MonoBehaviour
         ToggleInventory(false);
         InitializeMainUI();
         InitializeQuickSlotUI();
+        InitializeEqipmentUI();
+        ToggleUIComponents(false);
         mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
         mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
         uiMainInventory.OnItemRMBClicked += HandleItemRMBClick;
@@ -38,6 +40,11 @@ public class InventoryController : MonoBehaviour
         uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
         uiMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
         uiMainInventory.OnQuickSlotItemUnequipConfirmed += HandleQuickSlotUnequipConfirmation;
+        uiMainInventory.OnItemDragStarted += HandleItemDragStart;
+        uiMainInventory.OnQuickSlotItemDragStarted += HandleQuickSlotItemDragStart;
+        //uiMainInventory.OnMainVSMainSwapRequest += HandleSwapMainVSMain;
+
+        mainInventorySO.debug();
     }
 
 
@@ -48,6 +55,7 @@ public class InventoryController : MonoBehaviour
         mainInventorySO.CorrectQuantity();
         mainInventorySO.CheckForInventoryGridEnd();
         mainInventorySO.CorrectQuickSlotQuantity();
+        mainInventorySO.CorrectEquipSlotsQuantity();
     }
     private void InitializeMainUI()
     {
@@ -57,8 +65,17 @@ public class InventoryController : MonoBehaviour
     {
         uiMainInventory.InitializeQuickSlotsData(mainInventorySO.GetQuickSlotList());
     }
+    private void InitializeEqipmentUI()
+    {
+        uiMainInventory.InitializeEquipmentSlotsData(mainInventorySO.GetEquipmentItemsList());
+    }
 
 
+    private void ToggleUIComponents(bool value)
+    {
+        if (uiMainInventory.IsMouseFollowerActive())
+            uiMainInventory.ToggleMouseFollower(value);
+    }
     private void HandleInventoryChange()
     {
         uiMainInventory.UpdateInventoryUI(mainInventorySO.GetCurrentInventoryState());
@@ -67,6 +84,9 @@ public class InventoryController : MonoBehaviour
     {
         uiMainInventory.UpdateQuickSlotsUI(mainInventorySO.GetQuickSlotList());
     }
+
+
+
     private void HandleItemRMBClick(int index)
     {
         if (AreAllPanelsClosed())
@@ -116,6 +136,30 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
+    private void HandleItemDragStart(int index, string slotType)
+    {
+        InventoryItem item = mainInventorySO.GetItemAt(index);
+        uiMainInventory.CreateMouseFollower(item, slotType, index);
+    }
+    private void HandleQuickSlotItemDragStart(int index, string slotType)
+    {
+        QuickSlotItem item = mainInventorySO.GetQuickSlotItemAt(index);
+        uiMainInventory.CreateMouseFollower(item, slotType, index);
+    }
+
+
+    //private void HandleSwapMainVSMain(int startIndex, int endIndex)
+    //{
+    //    if (mainInventorySO.GetItemAt(endIndex).item.MaxStackSize > 1)
+    //    {
+    //        Debug.Log("we can stack it");
+    //    }
+    //}
+
+
+
+
+
     private bool AreAllPanelsClosed()
     {
         if (uiMainInventory.IsPanelActive() == true)
