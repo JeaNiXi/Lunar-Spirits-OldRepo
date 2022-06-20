@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Base Health Modifier", menuName = "Modifiers/Base/Health")]
-public class BaseHealthModifierSO : ModifiersSO
+namespace Inventory.SO
 {
-    public override void ApplyModifier(GameObject character, int value)
+    [CreateAssetMenu(fileName = "Base Health Modifier", menuName = "Modifiers/Base/Health")]
+    public class BaseHealthModifierSO : ModifiersSO
     {
-        Debug.Log("Apply modifier");
+        public override void ApplyModifier(GameObject character, int value)
+        {
+            Debug.Log("Apply modifier");
+        }
     }
 }

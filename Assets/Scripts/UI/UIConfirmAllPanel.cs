@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIConfirmAllPanel : MonoBehaviour
+namespace Inventory.UI
 {
-    [SerializeField] private Button YButton;
-    [SerializeField] private Button NButton;
-    [SerializeField] private UIMainInventory uiMainInventory;
-    public void ToggleConfirmationPanel(bool value, int index)
+    public class UIConfirmAllPanel : MonoBehaviour
     {
-        if (value == true)
+        [SerializeField] private Button YButton;
+        [SerializeField] private Button NButton;
+        [SerializeField] private UIMainInventory uiMainInventory;
+        public void ToggleConfirmationPanel(bool value, int index)
         {
-            gameObject.SetActive(value);
-            YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingAll(index));
-            NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmationPanel(false, -1));
+            if (value == true)
+            {
+                gameObject.SetActive(value);
+                YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingAll(index));
+                NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmationPanel(false, -1));
+            }
+            else
+            {
+                YButton.onClick.RemoveAllListeners();
+                NButton.onClick.RemoveAllListeners();
+                gameObject.SetActive(value);
+            }
         }
-        else
+        public bool IsConfirmationPanelActive()
         {
-            YButton.onClick.RemoveAllListeners();
-            NButton.onClick.RemoveAllListeners();
-            gameObject.SetActive(value);
+            if (gameObject.activeSelf)
+                return true;
+            else
+                return false;
         }
-    }
-    public bool IsConfirmationPanelActive()
-    {
-        if (gameObject.activeSelf)
-            return true;
-        else
-            return false;
-    }
 
+    }
 }

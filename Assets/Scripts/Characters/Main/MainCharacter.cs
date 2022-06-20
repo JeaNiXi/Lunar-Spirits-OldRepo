@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Inventory.SO;
+
 public class MainCharacter : MonoBehaviour
 {
     [SerializeField] InventorySO mainInventory;

@@ -5,41 +5,44 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class UIItemActionPanel : MonoBehaviour
+namespace Inventory.UI
 {
-    [SerializeField] private GameObject buttonPrefab;
-    public void TogglePanel(bool value)
+    public class UIItemActionPanel : MonoBehaviour
     {
-        if (value == true)
+        [SerializeField] private GameObject buttonPrefab;
+        public void TogglePanel(bool value)
         {
-            gameObject.SetActive(value);
-            gameObject.transform.position = Input.mousePosition;
+            if (value == true)
+            {
+                gameObject.SetActive(value);
+                gameObject.transform.position = Input.mousePosition;
+            }
+            else
+            {
+                RemoveAllButtons();
+                gameObject.SetActive(false);
+            }
         }
-        else
+        public void AddButton(string name, Action onClickAction)
         {
-            RemoveAllButtons();
-            gameObject.SetActive(false);
+            GameObject button = Instantiate(buttonPrefab, transform);
+            button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
+            button.GetComponent<Button>().onClick.AddListener(() => TogglePanel(false));
+            button.GetComponentInChildren<TMPro.TMP_Text>().text = name;
         }
-    }
-    public void AddButton(string name, Action onClickAction)
-    {
-        GameObject button = Instantiate(buttonPrefab, transform);
-        button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
-        button.GetComponent<Button>().onClick.AddListener(() => TogglePanel(false));
-        button.GetComponentInChildren<TMPro.TMP_Text>().text = name;
-    }
-    public void RemoveAllButtons()
-    {
-        foreach(Transform button in transform)
+        public void RemoveAllButtons()
         {
-            Destroy(button.gameObject);
+            foreach (Transform button in transform)
+            {
+                Destroy(button.gameObject);
+            }
         }
-    }
-    public bool IsPanelActive()
-    {
-        if (gameObject.activeSelf)
-            return true;
-        else
-            return false;
+        public bool IsPanelActive()
+        {
+            if (gameObject.activeSelf)
+                return true;
+            else
+                return false;
+        }
     }
 }
