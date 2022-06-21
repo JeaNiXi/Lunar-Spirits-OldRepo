@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
+using Inventory.SO;
+
 namespace Inventory.UI
 {
     public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
@@ -15,109 +18,44 @@ namespace Inventory.UI
         [SerializeField] private Image itemImage;
         [SerializeField] private TMP_Text quantityText;
         [SerializeField] private Image borderImage;
-
-        public enum SlotType
-        {
-            DEFAULT,
-            MAIN,
-            QUICK_SLOT,
-            EQUIP_SLOT,
-        }
-        public SlotType mainSlotType = SlotType.DEFAULT;
-
-        public enum EquipSlotType
-        {
-            _0_DEFAULT,
-            _1_HEAD,
-            _2_MEDALION,
-            _3_RING1,
-            _4_RING2,
-            _5_ARMOR,
-            _6_BRACERS,
-            _7_BOOTS,
-            _8_WEAPON_MAIN,
-            _9_WEAPON_SECONDARY,
-            _10_RANGED,
-            _11_AMMO,
-            _12_QUICK_SLOT,
-        }
-        public EquipSlotType mainEquipSlotType = EquipSlotType._0_DEFAULT;
-        public List<EquipSlotType> slotTypesOfItem = new List<EquipSlotType>();
+        public bool IsEmpty { get; set; }
 
         public event Action<UIMainItem>
-            OnItemRMBClicked,
+            //OnItemRMBClicked,
             OnItemLMBClicked,
             OnItemDragStart,
             OnItemDrag,
             OnItemDragEnd,
             OnItemDroppedOn;
 
-        public bool IsEmpty { get; set; }
-
-        public void SetData()
+        public enum UIItemSlots
         {
-            itemImage.sprite = null;
-            Color tmpColor = itemImage.color;
-            tmpColor.a = 0;
-            itemImage.color = tmpColor;
-            quantityText.text = "";
-            IsEmpty = true;
-            mainSlotType = SlotType.DEFAULT;
-            ToggleQuantityPanel(false);
-            //imageComponent.gameObject.SetActive(false);
+            MAIN_SLOT,
+            HEAD,
+            MEDALION,
+            RING1,
+            RING2,
+            ARMOR,
+            BRACERS,
+            BOOTS,
+            WEAPON_MAIN,
+            WEAPON_SECONDARY,
+            RANGED,
+            AMMO,
+            QUICK_SLOT,
         }
-        public void SetData(Sprite sprite, int quantity, SlotType type)
+        public enum ItemContainer
         {
-            //imageComponent.gameObject.SetActive(true);
-            itemImage.sprite = sprite;
-            Color tmpColor = itemImage.color;
-            tmpColor.a = 1;
-            itemImage.color = tmpColor;
-            quantityText.text = quantity.ToString();
-            mainSlotType = type;
-            IsEmpty = false;
-            ToggleQuantityPanel(true);
+            Container,
+            QSContainer,
+            EquipmentContainer,
         }
 
-        public void SetData(SlotType type)
-        {
-            itemImage.sprite = null;
-            Color tmpColor = itemImage.color;
-            tmpColor.a = 0;
-            itemImage.color = tmpColor;
-            quantityText.text = "";
-            IsEmpty = true;
-            mainSlotType = type;
-            ToggleQuantityPanel(false);
-        }
+        public UIItemSlots UISlot;
+        public ItemContainer ItemSlotContainer;
 
-
-        public void SetData(EquipSlotType type)
-        {
-            //imageComponent.gameObject.SetActive(true);
-            itemImage.sprite = null;
-            Color tmpColor = itemImage.color;
-            tmpColor.a = 0;
-            itemImage.color = tmpColor;
-            IsEmpty = true;
-            mainSlotType = SlotType.EQUIP_SLOT;
-            mainEquipSlotType = type;
-        }
-        public void SetData(Sprite sprite, int quantity, EquipSlotType type)
-        {
-            //imageComponent.gameObject.SetActive(true);
-            itemImage.sprite = sprite;
-            Color tmpColor = itemImage.color;
-            tmpColor.a = 1;
-            itemImage.color = tmpColor;
-            quantityText.text = quantity.ToString();
-            mainSlotType = SlotType.EQUIP_SLOT;
-            mainEquipSlotType = type;
-            IsEmpty = false;
-        }
-
-
-
+        public List<ItemSO.ItemSlots> ItemSlots = new List<ItemSO.ItemSlots>();
+        
         public void SelectItem()
         {
             borderImage.enabled = true;
@@ -130,24 +68,58 @@ namespace Inventory.UI
         {
             quantityComponent.gameObject.SetActive(value);
         }
-        public void DeleteObject()
+        public void DisableImageAlpha(bool value)
         {
-            Destroy(gameObject);
+            int temp;
+            if (value)
+                temp = 0;
+            else
+                temp = 1;
+            Color tmpColor = itemImage.color;
+            tmpColor.a = temp;
+            itemImage.color = tmpColor;
         }
 
+        public void InitItem(string slotType, string itemContainer)
+        {
+            itemImage.sprite = null;
+            DisableImageAlpha(true);
+            quantityText.text = "";
+            IsEmpty = true;
+            UISlot = (UIItemSlots)Enum.Parse(typeof(UIItemSlots), slotType);
+            ItemSlotContainer = (ItemContainer)Enum.Parse(typeof(ItemContainer), itemContainer);
+            if (ItemSlots.Count > 0)
+                ItemSlots.Clear();
+            ToggleQuantityPanel(false);
+        }
+        public void InitItem(Sprite sprite, int quantity, string slotType, List<ItemSO.ItemSlots> itemSlotList, string itemContainer)
+        {
+            itemImage.sprite = sprite;
+            DisableImageAlpha(false);
+            quantityText.text = quantity.ToString();
+            IsEmpty = false;
+            UISlot = (UIItemSlots)Enum.Parse(typeof(UIItemSlots), slotType);
+            ItemSlotContainer = (ItemContainer)Enum.Parse(typeof(ItemContainer), itemContainer);
+            if (ItemSlots.Count > 0)
+                ItemSlots.Clear();
+            foreach(ItemSO.ItemSlots slot in itemSlotList)
+            {
+                ItemSlots.Add(slot);
+            }    
+            ToggleQuantityPanel(true);
+        }
 
-        public List<EquipSlotType> GetEquipSlotList() => slotTypesOfItem;
-
+        #region Actions
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 OnItemLMBClicked?.Invoke(this);
             }
-            else if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                OnItemRMBClicked?.Invoke(this);
-            }
+            //else if (eventData.button == PointerEventData.InputButton.Right)
+            //{
+            //    OnItemRMBClicked?.Invoke(this);
+            //}
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -164,6 +136,12 @@ namespace Inventory.UI
         public void OnDrop(PointerEventData eventData)
         {
             OnItemDroppedOn?.Invoke(this);
+        }
+        #endregion
+
+        public void DeleteUIObject()
+        {
+            Destroy(gameObject);
         }
     }
 }

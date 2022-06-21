@@ -28,26 +28,27 @@ namespace Inventory
         "Unequip Item",
         "Remove",
         "Remove All"
-    };
+        };
 
         private void Awake()
         {
-            //InitializeInventorySO();
-            //ToggleInventory(false);
-            //InitializeMainUI();
-            //InitializeQuickSlotUI();
-            //InitializeEqipmentUI();
-            //ToggleUIComponents(false);
-            //mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
-            //mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
-            //mainInventorySO.OnEquipmentUpdated += HandleEquipmentChange;
+            InitializeInventorySO();
+            ToggleInventory(false);
+            InitializeMainUI();
+            InitializeQuickSlotUI();
+            InitializeEqipmentUI();
+            ToggleUIComponents(false);
+            mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
+            mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
+            mainInventorySO.OnEquipmentUpdated += HandleEquipmentChange;
             //uiMainInventory.OnItemRMBClicked += HandleItemRMBClick;
             //uiMainInventory.OnQuickSlotItemRMBClicked += HandleQuickSlotRMBClick;
             //uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
             //uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
             //uiMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
             //uiMainInventory.OnQuickSlotItemUnequipConfirmed += HandleQuickSlotUnequipConfirmation;
-            //uiMainInventory.OnItemDragStarted += HandleItemDragStart;
+            uiMainInventory.OnItemDragStarted += HandleItemDragStart;
+            uiMainInventory.OnItemDropRequest += HandleItemDropRequest;
             //uiMainInventory.OnQuickSlotItemDragStarted += HandleQuickSlotItemDragStart;
 
             //uiMainInventory.OnInventoryItemMovingToEmptySlot += HandleInventoryMovingToEmptySlot;
@@ -56,7 +57,7 @@ namespace Inventory
         }
 
 
-
+        #region Initializations
         private void InitializeInventorySO()
         {
             mainInventorySO = mainCharacter.GetComponent<MainCharacter>().GetInventorySO();
@@ -77,12 +78,40 @@ namespace Inventory
         {
             uiMainInventory.InitializeEquipmentSlotsData(mainInventorySO.GetEquipmentItemsList());
         }
+        #endregion
 
-
+        #region ToggleUI
         private void ToggleUIComponents(bool value)
         {
             if (uiMainInventory.IsMouseFollowerActive())
                 uiMainInventory.ToggleMouseFollower(value);
+        }
+        #endregion
+
+        #region Handlers
+        private void HandleItemDragStart(int itemIndex, int containerType)
+        {
+            switch (containerType)
+            {
+                case 0:
+                    InventoryItem inventoryItem = mainInventorySO.GetItemAt(itemIndex);
+                    uiMainInventory.CreateMouseFollower(inventoryItem, inventoryItem.slotType, inventoryItem.itemContainer, itemIndex);
+                    break;
+                case 1:
+                    QuickSlotItem qsItem = mainInventorySO.GetQuickSlotItemAt(itemIndex);
+                    uiMainInventory.CreateMouseFollower(qsItem, qsItem.slotType, qsItem.itemContainer, itemIndex);
+                    break;
+                case 2:
+                    EquipmentItem equipItem = mainInventorySO.GetEquipmentItemAt(itemIndex);
+                    uiMainInventory.CreateMouseFollower(equipItem, equipItem.slotType, equipItem.itemContainer, itemIndex);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void HandleItemDropRequest(string originContainer, int originIndex, string destContainer, int destIndex)
+        {
+            mainInventorySO.SwapItemsHandler(originContainer, originIndex, destContainer, destIndex);
         }
         private void HandleInventoryChange()
         {
@@ -96,8 +125,21 @@ namespace Inventory
         {
             uiMainInventory.InitializeUpdateEquipmentUI(mainInventorySO.GetEquipmentItemsList());
         }
+        #endregion
 
 
+
+
+
+
+
+
+
+        //private void HandleQuickSlotItemDragStart(int index, List<UIMainItem.EquipSlotType> slotTypes)
+        //{
+        //    QuickSlotItem item = mainInventorySO.GetQuickSlotItemAt(index);
+        //    uiMainInventory.CreateMouseFollower(item, slotTypes, index);
+        //}
         private void HandleItemRMBClick(int index)
         {
             //if (AreAllPanelsClosed())
@@ -147,26 +189,17 @@ namespace Inventory
             //    }
             //}
         }
-        private void HandleItemDragStart(int index, List<UIMainItem.EquipSlotType> slotTypes)
-        {
-            InventoryItem item = mainInventorySO.GetItemAt(index);
-            uiMainInventory.CreateMouseFollower(item, slotTypes, index);
-        }
-        private void HandleQuickSlotItemDragStart(int index, List<UIMainItem.EquipSlotType> slotTypes)
-        {
-            QuickSlotItem item = mainInventorySO.GetQuickSlotItemAt(index);
-            uiMainInventory.CreateMouseFollower(item, slotTypes, index);
-        }
 
 
-        private void HandleInventoryMovingToEmptySlot(int followerIndex, int newIndex)
-        {
-            mainInventorySO.MoveInventoryItemToEmptyInventorySlot(followerIndex, newIndex);
-        }
-        private void HandleInventoryMovingToEmptyEquipmentSlot(int followerIndex, int newIndex)
-        {
-            mainInventorySO.MoveInventoryItemToEmptyEquipmentSlot(followerIndex, newIndex);
-        }
+
+        //private void HandleInventoryMovingToEmptySlot(int followerIndex, int newIndex)
+        //{
+        //    mainInventorySO.MoveInventoryItemToEmptyInventorySlot(followerIndex, newIndex);
+        //}
+        //private void HandleInventoryMovingToEmptyEquipmentSlot(int followerIndex, int newIndex)
+        //{
+        //    mainInventorySO.MoveInventoryItemToEmptyEquipmentSlot(followerIndex, newIndex);
+        //}
 
 
 
@@ -202,12 +235,13 @@ namespace Inventory
         }
         private void HandleQuickSlotEquipConfirmation(int index, int slotIndex)
         {
-            mainInventorySO.EquipToQuickSlot(index, slotIndex);
+            //mainInventorySO.EquipToQuickSlot(index, slotIndex); //remaked
         }
         private void HandleQuickSlotUnequipConfirmation(int index)
         {
-            mainInventorySO.UnequipQuitSlot(index);
+            //mainInventorySO.UnequipQuitSlot(index); // remaked
         }
+
         //Activating/Deactivating Inventory Screen
         public void ToggleInventory()
         {

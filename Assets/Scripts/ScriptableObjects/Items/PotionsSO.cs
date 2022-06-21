@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-using Inventory;
-using Inventory.UI;
-
 namespace Inventory.SO
 {
     [CreateAssetMenu(fileName = "New Potion", menuName = "Inventory/Items/Potion Item")]

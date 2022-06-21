@@ -4,47 +4,83 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+using Inventory.SO;
+
 namespace Inventory.UI
 {
     public class UIMouseFollower : MonoBehaviour
     {
         [SerializeField] private Image itemImage;
         [SerializeField] private TMP_Text quantity;
-        public enum EquipSlots
-        {
-            _0_DEFAULT,
-            _1_HEAD,
-            _2_MEDALION,
-            _3_RING1,
-            _4_RING2,
-            _5_ARMOR,
-            _6_BRACERS,
-            _7_BOOTS,
-            _8_WEAPON_MAIN,
-            _9_WEAPON_SECONDARY,
-            _10_RANGED,
-            _11_AMMO,
-            _12_QUICK_SLOT
-        }
-        public EquipSlots FollowerSlotType = EquipSlots._0_DEFAULT;
-
-        public List<EquipSlots> slotsToEquip = new List<EquipSlots>();
-
-        public string FollowerType { get; set; }
 
         public int ItemIndex { get; set; }
+
+        #region Getters
+        public InventoryItem InvItem { get; set; }
+        public QuickSlotItem QSItem { get; set; }
+        public EquipmentItem EItem { get; set; }
+        public InventoryItem.SlotType InvSlotType { get; set; }
+        public QuickSlotItem.SlotType QSSlotType { get; set; }
+        public EquipmentItem.SlotType ESlotType { get; set; }
+        public InventoryItem.ItemContainer InvCont { get; set; }
+        public QuickSlotItem.ItemContainer QSCont { get; set; }
+        public EquipmentItem.ItemContainer ECont { get; set; }
+        public string ContainerString { get; set; }
+        #endregion
+
         public bool IsActive() => isActiveAndEnabled == true;
+        public int Index { get; set; }
         public void ToggleMouseFollower(bool value)
         {
-            slotsToEquip.Clear();
             gameObject.SetActive(value);
         }
-
-        public void SetUpData(Sprite sprite, int quantity)
+        public void InitFollower(InventoryItem item, InventoryItem.SlotType slotType, InventoryItem.ItemContainer itemContainer, int index)
         {
-            itemImage.sprite = sprite;
-            this.quantity.text = quantity.ToString();
+            itemImage.sprite = item.item.ItemImage;
+            quantity.text = item.quantity.ToString();
+            InvItem = item;
+            InvSlotType = slotType;
+            ContainerString = itemContainer.ToString();
+            //InvCont = itemContainer;
+            Index = index;
+            Debug.Log("Started 1 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + ContainerString + " and index is " + index);
+            foreach(var slot in item.item.CanBeInSlots)
+            {
+                Debug.Log("Can Be Equipped in : " + slot);
+            }
         }
+        public void InitFollower(QuickSlotItem item, QuickSlotItem.SlotType slotType, QuickSlotItem.ItemContainer itemContainer, int index)
+        {
+            itemImage.sprite = item.item.ItemImage;
+            quantity.text = item.quantity.ToString();
+            QSItem = item;
+            QSSlotType = slotType;
+            ContainerString = itemContainer.ToString();
+            //QSCont = itemContainer;
+            Index = index;
+            Debug.Log("Started 2 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + itemContainer + " and index is " + index);
+            foreach (var slot in item.item.CanBeInSlots)
+            {
+                Debug.Log("Can Be Equipped in : " + slot);
+            }
+        }
+        public void InitFollower(EquipmentItem item, EquipmentItem.SlotType slotType, EquipmentItem.ItemContainer itemContainer, int index)
+        {
+            itemImage.sprite = item.item.ItemImage;
+            quantity.text = item.quantity.ToString();
+            EItem = item;
+            ESlotType = slotType;
+            ContainerString = itemContainer.ToString();
+            //ECont = itemContainer;
+            Index = index;
+            Debug.Log("Started 3 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + itemContainer + " and index is " + index);
+            foreach (var slot in item.item.CanBeInSlots)
+            {
+                Debug.Log("Can Be Equipped in : " + slot);
+            }
+        }
+
         private void Update()
         {
             gameObject.transform.position = Input.mousePosition;

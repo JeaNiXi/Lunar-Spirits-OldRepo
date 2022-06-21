@@ -15,6 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Wooden Sword
   <MaxStackSize>k__BackingField: 1
   <Description>k__BackingField: Just for training.
+  <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
-  SlotsToEquipIn: 0800000009000000
+  CanBeInSlots: 000000000800000009000000

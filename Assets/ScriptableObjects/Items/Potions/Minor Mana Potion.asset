@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ddffd81449db044199daec8e075134f, type: 3}
-  m_Name: Minor Health Potion
+  m_Name: Minor Mana Potion
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Minor Health Potion
+  <Name>k__BackingField: Minor Mana Potion
   <MaxStackSize>k__BackingField: 99
-  <Description>k__BackingField: Restores X health.
+  <Description>k__BackingField: Super Mana for You.
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 0
-  <ItemImage>k__BackingField: {fileID: 6997616985800771554, guid: b0b0d2349b457904b8c4fc0cfdd74a5a, type: 3}
+  <ItemImage>k__BackingField: {fileID: -5249288142952506341, guid: b0b0d2349b457904b8c4fc0cfdd74a5a, type: 3}
   CanBeInSlots: 000000000c000000
-  modifierTypes:
-  - Modifier: {fileID: 11400000, guid: 3569220e83e464749894625b8775a43d, type: 2}
-    Value: 50
+  modifierTypes: []

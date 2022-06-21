@@ -4,26 +4,29 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class UINotifications : MonoBehaviour
+namespace Inventory.UI
 {
-    [SerializeField] private UINotificationText notificationPrefab;
-    [SerializeField] private RectTransform notificationPanel;
-    public enum Notifications
+    public class UINotifications : MonoBehaviour
     {
-        WRONG_ITEM_TYPE,
-    }
-    public string[] NotificationsStrings =
-    {
+        [SerializeField] private UINotificationText notificationPrefab;
+        [SerializeField] private RectTransform notificationPanel;
+        public enum Notifications
+        {
+            WRONG_ITEM_TYPE,
+        }
+        public string[] NotificationsStrings =
+        {
         "Wrong Item Type. Item can't be equiped here!",
-    };
-    public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
-    public void ThrowNotification(Notifications notificationType)
-    {
-        UINotificationText notification = CreateNotification();
-        notification.transform.SetParent(notificationPanel);
-        notification.SetText(NotificationsStrings[Convert.ToInt32(notificationType)]);
-        notification.StartDisplay();
-    }
+        };
+        public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
+        public void ThrowNotification(Notifications notificationType)
+        {
+            UINotificationText notification = CreateNotification();
+            notification.transform.SetParent(notificationPanel);
+            notification.SetText(NotificationsStrings[Convert.ToInt32(notificationType)]);
+            notification.StartDisplay();
+        }
 
-    private UINotificationText CreateNotification() => Instantiate(notificationPrefab, Vector3.zero, Quaternion.identity); 
+        private UINotificationText CreateNotification() => Instantiate(notificationPrefab, Vector3.zero, Quaternion.identity);
+    }
 }
