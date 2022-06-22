@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IQuickEquipable
+namespace Interfaces
 {
+    public interface IQuickEquipable
+    {
 
+    }
 }

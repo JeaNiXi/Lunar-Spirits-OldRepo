@@ -20,7 +20,7 @@ namespace Inventory.UI
         private int inputInteger;
         private int maxRSize;
 
-        public void ToggleConfirmQuantityPanel(bool value, int index, int maxRemoveSize)
+        public void ToggleConfirmQuantityPanel(bool value, int index, int maxRemoveSize, string containerType)
         {
             inputInteger = 0;
             maxRSize = maxRemoveSize;
@@ -30,8 +30,8 @@ namespace Inventory.UI
                 inputField.text = inputInteger.ToString();
                 UPButton.onClick.AddListener(() => AddInt());
                 DOWNButton.onClick.AddListener(() => RemoveInt());
-                YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingQuantity(index, Convert.ToInt32(inputField.text)));
-                NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmQuantityPanel(false, -1, -1));
+                YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingQuantity(index, Convert.ToInt32(inputField.text), containerType));
+                NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmQuantityPanel(false, -1, -1, ""));
             }
             if (value == false)
             {

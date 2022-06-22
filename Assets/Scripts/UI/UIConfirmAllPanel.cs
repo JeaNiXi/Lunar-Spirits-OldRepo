@@ -10,13 +10,13 @@ namespace Inventory.UI
         [SerializeField] private Button YButton;
         [SerializeField] private Button NButton;
         [SerializeField] private UIMainInventory uiMainInventory;
-        public void ToggleConfirmationPanel(bool value, int index)
+        public void ToggleConfirmationPanel(bool value, int index, string containerType)
         {
             if (value == true)
             {
                 gameObject.SetActive(value);
-                YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingAll(index));
-                NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmationPanel(false, -1));
+                YButton.onClick.AddListener(() => uiMainInventory.ConfirmRemovingAll(index, containerType));
+                NButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmationPanel(false, -1, ""));
             }
             else
             {

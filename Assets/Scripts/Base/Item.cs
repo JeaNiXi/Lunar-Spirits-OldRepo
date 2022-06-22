@@ -1,8 +1,9 @@
+using Inventory.SO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Inventory.SO
+namespace Inventory
 {
     public class Item : MonoBehaviour
     {
@@ -26,6 +27,7 @@ namespace Inventory.SO
         public void SetQuantity(int quantity)
         {
             this.quantity = quantity;
+            Debug.Log("Item to big, quantity left : " + this.quantity);
         }
 
         public void DeleteItem()

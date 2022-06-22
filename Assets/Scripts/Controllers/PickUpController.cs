@@ -1,27 +1,31 @@
+using Inventory;
+using Inventory.SO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Inventory.SO;
 
-public class PickUpController : MonoBehaviour
+namespace Managers
 {
-    [SerializeField] private InventorySO mainInventory;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class PickUpController : MonoBehaviour
     {
-        if (collision.gameObject.layer == 6)  // Items
+        [SerializeField] private InventorySO mainInventory;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            //Item item = collision.gameObject.GetComponentInParent<Item>();
-            //int reminder = mainInventory.AddItem(item.GetItem(), item.GetQuantity());
-            //if (reminder == 0)
-            //{
-            //    item.DeleteItem();
-            //}
-            //else
-            //{
-            //    item.SetQuantity(reminder);
-            //}
+            if (collision.gameObject.layer == 6)  // Items
+            {
+                Item item = collision.gameObject.GetComponentInParent<Item>();
+                int reminder = mainInventory.AddItem(item.GetItem(), item.GetQuantity());
+                if (reminder == 0)
+                {
+                    item.DeleteItem();
+                }
+                else
+                {
+                    item.SetQuantity(reminder);
+                }
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 using Inventory.SO;
 
@@ -20,33 +21,31 @@ namespace Inventory.UI
         [SerializeField] private RectTransform leftEquipmentPanel;
         [SerializeField] private RectTransform rightEquipmentPanel;
         [SerializeField] private UINotifications uiNotifications;
-
+ 
         public event Action<int, int>
+            OnItemRMBClicked,
             OnItemDragStarted;
+        public event Action<int, string>
+            OnRemoveAllConfirmed;
+        public event Action<int, int, string>
+            OnQuickSlotEquipConfirmed,
+            OnRemoveQuantityConfirmed;
         public event Action<string, int, string, int>
             OnItemDropRequest;
 
 
-
-
         //public Action<int>
-
-
-
-
-        //OnItemRMBClicked;
         //OnQuickSlotItemRMBClicked;
         //OnItemLMBClicked,
         //OnQuickSlotItemLMBClicked,
         //OnQuickSlotItemUnequipConfirmed,
-        //OnRemoveAllConfirmed;
+        //;
 
 
 
 
 
-        //OnRemoveQuantityConfirmed,
-        //OnQuickSlotEquipConfirmed,
+        //,
         //OnMainVSMainSwapRequest,
         //OnInventoryItemMovingToEmptySlot,
         //OnInventoryItemMovingToEmptyEquipSlot;
@@ -160,7 +159,7 @@ namespace Inventory.UI
         }
         private void InitializeActions(UIMainItem uiItem)
         {
-            //uiItem.OnItemRMBClicked += HandleRMBClick;
+            uiItem.OnItemRMBClicked += HandleRMBClick;
             uiItem.OnItemLMBClicked += HandleLMBClick;
             uiItem.OnItemDragStart += HandleDragStart;
             uiItem.OnItemDragEnd += HandleDragEnd;
@@ -168,7 +167,7 @@ namespace Inventory.UI
         }
         private void DeleteActions(UIMainItem uiItem)
         {
-            //uiItem.OnItemRMBClicked -= HandleRMBClick;
+            uiItem.OnItemRMBClicked -= HandleRMBClick;
             uiItem.OnItemLMBClicked -= HandleLMBClick;
             uiItem.OnItemDragStart -= HandleDragStart;
             uiItem.OnItemDragEnd -= HandleDragEnd;
@@ -181,8 +180,8 @@ namespace Inventory.UI
         {
             if (newDictionary.Count == uiItemsList.Count)
             {
-                DeselectAllItems();
-                ToggleMouseFollower(false);
+                //DeselectAllItems();
+                //ToggleMouseFollower(false);
                 for (int i = 0; i < newDictionary.Count; i++)
                 {
                     if (newDictionary[i].IsEmpty)
@@ -194,8 +193,8 @@ namespace Inventory.UI
             }
             else if (newDictionary.Count > uiItemsList.Count)
             {
-                DeselectAllItems();
-                ToggleMouseFollower(false);
+                //DeselectAllItems();
+                //ToggleMouseFollower(false);
                 int startIndex = uiItemsList.Count;
                 for (int i = 0; i < uiItemsList.Count; i++)
                 {
@@ -227,8 +226,8 @@ namespace Inventory.UI
             }
             else
             {
-                DeselectAllItems();
-                ToggleMouseFollower(false);
+                //DeselectAllItems();
+                //ToggleMouseFollower(false);
                 int reminder = newDictionary.Count - 1;
                 int startPoint = uiItemsList.Count - 1;
                 for (int i = 0; i < newDictionary.Count; i++)
@@ -250,6 +249,8 @@ namespace Inventory.UI
         }
         public void UpdateQuickSlotsUI(List<QuickSlotItem> quickSlotsList)
         {
+            //DeselectAllItems();
+            //ToggleMouseFollower(false);
             for (int i = 0; i < quickSlotsList.Count; i++)
             {
                 if (quickSlotsList[i].IsEmpty)
@@ -257,7 +258,6 @@ namespace Inventory.UI
                 else
                     uiQuickSlotsItems[i].InitItem(quickSlotsList[i].item.ItemImage, quickSlotsList[i].quantity, quickSlotsList[i].slotType.ToString(), quickSlotsList[i].item.CanBeInSlots, quickSlotsList[i].itemContainer.ToString());
             }
-            DeselectAllItems();
         }
         public void InitializeUpdateEquipmentUI(List<EquipmentItem> equipmentList)
         {
@@ -294,17 +294,95 @@ namespace Inventory.UI
         #region Handlers
         private void HandleLMBClick(UIMainItem obj)
         {
-            if (obj.IsEmpty)
-                DeselectAllItems();
+            if (IsActionPanelActive())
+            {
+                if (obj.IsEmpty)
+                {
+                    DeselectAllItems();
+                    ToggleActionPanel(false);
+                    return;
+                }
+                else
+                {
+                    DeselectAllItems();
+                    ToggleActionPanel(false);
+                    obj.SelectItem();
+                    return;
+                }
+            }
             else
             {
-                DeselectAllItems();
-                obj.SelectItem();
+                if (obj.IsEmpty)
+                {
+                    DeselectAllItems();
+                    ToggleActionPanel(false);
+                }
+                else
+                {
+                    DeselectAllItems();
+                    ToggleActionPanel(false);
+                    obj.SelectItem();
+                }
+            }
+        }
+        private void HandleRMBClick(UIMainItem obj)
+        {
+            if (IsAnyPanelActive())
+                return;
+            if (IsActionPanelActive())
+            {
+                if (obj.IsEmpty)
+                {
+                    ToggleActionPanel(false);
+                    DeselectAllItems();
+                    return;
+                }
+                else
+                {
+                    ToggleActionPanel(false);
+                    DeselectAllItems();
+                    obj.SelectItem();
+                    ToggleActionPanel(true);
+                    RequestActionPanel(obj);
+                }
+            }
+            else
+            {
+                if (obj.IsEmpty)
+                    return;
+                else
+                {
+                    DeselectAllItems();
+                    obj.SelectItem();
+                    ToggleActionPanel(true);
+                    RequestActionPanel(obj);
+                }
+            }
+        }
+        private void RequestActionPanel(UIMainItem obj)
+        {
+            switch (obj.ItemSlotContainer)
+            {
+                case UIMainItem.ItemContainer.Container:
+                    OnItemRMBClicked?.Invoke(uiItemsList.IndexOf(obj), 0); //Where ARG2 is container Type;
+                    break;
+                case UIMainItem.ItemContainer.QSContainer:
+                    OnItemRMBClicked?.Invoke(uiQuickSlotsItems.IndexOf(obj), 1);
+                    break;
+                case UIMainItem.ItemContainer.EquipmentContainer:
+                    OnItemRMBClicked?.Invoke(uiEquipmentItems.IndexOf(obj), 2);
+                    break;
+                default:
+                    break;
             }
         }
         private void HandleDragStart(UIMainItem obj)
         {
             if (obj.IsEmpty)
+                return;
+            if (IsActionPanelActive())
+                return;
+            if (IsAnyPanelActive())
                 return;
             switch (obj.ItemSlotContainer)
             {
@@ -323,11 +401,23 @@ namespace Inventory.UI
         }
         private void HandleDragEnd(UIMainItem obj) // Returns Dragged Item
         {
+            if (IsActionPanelActive())
+                return;
+            if (IsAnyPanelActive())
+                return;
+            Debug.Log("DISABLING MOUSE FOLLOWER!");
             ToggleMouseFollower(false);
             DeselectAllItems();
         }
         private void HandleItemDroppedOn(UIMainItem obj)
         {
+            if (IsActionPanelActive())
+                return;
+            if (IsAnyPanelActive())
+                return;
+            if (!IsMouseFollowerActive())
+                return;
+            Debug.Log("HANDLE DROP CALLED");
             switch (obj.ItemSlotContainer)
             {
                 case UIMainItem.ItemContainer.Container:
@@ -387,49 +477,7 @@ namespace Inventory.UI
         }
         #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void HandleRMBClick(UIMainItem obj)
-        {
-            //if (obj.mainSlotType == UIMainItem.SlotType.MAIN)
-            //{
-            //    if (IsIndexNotValidInInventorySlot(obj, out int index))
-            //        return;
-            //    //int index = uiItemsList.IndexOf(obj);
-            //    //if (index == -1)
-            //    //    return;
-            //    OnItemRMBClicked?.Invoke(index);
-            //}
-            //if (obj.mainSlotType == UIMainItem.SlotType.QUICK_SLOT)
-            //{
-            //    if (IsIndexNotValidInQuickSlot(obj, out int index))
-            //        return;
-            //    //int index = uiQuickSlotsItems.IndexOf(obj);
-            //    //if (index == -1)
-            //    //    return;
-            //    OnQuickSlotItemRMBClicked?.Invoke(index);
-            //}
-        }
-
-
-
-
-
-
-
-
+        #region Actions
         public void ToggleActionPanel(bool value)
         {
             itemActionPanel.TogglePanel(value);
@@ -438,16 +486,61 @@ namespace Inventory.UI
         {
             itemActionPanel.AddButton(name, onClickAction);
         }
+        #endregion
 
+        #region ConfirmationPanels
+        public void ToggleConfirmQuickSlotPanel(bool value, int index, string containerType)
+        {
+            confirmationQuickSlotsPanel.ToggleConfirmQuantityPanel(value, index, containerType);
+        }
+        public void ConfirmQuickSlotEquip(int index, int slotIndex, string containerType)
+        {
+            confirmationQuickSlotsPanel.ToggleConfirmQuantityPanel(false, -1, "");
+            OnQuickSlotEquipConfirmed?.Invoke(index, slotIndex, containerType);
+            DeselectAllItems();
+        }
+        public void ToggleConfirmationPanel(bool value, int index, string containerType)
+        {
+            confirmationPanel.ToggleConfirmationPanel(value, index, containerType);
+        }
+        public void ConfirmRemovingAll(int index, string containerType)
+        {
+            confirmationPanel.ToggleConfirmationPanel(false, -1, "");
+            OnRemoveAllConfirmed?.Invoke(index, containerType);
+            DeselectAllItems();
+        }
+        public void ToggleConfirmQuantityPanel(bool value, int index, int maxRemoveSize, string containertype)
+        {
+            confirmationQuantityPanel.ToggleConfirmQuantityPanel(value, index, maxRemoveSize, containertype);
+        }
+        public void ConfirmRemovingQuantity(int index, int quantity, string containerType)
+        {
+            confirmationQuantityPanel.ToggleConfirmQuantityPanel(false, -1, -1, "");
+            DeselectAllItems();
+            if (quantity == 0)
+                return;
+            else
+            {
+                OnRemoveQuantityConfirmed?.Invoke(index, quantity, containerType);
+            }
+        }
+        #endregion
 
-
-        //private string GetMouseFollowerType() => mouseFollower.FollowerType;
-        //private int GetMouseFollowerIndex() => mouseFollower.ItemIndex;
-        //private List<UIMouseFollower.EquipSlots> GetMouseFollowerEquipSlots() => mouseFollower.slotsToEquip;
-
-        public bool IsPanelActive()
+        #region UIStatus
+        public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();
+        public bool IsActionPanelActive()
         {
             return itemActionPanel.IsPanelActive();
+        }
+        public bool IsAnyPanelActive()
+        {
+            if (IsConfirmationPanelActive())
+                return true;
+            if (IsConfirmationQuantityPanelActive())
+                return true;
+            if (IsQuickSlotSelectionPanelActive())
+                return true;
+            return false;
         }
         public bool IsConfirmationPanelActive()
         {
@@ -461,38 +554,45 @@ namespace Inventory.UI
         {
             return confirmationPanel.IsConfirmationPanelActive();
         }
+        #endregion
 
 
-        public void ToggleConfirmationPanel(bool value, int index)
-        {
-            confirmationPanel.ToggleConfirmationPanel(value, index);
-        }
-        public void ConfirmRemovingAll(int index)
-        {
-            //confirmationPanel.ToggleConfirmationPanel(false, -1);
-            //OnRemoveAllConfirmed?.Invoke(index);
-        }
-        public void ToggleConfirmQuantityPanel(bool value, int index, int maxRemoveSize)
-        {
-            confirmationQuantityPanel.ToggleConfirmQuantityPanel(value, index, maxRemoveSize);
-        }
-        public void ConfirmRemovingQuantity(int index, int quantity)
-        {
-            //confirmationQuantityPanel.ToggleConfirmQuantityPanel(false, -1, -1);
-            //if (quantity == 0)
-            //    return;
-            //else
-            //    OnRemoveQuantityConfirmed?.Invoke(index, quantity);
-        }
-        public void ToggleConfirmQuickSlotPanel(bool value, int index)
-        {
-            confirmationQuickSlotsPanel.ToggleConfirmQuantityPanel(value, index);
-        }
-        public void ConfirmQuickSlotEquip(int index, int slotIndex)
-        {
-            //confirmationQuickSlotsPanel.ToggleConfirmQuantityPanel(false, -1);
-            //OnQuickSlotEquipConfirmed?.Invoke(index, slotIndex);
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private string GetMouseFollowerType() => mouseFollower.FollowerType;
+        //private int GetMouseFollowerIndex() => mouseFollower.ItemIndex;
+        //private List<UIMouseFollower.EquipSlots> GetMouseFollowerEquipSlots() => mouseFollower.slotsToEquip;
+
+
+
+
+
+
+
+
+
+
+
 
 
         public void UnequipQuickSlot(int index)
@@ -517,6 +617,8 @@ namespace Inventory.UI
             Debug.Log(index);
             return index == -1;
         }
+
+
 
         //public void ClearInventory()
         //{

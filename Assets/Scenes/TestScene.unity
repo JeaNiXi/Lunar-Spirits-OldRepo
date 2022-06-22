@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.1882353, g: 0.27450982, b: 0.32156864, a: 0.6862745}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4959,11 +4959,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
+    m_Left: 40
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.16862746, g: 0.2509804, b: 0.33333334, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5242,8 +5242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notificationPrefab: {fileID: 8861659969148855988, guid: 3b71a1d9085c992428718fb49ef3fe80, type: 3}
   notificationPanel: {fileID: 1153256304}
-  NotificationsStrings:
-  - Wrong Item Type. Item can't be equiped here!
   Notification: 0
 --- !u!114 &1153256306
 MonoBehaviour:
@@ -6300,7 +6298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.1882353, g: 0.27450982, b: 0.32156864, a: 0.6862745}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8426,6 +8424,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 916649383339807552, guid: a0669fb0be654a44eb4a91eeeabba3ab, type: 3}
+      propertyPath: quantity
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 916649383339807554, guid: a0669fb0be654a44eb4a91eeeabba3ab, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -13,14 +13,14 @@ namespace Inventory.UI
 
         [SerializeField] private UIMainInventory uiMainInventory;
 
-        public void ToggleConfirmQuantityPanel(bool value, int index)
+        public void ToggleConfirmQuantityPanel(bool value, int index, string containerType)
         {
             if (value == true)
             {
                 gameObject.SetActive(true);
-                firstSlotButton.onClick.AddListener(() => uiMainInventory.ConfirmQuickSlotEquip(index, 0));
-                secondSlotButton.onClick.AddListener(() => uiMainInventory.ConfirmQuickSlotEquip(index, 1));
-                cancelButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmQuickSlotPanel(false, -1));
+                firstSlotButton.onClick.AddListener(() => uiMainInventory.ConfirmQuickSlotEquip(index, 0, containerType));
+                secondSlotButton.onClick.AddListener(() => uiMainInventory.ConfirmQuickSlotEquip(index, 1, containerType));
+                cancelButton.onClick.AddListener(() => uiMainInventory.ToggleConfirmQuickSlotPanel(false, -1, ""));
             }
             else
             {

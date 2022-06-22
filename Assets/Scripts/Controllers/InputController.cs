@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Inventory;
+using Character;
 
-public class InputController : MonoBehaviour
+namespace Managers
 {
-    [SerializeField] InventoryController MainInventoryController;
-    [SerializeField] MainCharacter mainCharacter;
-
-    private void Update()
+    public class InputController : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        [SerializeField] InventoryController MainInventoryController;
+        [SerializeField] MainCharacter mainCharacter;
+
+        private void Update()
         {
-            MainInventoryController.ToggleInventory();
-        }
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            float direction = Input.GetAxis("Horizontal");
-            mainCharacter.Move(direction);
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                MainInventoryController.ToggleInventory();
+            }
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                float direction = Input.GetAxis("Horizontal");
+                mainCharacter.Move(direction);
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                MainInventoryController.ToggleMouseClick();
+            }
         }
     }
 }
-

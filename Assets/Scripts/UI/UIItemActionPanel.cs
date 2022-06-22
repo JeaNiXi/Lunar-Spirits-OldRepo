@@ -14,8 +14,8 @@ namespace Inventory.UI
         {
             if (value == true)
             {
-                gameObject.SetActive(value);
                 gameObject.transform.position = Input.mousePosition;
+                gameObject.SetActive(value);
             }
             else
             {
@@ -26,6 +26,7 @@ namespace Inventory.UI
         public void AddButton(string name, Action onClickAction)
         {
             GameObject button = Instantiate(buttonPrefab, transform);
+            button.SetActive(true);
             button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
             button.GetComponent<Button>().onClick.AddListener(() => TogglePanel(false));
             button.GetComponentInChildren<TMPro.TMP_Text>().text = name;

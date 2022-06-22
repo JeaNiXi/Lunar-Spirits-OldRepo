@@ -17,6 +17,18 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
+    slotType: 0
+    itemContainer: 0
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
@@ -29,10 +41,6 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
-    slotType: 0
-    itemContainer: 0
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
@@ -57,28 +65,20 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
+    quantity: 55
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
+    quantity: 55
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
+    quantity: 94
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
@@ -110,12 +110,12 @@ MonoBehaviour:
     slotType: 0
     itemContainer: 0
   QSContainer:
-  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
-    quantity: 88
+  - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
+    quantity: 6
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
-    quantity: 5
+  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
+    quantity: 99
     slotType: 0
     itemContainer: 0
   EquipContainer:
@@ -151,7 +151,7 @@ MonoBehaviour:
     quantity: 1
     slotType: 7
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+  - item: {fileID: 11400000, guid: eb86b4031b2a7e3449416bcf33c39683, type: 2}
     quantity: 1
     slotType: 8
     itemContainer: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     quantity: 0
     slotType: 9
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
+    quantity: 17
     slotType: 10
     itemContainer: 0

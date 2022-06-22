@@ -13,10 +13,14 @@ namespace Inventory.UI
         public enum Notifications
         {
             WRONG_ITEM_TYPE,
+            NO_INVENTORY_SPACE_LEFT,
+            SAME_ITEM_IN_SLOT,
         }
-        public string[] NotificationsStrings =
+        private readonly string[] NotificationsStrings =
         {
-        "Wrong Item Type. Item can't be equiped here!",
+            "Wrong Item Type. Item can't be equiped here!",
+            "No Space In Inventory!",
+            "Same Item Already in Slot!",
         };
         public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
         public void ThrowNotification(Notifications notificationType)

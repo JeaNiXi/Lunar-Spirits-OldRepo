@@ -21,7 +21,7 @@ namespace Inventory.UI
         public bool IsEmpty { get; set; }
 
         public event Action<UIMainItem>
-            //OnItemRMBClicked,
+            OnItemRMBClicked,
             OnItemLMBClicked,
             OnItemDragStart,
             OnItemDrag,
@@ -50,6 +50,7 @@ namespace Inventory.UI
             QSContainer,
             EquipmentContainer,
         }
+
 
         public UIItemSlots UISlot;
         public ItemContainer ItemSlotContainer;
@@ -116,13 +117,15 @@ namespace Inventory.UI
             {
                 OnItemLMBClicked?.Invoke(this);
             }
-            //else if (eventData.button == PointerEventData.InputButton.Right)
-            //{
-            //    OnItemRMBClicked?.Invoke(this);
-            //}
+            else if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                OnItemRMBClicked?.Invoke(this);
+            }
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (eventData.button == PointerEventData.InputButton.Right)
+                return;
             OnItemDragStart?.Invoke(this);
         }
         public void OnEndDrag(PointerEventData eventData)

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
-  m_Name: Wooden Sword
+  m_Name: AmmoLike
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Wooden Sword
-  <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: Just for training.
+  <Name>k__BackingField: Ammo Like
+  <MaxStackSize>k__BackingField: 55
+  <Description>k__BackingField: ammo
   <IsQuestItem>k__BackingField: 0
-  <ItemType>k__BackingField: 2
-  <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
-  CanBeInSlots: 000000000800000009000000
+  <ItemType>k__BackingField: 5
+  <ItemImage>k__BackingField: {fileID: -8354697452043296405, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
+  CanBeInSlots: 000000000b000000
   modifierTypes:
-  - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
-    Value: 500
+  - Modifier: {fileID: 11400000, guid: 3569220e83e464749894625b8775a43d, type: 2}
+    Value: 2

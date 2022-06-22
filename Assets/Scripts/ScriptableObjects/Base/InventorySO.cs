@@ -1,3 +1,4 @@
+using Inventory.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace Inventory.SO
             OnInventoryUpdated,
             OnQuickSlotUpdated,
             OnEquipmentUpdated;
+        public event Action<UINotifications.Notifications>
+            ThrowNotification;
 
         [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
         [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
@@ -29,181 +32,80 @@ namespace Inventory.SO
         public List<EquipmentItem> GetEquipmentItemsList() => EquipContainer;
 
 
-
-        //public int AddItem(ItemSO item, int quantity)
-        //{
-        //if (item.MaxStackSize > 1)
-        //{
-        //    int index;
-        //    int sizeToAdd = quantity;
-        //    while (sizeToAdd > 0)
-        //    {
-        //        if (SearchForItemStackable(item, out index))
-        //        {
-        //            if (Container[index].quantity + quantity > Container[index].item.MaxStackSize)
-        //            {
-        //                int maxStackSize = Container[index].item.MaxStackSize;
-        //                sizeToAdd = quantity - (Container[index].item.MaxStackSize - Container[index].quantity);
-        //                Container[index] = new InventoryItem(item, maxStackSize);
-        //            }
-        //            else
-        //            {
-        //                int addSize = Container[index].quantity + sizeToAdd;
-        //                Container[index] = new InventoryItem(item, addSize);
-        //                InformUI();
-        //                return 0;
-        //                //sizeToAdd = 0;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (SearchForEmptySlot(out index))
-        //            {
-        //                if (sizeToAdd > item.MaxStackSize)
-        //                {
-        //                    Container[index] = new InventoryItem(item, item.MaxStackSize);
-        //                    sizeToAdd -= item.MaxStackSize;
-        //                }
-        //                else
-        //                {
-        //                    Container[index] = new InventoryItem(item, sizeToAdd);
-        //                    InformUI();
-        //                    return 0;
-        //                    //sizeToAdd = 0;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                //Should be remade. No Empty Slots, nowhere to stack. Debug Inventory Full!
-        //                Debug.Log("STACKABLE Inventory Full!");
-        //                InformUI();
-        //                return sizeToAdd;
-        //                //sizeToAdd = 0;
-        //                //if (sizeToAdd > item.MaxStackSize)
-        //                //{
-        //                //    Container.Add(new InventoryItem(item, item.MaxStackSize));
-        //                //    sizeToAdd -= item.MaxStackSize;
-        //                //}
-        //                //else
-        //                //{
-        //                //    Container.Add(new InventoryItem(item, sizeToAdd));
-        //                //    sizeToAdd = 0;
-        //                //}
-        //            }
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    int index;
-        //    int sizeToAdd = quantity;
-        //    while (sizeToAdd > 0)
-        //    {
-        //        if (SearchForEmptySlot(out index))
-        //        {
-        //            Container[index] = new InventoryItem(item, item.MaxStackSize);
-        //            sizeToAdd -= item.MaxStackSize;
-        //        }
-        //        else
-        //        {
-        //            //Should be remade. No Empty Slots, nowhere add. Debug Inventory Full!
-        //            Debug.Log("NO STACKABLE FULL");
-        //            InformUI();
-        //            return sizeToAdd;
-        //            //sizeToAdd = 0;
-        //            //Container.Add(new InventoryItem(item, item.MaxStackSize));
-        //            //sizeToAdd -= item.MaxStackSize;
-        //        }
-        //    }
-        //}
-        //InformUI();
-        //return 0;
-        //}
-
-        public void RemoveItem(ItemSO item, int quantity, int index)
+        #region ItemHandling
+        public int AddItem(ItemSO item, int quantity)
         {
-
-        }
-        public void RemoveItem(ItemSO item, int quantity)
-        {
-
-        }
-        public void RemoveItem(ItemSO item)
-        {
-
-        }
-        public void RemoveItem(int index, int quantity)
-        {
-            //if (Container[index].IsEmpty)
-            //    return;
-            //if (Container[index].quantity > 1)
-            //{
-            //    Container[index] = new InventoryItem(Container[index].item, Container[index].quantity - quantity);
-            //}
-            //else
-            //    Container[index] = InventoryItem.GetEmptyItem();
-            //InformUI();
-        }
-        public void RemoveItem(int index)
-        {
-            if (Container[index].IsEmpty)
-                return;
-            Container[index] = InventoryItem.GetEmptyItem();
-            InformUI();
-        }
-        public void RemoveItem(string itemType, string itemName)
-        {
-
-        }
-        public void RemoveItem(string itemType)
-        {
-            if (SearchForItem(itemType))
+            if (item.MaxStackSize > 1)
             {
-                for (int i = 0; i < Container.Count; i++)
+                int index;
+                int sizeToAdd = quantity;
+                while (sizeToAdd > 0)
                 {
-                    if (Container[i].IsEmpty)
-                        continue;
-                    if (Container[i].item.ItemType.ToString() == itemType)
+                    if (SearchForItemStackable(item, out index))
                     {
-                        Container[i] = InventoryItem.GetEmptyItem();
+                        if (Container[index].quantity + quantity > Container[index].item.MaxStackSize)
+                        {
+                            int maxStackSize = Container[index].item.MaxStackSize;
+                            sizeToAdd = quantity - (Container[index].item.MaxStackSize - Container[index].quantity);
+                            Container[index] = new InventoryItem(item, maxStackSize, Container[index].slotType);
+                        }
+                        else
+                        {
+                            int addSize = Container[index].quantity + sizeToAdd;
+                            Container[index] = new InventoryItem(item, addSize, Container[index].slotType);
+                            InformUI();
+                            return 0;
+                        }
+                    }
+                    else
+                    {
+                        if (SearchForEmptySlot(out index))
+                        {
+                            if (sizeToAdd > item.MaxStackSize)
+                            {
+                                Container[index] = new InventoryItem(item, item.MaxStackSize, Container[index].slotType);
+                                sizeToAdd -= item.MaxStackSize;
+                            }
+                            else
+                            {
+                                Container[index] = new InventoryItem(item, sizeToAdd, Container[index].slotType);
+                                InformUI();
+                                return 0;
+                            }
+                        }
+                        else
+                        {
+                            ThrowNotification?.Invoke(UINotifications.Notifications.NO_INVENTORY_SPACE_LEFT);
+                            InformUI();
+                            return sizeToAdd;
+                        }
                     }
                 }
                 InformUI();
+                return 0;
             }
             else
             {
-                Debug.LogError("NO ITEM FOUND");
+                int index;
+                int sizeToAdd = quantity;
+                while (sizeToAdd > 0)
+                {
+                    if (SearchForEmptySlot(out index))
+                    {
+                        Container[index] = new InventoryItem(item, item.MaxStackSize, Container[index].slotType);
+                        sizeToAdd -= item.MaxStackSize;
+                    }
+                    else
+                    {
+                        ThrowNotification?.Invoke(UINotifications.Notifications.NO_INVENTORY_SPACE_LEFT);
+                        InformUI();
+                        return sizeToAdd;
+                    }
+                }
+                InformUI();
+                return 0;
             }
         }
-        public void RemoveQuickSlotItem(int index, int quantity)
-        {
-            //if (QSContainer[index].IsEmpty)
-            //    return;
-            //if (QSContainer[index].quantity > 1)
-            //{
-            //    QSContainer[index] = new QuickSlotItem(QSContainer[index].item, QSContainer[index].quantity - quantity);
-            //}
-            //else
-            //    QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
-            //InformQuickSlotUI();
-        }
-
-
-
-        //public void MoveInventoryItemToEmptyInventorySlot(int followerIndex, int emptyIndex)
-        //{
-        //    Container[emptyIndex] = new InventoryItem(Container[followerIndex].item, Container[followerIndex].quantity);
-        //    Container[followerIndex] = InventoryItem.GetEmptyItem();
-        //    InformUI();
-        //}
-        //public void MoveInventoryItemToEmptyEquipmentSlot(int followerIndex, int equipIndex)
-        //{
-        //    EquipContainer[equipIndex] = new EquipmentItem(Container[followerIndex].item, Container[followerIndex].quantity, EquipContainer[equipIndex].slotType);
-        //    Container[followerIndex] = InventoryItem.GetEmptyItem();
-        //    InformUI();
-        //    InformEquipmentUI();
-        //}
-        #region ItemHandling
         public void SwapItemsHandler(string originContainer, int originIndex, string destContainer, int destIndex)
         {
             switch (originContainer)
@@ -212,6 +114,8 @@ namespace Inventory.SO
                     switch (destContainer)
                     {
                         case "Container":
+                            if (originIndex == destIndex)
+                                break;
                             SwapItems(Container[originIndex], originIndex, Container[destIndex], destIndex);
                             break;
                         case "QSContainer":
@@ -231,6 +135,8 @@ namespace Inventory.SO
                             SwapItems(QSContainer[originIndex], originIndex, Container[destIndex], destIndex);
                             break;
                         case "QSContainer":
+                            if (originIndex == destIndex)
+                                break;
                             SwapItems(QSContainer[originIndex], originIndex, QSContainer[destIndex], destIndex);
                             break;
                         case "EquipmentContainer":
@@ -250,6 +156,8 @@ namespace Inventory.SO
                             SwapItems(EquipContainer[originIndex], originIndex, QSContainer[destIndex], destIndex);
                             break;
                         case "EquipmentContainer":
+                            if (originIndex == destIndex)
+                                break;
                             SwapItems(EquipContainer[originIndex], originIndex, EquipContainer[destIndex], destIndex);
                             break;
                         default:
@@ -277,17 +185,62 @@ namespace Inventory.SO
                     }
                     else
                     {
-                        //Do shit.
-                        break;
+                        if (Container[destIndex].item.MaxStackSize == 1 || Container[originIndex].item.MaxStackSize == 1)
+                        {
+                            InventoryItem tmpItem = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType);
+                            Container[originIndex] = new InventoryItem(Container[destIndex].item, Container[destIndex].quantity, Container[destIndex].slotType);
+                            Container[destIndex] = new InventoryItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                            InformUI();
+                            break;
+                        }
+                        else
+                        {
+                            if (Container[destIndex].item.ID == Container[originIndex].item.ID)
+                            {
+                                if (Container[destIndex].quantity < Container[destIndex].item.MaxStackSize)
+                                {
+                                    int sizeWeCanAdd = Container[destIndex].item.MaxStackSize - Container[destIndex].quantity;
+                                    if (Container[originIndex].quantity > sizeWeCanAdd)
+                                    {
+                                        int reminder = Container[originIndex].quantity - sizeWeCanAdd;
+                                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].item.MaxStackSize, Container[originIndex].slotType);
+                                        Container[originIndex] = new InventoryItem(Container[destIndex].item, reminder, Container[destIndex].slotType);
+                                    }
+                                    else
+                                    {
+                                        int newSize = Container[destIndex].quantity + Container[originIndex].quantity;
+                                        Container[destIndex] = new InventoryItem(Container[originIndex].item, newSize, Container[originIndex].slotType);
+                                        Container[originIndex] = InventoryItem.GetEmptyItem();
+                                    }
+                                    InformUI();
+                                    break;
+                                }
+                                else
+                                {
+                                    InventoryItem tmpItem = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType);
+                                    Container[originIndex] = new InventoryItem(Container[destIndex].item, Container[destIndex].quantity, Container[destIndex].slotType);
+                                    Container[destIndex] = new InventoryItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                                    InformUI();
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                InventoryItem tmpItem = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType);
+                                Container[originIndex] = new InventoryItem(Container[destIndex].item, Container[destIndex].quantity, Container[destIndex].slotType);
+                                Container[destIndex] = new InventoryItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                                InformUI();
+                                break;
+                            }
+                        }
                     }
                 }
             }
-            if(!IsFound)
-                Debug.Log("Can not Be Equipped Here!");
+            if (!IsFound)
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
         }
         public void SwapItems(InventoryItem originItem, int originIndex, QuickSlotItem destItem, int destIndex)
         {
-            // In Production.
             bool IsFound = false;
             foreach (var slot in Container[originIndex].item.CanBeInSlots)
             {
@@ -333,7 +286,7 @@ namespace Inventory.SO
                         {
                             QuickSlotItem tmpQSItem = new QuickSlotItem(QSContainer[destIndex].item, QSContainer[destIndex].quantity, QSContainer[destIndex].slotType);
                             QSContainer[destIndex] = new QuickSlotItem(Container[originIndex].item, Container[originIndex].quantity, QSContainer[destIndex].slotType);
-                            Container[originIndex] = new InventoryItem(tmpQSItem.item, tmpQSItem.quantity,Container[originIndex].slotType);
+                            Container[originIndex] = new InventoryItem(tmpQSItem.item, tmpQSItem.quantity, Container[originIndex].slotType);
                         }
                         InformUI();
                         InformQuickSlotUI();
@@ -342,17 +295,17 @@ namespace Inventory.SO
                 }
             }
             if (!IsFound)
-                Debug.Log("Can not Be Equipped Here!");
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
         }
         public void SwapItems(InventoryItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
             bool IsFound = false;
-            foreach(var slot in Container[originIndex].item.CanBeInSlots)
+            foreach (var slot in Container[originIndex].item.CanBeInSlots)
             {
-                if(CanBeEquipped(slot.ToString(), EquipContainer[destIndex].slotType))
+                if (CanBeEquipped(slot.ToString(), EquipContainer[destIndex].slotType))
                 {
                     IsFound = true;
-                    if(EquipContainer[destIndex].IsEmpty)
+                    if (EquipContainer[destIndex].IsEmpty)
                     {
                         EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
@@ -362,13 +315,39 @@ namespace Inventory.SO
                     }
                     else
                     {
-                        // Do shit.
+                        if (EquipContainer[destIndex].slotType == EquipmentItem.SlotType.AMMO && EquipContainer[destIndex].item.ID == Container[originIndex].item.ID)
+                        {
+                            if (EquipContainer[destIndex].quantity < EquipContainer[destIndex].item.MaxStackSize)
+                            {
+                                int sizeToAdd = EquipContainer[destIndex].item.MaxStackSize - EquipContainer[destIndex].quantity;
+                                if (Container[originIndex].quantity <= sizeToAdd) 
+                                {
+                                    int newSize = EquipContainer[destIndex].quantity + Container[originIndex].quantity;
+                                    EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, newSize, EquipContainer[destIndex].slotType);
+                                    Container[originIndex] = InventoryItem.GetEmptyItem();
+                                }
+                                else
+                                {
+                                    int reminder = Container[originIndex].quantity - sizeToAdd;
+                                    EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, EquipContainer[destIndex].item.MaxStackSize, EquipContainer[destIndex].slotType);
+                                    Container[originIndex] = new InventoryItem(EquipContainer[destIndex].item, reminder, Container[originIndex].slotType);
+                                }
+                                InformUI();
+                                InformEquipmentUI();
+                                break;
+                            }
+                        }
+                        InventoryItem tmpItem = new InventoryItem(EquipContainer[destIndex].item, EquipContainer[destIndex].quantity, Container[originIndex].slotType);
+                        EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
+                        Container[originIndex] = new InventoryItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                        InformUI();
+                        InformEquipmentUI();
                         break;
                     }
                 }
             }
-            if(!IsFound)
-                Debug.Log("Can not Be Equipped Here!");
+            if (!IsFound)
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
         }
         public void SwapItems(QuickSlotItem originItem, int originIndex, InventoryItem destItem, int destIndex)
         {
@@ -409,115 +388,71 @@ namespace Inventory.SO
                                     break;
                                 }
                             }
-                            if(!IsOtherFound)
-                                Debug.Log("CONT ITEM Can not Be Equipped IN QS!");
+                            if (!IsOtherFound)
+                                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
                         }
                     }
                 }
             }
-            if(!IsFound)
-                Debug.Log("QS ITEM Can not Be Equipped Here!");
+            if (!IsFound)
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
         }
-
-
-
-
-
-        //                if (QSContainer[originIndex].item.ID == Container[destIndex].item.ID) 
-        //                {
-        //                    if (QSContainer[originIndex].item.MaxStackSize > 1)
-        //                    {
-        //                        int newIndex;
-        //                        int sizeToAdd;
-        //                        int reminder = QSContainer[index].quantity;
-        //                        while (reminder > 0)
-        //                        {
-        //                            if (SearchForItemStackable(QSContainer[index].item, out newIndex))
-        //                            {
-        //                                if (Container[newIndex].quantity + reminder > Container[newIndex].item.MaxStackSize)
-        //                                {
-        //                                    sizeToAdd = Container[newIndex].item.MaxStackSize - Container[newIndex].quantity;
-        //                                    Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-        //                                    reminder -= sizeToAdd;
-        //                                }
-        //                                else
-        //                                {
-        //                                    sizeToAdd = Container[newIndex].quantity + reminder;
-        //                                    Container[newIndex] = new InventoryItem(QSContainer[index].item, sizeToAdd);
-        //                                    QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
-        //                                    InformUI();
-        //                                    InformQuickSlotUI();
-        //                                    return;
-        //                                }
-        //                            }
-        //                            else
-        //                            {
-        //                                if (SearchForEmptySlot(out newIndex))
-        //                                {
-        //                                    if (reminder > QSContainer[index].item.MaxStackSize)
-        //                                    {
-        //                                        sizeToAdd = reminder - QSContainer[index].item.MaxStackSize;
-        //                                        Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-        //                                        reminder -= sizeToAdd;
-        //                                    }
-        //                                    else
-        //                                    {
-        //                                        Container[newIndex] = new InventoryItem(QSContainer[index].item, reminder);
-        //                                        QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
-        //                                        InformUI();
-        //                                        InformQuickSlotUI();
-        //                                        return;
-        //                                    }
-        //                                }
-        //                                else
-        //                                {
-        //                                    QSContainer[index] = new QuickSlotItem(QSContainer[index].item, reminder);
-        //                                    Debug.Log("NO EMPTY SLOTS TO UNEQUIP QUICK SLOT STACKABLE ITEM, ITEMS LEFT: " + reminder);
-        //                                    InformUI();
-        //                                    InformQuickSlotUI();
-        //                                    return;
-        //                                }
-        //                            }
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        int newIndex;
-        //                        int sizeToAdd = QSContainer[index].quantity;
-        //                        while (sizeToAdd > 0)
-        //                        {
-        //                            if (SearchForEmptySlot(out newIndex))
-        //                            {
-        //                                Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-        //                                sizeToAdd -= QSContainer[index].item.MaxStackSize;
-        //                            }
-        //                            else
-        //                            {
-        //                                QSContainer[index] = new QuickSlotItem(QSContainer[index].item, sizeToAdd);
-        //                                Debug.Log("NO EMPTY SLOTS TO UNEQUIP QUICK SLOT UNSTACKABLE ITEM, ITEMS LEFT: " + sizeToAdd);
-        //                                InformUI();
-        //                                InformQuickSlotUI();
-        //                                return;
-        //                            }
-        //                        }
-        //                    }
-        //                }
-
-
-
-        //                InformUI();
-        //                InformQuickSlotUI();
-        //                //do shit
-        //                break;
-        //            }
-        //        }
-        //    }
-        //    if(!IsFound)
-        //        Debug.Log("Can not Be Equipped Here!");
-        //}
         public void SwapItems(QuickSlotItem originItem, int originIndex, QuickSlotItem destItem, int destIndex)
         {
-
+            if (originIndex == destIndex)
+            {
+                ThrowNotification?.Invoke(UINotifications.Notifications.SAME_ITEM_IN_SLOT);
+                return;
+            }
+            if (QSContainer[destIndex].IsEmpty)
+            {
+                QSContainer[destIndex] = new QuickSlotItem(QSContainer[originIndex].item, QSContainer[originIndex].quantity, QSContainer[originIndex].slotType);
+                QSContainer[originIndex] = QuickSlotItem.GetEmptyQuickSlotItem();
+                InformQuickSlotUI();
+                return;
+            }
+            else
+            {
+                if (QSContainer[originIndex].item.ID == QSContainer[destIndex].item.ID)
+                {
+                    if (QSContainer[destIndex].quantity < QSContainer[destIndex].item.MaxStackSize)
+                    {
+                        int sizeToAdd = QSContainer[destIndex].item.MaxStackSize - QSContainer[destIndex].quantity;
+                        if (QSContainer[originIndex].quantity <= sizeToAdd)
+                        {
+                            int tmp = QSContainer[destIndex].quantity + QSContainer[originIndex].quantity;
+                            QSContainer[destIndex] = new QuickSlotItem(QSContainer[originIndex].item, tmp, QSContainer[originIndex].slotType);
+                            QSContainer[originIndex] = QuickSlotItem.GetEmptyQuickSlotItem();
+                            InformQuickSlotUI();
+                            return;
+                        }
+                        else
+                        {
+                            int tmp = QSContainer[originIndex].quantity - sizeToAdd;
+                            QSContainer[destIndex] = new QuickSlotItem(QSContainer[originIndex].item, QSContainer[originIndex].item.MaxStackSize, QSContainer[originIndex].slotType);
+                            QSContainer[originIndex] = new QuickSlotItem(QSContainer[destIndex].item, tmp, QSContainer[destIndex].slotType);
+                            InformQuickSlotUI();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        QuickSlotItem tmpItem = new QuickSlotItem(QSContainer[originIndex].item, QSContainer[originIndex].quantity, QSContainer[originIndex].slotType);
+                        QSContainer[originIndex] = new QuickSlotItem(QSContainer[destIndex].item, QSContainer[destIndex].quantity, QSContainer[destIndex].slotType);
+                        QSContainer[destIndex] = new QuickSlotItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                        InformQuickSlotUI();
+                        return;
+                    }
+                }
+                else
+                {
+                    QuickSlotItem tmpItem = new QuickSlotItem(QSContainer[originIndex].item, QSContainer[originIndex].quantity, QSContainer[originIndex].slotType);
+                    QSContainer[originIndex] = new QuickSlotItem(QSContainer[destIndex].item, QSContainer[destIndex].quantity, QSContainer[destIndex].slotType);
+                    QSContainer[destIndex] = new QuickSlotItem(tmpItem.item, tmpItem.quantity, tmpItem.slotType);
+                    InformQuickSlotUI();
+                    return;
+                }
+            }
         }
         public void SwapItems(QuickSlotItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
@@ -535,13 +470,139 @@ namespace Inventory.SO
         {
 
         }
+        public void RemoveItem(int index, int quantity, string ContainerType)
+        {
+            switch (ContainerType)
+            {
+                case "Container":
+                    RemoveItem(Container, index, quantity);
+                    break;
+                case "QSContainer":
+                    RemoveItem(QSContainer, index, quantity);
+                    break;
+                case "EquipmentContainer":
+                    RemoveItem(EquipContainer, index, quantity);
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void RemoveItem(List<InventoryItem> tmpList, int index)
+        {
+            if (Container[index].IsEmpty)
+                return;
+            Container[index] = InventoryItem.GetEmptyItem();
+            InformUI();
+        }
+        public void RemoveItem(List<QuickSlotItem> tmpList, int index)
+        {
+            if (QSContainer[index].IsEmpty)
+                return;
+            QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
+            InformQuickSlotUI();
+        }
+        public void RemoveItem(List<EquipmentItem> tmpList, int index)
+        {
+            if (EquipContainer[index].IsEmpty)
+                return;
+            EquipContainer[index] = new EquipmentItem(EquipContainer[index].slotType);
+            InformEquipmentUI();
+        }
+        public void RemoveItem(List<InventoryItem> tmpList, int index, int quantity)
+        {
+            if (Container[index].IsEmpty)
+                return;
+            if (Container[index].quantity > 1)
+            {
+                Container[index] = new InventoryItem(Container[index].item, Container[index].quantity - quantity, Container[index].slotType);
+            }
+            else
+                Container[index] = InventoryItem.GetEmptyItem();
+            InformUI();
+        }
+        public void RemoveItem(List<QuickSlotItem> list, int index, int quantity)
+        {
+            if (QSContainer[index].IsEmpty)
+                return;
+            if (QSContainer[index].quantity > 1)
+            {
+                QSContainer[index] = new QuickSlotItem(QSContainer[index].item, QSContainer[index].quantity - quantity, QSContainer[index].slotType);
+            }
+            else
+                QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
+            InformQuickSlotUI();
+        }
+        public void RemoveItem(List<EquipmentItem> list, int index, int quantity)
+        {
+
+        }
+        public bool EquipItemHandler(int index, string containerType)
+        {
+            switch (containerType)
+            {
+                case "Container":
+                    EquipItem(Container, index, EquipContainer);
+                    return true;
+                case "EquipmentContainer":
+                    UnequipItem(EquipContainer, index, Container);
+                    return false;
+                default:
+                    return false;
+            }
+        }
+        public void EquipItem(List<InventoryItem> originContainer, int originIndex, List<EquipmentItem> destContainer)
+        {
+            //we search for destination slot
+            //we swap items
+            //remove old stats, new stats will apply on return check with debug order
+        }
+        public void UnequipItem(List<EquipmentItem> originContainer, int originIndex, List<InventoryItem> destContainer)
+        {
+            //we search for empty slot, if there remove item
+            //remove stats, new stats will not apply cause returned false
+        }
         #endregion
 
         #region HelperMethods
         private bool CanBeEquipped(string itemPossibleEquipSlot, InventoryItem.SlotType slotType) => itemPossibleEquipSlot == slotType.ToString();
         private bool CanBeEquipped(string itemPossibleEquipSlot, QuickSlotItem.SlotType slotType) => itemPossibleEquipSlot == slotType.ToString();
         private bool CanBeEquipped(string itemPossibleEquipSlot, EquipmentItem.SlotType slotType) => itemPossibleEquipSlot == slotType.ToString();
+        private bool SearchForItemStackable(ItemSO item, out int index)
+        {
+            for (int i = 0; i < Container.Count; i++)
+            {
+                if (!Container[i].IsEmpty && Container[i].item == item && Container[i].quantity < Container[i].item.MaxStackSize)
+                {
+                    index = i;
+                    return true;
+                }
+            }
+            index = -1;
+            return false;
+        }
+        private bool SearchForEmptySlot(out int index)
+        {
+            for (int i = 0; i < Container.Count; i++)
+            {
+                if (Container[i].IsEmpty)
+                {
+                    index = i;
+                    return true;
+                }
+            }
+            index = -1;
+            return false;
+        }
         #endregion
+
+
+
+
+
+
+
+
+
 
 
 
@@ -688,32 +749,13 @@ namespace Inventory.SO
             }
             return false;
         }
-        private bool SearchForItemStackable(ItemSO item, out int index)
-        {
-            for (int i = 0; i < Container.Count; i++)
-            {
-                if (!Container[i].IsEmpty && Container[i].item == item && Container[i].quantity < Container[i].item.MaxStackSize)
-                {
-                    index = i;
-                    return true;
-                }
-            }
-            index = -1;
-            return false;
-        }
-        private bool SearchForEmptySlot(out int index)
-        {
-            for (int i = 0; i < Container.Count; i++)
-            {
-                if (Container[i].IsEmpty)
-                {
-                    index = i;
-                    return true;
-                }
-            }
-            index = -1;
-            return false;
-        }
+
+
+
+
+
+
+
 
         #region InformingUI
         private void InformUI()

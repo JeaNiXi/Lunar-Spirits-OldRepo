@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IRemovableQuantity
+namespace Interfaces
 {
+    public interface IRemovableQuantity
+    {
 
+    }
 }
