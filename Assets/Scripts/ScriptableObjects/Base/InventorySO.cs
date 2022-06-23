@@ -115,7 +115,10 @@ namespace Inventory.SO
                     {
                         case "Container":
                             if (originIndex == destIndex)
+                            {
+                                ThrowNotification?.Invoke(UINotifications.Notifications.SAME_ITEM_IN_SLOT);
                                 break;
+                            }
                             SwapItems(Container[originIndex], originIndex, Container[destIndex], destIndex);
                             break;
                         case "QSContainer":
@@ -136,7 +139,10 @@ namespace Inventory.SO
                             break;
                         case "QSContainer":
                             if (originIndex == destIndex)
+                            {
+                                ThrowNotification?.Invoke(UINotifications.Notifications.SAME_ITEM_IN_SLOT);
                                 break;
+                            }
                             SwapItems(QSContainer[originIndex], originIndex, QSContainer[destIndex], destIndex);
                             break;
                         case "EquipmentContainer":
@@ -157,7 +163,10 @@ namespace Inventory.SO
                             break;
                         case "EquipmentContainer":
                             if (originIndex == destIndex)
+                            {
+                                ThrowNotification?.Invoke(UINotifications.Notifications.SAME_ITEM_IN_SLOT);
                                 break;
+                            }
                             SwapItems(EquipContainer[originIndex], originIndex, EquipContainer[destIndex], destIndex);
                             break;
                         default:
@@ -320,7 +329,7 @@ namespace Inventory.SO
                             if (EquipContainer[destIndex].quantity < EquipContainer[destIndex].item.MaxStackSize)
                             {
                                 int sizeToAdd = EquipContainer[destIndex].item.MaxStackSize - EquipContainer[destIndex].quantity;
-                                if (Container[originIndex].quantity <= sizeToAdd) 
+                                if (Container[originIndex].quantity <= sizeToAdd)
                                 {
                                     int newSize = EquipContainer[destIndex].quantity + Container[originIndex].quantity;
                                     EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, newSize, EquipContainer[destIndex].slotType);
@@ -367,11 +376,27 @@ namespace Inventory.SO
                     }
                     else
                     {
-                        if (QSContainer[originIndex].item.ID == Container[destIndex].item.ID)
+                        if (QSContainer[originIndex].item.ID == Container[destIndex].item.ID && Container[destIndex].quantity < Container[destIndex].item.MaxStackSize)
                         {
-                            // same items, we can add from qs to inventory and leave reminder of add all
-                            Debug.Log("SAME ITEMS LETS SWAP!");
-                            break;
+                            int sizeToAdd = Container[destIndex].item.MaxStackSize - Container[destIndex].quantity;
+                            if (QSContainer[originIndex].quantity > sizeToAdd)
+                            {
+                                int reminder = QSContainer[originIndex].quantity - sizeToAdd;
+                                Container[destIndex] = new InventoryItem(Container[destIndex].item, Container[destIndex].item.MaxStackSize, Container[destIndex].slotType);
+                                QSContainer[originIndex] = new QuickSlotItem(QSContainer[originIndex].item, reminder, QSContainer[originIndex].slotType);
+                                InformUI();
+                                InformQuickSlotUI();
+                                break;
+                            }
+                            else
+                            {
+                                int newSize = Container[destIndex].quantity + QSContainer[originIndex].quantity;
+                                Container[destIndex] = new InventoryItem(Container[destIndex].item, newSize, Container[destIndex].slotType);
+                                QSContainer[originIndex] = QuickSlotItem.GetEmptyQuickSlotItem();
+                                InformUI();
+                                InformQuickSlotUI();
+                                break;
+                            }
                         }
                         else
                         {
@@ -381,10 +406,11 @@ namespace Inventory.SO
                                 if (CanBeEquipped(otherSlot.ToString(), QSContainer[originIndex].slotType))
                                 {
                                     IsOtherFound = true;
-                                    //item from container can be quick slot we can check for swap
-                                    //we swap items here
-                                    Debug.Log("NOT SAME ITEMS BUT WE CAN SWAP LETS SWAP!");
-
+                                    InventoryItem newItem = new InventoryItem(QSContainer[originIndex].item, QSContainer[originIndex].quantity, Container[destIndex].slotType);
+                                    QSContainer[originIndex] = new QuickSlotItem(Container[destIndex].item, Container[destIndex].quantity, QSContainer[originIndex].slotType);
+                                    Container[destIndex] = new InventoryItem(newItem.item, newItem.quantity, newItem.slotType);
+                                    InformUI();
+                                    InformQuickSlotUI();
                                     break;
                                 }
                             }
@@ -399,11 +425,6 @@ namespace Inventory.SO
         }
         public void SwapItems(QuickSlotItem originItem, int originIndex, QuickSlotItem destItem, int destIndex)
         {
-            if (originIndex == destIndex)
-            {
-                ThrowNotification?.Invoke(UINotifications.Notifications.SAME_ITEM_IN_SLOT);
-                return;
-            }
             if (QSContainer[destIndex].IsEmpty)
             {
                 QSContainer[destIndex] = new QuickSlotItem(QSContainer[originIndex].item, QSContainer[originIndex].quantity, QSContainer[originIndex].slotType);
@@ -456,19 +477,84 @@ namespace Inventory.SO
         }
         public void SwapItems(QuickSlotItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
-
+            ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
+            return;
         }
         public void SwapItems(EquipmentItem originItem, int originIndex, InventoryItem destItem, int destIndex)
         {
-
+            bool isFound = false;
+            foreach (var slot in EquipContainer[originIndex].item.CanBeInSlots)
+            {
+                if (CanBeEquipped(slot.ToString(), Container[destIndex].slotType))
+                {
+                    isFound = true;
+                    if (Container[destIndex].IsEmpty)
+                    {
+                        Container[destIndex] = new InventoryItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, Container[destIndex].slotType);
+                        EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
+                        InformUI();
+                        InformEquipmentUI();
+                        break;
+                    }
+                    else
+                    {
+                        bool newFound = false;
+                        foreach (var newSlot in Container[destIndex].item.CanBeInSlots)
+                        {
+                            if (CanBeEquipped(newSlot.ToString(), EquipContainer[originIndex].slotType))
+                            {
+                                newFound = true;
+                                if (Container[destIndex].item.ID == EquipContainer[originIndex].item.ID && Container[destIndex].quantity < Container[destIndex].item.MaxStackSize)
+                                {
+                                    int sizeToAdd = Container[destIndex].item.MaxStackSize - Container[destIndex].quantity;
+                                    if (EquipContainer[originIndex].quantity > sizeToAdd)
+                                    {
+                                        int reminder = EquipContainer[originIndex].quantity - sizeToAdd;
+                                        Container[destIndex] = new InventoryItem(Container[destIndex].item, Container[destIndex].item.MaxStackSize, Container[destIndex].slotType);
+                                        EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].item, reminder, EquipContainer[originIndex].slotType);
+                                        InformUI();
+                                        InformEquipmentUI();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        int newSize = Container[destIndex].quantity + EquipContainer[originIndex].quantity;
+                                        Container[destIndex] = new InventoryItem(Container[destIndex].item, newSize, Container[destIndex].slotType);
+                                        EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
+                                        InformUI();
+                                        InformEquipmentUI();
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    EquipmentItem tmpItem = new EquipmentItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, EquipContainer[originIndex].slotType);
+                                    EquipContainer[originIndex] = new EquipmentItem(Container[destIndex].item, Container[destIndex].quantity, EquipContainer[originIndex].slotType);
+                                    Container[destIndex] = new InventoryItem(tmpItem.item, tmpItem.quantity, Container[destIndex].slotType);
+                                    InformUI();
+                                    InformEquipmentUI();
+                                    break;
+                                }
+                            }
+                        }
+                        if (!newFound)
+                            ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
+                    }
+                }
+            }
+            if (!isFound)
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
         }
         public void SwapItems(EquipmentItem originItem, int originIndex, QuickSlotItem destItem, int destIndex)
         {
-
+            ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
+            return;
         }
         public void SwapItems(EquipmentItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
-
+            ////////////////////////////
+            ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
+            return;
         }
         public void RemoveItem(int index, int quantity, string ContainerType)
         {
@@ -552,14 +638,78 @@ namespace Inventory.SO
         }
         public void EquipItem(List<InventoryItem> originContainer, int originIndex, List<EquipmentItem> destContainer)
         {
-            //we search for destination slot
-            //we swap items
-            //remove old stats, new stats will apply on return check with debug order
+            int destIndex = GetEquipmentSlotIndex(ConvertListItemSlotsToEquipmentSlots(Container[originIndex].item.CanBeInSlots));
+            SwapItems(Container[originIndex], originIndex, EquipContainer[destIndex], destIndex);
         }
         public void UnequipItem(List<EquipmentItem> originContainer, int originIndex, List<InventoryItem> destContainer)
         {
-            //we search for empty slot, if there remove item
-            //remove stats, new stats will not apply cause returned false
+            if (EquipContainer[originIndex].item.MaxStackSize > 1)
+            {
+                bool wasChanged = false;
+                int reminder = EquipContainer[originIndex].quantity;
+                while (reminder > 0)
+                {
+                    if (SearchForItemStackable(EquipContainer[originIndex].item, out int index))
+                    {
+                        wasChanged = true;
+                        if (Container[index].quantity + reminder > Container[index].item.MaxStackSize) 
+                        {
+                            int sizeToAdd = Container[index].item.MaxStackSize - Container[index].quantity;
+                            reminder -= sizeToAdd;
+                            Container[index] = new InventoryItem(Container[index].item, Container[index].item.MaxStackSize, Container[index].slotType);
+                            EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].item, reminder, EquipContainer[originIndex].slotType);
+                        }
+                        else
+                        {
+                            int newSize = EquipContainer[originIndex].quantity + Container[index].quantity;
+                            Container[index] = new InventoryItem(Container[index].item, newSize, Container[index].slotType);
+                            EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
+                            InformUI();
+                            InformEquipmentUI();
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if(SearchForEmptySlot(out int newIndex)) // Not added reminder > maxStackSize because switching from EquipCont to empty slot won't be more than stack size.
+                        {
+                            Container[newIndex] = new InventoryItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, Container[newIndex].slotType);
+                            EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
+                            InformUI();
+                            InformEquipmentUI();
+                            break;
+                        }
+                        else
+                        {
+                            if (wasChanged)
+                            {
+                                Debug.Log("was changed!");
+                                EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].item, reminder, EquipContainer[originIndex].slotType);
+                                InformUI();
+                                InformEquipmentUI();
+                                Debug.Log("NO MORE PLACE, Some Items are left there!");
+                                break;
+                            }
+                            Debug.Log("NO MORE PLACE, Nothing Changed!");
+                            break;
+                        }
+                    }    
+                }
+            }
+            else
+            {
+                if (SearchForEmptySlot(out int newEmptyIndex)) // Same as above.
+                {
+                    Container[newEmptyIndex] = new InventoryItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, Container[newEmptyIndex].slotType);
+                    EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
+                    InformUI();
+                    InformEquipmentUI();
+                }
+                else
+                {
+                    Debug.Log("NO PLACE, Dont UnEquiped!");
+                }
+            }
         }
         #endregion
 
@@ -592,6 +742,44 @@ namespace Inventory.SO
             }
             index = -1;
             return false;
+        }
+        private List<EquipmentItem.SlotType> ConvertListItemSlotsToEquipmentSlots(List<ItemSO.ItemSlots> itemSOList)
+        {
+            List<EquipmentItem.SlotType> newList = new List<EquipmentItem.SlotType>();
+            foreach(ItemSO.ItemSlots slot in itemSOList)
+            {
+                if(Enum.TryParse(slot.ToString(), out EquipmentItem.SlotType result))
+                {
+                    newList.Add(result);
+                }
+            }
+            return newList;
+        }
+        private int GetEquipmentSlotIndex(List<EquipmentItem.SlotType> possibleSlotTypes)
+        {
+            int slotCount = 0;
+            List<int> indexes = new List<int>();
+            int listIndex = 0;
+            foreach (EquipmentItem item in EquipContainer)
+                for (int i = 0; i < possibleSlotTypes.Count; i++)
+                {
+                    if (item.slotType == possibleSlotTypes[i])
+                    {
+                        slotCount++;
+                        indexes.Add(EquipContainer.IndexOf(item));
+                        listIndex++;
+                    }
+                }
+            if (slotCount == 1)
+                return indexes[0];
+            else
+            {
+                if (EquipContainer[indexes[0]].IsEmpty)
+                    return indexes[0];
+                else if (EquipContainer[indexes[1]].IsEmpty)
+                    return indexes[1];
+                return indexes[0];
+            }
         }
         #endregion
 

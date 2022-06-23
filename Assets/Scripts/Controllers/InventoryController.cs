@@ -287,27 +287,3 @@ namespace Inventory
         }
     }
 }
-
-public struct TestStruct
-{
-    public string name;
-    public int age;
-
-    public TestStruct(string name, int age)
-    {
-        this.name = name;
-        this.age = age;
-    }
-
-}
-public class TestClass
-{
-    public string name;
-    public int age;
-
-    public TestClass(string name, int age)
-    {
-        this.name = name;
-        this.age = age;
-    }
-}

@@ -180,7 +180,7 @@ namespace Inventory.UI
         {
             if (newDictionary.Count == uiItemsList.Count)
             {
-                //DeselectAllItems();
+                DeselectAllItems();
                 //ToggleMouseFollower(false);
                 for (int i = 0; i < newDictionary.Count; i++)
                 {
@@ -193,7 +193,7 @@ namespace Inventory.UI
             }
             else if (newDictionary.Count > uiItemsList.Count)
             {
-                //DeselectAllItems();
+                DeselectAllItems();
                 //ToggleMouseFollower(false);
                 int startIndex = uiItemsList.Count;
                 for (int i = 0; i < uiItemsList.Count; i++)
@@ -226,7 +226,7 @@ namespace Inventory.UI
             }
             else
             {
-                //DeselectAllItems();
+                DeselectAllItems();
                 //ToggleMouseFollower(false);
                 int reminder = newDictionary.Count - 1;
                 int startPoint = uiItemsList.Count - 1;
@@ -249,7 +249,7 @@ namespace Inventory.UI
         }
         public void UpdateQuickSlotsUI(List<QuickSlotItem> quickSlotsList)
         {
-            //DeselectAllItems();
+            DeselectAllItems();
             //ToggleMouseFollower(false);
             for (int i = 0; i < quickSlotsList.Count; i++)
             {
@@ -261,6 +261,7 @@ namespace Inventory.UI
         }
         public void InitializeUpdateEquipmentUI(List<EquipmentItem> equipmentList)
         {
+            DeselectAllItems();
             for (int i = 0; i < LEFT_EQUIP_SLOTS; i++)
             {
                 SetupUpdateEquipmentUI(i, equipmentList, true);
@@ -298,14 +299,17 @@ namespace Inventory.UI
             {
                 if (obj.IsEmpty)
                 {
+                    Debug.Log("DESELECTING");
                     DeselectAllItems();
                     ToggleActionPanel(false);
                     return;
                 }
                 else
                 {
+                    Debug.Log("DESELECTING");
                     DeselectAllItems();
                     ToggleActionPanel(false);
+                    Debug.Log("Selecting!");
                     obj.SelectItem();
                     return;
                 }
@@ -314,13 +318,16 @@ namespace Inventory.UI
             {
                 if (obj.IsEmpty)
                 {
+                    Debug.Log("DESELECTING");
                     DeselectAllItems();
                     ToggleActionPanel(false);
                 }
                 else
                 {
+                    Debug.Log("DESELECTING");
                     DeselectAllItems();
                     ToggleActionPanel(false);
+                    Debug.Log("Selecting!");
                     obj.SelectItem();
                 }
             }
