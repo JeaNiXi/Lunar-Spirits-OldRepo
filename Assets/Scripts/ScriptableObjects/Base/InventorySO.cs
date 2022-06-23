@@ -552,9 +552,24 @@ namespace Inventory.SO
         }
         public void SwapItems(EquipmentItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
-            ////////////////////////////
-            ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
-            return;
+            bool isFound = false;
+            foreach(var slot in EquipContainer[originIndex].item.CanBeInSlots)
+            {
+                if(CanBeEquipped(slot.ToString(), EquipContainer[destIndex].slotType))
+                {
+                    isFound = true;
+                    EquipmentItem tmpItem = new EquipmentItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, EquipContainer[originIndex].slotType);
+                    EquipContainer[originIndex] = new EquipmentItem(EquipContainer[destIndex].item, EquipContainer[destIndex].quantity, EquipContainer[originIndex].slotType);
+                    EquipContainer[destIndex] = new EquipmentItem(tmpItem.item, tmpItem.quantity, EquipContainer[destIndex].slotType);
+                    InformEquipmentUI();
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                ThrowNotification?.Invoke(UINotifications.Notifications.WRONG_ITEM_TYPE);
+                return;
+            }
         }
         public void RemoveItem(int index, int quantity, string ContainerType)
         {
