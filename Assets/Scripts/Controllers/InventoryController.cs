@@ -13,7 +13,7 @@ namespace Inventory
     public class InventoryController : MonoBehaviour
     {
         [SerializeField] private UIMainInventory uiMainInventory;
-        [SerializeField] private MainCharacter mainCharacter;
+        [SerializeField] private CharacterManager mainCharacter;
         private InventorySO mainInventorySO;
         private enum ActionButtons
         {
@@ -63,7 +63,7 @@ namespace Inventory
         #region Initializations
         private void InitializeInventorySO()
         {
-            mainInventorySO = mainCharacter.GetComponent<MainCharacter>().GetInventorySO();
+            mainInventorySO = mainCharacter.GetComponent<CharacterManager>().GetInventorySO();
             mainInventorySO.CorrectQuantity();
             mainInventorySO.CheckForInventoryGridEnd();
             mainInventorySO.CorrectQuickSlotQuantity();

@@ -10,7 +10,7 @@ namespace Managers
     public class InputController : MonoBehaviour
     {
         [SerializeField] InventoryController MainInventoryController;
-        [SerializeField] MainCharacter mainCharacter;
+        [SerializeField] CharacterManager mainCharacter;
 
         private void Update()
         {
