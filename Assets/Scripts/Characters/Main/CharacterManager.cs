@@ -20,6 +20,7 @@ namespace Character
         public void Awake()
         {
             mcRigidBody2D = GetComponent<Rigidbody2D>();
+            Test();
         }
         public InventorySO GetInventorySO() => mainInventorySO;
         public void Move(float direction)
@@ -28,7 +29,14 @@ namespace Character
         }
         public void Test()
         {
-           
+            //mainActorSO.SetBaseEndurance(3);
+            //mainActorSO.ChangeEndurance(5);
+            //mainActorSO.perksList[0].UsePerk();
+            //foreach(var perk in mainActorSO.perksList)
+            //{
+            //    Debug.Log("HAHAHAH");
+            //}
+            mainActorSO.AddPerk(mainActorSO.perkManager.Agility_FastRunner());
         }
     }
 }

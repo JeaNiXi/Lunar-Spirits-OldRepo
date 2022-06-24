@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Main Character
   m_EditorClassIdentifier: 
   Health: 100
+  endurance:
+    Level: 5
+  perksList:
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  perkManager: {fileID: 11400000, guid: 3e461684a99849041bec3e6ff5f882c2, type: 2}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Inventory.SO
 {
-    [CreateAssetMenu(fileName = "Stat Health Modifier", menuName = "Modifiers/Stat/Health")]
+    [CreateAssetMenu(fileName = "Stat Health Modifier", menuName = "Character/Modifiers/Stat/Health")]
     public class StatHealthModifierSO : ModifiersSO
     {
         public override void ApplyModifier(GameObject character, int value)
