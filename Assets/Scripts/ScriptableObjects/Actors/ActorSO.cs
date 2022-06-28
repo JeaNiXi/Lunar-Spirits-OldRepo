@@ -11,7 +11,13 @@ namespace Actor.SO
     {
         [field: SerializeField] public float Health;
 
-        [SerializeField] Endurance endurance = new Endurance(1);
+        [SerializeField] Strength strength = new Strength(1);
+        [SerializeField] Dexterity dexterity = new Dexterity(1);
+        [SerializeField] Constitution constitution = new Constitution(1);
+        [SerializeField] Intelligence intelligence = new Intelligence(1);
+        [SerializeField] Wisdom wisdom = new Wisdom(1);
+        [SerializeField] Charisma charisma = new Charisma(1);
+
 
         [SerializeField] public List<Perks> perksList = new List<Perks>();
         [SerializeField] public PerkManagerSO perkManager;
@@ -24,37 +30,83 @@ namespace Actor.SO
             perksList.Add(perk);
         }
 
-        internal void SetBaseEndurance(int v)
+        public void SetBaseEndurance(int v)
         {
-            Endurance.SetBaseValue(v);
+            Strength.SetBaseValue(v);
         }
 
-        internal void ChangeEndurance(int v)
+        public void ChangeEndurance(int v)
         {
             throw new NotImplementedException();
         }
     }
 
     [Serializable]
-    public class Endurance
+    public struct Strength
     {
-        public int Level;
+        [SerializeField] private int level;
 
-        public Endurance(int level)
+        public Strength(int level)
         {
-            this.Level = level;
+            this.level = level;
         }
-
-        internal static void SetBaseValue(int v)
+        public static void SetBaseValue(int v)
         {
             throw new NotImplementedException();
         }
-        public float HealthBonus => Level switch
+
+    }
+    [Serializable]
+    public struct Dexterity
+    {
+        [SerializeField] private int level;
+        public Dexterity(int level)
         {
-            1 => 100,
-            2 => 200,
+            this.level = level;
+        }
+    }
+    [Serializable]
+    public struct Constitution
+    {
+        [SerializeField] private int level;
+        public Constitution(int level)
+        {
+            this.level = level;
+        }
+        public float GetHealthBonus => level switch
+        {
+            1 => 200,
+            2 => 400,
+            3 => 600,
+            4 => 800,
             _ => 0,
         };
     }
-
+    [Serializable]
+    public struct Intelligence
+    {
+        [SerializeField] private int level;
+        public Intelligence(int level)
+        {
+            this.level = level;
+        }
+    }
+    [Serializable]
+    public struct Wisdom
+    {
+        [SerializeField] private int level;
+        public Wisdom(int level)
+        {
+            this.level = level;
+        }
+    }
+    [Serializable]
+    public struct Charisma
+    {
+        [SerializeField] private int level;
+        public Charisma(int level)
+        {
+            this.level = level;
+        }
+    }
 }

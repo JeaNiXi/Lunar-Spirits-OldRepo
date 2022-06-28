@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 using Inventory.SO;
+using Actor.SO;
 
 namespace Inventory.UI
 {
@@ -21,6 +22,7 @@ namespace Inventory.UI
         [SerializeField] private RectTransform leftEquipmentPanel;
         [SerializeField] private RectTransform rightEquipmentPanel;
         [SerializeField] private UINotifications uiNotifications;
+        [SerializeField] private UIStatsScreen uiStatsScreen;
  
         public event Action<int, int>
             OnItemRMBClicked,
@@ -289,6 +291,10 @@ namespace Inventory.UI
                 if (isQuantityDisabled)
                     uiEquipmentItems[i].ToggleQuantityPanel(false);
             }
+        }
+        public void UpdateStatsUI(ActorSO actor)
+        {
+            uiStatsScreen.UpdateStatsUI(actor);
         }
         #endregion
 

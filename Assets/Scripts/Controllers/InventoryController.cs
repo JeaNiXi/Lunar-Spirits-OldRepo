@@ -68,6 +68,7 @@ namespace Inventory
             mainInventorySO.CheckForInventoryGridEnd();
             mainInventorySO.CorrectQuickSlotQuantity();
             mainInventorySO.CorrectEquipSlotsQuantity();
+            InvokeRepeating("UIUpdate", 0, 1.0f);
         }
         private void InitializeMainUI()
         {

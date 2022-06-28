@@ -16,7 +16,10 @@ namespace Character
 
         Rigidbody2D mcRigidBody2D;
 
-
+        public ActorSO GetActorSO()
+        {
+            return mainActorSO;
+        }
         public void Awake()
         {
             mcRigidBody2D = GetComponent<Rigidbody2D>();

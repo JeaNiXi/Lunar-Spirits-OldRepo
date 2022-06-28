@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Perk Manager", menuName = "Base/Perk Manager")]
-
-public class PerkManagerSO : ScriptableObject
+namespace Actor.SO
 {
-    [SerializeField] public Perks FastRunner;
+    [CreateAssetMenu(fileName = "Perk Manager", menuName = "Base/Perk Manager")]
 
-    public Perks Agility_FastRunner()
+    public class PerkManagerSO : ScriptableObject
     {
-        return FastRunner;
+        [SerializeField] public Perks FastRunner;
+
+        public Perks Agility_FastRunner()
+        {
+            return FastRunner;
+        }
     }
 }
