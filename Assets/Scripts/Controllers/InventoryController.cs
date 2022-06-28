@@ -41,6 +41,7 @@ namespace Inventory
             InitializeMainUI();
             InitializeQuickSlotUI();
             InitializeEqipmentUI();
+            InitializeStatsUI();
             ToggleUIComponents(false);
             mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
             mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
@@ -55,7 +56,11 @@ namespace Inventory
             uiMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
             uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
             uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
+
+            mainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
+
+
 
 
 
@@ -68,7 +73,6 @@ namespace Inventory
             mainInventorySO.CheckForInventoryGridEnd();
             mainInventorySO.CorrectQuickSlotQuantity();
             mainInventorySO.CorrectEquipSlotsQuantity();
-            InvokeRepeating("UIUpdate", 0, 1.0f);
         }
         private void InitializeMainUI()
         {
@@ -81,6 +85,10 @@ namespace Inventory
         private void InitializeEqipmentUI()
         {
             uiMainInventory.InitializeEquipmentSlotsData(mainInventorySO.GetEquipmentItemsList());
+        }
+        private void InitializeStatsUI()
+        {
+            uiMainInventory.InitializeStatsUI(mainCharacter.GetActorSO());
         }
         #endregion
 
@@ -159,11 +167,11 @@ namespace Inventory
         {
             if (item.item is IUsable iUsable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter.gameObject, mainInventorySO, index, containerType));
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter, mainInventorySO, index, containerType));
             }
             if (item.item is IEquipable iEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(mainCharacter.gameObject, mainInventorySO, index, containerType));
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(mainCharacter, mainInventorySO, index, containerType));
             }
             if (item.item is IQuickEquipable iQuickEquipable)
             {
@@ -182,7 +190,7 @@ namespace Inventory
         {
             if (item.item is IUsable iUsable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter.gameObject, mainInventorySO, index, containerType));
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter, mainInventorySO, index, containerType));
             }
             if (item.item is IQuickEquipable iQuickEquipable)
             {
@@ -201,7 +209,7 @@ namespace Inventory
         {
             if (item.item is IEquipable iEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(mainCharacter.gameObject, mainInventorySO, index, containerType));
+                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(mainCharacter, mainInventorySO, index, containerType));
             }
             if (item.item is IRemovable iRemovable)
             {
@@ -253,6 +261,10 @@ namespace Inventory
         private void HandleNotificationRequest(UINotifications.Notifications notification)
         {
             uiMainInventory.ThrowNotification(notification);
+        }
+        private void HandleStatUIUpdateRequest()
+        {
+            uiMainInventory.UpdateStatsUI(mainCharacter.GetActorSO());
         }
         #endregion
 

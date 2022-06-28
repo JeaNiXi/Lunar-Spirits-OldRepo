@@ -6,14 +6,15 @@ using UnityEngine;
 
 namespace Inventory.SO
 {
-    [CreateAssetMenu(fileName = "New Weapon", menuName = "Inventory/Items/Weapon Item")]
-    public class WeaponSO : ItemSO, IRemovable, IEquipable
+    [CreateAssetMenu(fileName = "New Armor", menuName = "Inventory/Items/Armor Item")]
+
+    public class ArmorSO : ItemSO, IEquipable
     {
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
 
         public void EquipItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
-            if (mainInventory.EquipItemHandler(index, containerType)) 
+            if (mainInventory.EquipItemHandler(index, containerType))
             {
                 foreach (ModifierType modifier in modifierTypes)
                 {

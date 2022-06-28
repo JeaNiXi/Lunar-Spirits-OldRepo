@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ca27f00f380564994ae66e43226c23, type: 3}
+  m_Name: Leather Armor
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Leather Armor
+  <MaxStackSize>k__BackingField: 1
+  <Description>k__BackingField: sdss
+  <IsQuestItem>k__BackingField: 0
+  <ItemType>k__BackingField: 6
+  <ItemImage>k__BackingField: {fileID: 5064720189575774579, guid: 7a5806d11e28c4a4992cd2ec0e193899, type: 3}
+  CanBeInSlots: 0000000005000000
+  modifierTypes:
+  - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+    Value: 100

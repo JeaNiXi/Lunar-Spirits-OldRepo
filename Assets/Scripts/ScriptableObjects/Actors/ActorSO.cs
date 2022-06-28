@@ -1,3 +1,4 @@
+using Inventory.SO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,9 @@ namespace Actor.SO
 
     public class ActorSO : ScriptableObject
     {
-        [field: SerializeField] public float Health;
+        public event Action
+            OnStatUpdate;
+        [field: SerializeField] private float health;
 
         [SerializeField] Strength strength = new Strength(1);
         [SerializeField] Dexterity dexterity = new Dexterity(1);
@@ -21,6 +24,27 @@ namespace Actor.SO
 
         [SerializeField] public List<Perks> perksList = new List<Perks>();
         [SerializeField] public PerkManagerSO perkManager;
+        private void UpdateStatUI()
+        {
+            OnStatUpdate?.Invoke();
+        }
+        #region BaseStatsSetters
+        public void SetBaseHealth(float value)
+        {
+            health += value;
+            UpdateStatUI();
+        }
+        #endregion
+        #region BaseStatsGetters
+        public float GetCharacterBaseHealth()
+        {
+            return health + constitution.GetHealthBonus;
+        }
+        #endregion
+
+
+
+
         public void Test()
         {
             perksList[0].UsePerk();

@@ -1,3 +1,4 @@
+using Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,9 @@ namespace Inventory.SO
     [CreateAssetMenu(fileName = "Base Health Modifier", menuName = "Character/Modifiers/Base/Health")]
     public class BaseHealthModifierSO : ModifiersSO
     {
-        public override void ApplyModifier(GameObject character, int value)
+        public override void ApplyModifier(CharacterManager character, int value)
         {
-            Debug.Log("APPLIED MODIFIER!");
+            character.GetActorSO().SetBaseHealth(50);
         }
     }
 }

@@ -12,9 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115287c924eab41438a98b5d49809254, type: 3}
   m_Name: Main Character
   m_EditorClassIdentifier: 
-  Health: 100
-  endurance:
-    Level: 5
+  health: 200
+  strength:
+    level: 1
+  dexterity:
+    level: 1
+  constitution:
+    level: 1
+  intelligence:
+    level: 1
+  wisdom:
+    level: 1
+  charisma:
+    level: 1
   perksList:
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
+  - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
   - {fileID: 11400000, guid: 52fced37fd1a35f479b902b389b0a575, type: 2}
   perkManager: {fileID: 11400000, guid: 3e461684a99849041bec3e6ff5f882c2, type: 2}

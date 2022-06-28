@@ -16,6 +16,7 @@ namespace Inventory.UI
         [SerializeField] private UIConfirmAllPanel confirmationPanel;
         [SerializeField] private UIConfirmQuantityPanel confirmationQuantityPanel;
         [SerializeField] private UIConfirmQuickSlotPanel confirmationQuickSlotsPanel;
+        [SerializeField] private UIDescriptionPanel uiDescriptionPanel;
         [SerializeField] private RectTransform contentPanel;
         [SerializeField] private RectTransform quickSlotPanel;
         [SerializeField] private UIMouseFollower mouseFollower;
@@ -159,6 +160,10 @@ namespace Inventory.UI
                 uiItem.ToggleQuantityPanel(false);
             uiEquipmentItems.Add(uiItem);
         }
+        public void InitializeStatsUI(ActorSO actor)
+        {
+            uiStatsScreen.UpdateStatsUI(actor);
+        }
         private void InitializeActions(UIMainItem uiItem)
         {
             uiItem.OnItemRMBClicked += HandleRMBClick;
@@ -166,7 +171,11 @@ namespace Inventory.UI
             uiItem.OnItemDragStart += HandleDragStart;
             uiItem.OnItemDragEnd += HandleDragEnd;
             uiItem.OnItemDroppedOn += HandleItemDroppedOn;
+            uiItem.OnPointerHoveringOver += HandleItemDescriptionRequest;
         }
+
+
+
         private void DeleteActions(UIMainItem uiItem)
         {
             uiItem.OnItemRMBClicked -= HandleRMBClick;
@@ -445,6 +454,10 @@ namespace Inventory.UI
                 default:
                     break;
             }
+        }
+        private void HandleItemDescriptionRequest(UIMainItem obj)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 

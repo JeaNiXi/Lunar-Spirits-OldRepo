@@ -10,8 +10,8 @@ namespace Character
     public class CharacterManager : MonoBehaviour
     {
         [Header("Main SO")]
-        [SerializeField] InventorySO mainInventorySO;
-        [SerializeField] ActorSO mainActorSO;
+        [SerializeField] public InventorySO mainInventorySO;
+        [SerializeField] private ActorSO mainActorSO;
 
 
         Rigidbody2D mcRigidBody2D;

@@ -11,7 +11,13 @@ using Inventory.SO;
 
 namespace Inventory.UI
 {
-    public class UIMainItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+    public class UIMainItem : MonoBehaviour, 
+        IPointerClickHandler, 
+        IBeginDragHandler, 
+        IEndDragHandler, 
+        IDragHandler, 
+        IDropHandler,
+        IPointerEnterHandler
     {
         [SerializeField] private Component imageComponent;
         [SerializeField] private Component quantityComponent;
@@ -26,7 +32,8 @@ namespace Inventory.UI
             OnItemDragStart,
             OnItemDrag,
             OnItemDragEnd,
-            OnItemDroppedOn;
+            OnItemDroppedOn,
+            OnPointerHoveringOver;
 
         public enum UIItemSlots
         {
@@ -140,11 +147,17 @@ namespace Inventory.UI
         {
             OnItemDroppedOn?.Invoke(this);
         }
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            OnPointerHoveringOver?.Invoke(this);
+        }
         #endregion
 
         public void DeleteUIObject()
         {
             Destroy(gameObject);
         }
+
+
     }
 }

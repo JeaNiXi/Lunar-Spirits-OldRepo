@@ -5473,7 +5473,7 @@ MonoBehaviour:
   m_CellSize: {x: 72, y: 36}
   m_Spacing: {x: 130, y: 0}
   m_Constraint: 1
-  m_ConstraintCount: 2
+  m_ConstraintCount: 1
 --- !u!114 &1098722080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9232,7 +9232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: 99999'
+  m_text: 'Health: 99999 +9999 (+9999)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5643809f33335f94786297582ef6288b, type: 2}
   m_sharedMaterial: {fileID: 9066846124099740650, guid: 5643809f33335f94786297582ef6288b, type: 2}
@@ -9259,8 +9259,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12039,6 +12039,7 @@ MonoBehaviour:
   confirmationPanel: {fileID: 1851111297}
   confirmationQuantityPanel: {fileID: 144646740}
   confirmationQuickSlotsPanel: {fileID: 417239906}
+  uiDescriptionPanel: {fileID: 0}
   contentPanel: {fileID: 1564854392}
   quickSlotPanel: {fileID: 1760626332}
   mouseFollower: {fileID: 1340805331}

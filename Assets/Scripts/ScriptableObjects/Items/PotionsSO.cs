@@ -1,3 +1,4 @@
+using Character;
 using Interfaces;
 using System;
 using System.Collections;
@@ -12,7 +13,7 @@ namespace Inventory.SO
     {
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
 
-        public void UseItem(GameObject character, InventorySO mainInventory, int index, string containerType)
+        public void UseItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
             foreach (ModifierType modifier in modifierTypes)
             {

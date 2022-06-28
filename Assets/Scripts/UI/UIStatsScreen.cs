@@ -13,7 +13,7 @@ namespace Inventory.UI
 
         public void UpdateStatsUI(ActorSO actor)
         {
-            HealthText.text = "Health: " + actor.Health.ToString();
+            HealthText.text = "Health: " + actor.GetCharacterBaseHealth();
         }
     }
 }

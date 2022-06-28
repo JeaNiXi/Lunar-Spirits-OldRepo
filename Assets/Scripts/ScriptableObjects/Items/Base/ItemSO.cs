@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Inventory.SO
 {
     public abstract class ItemSO : ScriptableObject

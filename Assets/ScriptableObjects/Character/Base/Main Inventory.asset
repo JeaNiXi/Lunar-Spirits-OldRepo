@@ -13,8 +13,48 @@ MonoBehaviour:
   m_Name: Main Inventory
   m_EditorClassIdentifier: 
   Container:
-  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
-    quantity: 4
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 11400000, guid: 7755e85c95c401c41a7fb9018f2cdbe4, type: 2}
+    quantity: 1
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 0
     itemContainer: 0
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
@@ -37,8 +77,12 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
+    quantity: 11
+    slotType: 0
+    itemContainer: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
@@ -53,56 +97,12 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
+    quantity: 55
     slotType: 0
     itemContainer: 0
   - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
-    quantity: 54
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+    quantity: 34
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
@@ -133,61 +133,13 @@ MonoBehaviour:
     quantity: 13
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 11400000, guid: 411979c42416bb245a32bdd815a29ee6, type: 2}
-    quantity: 1
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
-    slotType: 0
-    itemContainer: 0
   QSContainer:
-  - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
-    quantity: 14
+  - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
+    quantity: 53
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
-    quantity: 34
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 0
     itemContainer: 0
   EquipContainer:
@@ -199,12 +151,12 @@ MonoBehaviour:
     quantity: 0
     slotType: 1
     itemContainer: 0
-  - item: {fileID: 11400000, guid: f7ad6c1e932e5894abfadbe812e2591d, type: 2}
-    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 2
     itemContainer: 0
-  - item: {fileID: 11400000, guid: f7ad6c1e932e5894abfadbe812e2591d, type: 2}
-    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 3
     itemContainer: 0
   - item: {fileID: 0}
@@ -223,8 +175,8 @@ MonoBehaviour:
     quantity: 1
     slotType: 7
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
     slotType: 8
     itemContainer: 0
   - item: {fileID: 0}
@@ -232,6 +184,6 @@ MonoBehaviour:
     slotType: 9
     itemContainer: 0
   - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
-    quantity: 55
+    quantity: 4
     slotType: 10
     itemContainer: 0
