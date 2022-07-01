@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 using Inventory;
 using Character;
@@ -9,24 +10,35 @@ namespace Managers
 {
     public class InputController : MonoBehaviour
     {
-        [SerializeField] InventoryController MainInventoryController;
-        [SerializeField] CharacterManager mainCharacter;
+        [SerializeField] private CharacterManager mainCharacter;
+        [SerializeField] private InventoryController mainInventoryController;
+
+        [SerializeField]
+        InputActionReference
+            Movement,
+            Attack,
+            MousePointer,
+            OpenInventory;
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                MainInventoryController.ToggleInventory();
-            }
-            if (Input.GetAxis("Horizontal") != 0)
-            {
-                float direction = Input.GetAxis("Horizontal");
-                mainCharacter.Move(direction);
-            }
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                MainInventoryController.ToggleMouseClick();
-            }
+            MoveHandler();
+            InventoryHandler();
         }
+
+
+
+
+        #region UpdateHandlers
+        private void MoveHandler()
+        {
+            mainCharacter.MoveInput = Movement.action.ReadValue<Vector2>();
+        }
+        private void InventoryHandler()
+        {
+            if (OpenInventory.action.WasPressedThisFrame())
+                mainInventoryController.ToggleInventory();
+        }
+        #endregion
     }
 }
