@@ -57,8 +57,12 @@ namespace Inventory
             uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
             uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
 
+            uiMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
+
             mainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
+
+
 
 
 
@@ -85,6 +89,7 @@ namespace Inventory
         private void InitializeEqipmentUI()
         {
             uiMainInventory.InitializeEquipmentSlotsData(mainInventorySO.GetEquipmentItemsList());
+            HandleWeaponEquipRequest();
         }
         private void InitializeStatsUI()
         {
@@ -265,6 +270,10 @@ namespace Inventory
         private void HandleStatUIUpdateRequest()
         {
             uiMainInventory.UpdateStatsUI(mainCharacter.GetActorSO());
+        }
+        private void HandleWeaponEquipRequest()
+        {
+            mainCharacter.SetUpEquipment(mainInventorySO.GetEquipmentItemsList());
         }
         #endregion
 

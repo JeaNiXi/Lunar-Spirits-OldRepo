@@ -24,6 +24,7 @@ namespace Managers
         {
             MoveHandler();
             InventoryHandler();
+            AttackHandler();
         }
 
 
@@ -32,12 +33,18 @@ namespace Managers
         #region UpdateHandlers
         private void MoveHandler()
         {
-            mainCharacter.MoveInput = Movement.action.ReadValue<Vector2>();
+            if(!Attack.action.WasPressedThisFrame())
+                mainCharacter.MoveInput = Movement.action.ReadValue<Vector2>();
         }
         private void InventoryHandler()
         {
             if (OpenInventory.action.WasPressedThisFrame())
                 mainInventoryController.ToggleInventory();
+        }
+        private void AttackHandler()
+        {
+            if (Attack.action.WasPerformedThisFrame())
+                mainCharacter.StartAttack();
         }
         #endregion
     }

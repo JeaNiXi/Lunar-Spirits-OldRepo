@@ -24,7 +24,9 @@ namespace Inventory.UI
         [SerializeField] private RectTransform rightEquipmentPanel;
         [SerializeField] private UINotifications uiNotifications;
         [SerializeField] private UIStatsScreen uiStatsScreen;
- 
+
+        public event Action
+            OnWeaponEquipRequst;
         public event Action<int, int>
             OnItemRMBClicked,
             OnItemDragStarted;
@@ -136,6 +138,7 @@ namespace Inventory.UI
             {
                 SetupEquipmentInitialization(i, equipmentItemsList, rightEquipmentPanel, false);
             }
+            UpdateCurrentEquip();
         }
         public void SetupEquipmentInitialization(int i, List<EquipmentItem> equipmentItemsList, RectTransform transformPanel, bool isQuantityDisabled)
         {
@@ -285,6 +288,7 @@ namespace Inventory.UI
             {
                 SetupUpdateEquipmentUI(i, equipmentList, false);
             }
+            UpdateCurrentEquip();
         }
         private void SetupUpdateEquipmentUI(int i, List<EquipmentItem> equipmentList, bool isQuantityDisabled)
         {
@@ -304,6 +308,11 @@ namespace Inventory.UI
         public void UpdateStatsUI(ActorSO actor)
         {
             uiStatsScreen.UpdateStatsUI(actor);
+        }
+        private void UpdateCurrentEquip()
+        {
+            Debug.Log("UPDATE EQUIP UIINVE CALLEd");
+            OnWeaponEquipRequst?.Invoke();
         }
         #endregion
 
@@ -457,7 +466,7 @@ namespace Inventory.UI
         }
         private void HandleItemDescriptionRequest(UIMainItem obj)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
         #endregion
 

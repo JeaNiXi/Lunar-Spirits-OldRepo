@@ -29,12 +29,12 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
+    quantity: 1
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: eb82f309dc389e441a767f6fc582784e, type: 2}
+    quantity: 1
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
@@ -175,8 +175,8 @@ MonoBehaviour:
     quantity: 1
     slotType: 7
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 8
     itemContainer: 0
   - item: {fileID: 0}

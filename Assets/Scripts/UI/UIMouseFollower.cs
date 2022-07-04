@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 
 using Inventory.SO;
@@ -83,7 +84,7 @@ namespace Inventory.UI
 
         private void Update()
         {
-            gameObject.transform.position = Input.mousePosition;
+            gameObject.transform.position = Mouse.current.position.ReadValue();
         }
     }
 }

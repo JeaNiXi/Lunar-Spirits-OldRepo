@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
-  m_Name: Wooden Sword
+  m_Name: Elven Sword
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Wooden Sword
+  <Name>k__BackingField: Elven Sword
   <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: Just for training.
+  <Description>k__BackingField: From Elves with Love
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
-  <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
+  <ItemImage>k__BackingField: {fileID: -21522807587195298, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  modifierTypes:
-  - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
-    Value: 500
+  modifierTypes: []
