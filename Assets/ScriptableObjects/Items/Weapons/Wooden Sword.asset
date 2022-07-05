@@ -18,6 +18,8 @@ MonoBehaviour:
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
+  <KnockbackStrength>k__BackingField: 10
+  <BaseDamage>k__BackingField: 300
   CanBeInSlots: 0000000008000000
   modifierTypes:
   - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}

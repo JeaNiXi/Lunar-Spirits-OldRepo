@@ -18,8 +18,8 @@ namespace Character
         [SerializeField] private Rigidbody2D mainRB2D;
         [SerializeField] private Animator mainAnimator;
 
-        private EquipmentItem mainWeapon;
-        private EquipmentItem secondaryWeapon;
+        public EquipmentItem MainWeapon { get; private set; }
+        public EquipmentItem SecondaryWeapon { get; private set; }
 
         private float lastX = 1;
         private float lastY = 0;
@@ -116,12 +116,12 @@ namespace Character
                     if(item.IsEmpty)
                     {
                         DeleteChildObjects(mainWeaponSlot);
-                        mainWeapon = new EquipmentItem(EquipmentItem.SlotType.WEAPON_MAIN);
+                        MainWeapon = new EquipmentItem(EquipmentItem.SlotType.WEAPON_MAIN);
                     }
                     else
                     {
                         DeleteChildObjects(mainWeaponSlot);
-                        mainWeapon = item;
+                        MainWeapon = item;
                         DrawMainWeapon();
                     }    
                 }
@@ -136,7 +136,7 @@ namespace Character
             item.transform.localPosition = Vector3.zero;
             item.transform.localRotation = Quaternion.identity;
             item.transform.localScale = Vector3.one;
-            item.EquipmentItem = mainWeapon;
+            item.EquipmentItem = MainWeapon;
             item.SetSprite(item.EquipmentItem.item.ItemImage);
         }
         private void DeleteChildObjects(Transform parent)
@@ -157,10 +157,12 @@ namespace Character
         {
             foreach(Collider2D collider in Physics2D.OverlapCircleAll(WeaponCircleOrigin.position,WeaponCircleRadius))
             {
+                if (collider.isTrigger)
+                    return;
                 ActorManager actor;
                 if(actor = collider.GetComponent<ActorManager>())
                 {
-                    actor.GetHit();
+                    actor.GetHit(this.gameObject.transform.position);
                 }
             }
         }

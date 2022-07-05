@@ -12,8 +12,18 @@ namespace Actor.SO
     {
         public event Action
             OnStatUpdate;
-        [field: SerializeField] private float health;
 
+        [field: SerializeField] public float BaseHealth { get; private set; }
+        [field: SerializeField] public float TotalHealth { get; private set; }
+        [field: SerializeField] public float CurrentHealth { get; private set; }
+
+        private void SetTotalHealth(float value)
+        {
+
+        }
+
+
+        [Header("Base Stats")]
         [SerializeField] Strength strength = new Strength(1);
         [SerializeField] Dexterity dexterity = new Dexterity(1);
         [SerializeField] Constitution constitution = new Constitution(1);
@@ -21,14 +31,31 @@ namespace Actor.SO
         [SerializeField] Wisdom wisdom = new Wisdom(1);
         [SerializeField] Charisma charisma = new Charisma(1);
 
+        [Header("Monster Settings")]
+        [field: SerializeField] public float JumpStrength;
+        [field: SerializeField] public float JumpDelay;
+
+
+
+
 
         [SerializeField] public List<Perks> perksList = new List<Perks>();
         [SerializeField] public PerkManagerSO perkManager;
 
 
-        public void GetHit()
+        public void InitializeSO()
         {
-            Debug.Log("I WAS HIT");
+            TotalHealth = BaseHealth + constitution.GetHealthBonus;
+            CurrentHealth = TotalHealth;
+        }
+
+
+
+
+
+        public void GetHit(EquipmentItem hitWeapon)
+        {
+            CurrentHealth -= hitWeapon.item.BaseDamage;
         }
 
 
@@ -43,14 +70,14 @@ namespace Actor.SO
         #region BaseStatsSetters
         public void SetBaseHealth(float value)
         {
-            health += value;
+            BaseHealth += value;
             UpdateStatUI();
         }
         #endregion
         #region BaseStatsGetters
         public float GetCharacterBaseHealth()
         {
-            return health + constitution.GetHealthBonus;
+            return BaseHealth + constitution.GetHealthBonus;
         }
         #endregion
 

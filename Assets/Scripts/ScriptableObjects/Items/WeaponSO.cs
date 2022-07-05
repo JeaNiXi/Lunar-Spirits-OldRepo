@@ -10,7 +10,6 @@ namespace Inventory.SO
     public class WeaponSO : ItemSO, IRemovable, IEquipable
     {
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
-
         public void EquipItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
             if (mainInventory.EquipItemHandler(index, containerType)) 
