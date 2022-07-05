@@ -27,6 +27,9 @@ namespace Character
         [SerializeField] private Transform mainWeaponSlot;
         [SerializeField] private EquipItem equipItemPrefab;
 
+        public Transform WeaponCircleOrigin;
+        public float WeaponCircleRadius;
+
         public Vector2 MoveInput { get; set; }
         public bool IsWalking { get; set; }
         public bool IsAttacking { get; set; }
@@ -144,8 +147,23 @@ namespace Character
         private EquipItem CreateEquipItem() => Instantiate(equipItemPrefab, Vector3.zero, Quaternion.identity);
         #endregion
 
-
-
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Vector3 position = WeaponCircleOrigin == null ? Vector3.zero : WeaponCircleOrigin.position;
+            Gizmos.DrawWireSphere(position, WeaponCircleRadius);
+        }
+        public void DetectColliders() // Is called in animation frame.
+        {
+            foreach(Collider2D collider in Physics2D.OverlapCircleAll(WeaponCircleOrigin.position,WeaponCircleRadius))
+            {
+                ActorManager actor;
+                if(actor = collider.GetComponent<ActorManager>())
+                {
+                    actor.GetHit();
+                }
+            }
+        }
 
 
         public ActorSO GetActorSO()

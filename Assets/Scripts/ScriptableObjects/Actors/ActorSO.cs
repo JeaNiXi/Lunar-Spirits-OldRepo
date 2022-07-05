@@ -24,6 +24,18 @@ namespace Actor.SO
 
         [SerializeField] public List<Perks> perksList = new List<Perks>();
         [SerializeField] public PerkManagerSO perkManager;
+
+
+        public void GetHit()
+        {
+            Debug.Log("I WAS HIT");
+        }
+
+
+
+
+
+
         private void UpdateStatUI()
         {
             OnStatUpdate?.Invoke();
