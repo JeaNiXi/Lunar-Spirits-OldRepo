@@ -17,6 +17,7 @@ namespace Actor.SO
         [field: SerializeField] public float TotalHealth { get; private set; }
         [field: SerializeField] public float CurrentHealth { get; private set; }
 
+
         private void SetTotalHealth(float value)
         {
 

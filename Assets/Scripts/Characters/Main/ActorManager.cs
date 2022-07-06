@@ -12,7 +12,7 @@ namespace Character
         [SerializeField] protected ActorSO actorSO;
         [SerializeField] protected Animator animator;
         [SerializeField] protected Rigidbody2D rigidBody;
-        [SerializeField] protected BoxCollider2D colliderMain;
+        [SerializeField] protected CapsuleCollider2D colliderMain;
 
         private const string ANIM_JUMP_START = "StartJump";
         private const string ANIM_JUMP_TO_FALL = "JumpToFall";
@@ -175,7 +175,7 @@ namespace Character
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player")) 
+            if (collision.gameObject.CompareTag("Player"))
             {
                 DoKnockback(collision.gameObject.transform.position);
                 PlayHitAnimation();

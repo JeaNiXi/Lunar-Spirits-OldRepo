@@ -24,6 +24,9 @@ namespace Character
         private float lastX = 1;
         private float lastY = 0;
 
+        private const float KNOCKBACK_STRENGTH = 20f;
+        private const float KNOCKBACK_DELAY = 0.1f;
+
         [SerializeField] private Transform mainWeaponSlot;
         [SerializeField] private EquipItem equipItemPrefab;
 
@@ -33,6 +36,10 @@ namespace Character
         public Vector2 MoveInput { get; set; }
         public bool IsWalking { get; set; }
         public bool IsAttacking { get; set; }
+        public bool IsKnockedback { get; set; }
+
+
+
         public void Awake()
         {
             UpdateAnimatorMovementFloat(new Vector2((int)MoveInput.x, (int)MoveInput.y));
@@ -49,6 +56,11 @@ namespace Character
         {
             UpdateCharacterState();
         }
+
+
+
+
+
 
 
         #region CharacterInputHandler
@@ -69,10 +81,15 @@ namespace Character
         #endregion
 
 
+
+
+
+
+
         #region AnimationControllers
         private void UpdateCharacterState()
         {
-            if(!IsAttacking)
+            if(!IsAttacking && !IsKnockedback)
             {
                 IsWalking = (Mathf.Abs(MoveInput.x) + Mathf.Abs(MoveInput.y)) > 0;
                 mainAnimator.SetBool("isWalking", IsWalking);
@@ -105,6 +122,11 @@ namespace Character
             mainAnimator.SetBool("isAttacking", IsAttacking);
         }
         #endregion
+
+
+
+
+
 
         #region EquipmentHandler
         public void SetUpEquipment(List<EquipmentItem> equipmentList)
@@ -147,6 +169,9 @@ namespace Character
         private EquipItem CreateEquipItem() => Instantiate(equipItemPrefab, Vector3.zero, Quaternion.identity);
         #endregion
 
+
+
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
@@ -158,14 +183,43 @@ namespace Character
             foreach(Collider2D collider in Physics2D.OverlapCircleAll(WeaponCircleOrigin.position,WeaponCircleRadius))
             {
                 if (collider.isTrigger)
-                    return;
-                ActorManager actor;
-                if(actor = collider.GetComponent<ActorManager>())
+                    continue;
+                else
                 {
-                    actor.GetHit(this.gameObject.transform.position);
+                    ActorManager actor;
+                    if (actor = collider.GetComponent<ActorManager>())
+                    {
+                        actor.GetHit(this.gameObject.transform.position);
+                    }
                 }
             }
         }
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.gameObject.CompareTag("Enemy"))
+            {
+                DoKnockback(collision.gameObject.transform.position);
+            }
+        }
+        private void DoKnockback(Vector2 originPos)
+        {
+            StopAllCoroutines();
+            IsKnockedback = true;
+            Vector2 direction = ((Vector2)gameObject.transform.localPosition - originPos).normalized;
+            mainRB2D.velocity = direction * KNOCKBACK_STRENGTH;
+            StartCoroutine(StopKnockback(KNOCKBACK_DELAY));
+        }
+        IEnumerator StopKnockback(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            IsKnockedback = false;
+            mainRB2D.velocity = Vector2.zero;
+        }
+
+
+
+
+
 
 
         public ActorSO GetActorSO()
