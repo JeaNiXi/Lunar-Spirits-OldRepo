@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace Inventory.UI
 {
@@ -14,7 +15,7 @@ namespace Inventory.UI
         {
             if (value == true)
             {
-                gameObject.transform.position = Input.mousePosition;
+                gameObject.transform.position = Mouse.current.position.ReadValue();
                 gameObject.SetActive(value);
             }
             else

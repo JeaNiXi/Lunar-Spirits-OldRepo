@@ -241,7 +241,7 @@ namespace Inventory.UI
             else
             {
                 DeselectAllItems();
-                //ToggleMouseFollower(false);
+                ToggleMouseFollower(false); // Needed because EndDrag is not called because Actions -=.
                 int reminder = newDictionary.Count - 1;
                 int startPoint = uiItemsList.Count - 1;
                 for (int i = 0; i < newDictionary.Count; i++)
