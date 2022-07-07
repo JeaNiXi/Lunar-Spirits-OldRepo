@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Dark Queen Shaccad Yoggoth
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: IdleBattler
+    m_Hash: 598579774
+    m_CategoryList:
+    - m_Name: Idle_1
+      m_Hash: -1506399397
+      m_Sprite: {fileID: -3981340501372026074, guid: 035b1d3a14e2ee14a8121b7c7ca5d034, type: 3}
+    - m_Name: Idle_2
+      m_Hash: 1061124833
+      m_Sprite: {fileID: 6199607290437287801, guid: 035b1d3a14e2ee14a8121b7c7ca5d034, type: 3}
+    - m_Name: Idle_3
+      m_Hash: 1211648631
+      m_Sprite: {fileID: 7818217000482352039, guid: 035b1d3a14e2ee14a8121b7c7ca5d034, type: 3}

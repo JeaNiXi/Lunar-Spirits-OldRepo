@@ -6,15 +6,19 @@ using UnityEngine.InputSystem;
 using Inventory.SO;
 using Actor.SO;
 using Inventory;
+using System;
 
 namespace Character
 {
     public class CharacterManager : MonoBehaviour
     {
+        public event Action<BattlerSO>
+            OnBattlerTriggerEnter;
+
         [Header("Main SO")]
         [SerializeField] public InventorySO mainInventorySO;
-        [SerializeField] private ActorSO mainActorSO;
 
+        [SerializeField] private ActorSO mainActorSO;
         [SerializeField] private Rigidbody2D mainRB2D;
         [SerializeField] private Animator mainAnimator;
 
@@ -37,7 +41,6 @@ namespace Character
         public bool IsWalking { get; set; }
         public bool IsAttacking { get; set; }
         public bool IsKnockedback { get; set; }
-
 
 
         public void Awake()
@@ -215,7 +218,18 @@ namespace Character
             IsKnockedback = false;
             mainRB2D.velocity = Vector2.zero;
         }
-
+        public void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.CompareTag("Battler"))
+            {
+                BattlerManager mainBattler;
+                if(mainBattler = collision.GetComponent<BattlerManager>())
+                {
+                    OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO());
+                }
+                Debug.Log("Battle Should Start");
+            }
+        }
 
 
 

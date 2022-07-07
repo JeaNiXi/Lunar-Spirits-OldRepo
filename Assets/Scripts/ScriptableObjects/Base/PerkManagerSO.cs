@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Actor.SO
 {
-    [CreateAssetMenu(fileName = "Perk Manager", menuName = "Base/Perk Manager")]
+    [CreateAssetMenu(fileName = "Perk Manager", menuName = "Managers/Perk Manager")]
 
     public class PerkManagerSO : ScriptableObject
     {
