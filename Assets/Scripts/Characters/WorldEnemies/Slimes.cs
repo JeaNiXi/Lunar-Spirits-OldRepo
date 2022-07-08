@@ -8,6 +8,7 @@ namespace Character
     {
         private void Awake()
         {
+            FindPlayer();
             InitActor();
         }
         private void Start()

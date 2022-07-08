@@ -10,8 +10,16 @@ namespace Managers
 {
     public class InputController : MonoBehaviour
     {
-        [SerializeField] private CharacterManager mainCharacter;
-        [SerializeField] private InventoryController mainInventoryController;
+        public CharacterManager MainCharacter { get; private set; }
+        public void SetMainCharacter(CharacterManager character)
+        {
+            MainCharacter = character;
+        }
+        public InventoryController MainInventoryController { get; private set; }
+        public void SetMainInventoryController(InventoryController inventoryController)
+        {
+            MainInventoryController = inventoryController;
+        }
 
         [SerializeField]
         InputActionReference
@@ -34,17 +42,17 @@ namespace Managers
         private void MoveHandler()
         {
             if(!Attack.action.WasPressedThisFrame())
-                mainCharacter.MoveInput = Movement.action.ReadValue<Vector2>();
+                MainCharacter.MoveInput = Movement.action.ReadValue<Vector2>();
         }
         private void InventoryHandler()
         {
             if (OpenInventory.action.WasPressedThisFrame())
-                mainInventoryController.ToggleInventory();
+                MainInventoryController.ToggleInventory();
         }
         private void AttackHandler()
         {
             if (Attack.action.WasPerformedThisFrame())
-                mainCharacter.StartAttack();
+                MainCharacter.StartAttack();
         }
         #endregion
     }

@@ -1,5 +1,6 @@
 using Actor.SO;
 using Inventory.SO;
+using Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,10 @@ namespace Character
         protected bool JumpDirectionFound;
         protected bool IsJumping { get; set; }
         protected bool CanJump { get; set; }
+        protected void FindPlayer()
+        {
+            mainCharacter = GameManager.Instance.MainCharacter;
+        }
         protected void InitActor()
         {
             actorSO.InitializeSO();

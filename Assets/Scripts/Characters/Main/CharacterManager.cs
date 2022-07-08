@@ -15,9 +15,11 @@ namespace Character
         public event Action<BattlerSO>
             OnBattlerTriggerEnter;
 
-        [Header("Main SO")]
-        [SerializeField] public InventorySO mainInventorySO;
-
+        public InventorySO MainInventorySO { get; private set; }
+        public void SetMainInventorySO(InventorySO inventory)
+        {
+            MainInventorySO = inventory;
+        }
         [SerializeField] private ActorSO mainActorSO;
         [SerializeField] private Rigidbody2D mainRB2D;
         [SerializeField] private Animator mainAnimator;
@@ -43,7 +45,7 @@ namespace Character
         public bool IsKnockedback { get; set; }
 
 
-        public void Awake()
+        public void Start()
         {
             UpdateAnimatorMovementFloat(new Vector2((int)MoveInput.x, (int)MoveInput.y));
         }
@@ -241,7 +243,7 @@ namespace Character
             return mainActorSO;
         }
 
-        public InventorySO GetInventorySO() => mainInventorySO;
+        public InventorySO GetInventorySO() => MainInventorySO;
 
         public void Test()
         {

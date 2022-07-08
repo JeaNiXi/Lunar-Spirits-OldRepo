@@ -12,9 +12,22 @@ namespace Inventory
 {
     public class InventoryController : MonoBehaviour
     {
-        [SerializeField] private UIMainInventory uiMainInventory;
-        [SerializeField] private CharacterManager mainCharacter;
-        private InventorySO mainInventorySO;
+        
+        public UIMainInventory uiMainInventory { get; private set; }
+        public void SetUIMainInventory(UIMainInventory inventoryUI)
+        {
+            uiMainInventory = inventoryUI;
+        }
+        public InventorySO mainInventorySO { get; private set; }
+        public void SetMainInventorySO(InventorySO inventorySO)
+        {
+            mainInventorySO = inventorySO;
+        }
+        public CharacterManager mainCharacter { get; private set; }
+        public void SetMainCharacter(CharacterManager character)
+        {
+            mainCharacter = character;
+        }
         private enum ActionButtons
         {
             Use,
@@ -34,7 +47,8 @@ namespace Inventory
         "Remove All"
         };
 
-        private void Awake()
+        //private void Awake()
+        private void Start()
         {
             InitializeInventorySO();
             ToggleInventory(false);
@@ -72,7 +86,7 @@ namespace Inventory
         #region Initializations
         private void InitializeInventorySO()
         {
-            mainInventorySO = mainCharacter.GetComponent<CharacterManager>().GetInventorySO();
+            //mainInventorySO = mainCharacter.GetComponent<CharacterManager>().GetInventorySO();
             mainInventorySO.CorrectQuantity();
             mainInventorySO.CheckForInventoryGridEnd();
             mainInventorySO.CorrectQuickSlotQuantity();
