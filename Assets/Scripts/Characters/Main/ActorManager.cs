@@ -21,7 +21,9 @@ namespace Character
         private const string ANIM_IDLE = "Idle";
         private const string ANIM_GET_HIT = "GetHit";
         private const string ANIM_DEATH = "Death";
-        
+        private const string ANIM_KNOCKBACK = "Knockback";
+
+
         public enum STATE
         {
             ALIVE,
@@ -137,6 +139,10 @@ namespace Character
         {
             animator.Play(ANIM_GET_HIT);
         }
+        protected virtual void GetKnockbackAnimation()
+        {
+            animator.Play(ANIM_KNOCKBACK);
+        }
         protected virtual void PlayJumpAnimation()
         {
             animator.Play(ANIM_JUMP_START);
@@ -182,8 +188,9 @@ namespace Character
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                DoKnockback(collision.gameObject.transform.position);
-                PlayHitAnimation();
+                StopAllCoroutines();
+                StopJumpAnimation();
+                GetKnockbackAnimation();
             }
         }
         private void OnTriggerEnter2D(Collider2D collision)

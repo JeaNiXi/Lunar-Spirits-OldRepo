@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115287c924eab41438a98b5d49809254, type: 3}
   m_Name: TestActor
   m_EditorClassIdentifier: 
-  <BaseHealth>k__BackingField: 300
-  <TotalHealth>k__BackingField: 700
-  <CurrentHealth>k__BackingField: -200
+  <BaseHealth>k__BackingField: 5000
+  <TotalHealth>k__BackingField: 5400
+  <CurrentHealth>k__BackingField: 4200
   strength:
     level: 1
   dexterity:
@@ -28,6 +28,6 @@ MonoBehaviour:
   charisma:
     level: 1
   JumpStrength: 5
-  JumpDelay: 0.5
+  JumpDelay: 0.2
   perksList: []
   perkManager: {fileID: 0}

@@ -8,11 +8,14 @@ namespace Character
     {
         private void Awake()
         {
-            FindPlayer();
-            InitActor();
+            //FindPlayer();
+            //InitActor();
         }
         private void Start()
         {
+            FindPlayer();
+            InitActor();
+
             CanJump = true;
             //IsJumping = true;
             GetJumpDirection();
