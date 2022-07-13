@@ -42,7 +42,7 @@ namespace Character
         protected bool CanJump { get; set; }
         protected void FindPlayer()
         {
-            mainCharacter = GameManager.Instance.MainCharacter;
+            //mainCharacter = GameManager.Instance.MainCharacter;
         }
         protected void InitActor()
         {

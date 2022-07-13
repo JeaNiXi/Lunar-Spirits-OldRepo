@@ -11,6 +11,12 @@ namespace Character
 
         public BattlerSO GetBattlerSO() => MainBattlerSO;
 
-
+        private void Awake()
+        {
+            if(MainBattlerSO.IsDefeated)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }

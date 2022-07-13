@@ -11,5 +11,10 @@ namespace Actor.SO
     {
         [field: SerializeField] public string BossName { get; set; }
         [field: SerializeField] public Battler BattlerPrefab { get; set; }
+        [field: SerializeField] public bool IsDefeated { get; private set; }
+        public void SetDefeatState(bool value)
+        {
+            IsDefeated = value;
+        }
     }
 }

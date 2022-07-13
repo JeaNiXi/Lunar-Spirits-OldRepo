@@ -12,7 +12,7 @@ namespace Character
 {
     public class CharacterManager : MonoBehaviour
     {
-        public event Action<BattlerSO>
+        public event Action<BattlerSO, GameObject>
             OnBattlerTriggerEnter;
 
         public InventorySO MainInventorySO { get; private set; }
@@ -227,7 +227,7 @@ namespace Character
                 BattlerManager mainBattler;
                 if(mainBattler = collision.GetComponent<BattlerManager>())
                 {
-                    OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO());
+                    OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO(),collision.gameObject);
                 }
                 Debug.Log("Battle Should Start");
             }

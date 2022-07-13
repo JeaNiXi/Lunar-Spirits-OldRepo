@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BossName>k__BackingField: Dark Queen Shaccad Yoggoth
   <BattlerPrefab>k__BackingField: {fileID: 3642573361729072216, guid: 82c2bb8d0235c8946b6f7214749b1d64, type: 3}
+  <IsDefeated>k__BackingField: 0

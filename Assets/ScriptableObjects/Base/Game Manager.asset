@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266967e23572a6d4d8a656b5fe46d223, type: 3}
   m_Name: Game Manager
   m_EditorClassIdentifier: 
-  <MainBattlerSO>k__BackingField: {fileID: 0}
+  <MainBattlerSO>k__BackingField: {fileID: 11400000, guid: ad0c0b0e7c3e171449f8811e34675a6d, type: 2}
+  <LastSceneIndex>k__BackingField: 0
+  <IsInitialized>k__BackingField: 0

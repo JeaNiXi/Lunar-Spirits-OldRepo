@@ -2,6 +2,7 @@ using Managers.SO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -15,6 +16,11 @@ namespace Managers
             Debug.Log("Wellcome TO Grande Battle!");
             Debug.Log("Battler is! " + MainGMSO.MainBattlerSO.BossName);
             Instantiate(MainGMSO.MainBattlerSO.BattlerPrefab, bossPosition, Quaternion.identity);
+        }
+        public void LoadLastLevel()
+        {
+            MainGMSO.SetDefeatedBattler(true);
+            SceneManager.LoadScene(MainGMSO.LastSceneIndex);
         }
     }
 }
