@@ -7,11 +7,14 @@ using Inventory.SO;
 using Actor.SO;
 using Inventory;
 using System;
+using Managers;
 
 namespace Character
 {
     public class CharacterManager : MonoBehaviour
     {
+        public static CharacterManager Instance;
+
         public event Action<BattlerSO, GameObject>
             OnBattlerTriggerEnter;
 
@@ -43,23 +46,36 @@ namespace Character
         public bool IsWalking { get; set; }
         public bool IsAttacking { get; set; }
         public bool IsKnockedback { get; set; }
+        public bool IsAtSavePlace { get; set; }
+        public bool SaveNotificationShowed { get; set; }
 
-
-        public void Start()
+        private void Awake()
+        {
+            if (Instance != null && Instance != this) 
+                Destroy(this);
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
+        }
+        private void Start()
         {
             UpdateAnimatorMovementFloat(new Vector2((int)MoveInput.x, (int)MoveInput.y));
         }
         private void FixedUpdate()
         {
-            if (IsWalking)
-            {
-                UpdateAnimatorMovementFloat(new Vector2((int)MoveInput.x, (int)MoveInput.y));
-                Move(MoveInput);
-            }
+            if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
+                if (IsWalking)
+                {
+                    UpdateAnimatorMovementFloat(new Vector2((int)MoveInput.x, (int)MoveInput.y));
+                    Move(MoveInput);
+                }
         }
         private void Update()
         {
-            UpdateCharacterState();
+            if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
+                UpdateCharacterState();
         }
 
 
@@ -230,6 +246,24 @@ namespace Character
                     OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO(),collision.gameObject);
                 }
                 Debug.Log("Battle Should Start");
+            }
+            if(collision.CompareTag("SavePlace"))
+            {
+                if (!SaveNotificationShowed)
+                {
+                    GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.CAN_INTERACT_WITH_OBJECT);
+                    SaveNotificationShowed = true;                
+                }
+                IsAtSavePlace = true;
+            }
+        }
+        public void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("SavePlace"))
+            {
+                GameManager.Instance.ToggleSavePlacePanel(false);
+                IsAtSavePlace = false;
+                SaveNotificationShowed = false;
             }
         }
 

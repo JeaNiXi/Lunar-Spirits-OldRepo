@@ -10,29 +10,37 @@ namespace Managers
 {
     public class InputController : MonoBehaviour
     {
-        public CharacterManager MainCharacter { get; private set; }
-        public void SetMainCharacter(CharacterManager character)
-        {
-            MainCharacter = character;
-        }
-        public InventoryController MainInventoryController { get; private set; }
-        public void SetMainInventoryController(InventoryController inventoryController)
-        {
-            MainInventoryController = inventoryController;
-        }
+        public static InputController Instance;
+        [field: SerializeField] public CharacterManager MainCharacter { get; private set; }
+        [field: SerializeField] public InventoryController MainInventoryController { get; private set; }
+
 
         [SerializeField]
         InputActionReference
             Movement,
             Attack,
             MousePointer,
-            OpenInventory;
-
+            OpenInventory,
+            Use;
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+                Destroy(this);
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
+        }
         private void Update()
         {
-            MoveHandler();
-            InventoryHandler();
-            AttackHandler();
+            if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
+            {
+                MoveHandler();
+                InventoryHandler();
+                AttackHandler();
+                UseHandler();
+            }
         }
 
 
@@ -53,6 +61,11 @@ namespace Managers
         {
             if (Attack.action.WasPerformedThisFrame())
                 MainCharacter.StartAttack();
+        }
+        private void UseHandler()
+        {
+            if (Use.action.WasPressedThisFrame() && MainCharacter.IsAtSavePlace)
+                GameManager.Instance.ToggleSavePlacePanel(true);
         }
         #endregion
     }

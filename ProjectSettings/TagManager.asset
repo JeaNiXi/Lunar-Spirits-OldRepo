@@ -7,6 +7,7 @@ TagManager:
   - BaseStruct
   - Enemy
   - Battler
+  - SavePlace
   layers:
   - Default
   - TransparentFX

@@ -12,22 +12,10 @@ namespace Inventory
 {
     public class InventoryController : MonoBehaviour
     {
-        
-        public UIMainInventory uiMainInventory { get; private set; }
-        public void SetUIMainInventory(UIMainInventory inventoryUI)
-        {
-            uiMainInventory = inventoryUI;
-        }
-        public InventorySO mainInventorySO { get; private set; }
-        public void SetMainInventorySO(InventorySO inventorySO)
-        {
-            mainInventorySO = inventorySO;
-        }
-        public CharacterManager mainCharacter { get; private set; }
-        public void SetMainCharacter(CharacterManager character)
-        {
-            mainCharacter = character;
-        }
+        public static InventoryController Instance;
+        [field: SerializeField] public UIMainInventory UIMainInventory { get; private set; }
+        [field: SerializeField] public InventorySO MainInventorySO { get; private set; }
+        [field: SerializeField] public CharacterManager MainCharacter { get; private set; }
         private enum ActionButtons
         {
             Use,
@@ -47,7 +35,16 @@ namespace Inventory
         "Remove All"
         };
 
-        //private void Awake()
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+                Destroy(this);
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
+        }
         private void Start()
         {
             InitializeInventorySO();
@@ -57,23 +54,23 @@ namespace Inventory
             InitializeEqipmentUI();
             InitializeStatsUI();
             ToggleUIComponents(false);
-            mainInventorySO.OnInventoryUpdated += HandleInventoryChange;
-            mainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
-            mainInventorySO.OnEquipmentUpdated += HandleEquipmentChange;
-            mainInventorySO.ThrowNotification += HandleNotificationRequest;
+            MainInventorySO.OnInventoryUpdated += HandleInventoryChange;
+            MainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
+            MainInventorySO.OnEquipmentUpdated += HandleEquipmentChange;
+            MainInventorySO.ThrowNotification += HandleNotificationRequest;
 
-            uiMainInventory.OnItemRMBClicked += HandleItemRMBClick;
+            UIMainInventory.OnItemRMBClicked += HandleItemRMBClick;
 
-            uiMainInventory.OnItemDragStarted += HandleItemDragStart;
-            uiMainInventory.OnItemDropRequest += HandleItemDropRequest;
+            UIMainInventory.OnItemDragStarted += HandleItemDragStart;
+            UIMainInventory.OnItemDropRequest += HandleItemDropRequest;
 
-            uiMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
-            uiMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
-            uiMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
+            UIMainInventory.OnQuickSlotEquipConfirmed += HandleQuickSlotEquipConfirmation;
+            UIMainInventory.OnRemoveAllConfirmed += HandleRemoveAllConfirmation;
+            UIMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
 
-            uiMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
+            UIMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
 
-            mainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
+            MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
 
 
@@ -86,40 +83,39 @@ namespace Inventory
         #region Initializations
         private void InitializeInventorySO()
         {
-            //mainInventorySO = mainCharacter.GetComponent<CharacterManager>().GetInventorySO();
-            mainInventorySO.CorrectQuantity();
-            mainInventorySO.CheckForInventoryGridEnd();
-            mainInventorySO.CorrectQuickSlotQuantity();
-            mainInventorySO.CorrectEquipSlotsQuantity();
+            MainInventorySO.CorrectQuantity();
+            MainInventorySO.CheckForInventoryGridEnd();
+            MainInventorySO.CorrectQuickSlotQuantity();
+            MainInventorySO.CorrectEquipSlotsQuantity();
         }
         private void InitializeMainUI()
         {
-            uiMainInventory.InitializeInventoryData(mainInventorySO.GetItemList());
+            UIMainInventory.InitializeInventoryData(MainInventorySO.GetItemList());
         }
         private void InitializeQuickSlotUI()
         {
-            uiMainInventory.InitializeQuickSlotsData(mainInventorySO.GetQuickSlotList());
+            UIMainInventory.InitializeQuickSlotsData(MainInventorySO.GetQuickSlotList());
         }
         private void InitializeEqipmentUI()
         {
-            uiMainInventory.InitializeEquipmentSlotsData(mainInventorySO.GetEquipmentItemsList());
+            UIMainInventory.InitializeEquipmentSlotsData(MainInventorySO.GetEquipmentItemsList());
             HandleWeaponEquipRequest();
         }
         private void InitializeStatsUI()
         {
-            uiMainInventory.InitializeStatsUI(mainCharacter.GetActorSO());
+            UIMainInventory.InitializeStatsUI(MainCharacter.GetActorSO());
         }
         #endregion
 
         #region ToggleUI
         private void ToggleUIComponents(bool value)
         {
-            if (uiMainInventory.IsMouseFollowerActive())
-                uiMainInventory.ToggleMouseFollower(value);
+            if (UIMainInventory.IsMouseFollowerActive())
+                UIMainInventory.ToggleMouseFollower(value);
         }
         private void ToggleActionPanel(bool value)
         {
-            uiMainInventory.ToggleActionPanel(value);
+            UIMainInventory.ToggleActionPanel(value);
         }
         #endregion
 
@@ -129,15 +125,15 @@ namespace Inventory
             switch (containerType)
             {
                 case 0:
-                    InventoryItem inventoryItem = mainInventorySO.GetItemAt(index);
+                    InventoryItem inventoryItem = MainInventorySO.GetItemAt(index);
                     HandleActionPanelRequest(inventoryItem, index, "Container");
                     break;
                 case 1:
-                    QuickSlotItem qsItem = mainInventorySO.GetQuickSlotItemAt(index);
+                    QuickSlotItem qsItem = MainInventorySO.GetQuickSlotItemAt(index);
                     HandleActionPanelRequest(qsItem, index, "QSContainer");
                     break;
                 case 2:
-                    EquipmentItem equipItem = mainInventorySO.GetEquipmentItemAt(index);
+                    EquipmentItem equipItem = MainInventorySO.GetEquipmentItemAt(index);
                     HandleActionPanelRequest(equipItem, index, "EquipmentContainer");
                     break;
                 default:
@@ -150,16 +146,16 @@ namespace Inventory
             switch (containerType)
             {
                 case 0:
-                    InventoryItem inventoryItem = mainInventorySO.GetItemAt(itemIndex);
-                    uiMainInventory.CreateMouseFollower(inventoryItem, inventoryItem.slotType, inventoryItem.itemContainer, itemIndex);
+                    InventoryItem inventoryItem = MainInventorySO.GetItemAt(itemIndex);
+                    UIMainInventory.CreateMouseFollower(inventoryItem, inventoryItem.slotType, inventoryItem.itemContainer, itemIndex);
                     break;
                 case 1:
-                    QuickSlotItem qsItem = mainInventorySO.GetQuickSlotItemAt(itemIndex);
-                    uiMainInventory.CreateMouseFollower(qsItem, qsItem.slotType, qsItem.itemContainer, itemIndex);
+                    QuickSlotItem qsItem = MainInventorySO.GetQuickSlotItemAt(itemIndex);
+                    UIMainInventory.CreateMouseFollower(qsItem, qsItem.slotType, qsItem.itemContainer, itemIndex);
                     break;
                 case 2:
-                    EquipmentItem equipItem = mainInventorySO.GetEquipmentItemAt(itemIndex);
-                    uiMainInventory.CreateMouseFollower(equipItem, equipItem.slotType, equipItem.itemContainer, itemIndex);
+                    EquipmentItem equipItem = MainInventorySO.GetEquipmentItemAt(itemIndex);
+                    UIMainInventory.CreateMouseFollower(equipItem, equipItem.slotType, equipItem.itemContainer, itemIndex);
                     break;
                 default:
                     break;
@@ -167,72 +163,72 @@ namespace Inventory
         }
         private void HandleItemDropRequest(string originContainer, int originIndex, string destContainer, int destIndex)
         {
-            mainInventorySO.SwapItemsHandler(originContainer, originIndex, destContainer, destIndex);
+            MainInventorySO.SwapItemsHandler(originContainer, originIndex, destContainer, destIndex);
         }
         private void HandleInventoryChange()
         {
-            uiMainInventory.UpdateInventoryUI(mainInventorySO.GetCurrentInventoryState());
+            UIMainInventory.UpdateInventoryUI(MainInventorySO.GetCurrentInventoryState());
         }
         private void HandleQuickSlotChange()
         {
-            uiMainInventory.UpdateQuickSlotsUI(mainInventorySO.GetQuickSlotList());
+            UIMainInventory.UpdateQuickSlotsUI(MainInventorySO.GetQuickSlotList());
         }
         private void HandleEquipmentChange()
         {
-            uiMainInventory.InitializeUpdateEquipmentUI(mainInventorySO.GetEquipmentItemsList());
+            UIMainInventory.InitializeUpdateEquipmentUI(MainInventorySO.GetEquipmentItemsList());
         }
 
         private void HandleActionPanelRequest(InventoryItem item, int index, string containerType)
         {
             if (item.item is IUsable iUsable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter, mainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(MainCharacter, MainInventorySO, index, containerType));
             }
             if (item.item is IEquipable iEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(mainCharacter, mainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
             }
             if (item.item is IQuickEquipable iQuickEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.QuickEquip], () => uiMainInventory.ToggleConfirmQuickSlotPanel(true, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.QuickEquip], () => UIMainInventory.ToggleConfirmQuickSlotPanel(true, index, containerType));
             }
             if (item.item is IRemovableQuantity iRemovableQuantity)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => uiMainInventory.ToggleConfirmQuantityPanel(true, index, item.quantity, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => UIMainInventory.ToggleConfirmQuantityPanel(true, index, item.quantity, containerType));
             }
             if (item.item is IRemovable iRemovable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => UIMainInventory.ToggleConfirmationPanel(true, index, containerType));
             }
         }
         private void HandleActionPanelRequest(QuickSlotItem item, int index, string containerType)
         {
             if (item.item is IUsable iUsable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(mainCharacter, mainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Use], () => iUsable.UseItem(MainCharacter, MainInventorySO, index, containerType));
             }
             if (item.item is IQuickEquipable iQuickEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.QuickEquip], () => uiMainInventory.ToggleConfirmQuickSlotPanel(true, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.QuickEquip], () => UIMainInventory.ToggleConfirmQuickSlotPanel(true, index, containerType));
             }
             if (item.item is IRemovableQuantity iRemovableQuantity)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => uiMainInventory.ToggleConfirmQuantityPanel(true, index, item.quantity, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Remove], () => UIMainInventory.ToggleConfirmQuantityPanel(true, index, item.quantity, containerType));
             }
             if (item.item is IRemovable iRemovable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => UIMainInventory.ToggleConfirmationPanel(true, index, containerType));
             }
         }
         private void HandleActionPanelRequest(EquipmentItem item, int index, string containerType)
         {
             if (item.item is IEquipable iEquipable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(mainCharacter, mainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
             }
             if (item.item is IRemovable iRemovable)
             {
-                uiMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => uiMainInventory.ToggleConfirmationPanel(true, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.RemoveAll], () => UIMainInventory.ToggleConfirmationPanel(true, index, containerType));
             }
         }
         private void HandleQuickSlotEquipConfirmation(int index, int slotIndex, string containerType)
@@ -240,14 +236,14 @@ namespace Inventory
             switch (containerType)
             {
                 case "Container":
-                    InventoryItem inventoryItem = mainInventorySO.GetItemAt(index);
-                    QuickSlotItem quickSlotItem = mainInventorySO.GetQuickSlotItemAt(slotIndex);
-                    mainInventorySO.SwapItems(inventoryItem, index, quickSlotItem, slotIndex);
+                    InventoryItem inventoryItem = MainInventorySO.GetItemAt(index);
+                    QuickSlotItem quickSlotItem = MainInventorySO.GetQuickSlotItemAt(slotIndex);
+                    MainInventorySO.SwapItems(inventoryItem, index, quickSlotItem, slotIndex);
                     break;
                 case "QSContainer":
-                    QuickSlotItem qsOriginItem = mainInventorySO.GetQuickSlotItemAt(index);
-                    QuickSlotItem qsDestItem = mainInventorySO.GetQuickSlotItemAt(slotIndex);
-                    mainInventorySO.SwapItems(qsOriginItem, index, qsDestItem, slotIndex);
+                    QuickSlotItem qsOriginItem = MainInventorySO.GetQuickSlotItemAt(index);
+                    QuickSlotItem qsDestItem = MainInventorySO.GetQuickSlotItemAt(slotIndex);
+                    MainInventorySO.SwapItems(qsOriginItem, index, qsDestItem, slotIndex);
                     break;
                 //case "EquipmentContainer":
                 //    EquipmentItem equipItem = mainInventorySO.GetEquipmentItemAt(index);
@@ -261,13 +257,13 @@ namespace Inventory
             switch (containerType)
             {
                 case "Container":
-                    mainInventorySO.RemoveItem(mainInventorySO.GetItemList(), index);
+                    MainInventorySO.RemoveItem(MainInventorySO.GetItemList(), index);
                     break;
                 case "QSContainer":
-                    mainInventorySO.RemoveItem(mainInventorySO.GetQuickSlotList(), index);
+                    MainInventorySO.RemoveItem(MainInventorySO.GetQuickSlotList(), index);
                     break;
                 case "EquipmentContainer":
-                    mainInventorySO.RemoveItem(mainInventorySO.GetEquipmentItemsList(), index);
+                    MainInventorySO.RemoveItem(MainInventorySO.GetEquipmentItemsList(), index);
                     break;
                 default:
                     break;
@@ -275,19 +271,19 @@ namespace Inventory
         }
         private void HandleRemoveQuantityConfirmation(int index, int quantity, string containerType)
         {
-            mainInventorySO.RemoveItem(index, quantity, containerType);
+            MainInventorySO.RemoveItem(index, quantity, containerType);
         }
         private void HandleNotificationRequest(UINotifications.Notifications notification)
         {
-            uiMainInventory.ThrowNotification(notification);
+            UIMainInventory.ThrowNotification(notification);
         }
         private void HandleStatUIUpdateRequest()
         {
-            uiMainInventory.UpdateStatsUI(mainCharacter.GetActorSO());
+            UIMainInventory.UpdateStatsUI(MainCharacter.GetActorSO());
         }
         private void HandleWeaponEquipRequest()
         {
-            mainCharacter.SetUpEquipment(mainInventorySO.GetEquipmentItemsList());
+            MainCharacter.SetUpEquipment(MainInventorySO.GetEquipmentItemsList());
         }
         #endregion
 
@@ -295,28 +291,28 @@ namespace Inventory
         //Activating/Deactivating Inventory Screen
         public void ToggleInventory()
         {
-            if (uiMainInventory.gameObject.activeSelf)
+            if (UIMainInventory.gameObject.activeSelf)
                 ToggleInventory(false);
             else
                 ToggleInventory(true);
         }
         public void ToggleInventory(bool value) =>
-            uiMainInventory.SetInventoryActive(value);
+            UIMainInventory.SetInventoryActive(value);
         public void ToggleMouseClick()
         {
-            if(uiMainInventory.gameObject.activeSelf)
+            if(UIMainInventory.gameObject.activeSelf)
             {
-                if(!uiMainInventory.IsPointerOverUI())
+                if(!UIMainInventory.IsPointerOverUI())
                 {
-                    if(uiMainInventory.IsActionPanelActive())
+                    if(UIMainInventory.IsActionPanelActive())
                     {
                         ToggleActionPanel(false);
-                        uiMainInventory.DeselectAllItems();
+                        UIMainInventory.DeselectAllItems();
                         return;
                     }
                     else
                     {
-                        uiMainInventory.DeselectAllItems();
+                        UIMainInventory.DeselectAllItems();
                     }
                 }
             }

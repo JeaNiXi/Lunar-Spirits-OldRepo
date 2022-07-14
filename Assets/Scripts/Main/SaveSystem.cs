@@ -9,8 +9,9 @@ namespace Managers
     public class SaveSystem : MonoBehaviour
     {
         public string saveName = "SaveData_";
-        [Range(1, 10)]
-        public int saveDataIndex = 0;
+        [Range(1, 3)]
+        public int saveDataIndex = 1;
+
 
         public void SaveData(string dataToSave)
         {

@@ -1,9 +1,11 @@
 using Actor.SO;
 using Character;
+using Helpers.SO;
 using Inventory;
 using Inventory.SO;
 using Inventory.UI;
 using Managers.SO;
+using Managers.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,9 +19,72 @@ namespace Managers
     {
         public static GameManager Instance;
 
-        private bool IsInitialized = false;
+        [field: SerializeField] public GameManagerSO MainGMSO { get; private set; }
+        [field: SerializeField] public SpawnPointsSO MainSpawnPoints { get; private set; }
+        public enum GameStates
+        {
+            DISABLED,
+            ENABLED,
+            PAUSED,
+            PLAYING,
+        }
+        public GameStates GameState = GameStates.DISABLED;
 
-        //[field: SerializeField] public GameManagerSO MainGMSO { get; private set; }
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            //Initialize();
+            //MainCharacter.OnBattlerTriggerEnter += HandleBattleStart;
+        }
+
+        public void SetSaveSlotIndex(int index) => MainGMSO.SetSaveSlot(index);
+
+
+        #region SceneManagement
+        public void LoadNewGameIntro()
+        {
+            SceneManager.LoadScene(1);
+            GameState = GameStates.PLAYING;
+            InitializeGameCharacter();
+        }
+        #endregion
+
+
+
+        #region GameManagement
+        private void InitializeGameCharacter() // Only called when a New Game is Started.
+        {
+            MoveCharacterToSpawnPoint(MainSpawnPoints.IntroSceneV3);
+        }
+        private void MoveCharacterToSpawnPoint(Vector3 spawnPoint)
+        {
+            CharacterManager.Instance.transform.position = spawnPoint;
+        }
+        public void ToggleSavePlacePanel(bool value)
+        {
+            UICanvas.Instance.ToggleSavePlacePanel(value);
+        }
+        #endregion
+
+        #region Utils
+        public void ThrowNotification(UINotifications.Notifications notification)
+        {
+            InventoryController.Instance.UIMainInventory.ThrowNotification(notification);
+        }
+        #endregion
+
+
+        //private bool IsInitialized = false;
+
         //[field: SerializeField] public InventoryController MainInveContPrefab { get; private set; }
         //[field: SerializeField] public UIMainInventory MainUIInveContPrefab { get; private set; }
         //[field: SerializeField] public InventorySO MainInventorySO { get; private set; }
@@ -27,20 +92,16 @@ namespace Managers
         //[field: SerializeField] public InputController MainInputControllerPrefab { get; private set; }
         //[field: SerializeField] public SaveSystem MainSaveSystem { get; private set; }
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;
-            }
-            //Initialize();
-            //MainCharacter.OnBattlerTriggerEnter += HandleBattleStart;
-        }
+
+
+
+
+
+
+
+
+
+
         //private void Initialize()
         //{
         //    MainCharacter.SetMainInventorySO(MainInventorySO);

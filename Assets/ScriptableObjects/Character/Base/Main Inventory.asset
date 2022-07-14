@@ -171,8 +171,8 @@ MonoBehaviour:
     quantity: 0
     slotType: 6
     itemContainer: 0
-  - item: {fileID: 11400000, guid: eb82f309dc389e441a767f6fc582784e, type: 2}
-    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 7
     itemContainer: 0
   - item: {fileID: 0}

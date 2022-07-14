@@ -15,12 +15,14 @@ namespace Inventory.UI
             WRONG_ITEM_TYPE,
             NO_INVENTORY_SPACE_LEFT,
             SAME_ITEM_IN_SLOT,
+            CAN_INTERACT_WITH_OBJECT,
         }
         private readonly string[] NotificationsStrings =
         {
             "Wrong Item Type. Item can't be equiped here!",
             "No Space In Inventory!",
             "Same Item Already in Slot!",
+            "This is an object I can interact with!",
         };
         public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
         public void ThrowNotification(Notifications notificationType)
