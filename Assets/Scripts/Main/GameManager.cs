@@ -73,6 +73,10 @@ namespace Managers
         {
             UICanvas.Instance.ToggleSavePlacePanel(value);
         }
+        public void SaveGame()
+        {
+            Debug.Log("GAME SAVED");
+        }
         #endregion
 
         #region Utils

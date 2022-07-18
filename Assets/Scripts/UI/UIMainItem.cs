@@ -120,6 +120,8 @@ namespace Inventory.UI
         #region Actions
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log("MOSE CLICK WORK");
+
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 OnItemLMBClicked?.Invoke(this);

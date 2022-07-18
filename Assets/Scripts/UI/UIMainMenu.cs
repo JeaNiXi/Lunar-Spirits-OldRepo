@@ -13,6 +13,9 @@ namespace Managers.UI
         [SerializeField] private GameObject MainButtons;
         [SerializeField] private GameObject ChooseSlotButtons;
         [SerializeField] private GameObject SaveSlotExistsConfirmationPanel;
+        [SerializeField] private GameObject SavePlacePanel;
+        [SerializeField] private GameObject SaveInSlotChoosePanel;
+        [SerializeField] private GameObject SaveSlotExistsConfirmationPanelInGame;
 
         private DirectoryInfo currentSaveDirectory;
         private enum SaveSlots
@@ -52,6 +55,12 @@ namespace Managers.UI
             SetSaveSlotToManager(SaveSlot);
             CheckForGameStart(SaveSlot);
         }
+        public void ChoosingSaveToFirstSlot()
+        {
+            SaveSlot = SaveSlots.Slot1;
+            SetSaveSlotToManager(SaveSlot);
+            CheckForSaveDirEmpty(SaveSlot);
+        }
         public void NGSlotYButtonPressed()
         {
             SaveSlotExistsConfirmationPanel.SetActive(false);
@@ -62,6 +71,21 @@ namespace Managers.UI
         {
             SaveSlotExistsConfirmationPanel.SetActive(false);
             ChooseSlotButtons.SetActive(true);
+        }
+        public void SlotYButtonPressed()
+        {
+            SaveSlotExistsConfirmationPanelInGame.SetActive(false);
+            GameManager.Instance.SaveGame();
+        }
+        public void SlotNButtonPressed()
+        {
+            SaveSlotExistsConfirmationPanelInGame.SetActive(false);
+            SaveInSlotChoosePanel.SetActive(true);
+        }
+        public void ShowChooseSaveSlotPanel()
+        {
+            SavePlacePanel.SetActive(false);
+            SaveInSlotChoosePanel.SetActive(true);
         }
         #endregion
 
@@ -106,6 +130,18 @@ namespace Managers.UI
             {
                 ChooseSlotButtons.SetActive(false);
                 SaveSlotExistsConfirmationPanel.SetActive(true);
+            }
+        }
+        private void CheckForSaveDirEmpty(SaveSlots slot)
+        {
+            if (IsDirectoryEmpty(slot))
+            {
+                GameManager.Instance.SaveGame();
+            }
+            else
+            {
+                SaveInSlotChoosePanel.SetActive(false);
+                SaveSlotExistsConfirmationPanelInGame.SetActive(true);
             }
         }
         #endregion
