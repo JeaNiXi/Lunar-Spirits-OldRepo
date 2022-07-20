@@ -42,7 +42,7 @@ namespace Character
         protected bool CanJump { get; set; }
         protected void FindPlayer()
         {
-            //mainCharacter = GameManager.Instance.MainCharacter;
+            mainCharacter = GameManager.Instance.MainCharacter;
         }
         protected void InitActor()
         {
@@ -119,7 +119,7 @@ namespace Character
         {
             if(!JumpDirectionFound)
             {
-                if(isPlayerInRange)
+                if (isPlayerInRange)
                 {
                     Vector2 targetPos = mainCharacter.transform.position;
                     JumpDirection = (targetPos - (Vector2)gameObject.transform.localPosition).normalized;

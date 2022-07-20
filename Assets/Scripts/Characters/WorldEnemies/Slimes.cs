@@ -13,8 +13,8 @@ namespace Character
         }
         private void Start()
         {
-            //FindPlayer();
-            //InitActor();
+            FindPlayer();
+            InitActor();
 
             CanJump = true;
             GetJumpDirection();
