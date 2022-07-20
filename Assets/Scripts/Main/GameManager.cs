@@ -9,6 +9,7 @@ using Managers.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,8 +20,14 @@ namespace Managers
     {
         public static GameManager Instance;
 
+        private DirectoryInfo currentSaveDirectory;
+
+
+
         [field: SerializeField] public GameManagerSO MainGMSO { get; private set; }
         [field: SerializeField] public SpawnPointsSO MainSpawnPoints { get; private set; }
+        [field: SerializeField] public SaveSystem MainSaveSystem { get; private set; }
+        [field: SerializeField] public CharacterManager MainCharacter { get; private set; }
         public enum GameStates
         {
             DISABLED,
@@ -75,7 +82,61 @@ namespace Managers
         }
         public void SaveGame()
         {
-            Debug.Log("GAME SAVED");
+            SetSaveParams();
+
+            SaveData data = new SaveData();
+            data.SetMCPosV3(MainCharacter.transform.position);
+            data.SetSceneIndex(SceneManager.GetActiveScene().buildIndex);
+            var DataToSave = JsonUtility.ToJson(data);
+            MainSaveSystem.SaveData(DataToSave);
+        }
+
+        //public void SaveGame()
+        //{
+        //    SaveData data = new SaveData();
+        //    data.Add(MainCharacter.transform.position);
+        //    var dataToSave = JsonUtility.ToJson(data);
+        //    MainSaveSystem.SaveData(dataToSave);
+        //}
+        public void LoadGame()
+        {
+            SetSaveParams();
+
+            string DataToLoad = "";
+            DataToLoad = MainSaveSystem.LoadData();
+            if (String.IsNullOrEmpty(DataToLoad) == false)
+            {
+                SaveData data = JsonUtility.FromJson<SaveData>(DataToLoad);
+                SceneManager.LoadScene(data.SceneIndex);
+                MainCharacter.transform.position = data.mainCharacterPosV3.GetV3();
+                GameState = GameStates.PLAYING;
+            }
+            else
+            {
+                Debug.Log("SOMETHING WRONG WITH LOADING");
+            }
+        }
+        //public void LoadGame()
+        //{
+        //    string dataToLoad = "";
+        //    dataToLoad = MainSaveSystem.LoadData();
+        //    if(String.IsNullOrEmpty(dataToLoad) == false)
+        //    {
+        //        SaveData data = JsonUtility.FromJson<SaveData>(dataToLoad);
+        //        MainCharacter.transform.position = data.positionData[0].GetValue();
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("LOADED DEFAULT SCENE");
+        //    }
+        //}
+        private void SetSaveParams()
+        {
+            currentSaveDirectory = Directory.CreateDirectory(Application.persistentDataPath + "/" + GetSaveName(MainGMSO.SaveSlotIndex));
+            var fullPath = Path.Combine(Path.Combine(Application.persistentDataPath, currentSaveDirectory.ToString(), MainGMSO.SaveSlotIndex.ToString()));
+            MainSaveSystem.SetSaveIndex(MainGMSO.SaveSlotIndex);
+            MainSaveSystem.SetSaveName(GetSaveName(MainGMSO.SaveSlotIndex));
+            MainSaveSystem.SetSavePath(fullPath);
         }
         #endregion
 
@@ -84,8 +145,61 @@ namespace Managers
         {
             InventoryController.Instance.UIMainInventory.ThrowNotification(notification);
         }
+        private string GetSaveName(int index) => index switch
+        {
+            1 => "Slot1",
+            2 => "Slot2",
+            3 => "Slot3",
+            4 => "Slot4",
+            5 => "Slot5",
+            6 => "Slot6",
+            _ => "DEFAULT",
+        };
         #endregion
 
+
+        [Serializable]
+        public class Vector3Serialization
+        {
+            public float x, y, z;
+
+            public Vector3Serialization(Vector3 position)
+            {
+                this.x = position.x;
+                this.y = position.y;
+                this.z = position.z;
+            }
+
+            public Vector3 GetV3()
+            {
+                return new Vector3(x, y, z);
+            }
+        }
+        [Serializable]
+        public class SaveData
+        {
+            public List<Vector3Serialization> positionData;
+            public Vector3Serialization mainCharacterPosV3;
+            public int SceneIndex;
+
+            public SaveData()
+            {
+                positionData = new List<Vector3Serialization>();
+            }
+
+            public void Add(Vector3 position)
+            {
+                positionData.Add(new Vector3Serialization(position));
+            }
+            public void SetSceneIndex(int index)
+            {
+                this.SceneIndex = index;
+            }
+            public void SetMCPosV3(Vector3 position)
+            {
+                mainCharacterPosV3 = new Vector3Serialization(position);
+            }
+        }
 
         //private bool IsInitialized = false;
 
@@ -130,60 +244,10 @@ namespace Managers
         //    SceneManager.LoadScene("BattleScene");
         //}
 
-        //public void SaveGame()
-        //{
-        //    SaveData data = new SaveData();
-        //    data.Add(MainCharacter.transform.position);
-        //    var dataToSave = JsonUtility.ToJson(data);
-        //    MainSaveSystem.SaveData(dataToSave);
-        //}
-        //public void LoadGame()
-        //{
-        //    string dataToLoad = "";
-        //    dataToLoad = MainSaveSystem.LoadData();
-        //    if(String.IsNullOrEmpty(dataToLoad) == false)
-        //    {
-        //        SaveData data = JsonUtility.FromJson<SaveData>(dataToLoad);
-        //        MainCharacter.transform.position = data.positionData[0].GetValue();
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("LOADED DEFAULT SCENE");
-        //    }
-        //}
-        //[Serializable]
-        //public class SaveData
-        //{
-        //    public List<Vector3Serialization> positionData;
 
-        //    public SaveData()
-        //    {
-        //        positionData = new List<Vector3Serialization>();
-        //    }
 
-        //    public void Add(Vector3 position)
-        //    {
-        //        positionData.Add(new Vector3Serialization(position));
-        //    }
-        //}
 
-        //[Serializable]
-        //public class Vector3Serialization
-        //{
-        //    public float x, y, z;
 
-        //    public Vector3Serialization(Vector3 position)
-        //    {
-        //        this.x = position.x;
-        //        this.y = position.y;
-        //        this.z = position.z;
-        //    }
-
-        //    public Vector3 GetValue()
-        //    {
-        //        return new Vector3(x, y, z);
-        //    }
-        //}
         //private void OnApplicationQuit()
         //{
         //    MainGMSO.SetSceneInitializedState(false);

@@ -267,7 +267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingFifthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -846,7 +846,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSaveToSixthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2176,7 +2176,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSixthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2443,7 +2443,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingThirdSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2965,7 +2965,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSaveToFourthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3232,7 +3232,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSaveToFifthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3365,7 +3365,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSaveToSecondSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3754,7 +3754,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSecondSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4576,6 +4576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418634760}
   - component: {fileID: 1418634759}
+  - component: {fileID: 1418634761}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4597,6 +4598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MainGMSO>k__BackingField: {fileID: 11400000, guid: 4898f4d2207fd4a4eac0700e2d8be7a0, type: 2}
   <MainSpawnPoints>k__BackingField: {fileID: 11400000, guid: 6269fdc2b2fab994da8e174642e95eca, type: 2}
+  <MainSaveSystem>k__BackingField: {fileID: 1418634761}
+  <MainCharacter>k__BackingField: {fileID: 41010191}
   GameState: 0
 --- !u!4 &1418634760
 Transform:
@@ -4612,6 +4615,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418634761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418634758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b859fa6b96945340a7fe50112ec0864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SaveName>k__BackingField: 
+  <SaveIndex>k__BackingField: 0
+  <FullPath>k__BackingField: 
 --- !u!1 &1425108706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,7 +6725,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingFourthSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7241,7 +7259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14358138}
         m_TargetAssemblyTypeName: Managers.UI.UIMainMenu, Assembly-CSharp
-        m_MethodName: LoadGameButtonPressed
+        m_MethodName: ChoosingSaveToThirdSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8247,7 +8265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

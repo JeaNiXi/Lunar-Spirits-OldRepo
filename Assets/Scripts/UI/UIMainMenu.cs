@@ -17,7 +17,6 @@ namespace Managers.UI
         [SerializeField] private GameObject SaveInSlotChoosePanel;
         [SerializeField] private GameObject SaveSlotExistsConfirmationPanelInGame;
 
-        private DirectoryInfo currentSaveDirectory;
         private enum SaveSlots
         {
             Slot1,
@@ -36,30 +35,86 @@ namespace Managers.UI
             OpenMainMenu();
         }
 
-
-
-
         #region OnButtonClickEvents
         public void StartGameButtonPressed()
         {
             MainButtons.SetActive(false);
-            ChooseSlotButtons.SetActive(true);
+            StartNewGame();
         }
         public void LoadGameButtonPressed()
         {
-
+            MainButtons.SetActive(false);
+            ChooseSlotButtons.SetActive(true);
         }
         public void ChoosingFirstSlot()
         {
             SaveSlot = SaveSlots.Slot1;
-            SetSaveSlotToManager(SaveSlot);
-            CheckForGameStart(SaveSlot);
+            InitSlot(SaveSlot);
+        }
+        public void ChoosingSecondSlot()
+        {
+            SaveSlot = SaveSlots.Slot2;
+            InitSlot(SaveSlot);
+        }
+        public void ChoosingThirdSlot()
+        {
+            SaveSlot = SaveSlots.Slot3;
+            InitSlot(SaveSlot);
+        }
+        public void ChoosingFourthSlot()
+        {
+            SaveSlot = SaveSlots.Slot4;
+            InitSlot(SaveSlot);
+        }
+        public void ChoosingFifthSlot()
+        {
+            SaveSlot = SaveSlots.Slot5;
+            InitSlot(SaveSlot);
+        }
+        public void ChoosingSixthSlot()
+        {
+            SaveSlot = SaveSlots.Slot6;
+            InitSlot(SaveSlot);
+        }
+        private void InitSlot(SaveSlots slot)
+        {
+            SetSaveSlotToManager(slot);
+            CheckForGameLoad(slot);
         }
         public void ChoosingSaveToFirstSlot()
         {
             SaveSlot = SaveSlots.Slot1;
-            SetSaveSlotToManager(SaveSlot);
-            CheckForSaveDirEmpty(SaveSlot);
+            InitSaveSlot(SaveSlot);
+        }
+        public void ChoosingSaveToSecondSlot()
+        {
+            SaveSlot = SaveSlots.Slot2;
+            InitSaveSlot(SaveSlot);
+        }
+        public void ChoosingSaveToThirdSlot()
+        {
+            SaveSlot = SaveSlots.Slot3;
+            InitSaveSlot(SaveSlot);
+        }
+        public void ChoosingSaveToFourthSlot()
+        {
+            SaveSlot = SaveSlots.Slot4;
+            InitSaveSlot(SaveSlot);
+        }
+        public void ChoosingSaveToFifthSlot()
+        {
+            SaveSlot = SaveSlots.Slot5;
+            InitSaveSlot(SaveSlot);
+        }
+        public void ChoosingSaveToSixthSlot()
+        {
+            SaveSlot = SaveSlots.Slot6;
+            InitSaveSlot(SaveSlot);
+        }
+        private void InitSaveSlot(SaveSlots slot)
+        {
+            SetSaveSlotToManager(slot);
+            CheckForSaveDirEmpty(slot);
         }
         public void NGSlotYButtonPressed()
         {
@@ -90,15 +145,6 @@ namespace Managers.UI
         #endregion
 
 
-
-        //DirectoryInfo savePath = Directory.CreateDirectory(Application.persistentDataPath + "/" + "Slot 1");
-        //Debug.Log(savePath);
-        //var fullPath = Path.Combine(Path.Combine(Application.persistentDataPath, savePath.ToString()), "Save_Index");
-        //File.WriteAllText(fullPath, "hahahahah");
-
-
-
-
         #region Utils
         private void OpenMainMenu() => MainButtons.SetActive(true);
         private void CloseAllPanels()
@@ -117,19 +163,23 @@ namespace Managers.UI
         }
         private void RemoveFolder(SaveSlots slot)
         {
+            string[] files = Directory.GetFiles(Application.persistentDataPath + "/" + slot.ToString());
+            foreach (string file in files)
+            {
+                File.Delete(file);
+            }
             Directory.Delete(Application.persistentDataPath + "/" + slot.ToString());
         }
-        private void CheckForGameStart(SaveSlots slot)
+        private void CheckForGameLoad(SaveSlots slot)
         {
             if (IsDirectoryEmpty(slot))
             {
-                ChooseSlotButtons.SetActive(false);
-                StartNewGame();
+                GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.SAVE_SLOT_EMPTY);
             }
             else
             {
                 ChooseSlotButtons.SetActive(false);
-                SaveSlotExistsConfirmationPanel.SetActive(true);
+                GameManager.Instance.LoadGame();
             }
         }
         private void CheckForSaveDirEmpty(SaveSlots slot)
@@ -137,6 +187,7 @@ namespace Managers.UI
             if (IsDirectoryEmpty(slot))
             {
                 GameManager.Instance.SaveGame();
+                SaveInSlotChoosePanel.SetActive(false);
             }
             else
             {
@@ -152,9 +203,5 @@ namespace Managers.UI
             GameManager.Instance.LoadNewGameIntro();
         }
         #endregion
-        //private bool CheckForEmpty()
-        //{
-        //    if()
-        //}
     }
 }

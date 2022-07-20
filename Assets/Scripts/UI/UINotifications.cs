@@ -16,6 +16,7 @@ namespace Inventory.UI
             NO_INVENTORY_SPACE_LEFT,
             SAME_ITEM_IN_SLOT,
             CAN_INTERACT_WITH_OBJECT,
+            SAVE_SLOT_EMPTY,
         }
         private readonly string[] NotificationsStrings =
         {
@@ -23,6 +24,7 @@ namespace Inventory.UI
             "No Space In Inventory!",
             "Same Item Already in Slot!",
             "This is an object I can interact with!",
+            "This save slot is empty!",
         };
         public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
         public void ThrowNotification(Notifications notificationType)

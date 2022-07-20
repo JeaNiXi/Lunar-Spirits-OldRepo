@@ -8,36 +8,33 @@ namespace Managers
 {
     public class SaveSystem : MonoBehaviour
     {
-        public string saveName = "SaveData_";
-        [Range(1, 3)]
-        public int saveDataIndex = 1;
-
-
+        [field: SerializeField] public string SaveName { get; private set; }
+        public void SetSaveName(string name)
+        {
+            this.SaveName = name;
+        }
+        [field: SerializeField] public int SaveIndex { get; private set; }
+        public void SetSaveIndex(int index)
+        {
+            this.SaveIndex = index;
+        }
+        [field: SerializeField] public string FullPath { get; private set; }
+        public void SetSavePath(string path)
+        {
+            FullPath = path;
+        }
         public void SaveData(string dataToSave)
         {
-            if (WriteToFile(saveName + saveDataIndex, dataToSave))
+            if (WriteToFile(SaveName, dataToSave))
             {
                 Debug.Log("SUCCESSFULLY SAVED DATA");
             }
         }
-
-        public string LoadData()
-        {
-            string data = "";
-            if (ReadFromFile(saveName + saveDataIndex, out data))
-            {
-                Debug.Log("SUCCESSFULLY LOADED DATA");
-            }
-            return data;
-        }
-
         private bool WriteToFile(string name, string content)
         {
-            var fullPath = Path.Combine(Application.persistentDataPath, name);
-
             try
             {
-                File.WriteAllText(fullPath, content);
+                File.WriteAllText(FullPath, content);
                 return true;
             }
             catch (Exception e)
@@ -47,13 +44,21 @@ namespace Managers
             return false;
         }
 
+        public string LoadData()
+        {
+            string data = "";
+            if (ReadFromFile(SaveName, out data))
+            {
+                Debug.Log("SUCCESSFULLY LOADED DATA");
+            }
+            return data;
+        }
+
         private bool ReadFromFile(string name, out string content)
         {
-            var fullPath = Path.Combine(Application.persistentDataPath, name);
-
             try
             {
-                content = File.ReadAllText(fullPath);
+                content = File.ReadAllText(FullPath);
                 return true;
             }
             catch (Exception e)
