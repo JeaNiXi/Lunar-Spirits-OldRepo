@@ -1,25 +1,73 @@
 fileFormatVersion: 2
-guid: 80205d6d7246c834ab5acd663e9adaef
+guid: 69907ab279ee61644b79edc152f65abc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1618185110837684384
-    second: Sprite Sheet - Green Jump Land_0
+      213: -2159989153046953655
+    second: Sprite Sheet - Green Hurt - No Flash_0
   - first:
-      213: -379935657828565217
-    second: Sprite Sheet - Green Jump Land_1
+      213: -5940323749537707868
+    second: Sprite Sheet - Green Hurt - No Flash_1
   - first:
-      213: 7961362974256884671
-    second: Sprite Sheet - Green Jump Land_2
+      213: 7006359815047711410
+    second: Sprite Sheet - Green Hurt - No Flash_2
   - first:
-      213: -3607888842448822257
-    second: Sprite Sheet - Green Jump Land_3
+      213: -8081401451875462301
+    second: Sprite Sheet - Green Hurt - No Flash_3
   - first:
-      213: 4593568250741143324
-    second: Sprite Sheet - Green Jump Land_4
+      213: -6715015496158861486
+    second: Sprite Sheet - Green Hurt - No Flash_4
   - first:
-      213: -255545124399731749
-    second: Sprite Sheet - Green Jump Land_5
+      213: 2417470212608203033
+    second: Sprite Sheet - Green Hurt - No Flash_5
+  - first:
+      213: 4789503813110512395
+    second: Sprite Sheet - Green Hurt - No Flash_6
+  - first:
+      213: -5971996416981112148
+    second: Sprite Sheet - Green Hurt - No Flash_7
+  - first:
+      213: 5390317748416754442
+    second: Sprite Sheet - Green Hurt - No Flash_8
+  - first:
+      213: -627908066408712283
+    second: Sprite Sheet - Green Hurt - No Flash_9
+  - first:
+      213: -3140844607034348796
+    second: Sprite Sheet - Green Hurt - No Flash_10
+  - first:
+      213: 1065703359125078014
+    second: Sprite Sheet - Dendro Hurt - No Flash_0
+  - first:
+      213: -7216868228000394845
+    second: Sprite Sheet - Dendro Hurt - No Flash_1
+  - first:
+      213: 4668504790732783474
+    second: Sprite Sheet - Dendro Hurt - No Flash_2
+  - first:
+      213: -5849115311712635139
+    second: Sprite Sheet - Dendro Hurt - No Flash_3
+  - first:
+      213: -992216117084710377
+    second: Sprite Sheet - Dendro Hurt - No Flash_4
+  - first:
+      213: 7975111968560691579
+    second: Sprite Sheet - Dendro Hurt - No Flash_5
+  - first:
+      213: -7467848132736858261
+    second: Sprite Sheet - Dendro Hurt - No Flash_6
+  - first:
+      213: 1176056482866188082
+    second: Sprite Sheet - Dendro Hurt - No Flash_7
+  - first:
+      213: -3805671752356924291
+    second: Sprite Sheet - Dendro Hurt - No Flash_8
+  - first:
+      213: -2138577164695870056
+    second: Sprite Sheet - Dendro Hurt - No Flash_9
+  - first:
+      213: -244657127595611126
+    second: Sprite Sheet - Dendro Hurt - No Flash_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +193,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_0
+      name: Sprite Sheet - Dendro Hurt - No Flash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a86e48e8c2f47610800000000000000
-      internalID: 1618185110837684384
+      spriteID: eff379c0f832ace00800000000000000
+      internalID: 1065703359125078014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_1
+      name: Sprite Sheet - Dendro Hurt - No Flash_1
       rect:
         serializedVersion: 2
         x: 96
@@ -180,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1fbf9d38823abaf0800000000000000
-      internalID: -379935657828565217
+      spriteID: 3a1db3f459888db90800000000000000
+      internalID: -7216868228000394845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_2
+      name: Sprite Sheet - Dendro Hurt - No Flash_2
       rect:
         serializedVersion: 2
         x: 192
@@ -201,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb6788a1717c7e60800000000000000
-      internalID: 7961362974256884671
+      spriteID: 27f36d35f5cd9c040800000000000000
+      internalID: 4668504790732783474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_3
+      name: Sprite Sheet - Dendro Hurt - No Flash_3
       rect:
         serializedVersion: 2
         x: 288
@@ -222,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f002eb496343eedc0800000000000000
-      internalID: -3607888842448822257
+      spriteID: df6f11b2d94c3dea0800000000000000
+      internalID: -5849115311712635139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_4
+      name: Sprite Sheet - Dendro Hurt - No Flash_4
       rect:
         serializedVersion: 2
         x: 384
@@ -243,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1730fc7cf1afbf30800000000000000
-      internalID: 4593568250741143324
+      spriteID: 71a9fb0d2b0fa32f0800000000000000
+      internalID: -992216117084710377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Land_5
+      name: Sprite Sheet - Dendro Hurt - No Flash_5
       rect:
         serializedVersion: 2
         x: 480
@@ -264,8 +312,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdb2214301f147cf0800000000000000
-      internalID: -255545124399731749
+      spriteID: b79b60ad41a4dae60800000000000000
+      internalID: 7975111968560691579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Dendro Hurt - No Flash_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67c7ab80bfdc5890800000000000000
+      internalID: -7467848132736858261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Dendro Hurt - No Flash_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fc801e321325010800000000000000
+      internalID: 1176056482866188082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Dendro Hurt - No Flash_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74f60d54b98f2bc0800000000000000
+      internalID: -3805671752356924291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Dendro Hurt - No Flash_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8956a8d366f3252e0800000000000000
+      internalID: -2138577164695870056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet - Dendro Hurt - No Flash_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c65e183adca9cf0800000000000000
+      internalID: -244657127595611126
       vertices: []
       indices: 
       edges: []

@@ -13,17 +13,16 @@ namespace Character
         }
         private void Start()
         {
-            FindPlayer();
-            InitActor();
+            //FindPlayer();
+            //InitActor();
 
             CanJump = true;
-            //IsJumping = true;
             GetJumpDirection();
             PlayIdleAnimation();
         }
         private void Update()
         {
-            if (ActorState == STATE.ALIVE) 
+            if (ActorState == STATE.ALIVE)
             {
                 ChasePlayer();
                 UpdateDirection();

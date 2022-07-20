@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 102c1e66c82af5d429c960fdcdff6e5b
+guid: bcf44f31a6d5b0d4d8339140ca136f6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9074539206338946419
-    second: Sprite Sheet - Green Idle_0
+      213: -7377153609105838001
+    second: Sprite Sheet - Green Jump to Fall_0
   - first:
-      213: -387061471815523496
-    second: Sprite Sheet - Green Idle_1
+      213: 8103759417398486482
+    second: Sprite Sheet - Green Jump to Fall_1
   - first:
-      213: 469887860811983759
-    second: Sprite Sheet - Green Idle_2
+      213: -822294439341482929
+    second: Sprite Sheet - Green Jump to Fall_2
   - first:
-      213: 4557467248702983155
-    second: Sprite Sheet - Green Idle_3
+      213: 775961440259190869
+    second: Sprite Sheet - Green Jump to Fall_3
   - first:
-      213: -5816436153592121541
-    second: Sprite Sheet - Green Idle_4
+      213: 8373471702286915353
+    second: Sprite Sheet - Green Jump to Fall_4
   - first:
-      213: -3371520512202314939
-    second: Sprite Sheet - Green Idle_5
+      213: 8894420211341288727
+    second: Sprite Sheet - Dendro Jump to Fall_0
   - first:
-      213: -2599926529332704699
-    second: Sprite Sheet - Green Idle_6
+      213: -7043397904040761214
+    second: Sprite Sheet - Dendro Jump to Fall_1
+  - first:
+      213: -8994571023837562476
+    second: Sprite Sheet - Dendro Jump to Fall_2
+  - first:
+      213: -7783759323104045491
+    second: Sprite Sheet - Dendro Jump to Fall_3
+  - first:
+      213: -4361659592350955132
+    second: Sprite Sheet - Dendro Jump to Fall_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,7 +157,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_0
+      name: Sprite Sheet - Dendro Jump to Fall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -162,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8adfc9bba2c01280800000000000000
-      internalID: -9074539206338946419
+      spriteID: 7156d0cbe045f6b70800000000000000
+      internalID: 8894420211341288727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_1
+      name: Sprite Sheet - Dendro Jump to Fall_1
       rect:
         serializedVersion: 2
         x: 96
@@ -183,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853223264a1e0aaf0800000000000000
-      internalID: -387061471815523496
+      spriteID: 2886bed7ce2d04e90800000000000000
+      internalID: -7043397904040761214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_2
+      name: Sprite Sheet - Dendro Jump to Fall_2
       rect:
         serializedVersion: 2
         x: 192
@@ -204,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8b67f31580658600800000000000000
-      internalID: 469887860811983759
+      spriteID: 499f3212f4ddc2380800000000000000
+      internalID: -8994571023837562476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_3
+      name: Sprite Sheet - Dendro Jump to Fall_3
       rect:
         serializedVersion: 2
         x: 288
@@ -225,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fb0b62f0506f3f30800000000000000
-      internalID: 4557467248702983155
+      spriteID: d469f31c2288af390800000000000000
+      internalID: -7783759323104045491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_4
+      name: Sprite Sheet - Dendro Jump to Fall_4
       rect:
         serializedVersion: 2
         x: 384
@@ -246,50 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b37f666922ed74fa0800000000000000
-      internalID: -5816436153592121541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_5
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54bec3d05f3f531d0800000000000000
-      internalID: -3371520512202314939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Idle_6
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54a8209b8943bebd0800000000000000
-      internalID: -2599926529332704699
+      spriteID: 4890fb6b5b54873c0800000000000000
+      internalID: -4361659592350955132
       vertices: []
       indices: 
       edges: []

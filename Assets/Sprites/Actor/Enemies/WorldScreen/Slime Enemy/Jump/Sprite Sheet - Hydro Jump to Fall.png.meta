@@ -1,40 +1,22 @@
 fileFormatVersion: 2
-guid: 4f0479d7434747f41891d58c3930fce4
+guid: 28671d2a8d682fe4bb565ecc5ea3a102
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3582929792314529393
-    second: Sprite Sheet - Green Hurt_0
+      213: 5452852936490287273
+    second: Sprite Sheet - Hydro Jump to Fall_0
   - first:
-      213: -5930358258539423250
-    second: Sprite Sheet - Green Hurt_1
+      213: 2771721514199323607
+    second: Sprite Sheet - Hydro Jump to Fall_1
   - first:
-      213: 1092018286536115964
-    second: Sprite Sheet - Green Hurt_2
+      213: -3523848288785948696
+    second: Sprite Sheet - Hydro Jump to Fall_2
   - first:
-      213: -2906184050789904689
-    second: Sprite Sheet - Green Hurt_3
+      213: -4649049064123029283
+    second: Sprite Sheet - Hydro Jump to Fall_3
   - first:
-      213: -1253452224801862350
-    second: Sprite Sheet - Green Hurt_4
-  - first:
-      213: 4330575107213191810
-    second: Sprite Sheet - Green Hurt_5
-  - first:
-      213: -45749507988941164
-    second: Sprite Sheet - Green Hurt_6
-  - first:
-      213: 596396071797096498
-    second: Sprite Sheet - Green Hurt_7
-  - first:
-      213: -5527445623120968242
-    second: Sprite Sheet - Green Hurt_8
-  - first:
-      213: -4621507994520260246
-    second: Sprite Sheet - Green Hurt_9
-  - first:
-      213: 4213319169435893366
-    second: Sprite Sheet - Green Hurt_10
+      213: 5377744400980549687
+    second: Sprite Sheet - Hydro Jump to Fall_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_0
+      name: Sprite Sheet - Hydro Jump to Fall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1765216b9af19b130800000000000000
-      internalID: 3582929792314529393
+      spriteID: 9a003f3fadc6cab40800000000000000
+      internalID: 5452852936490287273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_1
+      name: Sprite Sheet - Hydro Jump to Fall_1
       rect:
         serializedVersion: 2
         x: 96
@@ -195,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee914f0959223bda0800000000000000
-      internalID: -5930358258539423250
+      spriteID: 7d3982e2802277620800000000000000
+      internalID: 2771721514199323607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_2
+      name: Sprite Sheet - Hydro Jump to Fall_2
       rect:
         serializedVersion: 2
         x: 192
@@ -216,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf6473988d0a72f00800000000000000
-      internalID: 1092018286536115964
+      spriteID: 8ef9b88c6a6c81fc0800000000000000
+      internalID: -3523848288785948696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_3
+      name: Sprite Sheet - Hydro Jump to Fall_3
       rect:
         serializedVersion: 2
         x: 288
@@ -237,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce03c0e0092ba7d0800000000000000
-      internalID: -2906184050789904689
+      spriteID: dd8a59502824b7fb0800000000000000
+      internalID: -4649049064123029283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_4
+      name: Sprite Sheet - Hydro Jump to Fall_4
       rect:
         serializedVersion: 2
         x: 384
@@ -258,134 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23d03c5b7d7da9ee0800000000000000
-      internalID: -1253452224801862350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_5
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28a679a9d1b491c30800000000000000
-      internalID: 4330575107213191810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_6
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4969bab90177d5ff0800000000000000
-      internalID: -45749507988941164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_7
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23087e44113d64800800000000000000
-      internalID: 596396071797096498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec5469ecd719a43b0800000000000000
-      internalID: -5527445623120968242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_9
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a61fdfbf6fa1ddfb0800000000000000
-      internalID: -4621507994520260246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt_10
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67ef1932677b87a30800000000000000
-      internalID: 4213319169435893366
+      spriteID: 730aa494a0691aa40800000000000000
+      internalID: 5377744400980549687
       vertices: []
       indices: 
       edges: []

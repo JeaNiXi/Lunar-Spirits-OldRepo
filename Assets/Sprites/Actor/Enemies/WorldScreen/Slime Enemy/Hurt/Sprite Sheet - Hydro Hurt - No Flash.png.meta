@@ -1,49 +1,40 @@
 fileFormatVersion: 2
-guid: 93a378a877762d74e99c50e1ba4f311f
+guid: 4c5d4703e674e294fae70a470ca250d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8844130117516289635
-    second: Sprite Sheet - Green Death_0
+      213: 644163461260982421
+    second: Sprite Sheet - Hydro Hurt - No Flash_0
   - first:
-      213: -918093945981268291
-    second: Sprite Sheet - Green Death_1
+      213: -6147647451571842142
+    second: Sprite Sheet - Hydro Hurt - No Flash_1
   - first:
-      213: 4404395261052358378
-    second: Sprite Sheet - Green Death_2
+      213: -9199773372482459999
+    second: Sprite Sheet - Hydro Hurt - No Flash_2
   - first:
-      213: 1777014292035581766
-    second: Sprite Sheet - Green Death_3
+      213: -7109916622429804141
+    second: Sprite Sheet - Hydro Hurt - No Flash_3
   - first:
-      213: -4037482184808223913
-    second: Sprite Sheet - Green Death_4
+      213: 4502695795663867883
+    second: Sprite Sheet - Hydro Hurt - No Flash_4
   - first:
-      213: -8344769492127366768
-    second: Sprite Sheet - Green Death_5
+      213: 600185454893956545
+    second: Sprite Sheet - Hydro Hurt - No Flash_5
   - first:
-      213: 8189380851369571193
-    second: Sprite Sheet - Green Death_6
+      213: 22369936329589836
+    second: Sprite Sheet - Hydro Hurt - No Flash_6
   - first:
-      213: 4000569422998023894
-    second: Sprite Sheet - Green Death_7
+      213: -729954474810227441
+    second: Sprite Sheet - Hydro Hurt - No Flash_7
   - first:
-      213: -3343497886471754528
-    second: Sprite Sheet - Green Death_8
+      213: -8989198034457170906
+    second: Sprite Sheet - Hydro Hurt - No Flash_8
   - first:
-      213: 3191418561300426102
-    second: Sprite Sheet - Green Death_9
+      213: 4201869884531588870
+    second: Sprite Sheet - Hydro Hurt - No Flash_9
   - first:
-      213: -2917778579759445073
-    second: Sprite Sheet - Green Death_10
-  - first:
-      213: -6452399293700704893
-    second: Sprite Sheet - Green Death_11
-  - first:
-      213: 9025285406683601819
-    second: Sprite Sheet - Green Death_12
-  - first:
-      213: -4399547091799338291
-    second: Sprite Sheet - Green Death_13
+      213: 5266800738965976994
+    second: Sprite Sheet - Hydro Hurt - No Flash_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,7 +160,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_0
+      name: Sprite Sheet - Hydro Hurt - No Flash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -183,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d999b1e2486534580800000000000000
-      internalID: -8844130117516289635
+      spriteID: 5983fbd414780f800800000000000000
+      internalID: 644163461260982421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_1
+      name: Sprite Sheet - Hydro Hurt - No Flash_1
       rect:
         serializedVersion: 2
         x: 96
@@ -204,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbe895f9b664243f0800000000000000
-      internalID: -918093945981268291
+      spriteID: 2a399b4e63b2faaa0800000000000000
+      internalID: -6147647451571842142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_2
+      name: Sprite Sheet - Hydro Hurt - No Flash_2
       rect:
         serializedVersion: 2
         x: 192
@@ -225,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee8079872e8f1d30800000000000000
-      internalID: 4404395261052358378
+      spriteID: 1a6e5173cd6d35080800000000000000
+      internalID: -9199773372482459999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_3
+      name: Sprite Sheet - Hydro Hurt - No Flash_3
       rect:
         serializedVersion: 2
         x: 288
@@ -246,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 647b295651939a810800000000000000
-      internalID: 1777014292035581766
+      spriteID: 3992d697080845d90800000000000000
+      internalID: -7109916622429804141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_4
+      name: Sprite Sheet - Hydro Hurt - No Flash_4
       rect:
         serializedVersion: 2
         x: 384
@@ -267,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75ba98b285bf7f7c0800000000000000
-      internalID: -4037482184808223913
+      spriteID: bef803848f9cc7e30800000000000000
+      internalID: 4502695795663867883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_5
+      name: Sprite Sheet - Hydro Hurt - No Flash_5
       rect:
         serializedVersion: 2
         x: 480
@@ -288,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0914b310c5c613c80800000000000000
-      internalID: -8344769492127366768
+      spriteID: 1cd7f46cd79445800800000000000000
+      internalID: 600185454893956545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_6
+      name: Sprite Sheet - Hydro Hurt - No Flash_6
       rect:
         serializedVersion: 2
         x: 576
@@ -309,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973f440ce7686a170800000000000000
-      internalID: 8189380851369571193
+      spriteID: c44c29ca6597f4000800000000000000
+      internalID: 22369936329589836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_7
+      name: Sprite Sheet - Hydro Hurt - No Flash_7
       rect:
         serializedVersion: 2
         x: 672
@@ -330,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6de261db1b0e48730800000000000000
-      internalID: 4000569422998023894
+      spriteID: f05cabac54eaed5f0800000000000000
+      internalID: -729954474810227441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_8
+      name: Sprite Sheet - Hydro Hurt - No Flash_8
       rect:
         serializedVersion: 2
         x: 768
@@ -351,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ece49903628991d0800000000000000
-      internalID: -3343497886471754528
+      spriteID: 62c6a84b304ff3380800000000000000
+      internalID: -8989198034457170906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_9
+      name: Sprite Sheet - Hydro Hurt - No Flash_9
       rect:
         serializedVersion: 2
         x: 864
@@ -372,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67d66ebc5423a4c20800000000000000
-      internalID: 3191418561300426102
+      spriteID: 60fbae3c56a005a30800000000000000
+      internalID: 4201869884531588870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Death_10
+      name: Sprite Sheet - Hydro Hurt - No Flash_10
       rect:
         serializedVersion: 2
         x: 960
@@ -393,71 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fabc13c37d7f187d0800000000000000
-      internalID: -2917778579759445073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Death_11
-      rect:
-        serializedVersion: 2
-        x: 1056
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 385fcf557097476a0800000000000000
-      internalID: -6452399293700704893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Death_12
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9b94e56241404d70800000000000000
-      internalID: 9025285406683601819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Death_13
-      rect:
-        serializedVersion: 2
-        x: 1248
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc292b4da3ba1f2c0800000000000000
-      internalID: -4399547091799338291
+      spriteID: 2a7f4dc0e5f671940800000000000000
+      internalID: 5266800738965976994
       vertices: []
       indices: 
       edges: []

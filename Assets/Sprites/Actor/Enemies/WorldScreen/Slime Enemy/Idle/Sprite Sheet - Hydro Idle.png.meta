@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 180751693667db249bbd959fb69a6efb
+guid: c7e8b33f0794d594c86ebfa7ef4da7e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8769339193113792372
-    second: Sprite Sheet - Green Jump Start-up_0
+      213: -5736326865833247773
+    second: Sprite Sheet - Hydro Idle_0
   - first:
-      213: -8718068603340582171
-    second: Sprite Sheet - Green Jump Start-up_1
+      213: 4004338877220296042
+    second: Sprite Sheet - Hydro Idle_1
   - first:
-      213: 5487445420638461289
-    second: Sprite Sheet - Green Jump Start-up_2
+      213: 7019322896266445787
+    second: Sprite Sheet - Hydro Idle_2
   - first:
-      213: 552165441339613264
-    second: Sprite Sheet - Green Jump Start-up_3
+      213: 757387212422325626
+    second: Sprite Sheet - Hydro Idle_3
   - first:
-      213: -1847289444461471078
-    second: Sprite Sheet - Green Jump Start-up_4
+      213: 1913463029931141385
+    second: Sprite Sheet - Hydro Idle_4
   - first:
-      213: -1923823714793028283
-    second: Sprite Sheet - Green Jump Start-up_5
+      213: -4152934825960443006
+    second: Sprite Sheet - Hydro Idle_5
   - first:
-      213: -3434455214464728001
-    second: Sprite Sheet - Green Jump Start-up_6
-  - first:
-      213: 5410572983432652385
-    second: Sprite Sheet - Green Jump Start-up_7
-  - first:
-      213: -7616659179368546986
-    second: Sprite Sheet - Green Jump Start-up_8
+      213: -7807654620688065925
+    second: Sprite Sheet - Hydro Idle_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_0
+      name: Sprite Sheet - Hydro Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -168,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47f4570c883f2b970800000000000000
-      internalID: 8769339193113792372
+      spriteID: 3ebba7e9b197460b0800000000000000
+      internalID: -5736326865833247773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_1
+      name: Sprite Sheet - Hydro Idle_1
       rect:
         serializedVersion: 2
         x: 96
@@ -189,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e2166aabc2330780800000000000000
-      internalID: -8718068603340582171
+      spriteID: a6590013ef4429730800000000000000
+      internalID: 4004338877220296042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_2
+      name: Sprite Sheet - Hydro Idle_2
       rect:
         serializedVersion: 2
         x: 192
@@ -210,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96ddf7d4982572c40800000000000000
-      internalID: 5487445420638461289
+      spriteID: bd34ab3fbf4a96160800000000000000
+      internalID: 7019322896266445787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_3
+      name: Sprite Sheet - Hydro Idle_3
       rect:
         serializedVersion: 2
         x: 288
@@ -231,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0506b4c1b8fa9a700800000000000000
-      internalID: 552165441339613264
+      spriteID: a752bd928a7c28a00800000000000000
+      internalID: 757387212422325626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_4
+      name: Sprite Sheet - Hydro Idle_4
       rect:
         serializedVersion: 2
         x: 384
@@ -252,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9a9b81a90c1d56e0800000000000000
-      internalID: -1847289444461471078
+      spriteID: 90963eddc7cfd8a10800000000000000
+      internalID: 1913463029931141385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_5
+      name: Sprite Sheet - Hydro Idle_5
       rect:
         serializedVersion: 2
         x: 480
@@ -273,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5450a4536843d45e0800000000000000
-      internalID: -1923823714793028283
+      spriteID: 283774b67cfcd56c0800000000000000
+      internalID: -4152934825960443006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_6
+      name: Sprite Sheet - Hydro Idle_6
       rect:
         serializedVersion: 2
         x: 576
@@ -294,50 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3487d0dd2d5650d0800000000000000
-      internalID: -3434455214464728001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_7
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16624d44677361b40800000000000000
-      internalID: 5410572983432652385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Jump Start-up_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65df486c4d03c4690800000000000000
-      internalID: -7616659179368546986
+      spriteID: b7a53fc3d73a5a390800000000000000
+      internalID: -7807654620688065925
       vertices: []
       indices: 
       edges: []

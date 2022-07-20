@@ -1,40 +1,25 @@
 fileFormatVersion: 2
-guid: 69907ab279ee61644b79edc152f65abc
+guid: 1d8f94eda8be45a43832898c101d67fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2159989153046953655
-    second: Sprite Sheet - Green Hurt - No Flash_0
+      213: -970208874160267427
+    second: Sprite Sheet - Hydro Jump Land_0
   - first:
-      213: -5940323749537707868
-    second: Sprite Sheet - Green Hurt - No Flash_1
+      213: -3785471217350623325
+    second: Sprite Sheet - Hydro Jump Land_1
   - first:
-      213: 7006359815047711410
-    second: Sprite Sheet - Green Hurt - No Flash_2
+      213: 2137065135520996001
+    second: Sprite Sheet - Hydro Jump Land_2
   - first:
-      213: -8081401451875462301
-    second: Sprite Sheet - Green Hurt - No Flash_3
+      213: -3221398237320526666
+    second: Sprite Sheet - Hydro Jump Land_3
   - first:
-      213: -6715015496158861486
-    second: Sprite Sheet - Green Hurt - No Flash_4
+      213: -2894153377318460182
+    second: Sprite Sheet - Hydro Jump Land_4
   - first:
-      213: 2417470212608203033
-    second: Sprite Sheet - Green Hurt - No Flash_5
-  - first:
-      213: 4789503813110512395
-    second: Sprite Sheet - Green Hurt - No Flash_6
-  - first:
-      213: -5971996416981112148
-    second: Sprite Sheet - Green Hurt - No Flash_7
-  - first:
-      213: 5390317748416754442
-    second: Sprite Sheet - Green Hurt - No Flash_8
-  - first:
-      213: -627908066408712283
-    second: Sprite Sheet - Green Hurt - No Flash_9
-  - first:
-      213: -3140844607034348796
-    second: Sprite Sheet - Green Hurt - No Flash_10
+      213: 6445470836532625071
+    second: Sprite Sheet - Hydro Jump Land_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,7 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_0
+      name: Sprite Sheet - Hydro Jump Land_0
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94180f53f4d2602e0800000000000000
-      internalID: -2159989153046953655
+      spriteID: d5fdeb95b202982f0800000000000000
+      internalID: -970208874160267427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_1
+      name: Sprite Sheet - Hydro Jump Land_1
       rect:
         serializedVersion: 2
         x: 96
@@ -195,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a80df1e50bbf8da0800000000000000
-      internalID: -5940323749537707868
+      spriteID: 3afb95eebfd477bc0800000000000000
+      internalID: -3785471217350623325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_2
+      name: Sprite Sheet - Hydro Jump Land_2
       rect:
         serializedVersion: 2
         x: 192
@@ -216,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ba8d7861279b3160800000000000000
-      internalID: 7006359815047711410
+      spriteID: 1aad9980b6168ad10800000000000000
+      internalID: 2137065135520996001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_3
+      name: Sprite Sheet - Hydro Jump Land_3
       rect:
         serializedVersion: 2
         x: 288
@@ -237,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36313a5523819df80800000000000000
-      internalID: -8081401451875462301
+      spriteID: 6b4c070fe5b4b43d0800000000000000
+      internalID: -3221398237320526666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_4
+      name: Sprite Sheet - Hydro Jump Land_4
       rect:
         serializedVersion: 2
         x: 384
@@ -258,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2572532ebf87fc2a0800000000000000
-      internalID: -6715015496158861486
+      spriteID: ae4af6356d6e5d7d0800000000000000
+      internalID: -2894153377318460182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_5
+      name: Sprite Sheet - Hydro Jump Land_5
       rect:
         serializedVersion: 2
         x: 480
@@ -279,113 +264,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 919999d99549c8120800000000000000
-      internalID: 2417470212608203033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_6
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0bb4d6975cb77240800000000000000
-      internalID: 4789503813110512395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_7
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: caa6fe556e43f1da0800000000000000
-      internalID: -5971996416981112148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a033ddcde614eca40800000000000000
-      internalID: 5390317748416754442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_9
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a73b1eb0f83947f0800000000000000
-      internalID: -627908066408712283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite Sheet - Green Hurt - No Flash_10
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40b2407887a7964d0800000000000000
-      internalID: -3140844607034348796
+      spriteID: faebaa58399e27950800000000000000
+      internalID: 6445470836532625071
       vertices: []
       indices: 
       edges: []
