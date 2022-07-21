@@ -319,12 +319,27 @@ namespace Inventory.SO
                     IsFound = true;
                     if (EquipContainer[destIndex].IsEmpty)
                     {
-                        EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
-                        Container[originIndex] = InventoryItem.GetEmptyItem();
-                        OnItemEquipped?.Invoke(EquipContainer[destIndex]);
-                        InformUI();
-                        InformEquipmentUI();
-                        break;
+                        WeaponSO weaponSO = Container[originIndex].item as WeaponSO;
+                        if (!weaponSO.isTwoHanded)
+                        {
+                            EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
+                            Container[originIndex] = InventoryItem.GetEmptyItem();
+                            OnItemEquipped?.Invoke(EquipContainer[destIndex]);
+                            InformUI();
+                            InformEquipmentUI();
+                            break;
+                        }
+                        else
+                        {
+                            if(EquipContainer[GetTwoHandedOtherSlotIndex()].IsEmpty)
+                            {
+                                Debug.Log("can equip two handed");
+                            }
+                            else
+                            {
+                                Debug.Log("second slot busy");
+                            }
+                        }
                     }
                     else
                     {
@@ -799,6 +814,15 @@ namespace Inventory.SO
                     return indexes[1];
                 return indexes[0];
             }
+        }
+        private int GetTwoHandedOtherSlotIndex()
+        {
+            foreach (var item in EquipContainer)
+            {
+                if (item.slotType == EquipmentItem.SlotType.WEAPON_SECONDARY)
+                    return EquipContainer.IndexOf(item);
+            }
+            return -1;
         }
         #endregion
 

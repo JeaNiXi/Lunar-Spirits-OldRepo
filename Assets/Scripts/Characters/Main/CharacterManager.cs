@@ -191,6 +191,16 @@ namespace Character
                 Destroy(child.gameObject);
         }
         private EquipItem CreateEquipItem() => Instantiate(equipItemPrefab, Vector3.zero, Quaternion.identity);
+        private float GetScalingBonus(string scaleType)
+        {
+            switch(scaleType)
+            {
+                case "Strength":
+                    return ActorParams.mainStrength.ScaleBonus;
+                default:
+                    return 0;
+            }
+        }
         #endregion
 
 
@@ -213,7 +223,14 @@ namespace Character
                     ActorManager actor;
                     if (actor = collider.GetComponent<ActorManager>())
                     {
-                        //actor.GetHit(this.gameObject.transform.position);
+                        if(MainWeapon.item is WeaponSO weaponSO)
+                        {
+                            foreach(var modifier in weaponSO.weaponModifierTypes)
+                            {
+                                modifier.Modifier.ApplyModifier(actor, modifier.Value + (int)(modifier.Value*GetScalingBonus(weaponSO.scaleType.ToString())));
+                            }
+                            actor.GetHit(this.gameObject.transform.position);
+                        }
                     }
                 }
             }

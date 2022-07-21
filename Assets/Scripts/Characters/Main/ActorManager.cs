@@ -15,7 +15,7 @@ namespace Character
         [SerializeField] protected Rigidbody2D rigidBody;
         [SerializeField] protected CapsuleCollider2D colliderMain;
 
-        [SerializeField] protected MainActor ActorParams = new MainActor();
+        [SerializeField] public MainActor ActorParams = new MainActor();
 
         private const string ANIM_JUMP_START = "StartJump";
         private const string ANIM_JUMP_TO_FALL = "JumpToFall";
@@ -56,17 +56,17 @@ namespace Character
         //{
         //    actorSO.InitializeSO();
         //}
-        //protected virtual void UpdateActorHP()
-        //{
-        //    if (actorSO.CurrentHealth <= 0)
-        //    {
-        //        ActorState = STATE.DEAD;
-        //        colliderMain.enabled = false;
-        //        StopAllCoroutines();
-        //        StopMovement();
-        //        animator.Play(ANIM_DEATH);
-        //    }
-        //}
+        protected virtual void UpdateActorHP()
+        {
+            if (ActorParams.CurrentHealth <= 0)
+            {
+                ActorState = STATE.DEAD;
+                colliderMain.enabled = false;
+                StopAllCoroutines();
+                StopMovement();
+                animator.Play(ANIM_DEATH);
+            }
+        }
         public void GetHit(Vector2 hitPosition)
         {
             Debug.Log("ENEMY HIT");
@@ -86,7 +86,7 @@ namespace Character
                     }
                     if (IsJumping)
                     {
-                        //rigidBody.velocity = JumpDirection * ActorParams.JumpStrength;
+                        rigidBody.velocity = JumpDirection * ActorParams.JumpStrength;
                     }
                 }
             }
@@ -96,13 +96,14 @@ namespace Character
             StopAllCoroutines();
             isKnockedBack = true;
             Vector2 direction = ((Vector2)gameObject.transform.localPosition - actorPosition).normalized;
-            rigidBody.velocity = direction * GetMainWeapon().item.KnockbackStrength;
+            if (GetMainWeapon().item is WeaponSO weaponSO)
+                rigidBody.velocity = direction * weaponSO.KnockbackStrength;
             StartCoroutine(StopKnockback(KNOCKBACK_DELAY));
         }
         protected virtual void StopMovement()
         {
             StopAllCoroutines();
-            //StartCoroutine(WaitForJump(ActorParams.JumpDelay));
+            StartCoroutine(WaitForJump(ActorParams.JumpDelay));
             rigidBody.velocity = Vector2.zero;
             JumpDirectionFound = false;
         }
@@ -192,39 +193,39 @@ namespace Character
                 //}
             }
         }
-        //private void OnCollisionEnter2D(Collision2D collision)
-        //{
-        //    if (collision.gameObject.CompareTag("Player"))
-        //    {
-        //        StopAllCoroutines();
-        //        StopJumpAnimation();
-        //        GetKnockbackAnimation();
-        //    }
-        //}
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if(collision.CompareTag("Player"))
-        //    {
-        //        isPlayerInRange = true;
-        //    }
-        //}
-        //private void OnTriggerStay2D(Collider2D collision)
-        //{
-        //    if (collision.CompareTag("Player"))
-        //    {
-        //        isPlayerInRange = true;
-        //    }
-        //}
-        //private void OnTriggerExit2D(Collider2D collision)
-        //{
-        //    if (collision.CompareTag("Player"))
-        //    {
-        //        isPlayerInRange = false;
-        //    }
-        //}
-        //public void DestroyGameObject()
-        //{
-        //    Destroy(gameObject);
-        //}
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                StopAllCoroutines();
+                StopJumpAnimation();
+                GetKnockbackAnimation();
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                isPlayerInRange = true;
+            }
+        }
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                isPlayerInRange = true;
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                isPlayerInRange = false;
+            }
+        }
+        public void DestroyGameObject()
+        {
+            Destroy(gameObject);
+        }
     }
 }

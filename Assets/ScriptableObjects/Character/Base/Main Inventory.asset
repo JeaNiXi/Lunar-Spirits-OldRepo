@@ -33,8 +33,8 @@ MonoBehaviour:
     quantity: 1
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 0
     itemContainer: 0
   - item: {fileID: 0}
@@ -53,8 +53,8 @@ MonoBehaviour:
     quantity: 1
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: eb82f309dc389e441a767f6fc582784e, type: 2}
+    quantity: 1
     slotType: 0
     itemContainer: 0
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
@@ -73,8 +73,8 @@ MonoBehaviour:
     quantity: 0
     slotType: 0
     itemContainer: 0
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
     slotType: 0
     itemContainer: 0
   - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}

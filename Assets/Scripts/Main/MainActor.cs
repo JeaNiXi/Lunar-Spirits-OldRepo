@@ -15,6 +15,9 @@ namespace Actor
 
         //[SerializeField] public ActorStruct ActorSOParams = new ActorStruct(); 
         public string Name;
+        public bool IsLevelDependant;
+        public int Level;
+        [Space]
         public float BaseHealth;
         [Space]
         public float HealthBonus;
@@ -28,18 +31,27 @@ namespace Actor
         public float JumpStrength;
         public float JumpDelay;
 
+        //public MainActor(int level)
+        //{
+
+        //}
+        public void InitActor()
+        {
+            CurrentHealth = BaseHealth;
+        }
         public void AddHealthBonus(float value) // Used to collect all the bonuses to Health.
         {
             HealthBonus += value;
+        }
+        public void GetBaseHit(float value)
+        {
+            CurrentHealth -= value;
         }
         public void ChangeCurrentHealth(float value) // Used to Apply instant Health change. (Potions)
         {
             CurrentHealth += value;
         }
-        public void InitActor()
-        {
 
-        }
         public void TESTSETSETEST()
         {
 
@@ -54,6 +66,7 @@ namespace Actor
             {
                 this.level = level;
             }
+            public float ScaleBonus => level * 0.1f;
         }
         [Serializable]
         public struct Dexterity

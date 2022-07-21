@@ -49,8 +49,7 @@ namespace Inventory.SO
         [field: SerializeField] public bool IsQuestItem { get; set; }
         [field: SerializeField] public ItemTypes ItemType { get; set; }
         [field: SerializeField] public Sprite ItemImage { get; set; }
-        [field: SerializeField] public float KnockbackStrength { get; set; }
-        [field: SerializeField] public float BaseDamage { get; set; }
+
         public List<ItemSlots> CanBeInSlots;
 
     }
@@ -58,6 +57,12 @@ namespace Inventory.SO
     public class ModifierType
     {
         public ModifiersSO Modifier;
+        public int Value;
+    }
+    [Serializable] 
+    public class WeaponModifierType
+    {
+        public WeaponModifiersSO Modifier;
         public int Value;
     }
 }

@@ -10,6 +10,18 @@ namespace Inventory.SO
     public class WeaponSO : ItemSO, IRemovable, IEquipable
     {
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
+        [SerializeField] [NonReorderable] public List<WeaponModifierType> weaponModifierTypes = new List<WeaponModifierType>();
+
+        public enum ScaleType
+        {
+            Strength,
+            Dexterity,
+            Intelligence,
+        }
+        [SerializeField] public bool isTwoHanded;
+        [SerializeField] public ScaleType scaleType;
+        [SerializeField] public float KnockbackStrength;
+
         public void EquipItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
             if (mainInventory.EquipItemHandler(index, containerType)) 

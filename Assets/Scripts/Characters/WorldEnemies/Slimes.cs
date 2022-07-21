@@ -8,22 +8,22 @@ namespace Character
     {
         private void Start()
         {
+            ActorParams.InitActor();
             FindPlayer();
             //InitActor();
 
-            //CanJump = true;
-            //GetJumpDirection();
+            CanJump = true;
+            GetJumpDirection();
             PlayIdleAnimation();
         }
-        //private void Update()
-        //{
-        //    if (ActorState == STATE.ALIVE)
-        //    {
-        //        ChasePlayer();
-        //        UpdateDirection();
-        //        UpdateActorHP();
-
-        //    }
-        //}
+        private void Update()
+        {
+            if (ActorState == STATE.ALIVE)
+            {
+                ChasePlayer();
+                UpdateDirection();
+                UpdateActorHP();
+            }
+        }
     }
 }
