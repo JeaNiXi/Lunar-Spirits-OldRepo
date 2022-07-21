@@ -9,5 +9,6 @@ namespace Interfaces
     public interface IEquipable
     {
         public void EquipItem(CharacterManager character, InventorySO mainInventory, int index, string containerType);
+        public void EquipItem(CharacterManager character);
     }
 }

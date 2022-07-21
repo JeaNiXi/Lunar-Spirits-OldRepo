@@ -163,10 +163,10 @@ namespace Inventory.UI
                 uiItem.ToggleQuantityPanel(false);
             uiEquipmentItems.Add(uiItem);
         }
-        public void InitializeStatsUI(ActorSO actor)
-        {
-            uiStatsScreen.UpdateStatsUI(actor);
-        }
+        //public void InitializeStatsUI(ActorSO actor)
+        //{
+        //    uiStatsScreen.UpdateStatsUI(actor);
+        //}
         private void InitializeActions(UIMainItem uiItem)
         {
             uiItem.OnItemRMBClicked += HandleRMBClick;
@@ -305,10 +305,10 @@ namespace Inventory.UI
                     uiEquipmentItems[i].ToggleQuantityPanel(false);
             }
         }
-        public void UpdateStatsUI(ActorSO actor)
-        {
-            uiStatsScreen.UpdateStatsUI(actor);
-        }
+        //public void UpdateStatsUI(ActorSO actor)
+        //{
+        //    uiStatsScreen.UpdateStatsUI(actor);
+        //}
         private void UpdateCurrentEquip()
         {
             Debug.Log("UPDATE EQUIP UIINVE CALLEd");

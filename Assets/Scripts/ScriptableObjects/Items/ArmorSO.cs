@@ -22,5 +22,10 @@ namespace Inventory.SO
                 }
             }
         }
+
+        public void EquipItem(CharacterManager character)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

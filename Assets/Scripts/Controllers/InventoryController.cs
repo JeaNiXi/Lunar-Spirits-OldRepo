@@ -52,12 +52,14 @@ namespace Inventory
             InitializeMainUI();
             InitializeQuickSlotUI();
             InitializeEqipmentUI();
-            InitializeStatsUI();
+            //InitializeStatsUI();
             ToggleUIComponents(false);
             MainInventorySO.OnInventoryUpdated += HandleInventoryChange;
             MainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
             MainInventorySO.OnEquipmentUpdated += HandleEquipmentChange;
             MainInventorySO.ThrowNotification += HandleNotificationRequest;
+
+            MainInventorySO.OnItemEquipped += HandleItemEquippedRequest;
 
             UIMainInventory.OnItemRMBClicked += HandleItemRMBClick;
 
@@ -70,8 +72,10 @@ namespace Inventory
 
             UIMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
 
-            MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
+            //MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
+
+
 
 
 
@@ -101,10 +105,10 @@ namespace Inventory
             UIMainInventory.InitializeEquipmentSlotsData(MainInventorySO.GetEquipmentItemsList());
             HandleWeaponEquipRequest();
         }
-        private void InitializeStatsUI()
-        {
-            UIMainInventory.InitializeStatsUI(MainCharacter.GetActorSO());
-        }
+        //private void InitializeStatsUI()
+        //{
+        //    UIMainInventory.InitializeStatsUI(MainCharacter.GetActorSO());
+        //}
         #endregion
 
         #region ToggleUI
@@ -186,7 +190,8 @@ namespace Inventory
             }
             if (item.item is IEquipable iEquipable)
             {
-                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
+                //UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Equip], () => MainInventorySO.EquipItemHandler(index, containerType));
             }
             if (item.item is IQuickEquipable iQuickEquipable)
             {
@@ -224,7 +229,8 @@ namespace Inventory
         {
             if (item.item is IEquipable iEquipable)
             {
-                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
+                //UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => iEquipable.EquipItem(MainCharacter, MainInventorySO, index, containerType));
+                UIMainInventory.AddButton(ActionButtonsStrings[(int)ActionButtons.Unequip], () => MainInventorySO.EquipItemHandler(index, containerType));
             }
             if (item.item is IRemovable iRemovable)
             {
@@ -277,13 +283,18 @@ namespace Inventory
         {
             UIMainInventory.ThrowNotification(notification);
         }
-        private void HandleStatUIUpdateRequest()
-        {
-            UIMainInventory.UpdateStatsUI(MainCharacter.GetActorSO());
-        }
+        //private void HandleStatUIUpdateRequest()
+        //{
+        //    UIMainInventory.UpdateStatsUI(MainCharacter.GetActorSO());
+        //}
         private void HandleWeaponEquipRequest()
         {
             MainCharacter.SetUpEquipment(MainInventorySO.GetEquipmentItemsList());
+        }
+        private void HandleItemEquippedRequest(EquipmentItem item)
+        {
+            if (item.item is IEquipable iEquipable)
+                iEquipable.EquipItem(MainCharacter);
         }
         #endregion
 

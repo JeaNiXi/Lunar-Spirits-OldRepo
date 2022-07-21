@@ -10,7 +10,7 @@ namespace Inventory.SO
     {
         public override void ApplyModifier(CharacterManager character, int value)
         {
-            character.GetActorSO().SetBaseHealth(50);
+            character.ActorParams.ChangeCurrentHealth(50);
         }
     }
 }

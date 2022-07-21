@@ -15,6 +15,9 @@ namespace Inventory.SO
             OnEquipmentUpdated;
         public event Action<UINotifications.Notifications>
             ThrowNotification;
+        public event Action<EquipmentItem>
+            OnItemEquipped,
+            OnItemUnequipped;
 
         [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
         [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
@@ -318,6 +321,7 @@ namespace Inventory.SO
                     {
                         EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
+                        OnItemEquipped?.Invoke(EquipContainer[destIndex]);
                         InformUI();
                         InformEquipmentUI();
                         break;

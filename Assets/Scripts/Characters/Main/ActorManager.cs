@@ -1,4 +1,4 @@
-using Actor.SO;
+using Actor;
 using Inventory.SO;
 using Managers;
 using System.Collections;
@@ -10,10 +10,12 @@ namespace Character
     public class ActorManager : MonoBehaviour
     {
         [SerializeField] protected CharacterManager mainCharacter;
-        [SerializeField] protected ActorSO actorSO;
+        //[SerializeField] protected ActorSO actorSO;
         [SerializeField] protected Animator animator;
         [SerializeField] protected Rigidbody2D rigidBody;
         [SerializeField] protected CapsuleCollider2D colliderMain;
+
+        [SerializeField] protected MainActor ActorParams = new MainActor();
 
         private const string ANIM_JUMP_START = "StartJump";
         private const string ANIM_JUMP_TO_FALL = "JumpToFall";
@@ -31,6 +33,9 @@ namespace Character
         }
         public STATE ActorState = STATE.ALIVE;
 
+
+
+
         private const float KNOCKBACK_DELAY = .3f;
 
         private bool isPlayerInRange = false;
@@ -40,29 +45,32 @@ namespace Character
         protected bool JumpDirectionFound;
         protected bool IsJumping { get; set; }
         protected bool CanJump { get; set; }
+
+
         protected void FindPlayer()
         {
             mainCharacter = GameManager.Instance.MainCharacter;
         }
-        protected void InitActor()
-        {
-            actorSO.InitializeSO();
-        }
-        protected virtual void UpdateActorHP()
-        {
-            if(actorSO.CurrentHealth <= 0)
-            {
-                ActorState = STATE.DEAD;
-                colliderMain.enabled = false;
-                StopAllCoroutines();
-                StopMovement();
-                animator.Play(ANIM_DEATH);
-            }
-        }
+
+        //protected void InitActor()
+        //{
+        //    actorSO.InitializeSO();
+        //}
+        //protected virtual void UpdateActorHP()
+        //{
+        //    if (actorSO.CurrentHealth <= 0)
+        //    {
+        //        ActorState = STATE.DEAD;
+        //        colliderMain.enabled = false;
+        //        StopAllCoroutines();
+        //        StopMovement();
+        //        animator.Play(ANIM_DEATH);
+        //    }
+        //}
         public void GetHit(Vector2 hitPosition)
         {
             Debug.Log("ENEMY HIT");
-            actorSO.GetHit(GetMainWeapon());
+            //actorSO.GetHit(GetMainWeapon());
             DoKnockback(hitPosition);
             PlayHitAnimation();
         }
@@ -78,7 +86,7 @@ namespace Character
                     }
                     if (IsJumping)
                     {
-                        rigidBody.velocity = JumpDirection * actorSO.JumpStrength;
+                        //rigidBody.velocity = JumpDirection * ActorParams.JumpStrength;
                     }
                 }
             }
@@ -94,7 +102,7 @@ namespace Character
         protected virtual void StopMovement()
         {
             StopAllCoroutines();
-            StartCoroutine(WaitForJump(actorSO.JumpDelay));
+            //StartCoroutine(WaitForJump(ActorParams.JumpDelay));
             rigidBody.velocity = Vector2.zero;
             JumpDirectionFound = false;
         }
@@ -117,7 +125,7 @@ namespace Character
         }
         protected void GetJumpDirection()
         {
-            if(!JumpDirectionFound)
+            if (!JumpDirectionFound)
             {
                 if (isPlayerInRange)
                 {
@@ -164,7 +172,7 @@ namespace Character
         }
         protected void UpdateDirection()
         {
-            if(!isKnockedBack)
+            if (!isKnockedBack)
             {
                 //if (isPlayerInRange)
                 //{
@@ -176,47 +184,47 @@ namespace Character
                 //}
                 //else
                 //{
-                    float position = JumpDirection.x;
-                    if (position > 0)
-                        gameObject.transform.localScale = new Vector3(1, 1, 1);
-                    if (position < 0)
-                        gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                float position = JumpDirection.x;
+                if (position > 0)
+                    gameObject.transform.localScale = new Vector3(1, 1, 1);
+                if (position < 0)
+                    gameObject.transform.localScale = new Vector3(-1, 1, 1);
                 //}
             }
         }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                StopAllCoroutines();
-                StopJumpAnimation();
-                GetKnockbackAnimation();
-            }
-        }
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if(collision.CompareTag("Player"))
-            {
-                isPlayerInRange = true;
-            }
-        }
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                isPlayerInRange = true;
-            }
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                isPlayerInRange = false;
-            }
-        }
-        public void DestroyGameObject()
-        {
-            Destroy(gameObject);
-        }
+        //private void OnCollisionEnter2D(Collision2D collision)
+        //{
+        //    if (collision.gameObject.CompareTag("Player"))
+        //    {
+        //        StopAllCoroutines();
+        //        StopJumpAnimation();
+        //        GetKnockbackAnimation();
+        //    }
+        //}
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if(collision.CompareTag("Player"))
+        //    {
+        //        isPlayerInRange = true;
+        //    }
+        //}
+        //private void OnTriggerStay2D(Collider2D collision)
+        //{
+        //    if (collision.CompareTag("Player"))
+        //    {
+        //        isPlayerInRange = true;
+        //    }
+        //}
+        //private void OnTriggerExit2D(Collider2D collision)
+        //{
+        //    if (collision.CompareTag("Player"))
+        //    {
+        //        isPlayerInRange = false;
+        //    }
+        //}
+        //public void DestroyGameObject()
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }

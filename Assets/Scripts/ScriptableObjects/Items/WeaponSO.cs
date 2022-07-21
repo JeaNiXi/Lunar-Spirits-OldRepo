@@ -14,10 +14,19 @@ namespace Inventory.SO
         {
             if (mainInventory.EquipItemHandler(index, containerType)) 
             {
-                foreach (ModifierType modifier in modifierTypes)
-                {
-                    modifier.Modifier.ApplyModifier(character, modifier.Value);
-                }
+                ApplyModifier(character);
+            }
+        }
+
+        public void EquipItem(CharacterManager character)
+        {
+            ApplyModifier(character);
+        }
+        private void ApplyModifier(CharacterManager character)
+        {
+            foreach (ModifierType modifier in modifierTypes)
+            {
+                modifier.Modifier.ApplyModifier(character, modifier.Value);
             }
         }
     }

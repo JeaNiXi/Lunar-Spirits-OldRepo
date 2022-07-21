@@ -11,9 +11,9 @@ namespace Inventory.UI
     {
         [SerializeField] private TMP_Text HealthText;
 
-        public void UpdateStatsUI(ActorSO actor)
-        {
-            HealthText.text = "Health: " + actor.GetCharacterBaseHealth();
-        }
+        //public void UpdateStatsUI(ActorSO actor)
+        //{
+        //    //HealthText.text = "Health: " + actor.GetCharacterBaseHealth();
+        //}
     }
 }

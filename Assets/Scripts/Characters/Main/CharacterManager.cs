@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Inventory.SO;
+using Actor;
 using Actor.SO;
 using Inventory;
 using System;
@@ -23,9 +24,11 @@ namespace Character
         {
             MainInventorySO = inventory;
         }
-        [SerializeField] private ActorSO mainActorSO;
+        //[SerializeField] private ActorSO mainActorSO;
         [SerializeField] private Rigidbody2D mainRB2D;
         [SerializeField] private Animator mainAnimator;
+
+        [SerializeField] public MainActor ActorParams = new MainActor();
 
         public EquipmentItem MainWeapon { get; private set; }
         public EquipmentItem SecondaryWeapon { get; private set; }
@@ -210,7 +213,7 @@ namespace Character
                     ActorManager actor;
                     if (actor = collider.GetComponent<ActorManager>())
                     {
-                        actor.GetHit(this.gameObject.transform.position);
+                        //actor.GetHit(this.gameObject.transform.position);
                     }
                 }
             }
@@ -272,15 +275,15 @@ namespace Character
 
 
 
-        public ActorSO GetActorSO()
-        {
-            return mainActorSO;
-        }
+        //public ActorSO GetActorSO()
+        //{
+        //    return mainActorSO;
+        //}
 
-        public InventorySO GetInventorySO() => MainInventorySO;
+        //public InventorySO GetInventorySO() => MainInventorySO;
 
-        public void Test()
-        {
+        //public void Test()
+        //{
             //mainActorSO.SetBaseEndurance(3);
             //mainActorSO.ChangeEndurance(5);
             //mainActorSO.perksList[0].UsePerk();
@@ -288,7 +291,9 @@ namespace Character
             //{
             //    Debug.Log("HAHAHAH");
             //}
-            mainActorSO.AddPerk(mainActorSO.perkManager.Agility_FastRunner());
-        }
+
+            //this was not commented;
+            //mainActorSO.AddPerk(mainActorSO.perkManager.Agility_FastRunner());
+        //}
     }
 }

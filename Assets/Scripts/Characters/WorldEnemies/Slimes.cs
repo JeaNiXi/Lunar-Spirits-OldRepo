@@ -6,28 +6,24 @@ namespace Character
 {
     public class Slimes : ActorManager
     {
-        private void Awake()
-        {
-            //FindPlayer();
-            //InitActor();
-        }
         private void Start()
         {
             FindPlayer();
-            InitActor();
+            //InitActor();
 
-            CanJump = true;
-            GetJumpDirection();
+            //CanJump = true;
+            //GetJumpDirection();
             PlayIdleAnimation();
         }
-        private void Update()
-        {
-            if (ActorState == STATE.ALIVE)
-            {
-                ChasePlayer();
-                UpdateDirection();
-                UpdateActorHP();
-            }
-        }
+        //private void Update()
+        //{
+        //    if (ActorState == STATE.ALIVE)
+        //    {
+        //        ChasePlayer();
+        //        UpdateDirection();
+        //        UpdateActorHP();
+
+        //    }
+        //}
     }
 }
