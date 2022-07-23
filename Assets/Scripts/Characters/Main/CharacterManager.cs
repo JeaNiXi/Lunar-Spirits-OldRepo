@@ -9,6 +9,7 @@ using Actor.SO;
 using Inventory;
 using System;
 using Managers;
+using Mechanics;
 
 namespace Character
 {
@@ -39,6 +40,8 @@ namespace Character
         private const float KNOCKBACK_STRENGTH = 20f;
         private const float KNOCKBACK_DELAY = 0.1f;
 
+        [SerializeField] public Collider2D currentChestCollider { get; private set; }
+
         [SerializeField] private Transform mainWeaponSlot;
         [SerializeField] private EquipItem equipItemPrefab;
 
@@ -50,11 +53,13 @@ namespace Character
         public bool IsAttacking { get; set; }
         public bool IsKnockedback { get; set; }
         public bool IsAtSavePlace { get; set; }
+        public bool IsAtChest { get; set; }
         public bool SaveNotificationShowed { get; set; }
+        public bool ChestNotificationShowed { get; set; }
 
         private void Awake()
         {
-            if (Instance != null && Instance != this) 
+            if (Instance != null && Instance != this)
                 Destroy(this);
             else
             {
@@ -90,7 +95,7 @@ namespace Character
         #region CharacterInputHandler
         public void Move(Vector2 moveInput)
         {
-            mainRB2D.MovePosition(mainRB2D.position +  8f * Time.fixedDeltaTime * moveInput.normalized);
+            mainRB2D.MovePosition(mainRB2D.position + 8f * Time.fixedDeltaTime * moveInput.normalized);
         }
         public void StartAttack()
         {
@@ -113,7 +118,7 @@ namespace Character
         #region AnimationControllers
         private void UpdateCharacterState()
         {
-            if(!IsAttacking && !IsKnockedback)
+            if (!IsAttacking && !IsKnockedback)
             {
                 IsWalking = (Mathf.Abs(MoveInput.x) + Mathf.Abs(MoveInput.y)) > 0;
                 mainAnimator.SetBool("isWalking", IsWalking);
@@ -125,7 +130,7 @@ namespace Character
         }
         private void UpdateAnimatorMovementFloat(Vector2 moveInput)
         {
-            if (moveInput.x == 0 && moveInput.y == 0) 
+            if (moveInput.x == 0 && moveInput.y == 0)
             {
                 SetUpMoveAnim(lastX, lastY);
             }
@@ -159,7 +164,7 @@ namespace Character
             {
                 if (item.slotType == EquipmentItem.SlotType.WEAPON_MAIN)
                 {
-                    if(item.IsEmpty)
+                    if (item.IsEmpty)
                     {
                         DeleteChildObjects(mainWeaponSlot);
                         MainWeapon = new EquipmentItem(EquipmentItem.SlotType.WEAPON_MAIN);
@@ -169,7 +174,7 @@ namespace Character
                         DeleteChildObjects(mainWeaponSlot);
                         MainWeapon = item;
                         DrawMainWeapon();
-                    }    
+                    }
                 }
                 //if (item.slotType == EquipmentItem.SlotType.WEAPON_SECONDARY)
                 //    secondaryWeapon = item;
@@ -193,7 +198,7 @@ namespace Character
         private EquipItem CreateEquipItem() => Instantiate(equipItemPrefab, Vector3.zero, Quaternion.identity);
         private float GetScalingBonus(string scaleType)
         {
-            switch(scaleType)
+            switch (scaleType)
             {
                 case "Strength":
                     return ActorParams.mainStrength.ScaleBonus;
@@ -214,7 +219,7 @@ namespace Character
         }
         public void DetectColliders() // Is called in animation frame.
         {
-            foreach(Collider2D collider in Physics2D.OverlapCircleAll(WeaponCircleOrigin.position,WeaponCircleRadius))
+            foreach (Collider2D collider in Physics2D.OverlapCircleAll(WeaponCircleOrigin.position, WeaponCircleRadius))
             {
                 if (collider.isTrigger)
                     continue;
@@ -223,11 +228,11 @@ namespace Character
                     ActorManager actor;
                     if (actor = collider.GetComponent<ActorManager>())
                     {
-                        if(MainWeapon.item is WeaponSO weaponSO)
+                        if (MainWeapon.item is WeaponSO weaponSO)
                         {
-                            foreach(var modifier in weaponSO.weaponModifierTypes)
+                            foreach (var modifier in weaponSO.weaponModifierTypes)
                             {
-                                modifier.Modifier.ApplyModifier(actor, modifier.Value + (int)(modifier.Value*GetScalingBonus(weaponSO.scaleType.ToString())));
+                                modifier.Modifier.ApplyModifier(actor, modifier.Value + (int)(modifier.Value * GetScalingBonus(weaponSO.scaleType.ToString())));
                             }
                             actor.GetHit(this.gameObject.transform.position);
                         }
@@ -237,7 +242,7 @@ namespace Character
         }
         public void OnCollisionEnter2D(Collision2D collision)
         {
-            if(collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag("Enemy"))
             {
                 DoKnockback(collision.gameObject.transform.position);
             }
@@ -258,23 +263,66 @@ namespace Character
         }
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("Battler"))
+            if (collision.CompareTag("Battler"))
             {
                 BattlerManager mainBattler;
-                if(mainBattler = collision.GetComponent<BattlerManager>())
+                if (mainBattler = collision.GetComponent<BattlerManager>())
                 {
-                    OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO(),collision.gameObject);
+                    OnBattlerTriggerEnter?.Invoke(mainBattler.GetBattlerSO(), collision.gameObject);
                 }
                 Debug.Log("Battle Should Start");
             }
-            if(collision.CompareTag("SavePlace"))
+            if (collision.CompareTag("SavePlace"))
             {
-                if (!SaveNotificationShowed)
+                if (!IsAtSavePlace)
                 {
-                    GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.CAN_INTERACT_WITH_OBJECT);
-                    SaveNotificationShowed = true;                
+                    IsAtSavePlace = true;
+                    if (!SaveNotificationShowed)
+                    {
+                        GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.CAN_INTERACT_WITH_OBJECT);
+                        SaveNotificationShowed = true;
+                    }
                 }
-                IsAtSavePlace = true;
+            }
+            if (collision.CompareTag("TreasureChest"))
+            {
+                if (!IsAtChest)
+                {
+                    IsAtChest = true;
+                    if (!ChestNotificationShowed)
+                    {
+                        GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.CHEST_NEARBY);
+                        ChestNotificationShowed = true;
+                    }
+                    currentChestCollider = collision;
+                }
+            }
+        }
+        public void UseTreasureChest(Collider2D collision)
+        {
+            TreasureChest Chest = collision.GetComponentInParent<TreasureChest>();
+            if (!Chest.IsOpened)
+            {
+                if (!Chest.WasLooted)
+                {
+                    Chest.WasLooted = true;
+
+                    Debug.Log("First Time Opening, Generating Loot");
+                    Chest.SetOpenedState(true);
+                    InventoryController.Instance.ShowLootPanel(Chest.GetLootItems(1));
+                }
+                else
+                {
+                    Debug.Log("Was looted Already, Showing old content");
+                    Chest.SetOpenedState(true);
+                    InventoryController.Instance.ShowLootPanel(Chest.GetLootItems(1));
+                }
+            }
+            else
+            {
+                Debug.Log("Closing Loot Panel");
+                Chest.SetOpenedState(false);
+                InventoryController.Instance.HideLootPanel();
             }
         }
         public void OnTriggerExit2D(Collider2D collision)
@@ -284,6 +332,18 @@ namespace Character
                 GameManager.Instance.ToggleSavePlacePanel(false);
                 IsAtSavePlace = false;
                 SaveNotificationShowed = false;
+            }
+            if (collision.CompareTag("TreasureChest"))
+            {
+                TreasureChest Chest = collision.GetComponentInParent<TreasureChest>();
+                if (Chest.IsOpened)
+                {
+                    Debug.Log("Closing Loot Panel");
+                    Chest.SetOpenedState(false);
+                    InventoryController.Instance.HideLootPanel();
+                }
+                ChestNotificationShowed = false;
+                IsAtChest = false;
             }
         }
 
@@ -301,16 +361,16 @@ namespace Character
 
         //public void Test()
         //{
-            //mainActorSO.SetBaseEndurance(3);
-            //mainActorSO.ChangeEndurance(5);
-            //mainActorSO.perksList[0].UsePerk();
-            //foreach(var perk in mainActorSO.perksList)
-            //{
-            //    Debug.Log("HAHAHAH");
-            //}
+        //mainActorSO.SetBaseEndurance(3);
+        //mainActorSO.ChangeEndurance(5);
+        //mainActorSO.perksList[0].UsePerk();
+        //foreach(var perk in mainActorSO.perksList)
+        //{
+        //    Debug.Log("HAHAHAH");
+        //}
 
-            //this was not commented;
-            //mainActorSO.AddPerk(mainActorSO.perkManager.Agility_FastRunner());
+        //this was not commented;
+        //mainActorSO.AddPerk(mainActorSO.perkManager.Agility_FastRunner());
         //}
     }
 }

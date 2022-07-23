@@ -24,6 +24,10 @@ namespace Inventory.UI
         [SerializeField] private RectTransform rightEquipmentPanel;
         [SerializeField] private UINotifications uiNotifications;
         [SerializeField] private UIStatsScreen uiStatsScreen;
+        [SerializeField] private UILootPanel uiLootPanel;
+        [SerializeField] private RectTransform inventoryScreen;
+        [SerializeField] private RectTransform characterScreen;
+        [SerializeField] private RectTransform lootContentPanel;
 
         public event Action
             OnWeaponEquipRequst;
@@ -70,12 +74,19 @@ namespace Inventory.UI
         private List<UIMainItem> uiQuickSlotsItems = new List<UIMainItem>();
         private List<UIMainItem> uiEquipmentItems = new List<UIMainItem>();
 
+        private List<UIMainItem> uiLootPanelList = new List<UIMainItem>();
+
         private const int LEFT_EQUIP_SLOTS = 7;
         private const int RIGHT_EQUIP_SLOTS = 3;
         private const int AMMO_EQUIP_SLOTS = 1;
+        [SerializeField] public bool IsInventoryActive { get; private set; }
         public void SetInventoryActive(bool value)
         {
-            gameObject.SetActive(value);
+            //Ramake.
+            characterScreen.gameObject.SetActive(value);
+            inventoryScreen.gameObject.SetActive(value);
+            IsInventoryActive = value;
+            //gameObject.SetActive(value);
         }
 
         #region UIInitialization
@@ -313,6 +324,28 @@ namespace Inventory.UI
         {
             Debug.Log("UPDATE EQUIP UIINVE CALLEd");
             OnWeaponEquipRequst?.Invoke();
+        }
+        public void ToggleLootPanel(bool value)
+        {
+            uiLootPanel.SetLootPanelActive(value);
+        }
+        public void UpdateLootPanel(List<InventoryItem> lootList)
+        {
+            for (int i = 0; i < lootList.Count; i++)
+            {
+                UIMainItem uiLootItem = CreateItem();
+                uiLootItem.transform.SetParent(lootContentPanel);
+                uiLootItem.InitItem(lootList[i].item.ItemImage, lootList[i].quantity, lootList[i].slotType.ToString(), lootList[i].item.CanBeInSlots, lootList[i].itemContainer.ToString());
+                uiLootPanelList.Add(uiLootItem);
+            }
+        }
+        public void ClearLootPanel()
+        {
+            for (int i = uiLootPanelList.Count - 1; i >= 0; i--)
+            {
+                uiLootPanelList[i].DeleteUIObject();
+            }
+            uiLootPanelList.Clear();
         }
         #endregion
 

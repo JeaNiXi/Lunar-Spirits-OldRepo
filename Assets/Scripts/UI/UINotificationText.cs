@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 namespace Inventory.UI
 {
     public class UINotificationText : MonoBehaviour
     {
-        [SerializeField] TMP_Text text;
+        [SerializeField] Text text;
 
-        private const float TEXT_ANIMATION_TIME = 1.0f;
+        private const float TEXT_ANIMATION_TIME = 2.0f;
         private const float TEXT_HOLD_TIME = 2.0f;
 
         private IEnumerator FadeTextToFullAlpha(float aT, float hT)

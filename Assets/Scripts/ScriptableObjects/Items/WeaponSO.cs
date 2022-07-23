@@ -18,7 +18,6 @@ namespace Inventory.SO
             Dexterity,
             Intelligence,
         }
-        [SerializeField] public bool isTwoHanded;
         [SerializeField] public ScaleType scaleType;
         [SerializeField] public float KnockbackStrength;
 

@@ -10,12 +10,12 @@ namespace Character
     public class ActorManager : MonoBehaviour
     {
         [SerializeField] protected CharacterManager mainCharacter;
-        //[SerializeField] protected ActorSO actorSO;
         [SerializeField] protected Animator animator;
         [SerializeField] protected Rigidbody2D rigidBody;
         [SerializeField] protected CapsuleCollider2D colliderMain;
 
         [SerializeField] public MainActor ActorParams = new MainActor();
+        [SerializeField] [NonReorderable] public List<EnemyModifierType> enemyModifiersList = new List<EnemyModifierType>();
 
         private const string ANIM_JUMP_START = "StartJump";
         private const string ANIM_JUMP_TO_FALL = "JumpToFall";
@@ -52,10 +52,6 @@ namespace Character
             mainCharacter = GameManager.Instance.MainCharacter;
         }
 
-        //protected void InitActor()
-        //{
-        //    actorSO.InitializeSO();
-        //}
         protected virtual void UpdateActorHP()
         {
             if (ActorParams.CurrentHealth <= 0)
@@ -70,7 +66,6 @@ namespace Character
         public void GetHit(Vector2 hitPosition)
         {
             Debug.Log("ENEMY HIT");
-            //actorSO.GetHit(GetMainWeapon());
             DoKnockback(hitPosition);
             PlayHitAnimation();
         }
@@ -175,28 +170,36 @@ namespace Character
         {
             if (!isKnockedBack)
             {
-                //if (isPlayerInRange)
-                //{
-                //    float position = mainCharacter.gameObject.transform.position.x - gameObject.transform.position.x;
-                //    if (position >= 2)
-                //        gameObject.transform.localScale = new Vector3(1, 1, 1);
-                //    if (position <= -2)
-                //        gameObject.transform.localScale = new Vector3(-1, 1, 1);
-                //}
-                //else
-                //{
-                float position = JumpDirection.x;
+                if (isPlayerInRange)
+                {
+                    float position = mainCharacter.gameObject.transform.position.x - gameObject.transform.position.x;
+                    if (position >= 2)
+                        gameObject.transform.localScale = new Vector3(1, 1, 1);
+                    if (position <= -2)
+                        gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    float position = JumpDirection.x;
                 if (position > 0)
                     gameObject.transform.localScale = new Vector3(1, 1, 1);
                 if (position < 0)
                     gameObject.transform.localScale = new Vector3(-1, 1, 1);
-                //}
+                }
             }
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                CharacterManager character;
+                if (character = collision.gameObject.GetComponent<CharacterManager>()) 
+                {
+                    foreach(var modifier in enemyModifiersList)
+                    {
+                        modifier.Modifier.ApplyModifier(character, modifier.Value);
+                    }
+                }
                 StopAllCoroutines();
                 StopJumpAnimation();
                 GetKnockbackAnimation();

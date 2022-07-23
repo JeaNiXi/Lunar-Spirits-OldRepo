@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 using Inventory;
 using Character;
+using System;
 
 namespace Managers
 {
@@ -66,6 +67,8 @@ namespace Managers
         {
             if (Use.action.WasPressedThisFrame() && MainCharacter.IsAtSavePlace)
                 GameManager.Instance.ToggleSavePlacePanel(true);
+            if (Use.action.WasPressedThisFrame() && MainCharacter.IsAtChest)
+                CharacterManager.Instance.UseTreasureChest(CharacterManager.Instance.currentChestCollider);
         }
         #endregion
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using System;
 
 namespace Inventory.UI
@@ -17,6 +16,7 @@ namespace Inventory.UI
             SAME_ITEM_IN_SLOT,
             CAN_INTERACT_WITH_OBJECT,
             SAVE_SLOT_EMPTY,
+            CHEST_NEARBY,
         }
         private readonly string[] NotificationsStrings =
         {
@@ -25,6 +25,7 @@ namespace Inventory.UI
             "Same Item Already in Slot!",
             "This is an object I can interact with!",
             "This save slot is empty!",
+            "I sense something nearby!",
         };
         public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
         public void ThrowNotification(Notifications notificationType)

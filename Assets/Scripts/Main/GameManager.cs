@@ -49,6 +49,7 @@ namespace Managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+            //Application.targetFrameRate = 60;
             //Initialize();
             //MainCharacter.OnBattlerTriggerEnter += HandleBattleStart;
         }
@@ -155,6 +156,7 @@ namespace Managers
             6 => "Slot6",
             _ => "DEFAULT",
         };
+        public int GetPlayerLevel() => 1;
         #endregion
 
 

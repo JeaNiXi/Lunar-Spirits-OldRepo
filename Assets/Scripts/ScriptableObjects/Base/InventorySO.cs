@@ -319,27 +319,12 @@ namespace Inventory.SO
                     IsFound = true;
                     if (EquipContainer[destIndex].IsEmpty)
                     {
-                        WeaponSO weaponSO = Container[originIndex].item as WeaponSO;
-                        if (!weaponSO.isTwoHanded)
-                        {
-                            EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
-                            Container[originIndex] = InventoryItem.GetEmptyItem();
-                            OnItemEquipped?.Invoke(EquipContainer[destIndex]);
-                            InformUI();
-                            InformEquipmentUI();
-                            break;
-                        }
-                        else
-                        {
-                            if(EquipContainer[GetTwoHandedOtherSlotIndex()].IsEmpty)
-                            {
-                                Debug.Log("can equip two handed");
-                            }
-                            else
-                            {
-                                Debug.Log("second slot busy");
-                            }
-                        }
+                        EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
+                        Container[originIndex] = InventoryItem.GetEmptyItem();
+                        OnItemEquipped?.Invoke(EquipContainer[destIndex]);
+                        InformUI();
+                        InformEquipmentUI();
+                        break;
                     }
                     else
                     {
@@ -572,9 +557,9 @@ namespace Inventory.SO
         public void SwapItems(EquipmentItem originItem, int originIndex, EquipmentItem destItem, int destIndex)
         {
             bool isFound = false;
-            foreach(var slot in EquipContainer[originIndex].item.CanBeInSlots)
+            foreach (var slot in EquipContainer[originIndex].item.CanBeInSlots)
             {
-                if(CanBeEquipped(slot.ToString(), EquipContainer[destIndex].slotType))
+                if (CanBeEquipped(slot.ToString(), EquipContainer[destIndex].slotType))
                 {
                     isFound = true;
                     EquipmentItem tmpItem = new EquipmentItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, EquipContainer[originIndex].slotType);
@@ -686,7 +671,7 @@ namespace Inventory.SO
                     if (SearchForItemStackable(EquipContainer[originIndex].item, out int index))
                     {
                         wasChanged = true;
-                        if (Container[index].quantity + reminder > Container[index].item.MaxStackSize) 
+                        if (Container[index].quantity + reminder > Container[index].item.MaxStackSize)
                         {
                             int sizeToAdd = Container[index].item.MaxStackSize - Container[index].quantity;
                             reminder -= sizeToAdd;
@@ -705,7 +690,7 @@ namespace Inventory.SO
                     }
                     else
                     {
-                        if(SearchForEmptySlot(out int newIndex)) // Not added reminder > maxStackSize because switching from EquipCont to empty slot won't be more than stack size.
+                        if (SearchForEmptySlot(out int newIndex)) // Not added reminder > maxStackSize because switching from EquipCont to empty slot won't be more than stack size.
                         {
                             Container[newIndex] = new InventoryItem(EquipContainer[originIndex].item, EquipContainer[originIndex].quantity, Container[newIndex].slotType);
                             EquipContainer[originIndex] = new EquipmentItem(EquipContainer[originIndex].slotType);
@@ -727,7 +712,7 @@ namespace Inventory.SO
                             Debug.Log("NO MORE PLACE, Nothing Changed!");
                             break;
                         }
-                    }    
+                    }
                 }
             }
             else
@@ -780,9 +765,9 @@ namespace Inventory.SO
         private List<EquipmentItem.SlotType> ConvertListItemSlotsToEquipmentSlots(List<ItemSO.ItemSlots> itemSOList)
         {
             List<EquipmentItem.SlotType> newList = new List<EquipmentItem.SlotType>();
-            foreach(ItemSO.ItemSlots slot in itemSOList)
+            foreach (ItemSO.ItemSlots slot in itemSOList)
             {
-                if(Enum.TryParse(slot.ToString(), out EquipmentItem.SlotType result))
+                if (Enum.TryParse(slot.ToString(), out EquipmentItem.SlotType result))
                 {
                     newList.Add(result);
                 }

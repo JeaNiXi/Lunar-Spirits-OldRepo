@@ -121,6 +121,16 @@ namespace Inventory
         {
             UIMainInventory.ToggleActionPanel(value);
         }
+        public void ShowLootPanel(List<InventoryItem> itemList)
+        {
+            UIMainInventory.ToggleLootPanel(true);
+            UIMainInventory.UpdateLootPanel(itemList);
+        }
+        public void HideLootPanel()
+        {
+            UIMainInventory.ClearLootPanel();
+            UIMainInventory.ToggleLootPanel(false);
+        }
         #endregion
 
         #region Handlers
@@ -302,7 +312,7 @@ namespace Inventory
         //Activating/Deactivating Inventory Screen
         public void ToggleInventory()
         {
-            if (UIMainInventory.gameObject.activeSelf)
+            if (UIMainInventory.IsInventoryActive)
                 ToggleInventory(false);
             else
                 ToggleInventory(true);
