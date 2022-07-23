@@ -24,7 +24,12 @@ namespace Inventory.SO
             QUEST_ITEM,
             MISC,
         }
-
+        public enum ItemRarities
+        {
+            DEFAULT,
+            BAD,
+            NORMAL,
+        }
         public enum ItemSlots
         {
             MAIN_SLOT,
@@ -48,21 +53,28 @@ namespace Inventory.SO
         [field: SerializeField] [field: TextArea] public string Description { get; set; }
         [field: SerializeField] public bool IsQuestItem { get; set; }
         [field: SerializeField] public ItemTypes ItemType { get; set; }
+        [field: SerializeField] public ItemRarities ItemRarity { get; set; }
         [field: SerializeField] public Sprite ItemImage { get; set; }
 
         public List<ItemSlots> CanBeInSlots;
 
     }
     [Serializable]
-    public class ModifierType
+    public struct ModifierType
     {
         public ModifiersSO Modifier;
         public int Value;
     }
     [Serializable] 
-    public class WeaponModifierType
+    public struct WeaponModifierType
     {
         public WeaponModifiersSO Modifier;
         public int Value;
+
+        public WeaponModifierType(WeaponModifiersSO weaponModifiersSO, int value)
+        {
+            this.Modifier = weaponModifiersSO;
+            this.Value = value;
+        }
     }
 }

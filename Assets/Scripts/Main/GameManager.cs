@@ -22,6 +22,7 @@ namespace Managers
 
         private DirectoryInfo currentSaveDirectory;
 
+        [field: SerializeField] public ModifiersListSO ModifiersListSO { get; set; }
 
 
         [field: SerializeField] public GameManagerSO MainGMSO { get; private set; }

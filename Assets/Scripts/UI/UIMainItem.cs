@@ -26,6 +26,7 @@ namespace Inventory.UI
         [SerializeField] private Image borderImage;
         public bool IsEmpty { get; set; }
 
+
         public event Action<UIMainItem>
             OnItemRMBClicked,
             OnItemLMBClicked,

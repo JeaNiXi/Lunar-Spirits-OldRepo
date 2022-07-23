@@ -12,6 +12,7 @@ namespace Inventory.SO
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
         [SerializeField] [NonReorderable] public List<WeaponModifierType> weaponModifierTypes = new List<WeaponModifierType>();
 
+
         public enum ScaleType
         {
             Strength,

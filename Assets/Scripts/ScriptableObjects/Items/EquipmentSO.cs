@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace Inventory.SO
 {
-    [CreateAssetMenu(fileName = "New Armor", menuName = "Inventory/Items/Armor Item")]
+    [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Items/Equipment Item")]
 
-    public class ArmorSO : ItemSO, IEquipable
+    public class EquipmentSO : ItemSO, IEquipable
     {
         [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
 

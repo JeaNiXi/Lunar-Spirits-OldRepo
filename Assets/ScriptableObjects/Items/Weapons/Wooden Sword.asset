@@ -17,6 +17,7 @@ MonoBehaviour:
   <Description>k__BackingField: Just for training.
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
+  <ItemRarity>k__BackingField: 0
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
   modifierTypes:
@@ -24,6 +25,6 @@ MonoBehaviour:
     Value: 500
   weaponModifierTypes:
   - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
-    Value: 50
+    Value: 55
   scaleType: 0
   KnockbackStrength: 6

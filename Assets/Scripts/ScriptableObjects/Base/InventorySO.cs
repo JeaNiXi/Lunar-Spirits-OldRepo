@@ -1,4 +1,6 @@
+using Helpers.SO;
 using Inventory.UI;
+using Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +20,6 @@ namespace Inventory.SO
         public event Action<EquipmentItem>
             OnItemEquipped,
             OnItemUnequipped;
-
         [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
         [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
         [SerializeField] [NonReorderable] private List<EquipmentItem> EquipContainer = new List<EquipmentItem>(11);
@@ -190,7 +191,7 @@ namespace Inventory.SO
                     IsFound = true;
                     if (Container[destIndex].IsEmpty)
                     {
-                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType);
+                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType, Container[originIndex].baseModifiers, Container[originIndex].weaponModifiers);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
                         InformUI();
                         break;
@@ -992,6 +993,11 @@ namespace Inventory.SO
         #region Correcting SO
         public void CorrectQuantity()
         {
+            for (int i = 0; i < Container.Count; i++)
+            {
+                if (Container[i].IsEmpty)
+                    Container[i] = InventoryItem.GetEmptyItem();
+            }
             if (Container.Count > MAX_ITEM_SLOTS)
             {
                 int startIndex = Container.Count - 1;
@@ -1230,12 +1236,79 @@ namespace Inventory.SO
         public SlotType slotType;
         public ItemContainer itemContainer;
 
+        [NonReorderable] public List<ModifierType> baseModifiers;
+        [NonReorderable] public List<WeaponModifierType> weaponModifiers;
+
         public InventoryItem(ItemSO item, int quantity, SlotType slotType)
         {
             this.item = item;
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
+            this.baseModifiers = GetBaseModifiersList(item);
+            this.weaponModifiers = GetWeaponModifiersList(item);
+        }
+        public InventoryItem(ItemSO item, int quantity, SlotType slotType, List<ModifierType> baseModifiers, List<WeaponModifierType> weaponModifiers)
+        {
+            this.item = item;
+            this.quantity = quantity;
+            this.slotType = slotType;
+            this.itemContainer = ItemContainer.Container;
+            this.baseModifiers = baseModifiers;
+            this.weaponModifiers = weaponModifiers;
+        }
+        public static List<ModifierType> GetBaseModifiersList(ItemSO itemSO)
+        {
+            if (itemSO.ItemType == ItemSO.ItemTypes.SHIELD)
+            {
+                EquipmentSO equipmentSO = itemSO as EquipmentSO;
+                if (equipmentSO.modifierTypes.Count == 0)
+                    return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, true);
+                else
+                    return equipmentSO.modifierTypes;
+            }
+            else if (itemSO.ItemType != ItemSO.ItemTypes.POTION
+               && itemSO.ItemType != ItemSO.ItemTypes.INGREDIENT
+               && itemSO.ItemType != ItemSO.ItemTypes.RANGED_AMMO
+               && itemSO.ItemType != ItemSO.ItemTypes.QUEST_ITEM
+               && itemSO.ItemType != ItemSO.ItemTypes.MISC)
+            {
+                if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
+                {
+                    WeaponSO weaponSO = itemSO as WeaponSO;
+                    if (weaponSO.modifierTypes.Count == 0)
+                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, false);
+                    else
+                        return weaponSO.modifierTypes;
+                }
+                else
+                {
+                    EquipmentSO equipmentSO = itemSO as EquipmentSO;
+                    if (equipmentSO.modifierTypes.Count == 0)
+                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, false);
+                    else
+                        return equipmentSO.modifierTypes;
+                }
+            }
+            return new List<ModifierType>();
+        }
+        public static List<WeaponModifierType> GetWeaponModifiersList(ItemSO itemSO)
+        {
+            if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
+            {
+                WeaponSO weaponSO = itemSO as WeaponSO;
+                if (weaponSO.weaponModifierTypes.Count == 0)
+                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, false);
+                return weaponSO.weaponModifierTypes;
+            }
+            else if (itemSO.ItemType == ItemSO.ItemTypes.RANGED_AMMO)
+            {
+                WeaponSO weaponSO = itemSO as WeaponSO;
+                if (weaponSO.weaponModifierTypes.Count == 0)
+                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, true);
+                return weaponSO.weaponModifierTypes;
+            }
+            return new List<WeaponModifierType>();
         }
         public static InventoryItem GetEmptyItem()
         {
@@ -1247,6 +1320,7 @@ namespace Inventory.SO
                 itemContainer = ItemContainer.Container,
             };
         }
+
     }
     [Serializable]
     public struct QuickSlotItem
