@@ -23,6 +23,7 @@ namespace Inventory.SO
         [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
         [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
         [SerializeField] [NonReorderable] private List<EquipmentItem> EquipContainer = new List<EquipmentItem>(11);
+        [SerializeField] [NonReorderable] private List<InventoryItem> LootContainer = new List<InventoryItem>();
 
         private int Rows { get => Container.Count / 6; }
         private const int MAX_ITEM_SLOTS = 42;
@@ -34,6 +35,8 @@ namespace Inventory.SO
         public List<InventoryItem> GetItemList() => Container;
         public List<QuickSlotItem> GetQuickSlotList() => QSContainer;
         public List<EquipmentItem> GetEquipmentItemsList() => EquipContainer;
+        public void SetLootContainer(List<InventoryItem> lootList) => LootContainer = lootList;
+        public List<InventoryItem> GetLootList() => LootContainer;
 
 
         #region ItemHandling
@@ -191,7 +194,7 @@ namespace Inventory.SO
                     IsFound = true;
                     if (Container[destIndex].IsEmpty)
                     {
-                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType, Container[originIndex].baseModifiers, Container[originIndex].weaponModifiers);
+                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType, Container[originIndex].itemRarity, Container[originIndex].baseModifiers, Container[originIndex].weaponModifiers);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
                         InformUI();
                         break;
@@ -801,176 +804,8 @@ namespace Inventory.SO
                 return indexes[0];
             }
         }
-        private int GetTwoHandedOtherSlotIndex()
-        {
-            foreach (var item in EquipContainer)
-            {
-                if (item.slotType == EquipmentItem.SlotType.WEAPON_SECONDARY)
-                    return EquipContainer.IndexOf(item);
-            }
-            return -1;
-        }
+
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public void EquipToQuickSlot(int index, int quickSlotIndex)
-        {
-            //if (Container[index].IsEmpty)
-            //    return;
-            //if (QSContainer[quickSlotIndex].IsEmpty)
-            //{
-            //    QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].quantity);
-            //    Container[index] = InventoryItem.GetEmptyItem();
-            //}
-            //else
-            //{
-            //    if (QSContainer[quickSlotIndex].item.ID == Container[index].item.ID)
-            //    {
-            //        if (QSContainer[quickSlotIndex].quantity < QSContainer[quickSlotIndex].item.MaxStackSize)
-            //        {
-            //            int possibleSizeToAdd = QSContainer[quickSlotIndex].item.MaxStackSize - QSContainer[quickSlotIndex].quantity;
-            //            if (possibleSizeToAdd >= Container[index].quantity)
-            //            {
-            //                int newSize = QSContainer[quickSlotIndex].quantity + Container[index].quantity;
-            //                QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, newSize);
-            //                Container[index] = InventoryItem.GetEmptyItem();
-            //            }
-            //            else
-            //            {
-            //                int reminder = Container[index].quantity - possibleSizeToAdd;
-            //                QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].item.MaxStackSize);
-            //                Container[index] = new InventoryItem(QSContainer[quickSlotIndex].item, reminder);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            QuickSlotItem tmpQSItem = new QuickSlotItem(QSContainer[quickSlotIndex].item, QSContainer[quickSlotIndex].quantity);
-            //            QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].quantity);
-            //            Container[index] = new InventoryItem(tmpQSItem.item, tmpQSItem.quantity);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        QuickSlotItem tmpQSItem = new QuickSlotItem(QSContainer[quickSlotIndex].item, QSContainer[quickSlotIndex].quantity);
-            //        QSContainer[quickSlotIndex] = new QuickSlotItem(Container[index].item, Container[index].quantity);
-            //        Container[index] = new InventoryItem(tmpQSItem.item, tmpQSItem.quantity);
-            //    }
-            //}
-            InformUI();
-            InformQuickSlotUI();
-        }
-        public void UnequipQuitSlot(int index)
-        {
-            //if (QSContainer[index].IsEmpty)
-            //    return;
-            //if (QSContainer[index].item.MaxStackSize > 1)
-            //{
-            //    int newIndex;
-            //    int sizeToAdd;
-            //    int reminder = QSContainer[index].quantity;
-            //    while (reminder > 0)
-            //    {
-            //        if (SearchForItemStackable(QSContainer[index].item, out newIndex))
-            //        {
-            //            if (Container[newIndex].quantity + reminder > Container[newIndex].item.MaxStackSize)
-            //            {
-            //                sizeToAdd = Container[newIndex].item.MaxStackSize - Container[newIndex].quantity;
-            //                Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-            //                reminder -= sizeToAdd;
-            //            }
-            //            else
-            //            {
-            //                sizeToAdd = Container[newIndex].quantity + reminder;
-            //                Container[newIndex] = new InventoryItem(QSContainer[index].item, sizeToAdd);
-            //                QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
-            //                InformUI();
-            //                InformQuickSlotUI();
-            //                return;
-            //            }
-            //        }
-            //        else
-            //        {
-            //            if (SearchForEmptySlot(out newIndex))
-            //            {
-            //                if (reminder > QSContainer[index].item.MaxStackSize)
-            //                {
-            //                    sizeToAdd = reminder - QSContainer[index].item.MaxStackSize;
-            //                    Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-            //                    reminder -= sizeToAdd;
-            //                }
-            //                else
-            //                {
-            //                    Container[newIndex] = new InventoryItem(QSContainer[index].item, reminder);
-            //                    QSContainer[index] = QuickSlotItem.GetEmptyQuickSlotItem();
-            //                    InformUI();
-            //                    InformQuickSlotUI();
-            //                    return;
-            //                }
-            //            }
-            //            else
-            //            {
-            //                QSContainer[index] = new QuickSlotItem(QSContainer[index].item, reminder);
-            //                Debug.Log("NO EMPTY SLOTS TO UNEQUIP QUICK SLOT STACKABLE ITEM, ITEMS LEFT: " + reminder);
-            //                InformUI();
-            //                InformQuickSlotUI();
-            //                return;
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    int newIndex;
-            //    int sizeToAdd = QSContainer[index].quantity;
-            //    while (sizeToAdd > 0)
-            //    {
-            //        if (SearchForEmptySlot(out newIndex))
-            //        {
-            //            Container[newIndex] = new InventoryItem(QSContainer[index].item, QSContainer[index].item.MaxStackSize);
-            //            sizeToAdd -= QSContainer[index].item.MaxStackSize;
-            //        }
-            //        else
-            //        {
-            //            QSContainer[index] = new QuickSlotItem(QSContainer[index].item, sizeToAdd);
-            //            Debug.Log("NO EMPTY SLOTS TO UNEQUIP QUICK SLOT UNSTACKABLE ITEM, ITEMS LEFT: " + sizeToAdd);
-            //            InformUI();
-            //            InformQuickSlotUI();
-            //            return;
-            //        }
-            //    }
-            //}
-            //InformUI();
-            //InformQuickSlotUI();
-        }
-
-
-        private bool SearchForItem(string itemType)
-        {
-            for (int i = 0; i < Container.Count; i++)
-            {
-                if (!Container[i].IsEmpty && Container[i].item.ItemType.ToString() == itemType)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-
-
-
-
 
 
 
@@ -1227,6 +1062,18 @@ namespace Inventory.SO
         {
             MAIN_SLOT,
         }
+        public enum ItemRarities
+        {
+            DEFAULT,
+            BAD,        // 15%  86-100
+            COMMON,     // 22%  64-85
+            UNCOMMON,   // 18%  46-63
+            RARE,       // 15%  31-45
+            EPIC,       // 12%  19-30
+            LEGENDARY,  // 9%   10-18
+            MITHYCAL,   // 6%   4-9
+            ETERNAL,    // 3%   1-3
+        }
         public enum ItemContainer
         {
             Container,
@@ -1234,6 +1081,7 @@ namespace Inventory.SO
         public ItemSO item;
         public int quantity;
         public SlotType slotType;
+        public ItemRarities itemRarity;
         public ItemContainer itemContainer;
 
         [NonReorderable] public List<ModifierType> baseModifiers;
@@ -1245,25 +1093,27 @@ namespace Inventory.SO
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
-            this.baseModifiers = GetBaseModifiersList(item);
-            this.weaponModifiers = GetWeaponModifiersList(item);
+            this.itemRarity = GetItemRarity();
+            this.baseModifiers = GetBaseModifiersList(item, this.itemRarity);
+            this.weaponModifiers = GetWeaponModifiersList(item, this.itemRarity);
         }
-        public InventoryItem(ItemSO item, int quantity, SlotType slotType, List<ModifierType> baseModifiers, List<WeaponModifierType> weaponModifiers)
+        public InventoryItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, List<ModifierType> baseModifiers, List<WeaponModifierType> weaponModifiers)
         {
             this.item = item;
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
+            this.itemRarity = itemRarity;
             this.baseModifiers = baseModifiers;
             this.weaponModifiers = weaponModifiers;
         }
-        public static List<ModifierType> GetBaseModifiersList(ItemSO itemSO)
+        public static List<ModifierType> GetBaseModifiersList(ItemSO itemSO, ItemRarities itemRarity)
         {
             if (itemSO.ItemType == ItemSO.ItemTypes.SHIELD)
             {
                 EquipmentSO equipmentSO = itemSO as EquipmentSO;
                 if (equipmentSO.modifierTypes.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, true);
+                    return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, true);
                 else
                     return equipmentSO.modifierTypes;
             }
@@ -1277,7 +1127,7 @@ namespace Inventory.SO
                 {
                     WeaponSO weaponSO = itemSO as WeaponSO;
                     if (weaponSO.modifierTypes.Count == 0)
-                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, false);
+                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
                     else
                         return weaponSO.modifierTypes;
                 }
@@ -1285,30 +1135,48 @@ namespace Inventory.SO
                 {
                     EquipmentSO equipmentSO = itemSO as EquipmentSO;
                     if (equipmentSO.modifierTypes.Count == 0)
-                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, false);
+                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
                     else
                         return equipmentSO.modifierTypes;
                 }
             }
             return new List<ModifierType>();
         }
-        public static List<WeaponModifierType> GetWeaponModifiersList(ItemSO itemSO)
+        public static List<WeaponModifierType> GetWeaponModifiersList(ItemSO itemSO, ItemRarities itemRarity)
         {
             if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
             {
                 WeaponSO weaponSO = itemSO as WeaponSO;
                 if (weaponSO.weaponModifierTypes.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, false);
+                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, false);
                 return weaponSO.weaponModifierTypes;
             }
             else if (itemSO.ItemType == ItemSO.ItemTypes.RANGED_AMMO)
             {
                 WeaponSO weaponSO = itemSO as WeaponSO;
                 if (weaponSO.weaponModifierTypes.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, true);
+                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, true);
                 return weaponSO.weaponModifierTypes;
             }
             return new List<WeaponModifierType>();
+        }
+        public static ItemRarities GetItemRarity()
+        {
+            int index = UnityEngine.Random.Range(1, 101);
+            return index > 45 ? index <= 63
+                                ? ItemRarities.UNCOMMON
+                                : index > 85
+                                    ? ItemRarities.BAD
+                                    : ItemRarities.COMMON
+                              : index <= 18
+                                ? index <= 9
+                                    ? index > 3
+                                        ? ItemRarities.MITHYCAL
+                                        : ItemRarities.ETERNAL
+                                    : ItemRarities.LEGENDARY
+                                : index > 30
+                                    ? ItemRarities.RARE
+                                    : ItemRarities.EPIC;
         }
         public static InventoryItem GetEmptyItem()
         {
@@ -1318,6 +1186,7 @@ namespace Inventory.SO
                 quantity = 0,
                 slotType = SlotType.MAIN_SLOT,
                 itemContainer = ItemContainer.Container,
+                itemRarity = ItemRarities.DEFAULT,
             };
         }
 

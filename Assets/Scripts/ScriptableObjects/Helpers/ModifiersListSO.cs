@@ -2,6 +2,7 @@ using Inventory.SO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Inventory.SO.InventoryItem;
 using static Inventory.SO.ItemSO;
 
 namespace Helpers.SO
@@ -13,11 +14,11 @@ namespace Helpers.SO
         public ModifiersListBaseChildSO modifiersBaseListSO;
         public ModifiersListWeaponChildSO modifiersWeaponListSO;
 
-        public List<ModifierType> GenerateStatModifiersList(int playerLevel, bool isShield)
+        public List<ModifierType> GenerateStatModifiersList(int playerLevel, ItemRarities itemRarity, bool isShield)
         {
             return new List<ModifierType>();
         }
-        public List<WeaponModifierType> GenerateWeaponModifiersList(int playerLevel, bool isAmmo)
+        public List<WeaponModifierType> GenerateWeaponModifiersList(int playerLevel, ItemRarities itemRarity, bool isAmmo)
         {
             List<WeaponModifierType> newList = new List<WeaponModifierType>();
             int posModifiersCount;
@@ -48,5 +49,6 @@ namespace Helpers.SO
             }
             return newList;
         }
+
     }
 }

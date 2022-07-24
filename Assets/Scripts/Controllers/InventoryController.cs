@@ -71,9 +71,12 @@ namespace Inventory
             UIMainInventory.OnRemoveQuantityConfirmed += HandleRemoveQuantityConfirmation;
 
             UIMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
+            UIMainInventory.OnLootListUpdated += HandleLootListUpdateRequest;
 
             //MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
+
+
 
 
 
@@ -305,6 +308,10 @@ namespace Inventory
         {
             if (item.item is IEquipable iEquipable)
                 iEquipable.EquipItem(MainCharacter);
+        }
+        private void HandleLootListUpdateRequest(List<InventoryItem> lootList)
+        {
+            MainInventorySO.SetLootContainer(lootList);
         }
         #endregion
 

@@ -41,6 +41,8 @@ namespace Inventory.UI
             OnRemoveQuantityConfirmed;
         public event Action<string, int, string, int>
             OnItemDropRequest;
+        public event Action<List<InventoryItem>>
+            OnLootListUpdated;
 
 
         //public Action<int>
@@ -75,6 +77,7 @@ namespace Inventory.UI
         private List<UIMainItem> uiEquipmentItems = new List<UIMainItem>();
 
         private List<UIMainItem> uiLootPanelList = new List<UIMainItem>();
+        private List<InventoryItem> generatedLootList = new List<InventoryItem>();
 
         private const int LEFT_EQUIP_SLOTS = 7;
         private const int RIGHT_EQUIP_SLOTS = 3;
@@ -337,7 +340,9 @@ namespace Inventory.UI
                 uiLootItem.transform.SetParent(lootContentPanel);
                 uiLootItem.InitItem(lootList[i].item.ItemImage, lootList[i].quantity, lootList[i].slotType.ToString(), lootList[i].item.CanBeInSlots, lootList[i].itemContainer.ToString());
                 uiLootPanelList.Add(uiLootItem);
+                generatedLootList.Add(lootList[i]);
             }
+            OnLootListUpdated?.Invoke(generatedLootList);
         }
         public void ClearLootPanel()
         {
@@ -346,6 +351,7 @@ namespace Inventory.UI
                 uiLootPanelList[i].DeleteUIObject();
             }
             uiLootPanelList.Clear();
+            generatedLootList.Clear();
         }
         #endregion
 
