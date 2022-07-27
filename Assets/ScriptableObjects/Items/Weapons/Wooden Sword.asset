@@ -17,14 +17,17 @@ MonoBehaviour:
   <Description>k__BackingField: Just for training.
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
-  <ItemRarity>k__BackingField: 0
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  modifierTypes:
-  - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
-    Value: 500
-  weaponModifierTypes:
-  - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
-    Value: 55
+  itemParameters:
+    statModifiers:
+    - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      Value: 260
+    weaponModifiers:
+    - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+      Value: 12
+    equipmentModifiers: []
+    resistModifiers: []
+    vulnerabilityModifiers: []
   scaleType: 0
   KnockbackStrength: 6

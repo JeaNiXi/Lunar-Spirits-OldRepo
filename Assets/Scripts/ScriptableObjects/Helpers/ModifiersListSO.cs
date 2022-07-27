@@ -11,8 +11,11 @@ namespace Helpers.SO
 
     public class ModifiersListSO : ScriptableObject
     {
-        public ModifiersListBaseChildSO modifiersBaseListSO;
+        public ModifiersListStatChildSO modifiersStatListSO;
         public ModifiersListWeaponChildSO modifiersWeaponListSO;
+        public ModifiersListEquipmentChildSO modifiersEquipmentListSO;
+        public ModifiersResistChildSO modifiersResistListSO;
+        public ModifiersVulnerabilityChildSO modifiersVulnerabilityListSO;
 
         public List<ModifierType> GenerateStatModifiersList(int playerLevel, ItemRarities itemRarity, bool isShield)
         {
@@ -22,23 +25,42 @@ namespace Helpers.SO
         {
             List<WeaponModifierType> newList = new List<WeaponModifierType>();
             int posModifiersCount;
+            switch (itemRarity)
+            {
+                case ItemRarities.BAD:
+                case ItemRarities.COMMON:
+                    posModifiersCount = 1;
+                    break;
+                case ItemRarities.UNCOMMON:
+                case ItemRarities.RARE:
+                    posModifiersCount = 2;
+                    break;
+                case ItemRarities.EPIC:
+                case ItemRarities.LEGENDARY:
+                    posModifiersCount = 3;
+                    break;
+                case ItemRarities.MITHYCAL:
+                case ItemRarities.ETERNAL:
+                    posModifiersCount = 4;
+                    break;
+                default:
+                    posModifiersCount = 0;
+                    break;
+            }
             int modifierValue;
             switch (playerLevel)
             {
                 case 1:
                 case 2:
                 case 3:
-                    posModifiersCount = 0;
                     modifierValue = Random.Range(1, 30);
                     break;
                 case 4:
                 case 5:
                 case 6:
-                    posModifiersCount = 1;
                     modifierValue = Random.Range(30, 60);
                     break;
                 default:
-                    posModifiersCount = 0;
                     modifierValue = 0;
                     break;
             }
@@ -49,6 +71,5 @@ namespace Helpers.SO
             }
             return newList;
         }
-
     }
 }

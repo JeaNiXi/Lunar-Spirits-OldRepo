@@ -10,13 +10,11 @@ namespace Inventory.SO
 
     public class EquipmentSO : ItemSO, IEquipable
     {
-        [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
-
         public void EquipItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
             if (mainInventory.EquipItemHandler(index, containerType))
             {
-                foreach (ModifierType modifier in modifierTypes)
+                foreach (ModifierType modifier in itemParameters.statModifiers)
                 {
                     modifier.Modifier.ApplyModifier(character, modifier.Value);
                 }

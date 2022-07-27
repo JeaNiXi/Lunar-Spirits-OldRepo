@@ -5,9 +5,8 @@ using UnityEngine;
 
 namespace Helpers.SO
 {
-    [CreateAssetMenu(fileName = "ModifiersListBase", menuName = "Helpers/MainModifiersListBase")]
-
-    public class ModifiersListBaseChildSO : ScriptableObject
+    [CreateAssetMenu(fileName = "ModifiersListStat", menuName = "Helpers/MainModifiersListStat")]
+    public class ModifiersListStatChildSO : ScriptableObject
     {
         [NonReorderable] public List<ModifiersSO> modifiersStatList = new List<ModifiersSO>();
     }

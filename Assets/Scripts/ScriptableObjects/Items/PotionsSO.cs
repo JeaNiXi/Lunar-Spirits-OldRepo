@@ -11,11 +11,9 @@ namespace Inventory.SO
     [CreateAssetMenu(fileName = "New Potion", menuName = "Inventory/Items/Potion Item")]
     public class PotionsSO : ItemSO, IUsable, IQuickEquipable, IRemovable, IRemovableQuantity
     {
-        [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
-
         public void UseItem(CharacterManager character, InventorySO mainInventory, int index, string containerType)
         {
-            foreach (ModifierType modifier in modifierTypes)
+            foreach (ModifierType modifier in itemParameters.statModifiers)
             {
                 modifier.Modifier.ApplyModifier(character, modifier.Value);
             }

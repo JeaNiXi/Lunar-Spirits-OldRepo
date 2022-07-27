@@ -94,6 +94,8 @@ namespace Inventory
             MainInventorySO.CheckForInventoryGridEnd();
             MainInventorySO.CorrectQuickSlotQuantity();
             MainInventorySO.CorrectEquipSlotsQuantity();
+            //Debug
+            MainInventorySO.CorrectContainerSlotItemParameters();
         }
         private void InitializeMainUI()
         {

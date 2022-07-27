@@ -230,7 +230,7 @@ namespace Character
                     {
                         if (MainWeapon.item is WeaponSO weaponSO)
                         {
-                            foreach (var modifier in weaponSO.weaponModifierTypes)
+                            foreach (var modifier in MainWeapon.item.itemParameters.weaponModifiers)
                             {
                                 modifier.Modifier.ApplyModifier(actor, modifier.Value + (int)(modifier.Value * GetScalingBonus(weaponSO.scaleType.ToString())));
                             }

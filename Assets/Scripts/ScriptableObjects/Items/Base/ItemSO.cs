@@ -51,7 +51,7 @@ namespace Inventory.SO
         [field: SerializeField] public Sprite ItemImage { get; set; }
 
         public List<ItemSlots> CanBeInSlots;
-
+        public ItemParameters itemParameters;
     }
     [Serializable]
     public struct ModifierType
@@ -70,5 +70,23 @@ namespace Inventory.SO
             this.Modifier = weaponModifiersSO;
             this.Value = value;
         }
+    }
+    [Serializable]
+    public struct EquipmentModifierType
+    {
+        public EquipmentModifierSO Modifier;
+        public int Value;
+    }
+    [Serializable]
+    public struct ResistModifierType
+    {
+        public ResistModifierSO Modifier;
+        public int Value;
+    }
+    [Serializable]
+    public struct VulnerabilityModifierType
+    {
+        public VulnerabilityModifierSO Modifier;
+        public int Value;
     }
 }

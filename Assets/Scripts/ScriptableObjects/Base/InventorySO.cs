@@ -194,7 +194,7 @@ namespace Inventory.SO
                     IsFound = true;
                     if (Container[destIndex].IsEmpty)
                     {
-                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType, Container[originIndex].itemRarity, Container[originIndex].baseModifiers, Container[originIndex].weaponModifiers);
+                        Container[destIndex] = new InventoryItem(Container[originIndex].item, Container[originIndex].quantity, Container[originIndex].slotType, Container[originIndex].itemRarity, Container[originIndex].itemParameters);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
                         InformUI();
                         break;
@@ -1023,6 +1023,34 @@ namespace Inventory.SO
                 }
             }
         }
+        public void CorrectContainerSlotItemParameters()
+        {
+            for (int i = 0; i < Container.Count; i++)
+            {
+                if (!Container[i].IsEmpty)
+                    if (AllStatParamsAreNull(Container[i]))
+                    {
+                        Debug.Log(i + "is " + "empty");
+                        Container[i] = new InventoryItem(
+                            Container[i].item,
+                            Container[i].quantity,
+                            Container[i].slotType,
+                            Container[i].itemRarity,
+                            Container[i].item.itemParameters);
+                    }
+            }
+
+            static bool AllStatParamsAreNull(InventoryItem item)
+            {
+                if (item.itemParameters.statModifiers.Count == 0
+                    && item.itemParameters.weaponModifiers.Count == 0
+                    && item.itemParameters.equipmentModifiers.Count == 0
+                    && item.itemParameters.resistModifiers.Count == 0
+                    && item.itemParameters.vulnerabilityModifiers.Count == 0)
+                    return true;
+                else return false;
+            }
+        }
         #endregion
 
 
@@ -1054,6 +1082,20 @@ namespace Inventory.SO
 
     #region Structures
     [Serializable]
+    public struct ItemParameters
+    {
+        [NonReorderable] public List<ModifierType> statModifiers;
+        [NonReorderable] public List<WeaponModifierType> weaponModifiers;
+        [NonReorderable] public List<EquipmentModifierType> equipmentModifiers;
+        [NonReorderable] public List<ResistModifierType> resistModifiers;
+        [NonReorderable] public List<VulnerabilityModifierType> vulnerabilityModifiers;
+
+        internal static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, InventoryItem.ItemRarities itemRarity)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    [Serializable]
     public struct InventoryItem
     {
         // Is a property. Returning True if item==null, or False if not.
@@ -1065,14 +1107,14 @@ namespace Inventory.SO
         public enum ItemRarities
         {
             DEFAULT,
-            BAD,        // 15%  86-100
-            COMMON,     // 22%  64-85
-            UNCOMMON,   // 18%  46-63
-            RARE,       // 15%  31-45
-            EPIC,       // 12%  19-30
-            LEGENDARY,  // 9%   10-18
-            MITHYCAL,   // 6%   4-9
-            ETERNAL,    // 3%   1-3
+            BAD,        // 15%  86-100  W1
+            COMMON,     // 22%  64-85   W1
+            UNCOMMON,   // 18%  46-63   W2
+            RARE,       // 15%  31-45   W2
+            EPIC,       // 12%  19-30   W3
+            LEGENDARY,  // 9%   10-18   W3
+            MITHYCAL,   // 6%   4-9     W4
+            ETERNAL,    // 3%   1-3     W4
         }
         public enum ItemContainer
         {
@@ -1083,9 +1125,7 @@ namespace Inventory.SO
         public SlotType slotType;
         public ItemRarities itemRarity;
         public ItemContainer itemContainer;
-
-        [NonReorderable] public List<ModifierType> baseModifiers;
-        [NonReorderable] public List<WeaponModifierType> weaponModifiers;
+        public ItemParameters itemParameters;
 
         public InventoryItem(ItemSO item, int quantity, SlotType slotType)
         {
@@ -1094,28 +1134,26 @@ namespace Inventory.SO
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
             this.itemRarity = GetItemRarity();
-            this.baseModifiers = GetBaseModifiersList(item, this.itemRarity);
-            this.weaponModifiers = GetWeaponModifiersList(item, this.itemRarity);
+            this.itemParameters = ItemParameters.GetRandomItemParameters(item, 4, itemRarity);
         }
-        public InventoryItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, List<ModifierType> baseModifiers, List<WeaponModifierType> weaponModifiers)
+        public InventoryItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, ItemParameters itemParameters)
         {
             this.item = item;
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
             this.itemRarity = itemRarity;
-            this.baseModifiers = baseModifiers;
-            this.weaponModifiers = weaponModifiers;
+            this.itemParameters = itemParameters;
         }
         public static List<ModifierType> GetBaseModifiersList(ItemSO itemSO, ItemRarities itemRarity)
         {
             if (itemSO.ItemType == ItemSO.ItemTypes.SHIELD)
             {
                 EquipmentSO equipmentSO = itemSO as EquipmentSO;
-                if (equipmentSO.modifierTypes.Count == 0)
+                if (equipmentSO.itemParameters.statModifiers.Count == 0)
                     return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, true);
                 else
-                    return equipmentSO.modifierTypes;
+                    return equipmentSO.itemParameters.statModifiers;
             }
             else if (itemSO.ItemType != ItemSO.ItemTypes.POTION
                && itemSO.ItemType != ItemSO.ItemTypes.INGREDIENT
@@ -1126,18 +1164,18 @@ namespace Inventory.SO
                 if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
                 {
                     WeaponSO weaponSO = itemSO as WeaponSO;
-                    if (weaponSO.modifierTypes.Count == 0)
+                    if (weaponSO.itemParameters.statModifiers.Count == 0)
                         return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
                     else
-                        return weaponSO.modifierTypes;
+                        return weaponSO.itemParameters.statModifiers;
                 }
                 else
                 {
                     EquipmentSO equipmentSO = itemSO as EquipmentSO;
-                    if (equipmentSO.modifierTypes.Count == 0)
+                    if (equipmentSO.itemParameters.statModifiers.Count == 0)
                         return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
                     else
-                        return equipmentSO.modifierTypes;
+                        return equipmentSO.itemParameters.statModifiers;
                 }
             }
             return new List<ModifierType>();
@@ -1147,16 +1185,16 @@ namespace Inventory.SO
             if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
             {
                 WeaponSO weaponSO = itemSO as WeaponSO;
-                if (weaponSO.weaponModifierTypes.Count == 0)
+                if (weaponSO.itemParameters.weaponModifiers.Count == 0)
                     return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, false);
-                return weaponSO.weaponModifierTypes;
+                return weaponSO.itemParameters.weaponModifiers;
             }
             else if (itemSO.ItemType == ItemSO.ItemTypes.RANGED_AMMO)
             {
                 WeaponSO weaponSO = itemSO as WeaponSO;
-                if (weaponSO.weaponModifierTypes.Count == 0)
+                if (weaponSO.itemParameters.weaponModifiers.Count == 0)
                     return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, true);
-                return weaponSO.weaponModifierTypes;
+                return weaponSO.itemParameters.weaponModifiers;
             }
             return new List<WeaponModifierType>();
         }
@@ -1189,7 +1227,6 @@ namespace Inventory.SO
                 itemRarity = ItemRarities.DEFAULT,
             };
         }
-
     }
     [Serializable]
     public struct QuickSlotItem

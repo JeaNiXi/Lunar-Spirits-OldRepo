@@ -9,10 +9,6 @@ namespace Inventory.SO
     [CreateAssetMenu(fileName = "New Weapon", menuName = "Inventory/Items/Weapon Item")]
     public class WeaponSO : ItemSO, IRemovable, IEquipable
     {
-        [SerializeField] [NonReorderable] public List<ModifierType> modifierTypes = new List<ModifierType>();
-        [SerializeField] [NonReorderable] public List<WeaponModifierType> weaponModifierTypes = new List<WeaponModifierType>();
-
-
         public enum ScaleType
         {
             Strength,
@@ -36,7 +32,7 @@ namespace Inventory.SO
         }
         private void ApplyModifier(CharacterManager character)
         {
-            foreach (ModifierType modifier in modifierTypes)
+            foreach (ModifierType modifier in itemParameters.statModifiers)
             {
                 modifier.Modifier.ApplyModifier(character, modifier.Value);
             }
