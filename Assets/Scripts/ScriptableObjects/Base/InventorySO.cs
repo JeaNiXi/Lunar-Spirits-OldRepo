@@ -1086,14 +1086,177 @@ namespace Inventory.SO
     {
         [NonReorderable] public List<ModifierType> statModifiers;
         [NonReorderable] public List<WeaponModifierType> weaponModifiers;
+        [NonReorderable] public List<WeaponStatModifierType> weaponStatModifiers;
         [NonReorderable] public List<EquipmentModifierType> equipmentModifiers;
         [NonReorderable] public List<ResistModifierType> resistModifiers;
         [NonReorderable] public List<VulnerabilityModifierType> vulnerabilityModifiers;
+        public struct StatsCount
+        {
+            public int posStatCount;
+            public int negStatCount;
+            public int equipCount;
+            public int weaponCount;
+            public int weaponStatCount;
+            public int resistCount;
+            public int vulnerabilityCount;
+            public StatsCount(InventoryItem.ItemRarities itemRarity)
+            {
+                switch(itemRarity)
+                {
+                    case InventoryItem.ItemRarities.BAD:
+                        {
+                            posStatCount = 0;
+                            negStatCount = 2;
+                            equipCount = 1;
+                            weaponCount = 1;
+                            weaponStatCount = 0;
+                            resistCount = 0;
+                            vulnerabilityCount = 2;
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.COMMON:
+                        {
+                            posStatCount = 1;
+                            negStatCount = 1;
+                            equipCount = 1;
+                            weaponCount = 1;
+                            weaponStatCount = 0;
+                            resistCount = 1;
+                            vulnerabilityCount = 1;
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.UNCOMMON:
+                        {
+                            posStatCount = 1;
+                            negStatCount = UnityEngine.Random.Range(0, 2);
+                            equipCount = 1;
+                            weaponCount = 1;
+                            weaponStatCount = 0;
+                            resistCount = 1;
+                            vulnerabilityCount = UnityEngine.Random.Range(0, 2);
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.RARE:
+                        {
+                            posStatCount = 1;
+                            negStatCount = 0;
+                            equipCount = 2;
+                            weaponCount = 2;
+                            weaponStatCount = 1;
+                            resistCount = 1;
+                            vulnerabilityCount = 0;
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.EPIC:
+                        {
+                            posStatCount = 2;
+                            negStatCount = UnityEngine.Random.Range(0, 2);
+                            equipCount = 2;
+                            weaponCount = 2;
+                            weaponStatCount = 1;
+                            resistCount = 2;
+                            vulnerabilityCount = UnityEngine.Random.Range(0, 2);
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.LEGENDARY:
+                        {
+                            posStatCount = 3;
+                            negStatCount = UnityEngine.Random.Range(0, 3);
+                            equipCount = 3;
+                            weaponCount = 3;
+                            weaponStatCount = 2;
+                            resistCount = 3;
+                            vulnerabilityCount = UnityEngine.Random.Range(0, 3);
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.MITHYCAL:
+                        {
+                            posStatCount = 4;
+                            negStatCount = UnityEngine.Random.Range(0, 4);
+                            equipCount = 3;
+                            weaponCount = 3;
+                            weaponStatCount = 2;
+                            resistCount = 4;
+                            vulnerabilityCount = UnityEngine.Random.Range(0, 4);
+                            break;
+                        }
+                    case InventoryItem.ItemRarities.ETERNAL:
+                        {
+                            posStatCount = 5;
+                            negStatCount = UnityEngine.Random.Range(0, 5);
+                            equipCount = 4;
+                            weaponCount = 4;
+                            weaponStatCount = 3;
+                            resistCount = 5;
+                            vulnerabilityCount = UnityEngine.Random.Range(0, 5);
+                            break;
+                        }
+                    default:
+                        {
+                            posStatCount = 0;
+                            negStatCount = 0;
+                            equipCount = 0;
+                            weaponCount = 0;
+                            weaponStatCount = 0;
+                            resistCount = 0;
+                            vulnerabilityCount = 0;
+                            break;
+                        }
+                }
+            }
+        }
+        public static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, InventoryItem.ItemRarities itemRarity)
+        {
+            StatsCount newStatsCount = new StatsCount(itemRarity);
 
-        internal static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, InventoryItem.ItemRarities itemRarity)
+            switch (item.ItemType)
+            {
+                case ItemSO.ItemTypes.WEAPON:
+                case ItemSO.ItemTypes.RANGED_WEAPON:
+                    return GetWeaponParametres(newStatsCount, characterLevel);
+                default:
+                    return new ItemParameters();
+            }
+        }
+
+        private static ItemParameters GetWeaponParametres(StatsCount newStatsCount, int characterLevel)
+        {
+            ItemParameters parametres = new ItemParameters();
+            if (newStatsCount.weaponCount != 0)
+                for (int i = 0; i < newStatsCount.weaponCount; i++)
+                    parametres.weaponModifiers.Add(GetWeaponModifierType(characterLevel));
+            if (newStatsCount.weaponStatCount != 0)
+                for (int i = 0; i < newStatsCount.weaponStatCount; i++)
+                    parametres.weaponStatModifiers.Add(GetWeaponStatModifiers(characterLevel));
+            if (newStatsCount.posStatCount != 0)
+                for (int i = 0; i < newStatsCount.posStatCount; i++)
+                    parametres.statModifiers.Add(GetPositiveModifierType(characterLevel));
+            if (newStatsCount.negStatCount != 0)
+                for (int i = 0; i < newStatsCount.negStatCount; i++)
+                    parametres.statModifiers.Add(GetNegativeModifierType(characterLevel));
+
+            return new ItemParameters();
+        }
+
+        private static ModifierType GetNegativeModifierType(int characterLevel)
         {
             throw new NotImplementedException();
         }
+        private static ModifierType GetPositiveModifierType(int characterLevel)
+        {
+            throw new NotImplementedException();
+        }
+        private static WeaponStatModifierType GetWeaponStatModifiers(int characterLevel)
+        {
+            throw new NotImplementedException();
+        }
+        private static WeaponModifierType GetWeaponModifierType(int characterLevel)
+        {
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersWeaponListSO.modifiersWeaponList.Count);
+            int value = UnityEngine.Random.Range(characterLevel * 10, (characterLevel + 2) * 10);
+            return new WeaponModifierType(GameManager.Instance.ModifiersListSO.modifiersWeaponListSO.modifiersWeaponList[index], value);
+        }
+
     }
     [Serializable]
     public struct InventoryItem

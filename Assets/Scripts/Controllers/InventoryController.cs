@@ -44,6 +44,7 @@ namespace Inventory
                 Instance = this;
                 DontDestroyOnLoad(this);
             }
+            Debug.Log(UnityEngine.Random.Range(0, 1));
         }
         private void Start()
         {

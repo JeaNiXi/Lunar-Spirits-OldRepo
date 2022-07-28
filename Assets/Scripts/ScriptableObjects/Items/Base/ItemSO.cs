@@ -72,6 +72,17 @@ namespace Inventory.SO
         }
     }
     [Serializable]
+    public struct WeaponStatModifierType
+    {
+        public WeaponStatModifiersSO Modifier;
+        public int Value;
+        public WeaponStatModifierType(WeaponStatModifiersSO weaponStatModifiersSO, int value)
+        {
+            this.Modifier = weaponStatModifiersSO;
+            this.Value = value;
+        }
+    }
+    [Serializable]
     public struct EquipmentModifierType
     {
         public EquipmentModifierSO Modifier;

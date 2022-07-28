@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Managers
@@ -50,11 +51,17 @@ namespace Managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+
             //Application.targetFrameRate = 60;
             //Initialize();
             //MainCharacter.OnBattlerTriggerEnter += HandleBattleStart;
         }
-
+        //debug.
+        //private void Update()
+        //{
+        //    if (Keyboard.current.shiftKey.wasPressedThisFrame)
+        //        Debug.Log(UnityEngine.Random.Range(0, 1));
+        //}
         public void SetSaveSlotIndex(int index) => MainGMSO.SetSaveSlot(index);
 
 
