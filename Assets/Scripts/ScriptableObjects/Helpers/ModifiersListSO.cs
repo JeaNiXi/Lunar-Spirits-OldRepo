@@ -13,6 +13,7 @@ namespace Helpers.SO
     {
         public ModifiersListStatChildSO modifiersStatListSO;
         public ModifiersListWeaponChildSO modifiersWeaponListSO;
+        public ModifiersListWeaponStatChildSO modifiersWeaponStatListSO;
         public ModifiersListEquipmentChildSO modifiersEquipmentListSO;
         public ModifiersResistChildSO modifiersResistListSO;
         public ModifiersVulnerabilityChildSO modifiersVulnerabilityListSO;

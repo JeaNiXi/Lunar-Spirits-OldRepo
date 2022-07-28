@@ -1238,6 +1238,10 @@ namespace Inventory.SO
             return new ItemParameters();
         }
 
+
+
+
+
         private static ModifierType GetNegativeModifierType(int characterLevel)
         {
             throw new NotImplementedException();
@@ -1248,7 +1252,9 @@ namespace Inventory.SO
         }
         private static WeaponStatModifierType GetWeaponStatModifiers(int characterLevel)
         {
-            throw new NotImplementedException();
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersWeaponStatListSO.modifiersStatWeaponList.Count);
+            int value = UnityEngine.Random.Range(characterLevel * 2, (characterLevel + 10) * 2);
+            return new WeaponStatModifierType(GameManager.Instance.ModifiersListSO.modifiersWeaponStatListSO.modifiersStatWeaponList[index], value);
         }
         private static WeaponModifierType GetWeaponModifierType(int characterLevel)
         {
