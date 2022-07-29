@@ -1090,6 +1090,7 @@ namespace Inventory.SO
         [NonReorderable] public List<EquipmentModifierType> equipmentModifiers;
         [NonReorderable] public List<ResistModifierType> resistModifiers;
         [NonReorderable] public List<VulnerabilityModifierType> vulnerabilityModifiers;
+
         public struct StatsCount
         {
             public int posStatCount;
@@ -1205,6 +1206,17 @@ namespace Inventory.SO
                 }
             }
         }
+        private static ItemParameters Initialize()
+        {
+            ItemParameters parameters;
+            parameters.statModifiers = new List<ModifierType>();
+            parameters.weaponModifiers = new List<WeaponModifierType>();
+            parameters.weaponStatModifiers = new List<WeaponStatModifierType>();
+            parameters.equipmentModifiers = new List<EquipmentModifierType>();
+            parameters.resistModifiers = new List<ResistModifierType>();
+            parameters.vulnerabilityModifiers = new List<VulnerabilityModifierType>();
+            return parameters;
+        }
         public static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, InventoryItem.ItemRarities itemRarity)
         {
             StatsCount newStatsCount = new StatsCount(itemRarity);
@@ -1213,56 +1225,171 @@ namespace Inventory.SO
             {
                 case ItemSO.ItemTypes.WEAPON:
                 case ItemSO.ItemTypes.RANGED_WEAPON:
-                    return GetWeaponParametres(newStatsCount, characterLevel);
+                    return GetWeaponParameters(newStatsCount, characterLevel);
+                case ItemSO.ItemTypes.SHIELD:
+                case ItemSO.ItemTypes.ARMOR:
+                case ItemSO.ItemTypes.MEDALION:
+                case ItemSO.ItemTypes.RING:
+                case ItemSO.ItemTypes.HEAD_GEAR:
+                case ItemSO.ItemTypes.BRACERS:
+                case ItemSO.ItemTypes.BOOTS:
+                    return GetEquipmentParameters(newStatsCount, characterLevel);
+                case ItemSO.ItemTypes.RANGED_AMMO:
+                    return GetAmmoParameters(newStatsCount, characterLevel);
                 default:
                     return new ItemParameters();
             }
         }
-
-        private static ItemParameters GetWeaponParametres(StatsCount newStatsCount, int characterLevel)
+        private static ItemParameters GetEquipmentParameters(StatsCount newStatsCount, int characterLevel)
         {
-            ItemParameters parametres = new ItemParameters();
-            if (newStatsCount.weaponCount != 0)
-                for (int i = 0; i < newStatsCount.weaponCount; i++)
-                    parametres.weaponModifiers.Add(GetWeaponModifierType(characterLevel));
-            if (newStatsCount.weaponStatCount != 0)
-                for (int i = 0; i < newStatsCount.weaponStatCount; i++)
-                    parametres.weaponStatModifiers.Add(GetWeaponStatModifiers(characterLevel));
+            ItemParameters parameters = Initialize();
+            if (newStatsCount.equipCount != 0)
+                for (int i = 0; i < newStatsCount.equipCount; i++)
+                    parameters.equipmentModifiers.Add(GetEquipmentModifierType(characterLevel));
             if (newStatsCount.posStatCount != 0)
                 for (int i = 0; i < newStatsCount.posStatCount; i++)
-                    parametres.statModifiers.Add(GetPositiveModifierType(characterLevel));
+                    parameters.statModifiers.Add(GetPositiveModifierType(characterLevel));
             if (newStatsCount.negStatCount != 0)
                 for (int i = 0; i < newStatsCount.negStatCount; i++)
-                    parametres.statModifiers.Add(GetNegativeModifierType(characterLevel));
-
-            return new ItemParameters();
+                    parameters.statModifiers.Add(GetNegativeModifierType(characterLevel));
+            if (newStatsCount.resistCount != 0)
+                for (int i = 0; i < newStatsCount.resistCount; i++)
+                    parameters.resistModifiers.Add(GetResistModifierType(characterLevel));
+            if (newStatsCount.vulnerabilityCount != 0)
+                for (int i = 0; i < newStatsCount.vulnerabilityCount; i++)
+                    parameters.vulnerabilityModifiers.Add(GetVulnerabilityModifierType(characterLevel));
+            return parameters;
         }
-
-
-
-
+        private static ItemParameters GetWeaponParameters(StatsCount newStatsCount, int characterLevel)
+        {
+            ItemParameters parameters = Initialize();
+            if (newStatsCount.weaponCount != 0)
+                for (int i = 0; i < newStatsCount.weaponCount; i++)
+                    parameters.weaponModifiers.Add(GetWeaponModifierType(characterLevel));
+            if (newStatsCount.weaponStatCount != 0)
+                for (int i = 0; i < newStatsCount.weaponStatCount; i++)
+                    parameters.weaponStatModifiers.Add(GetWeaponStatModifiers(characterLevel));
+            if (newStatsCount.posStatCount != 0)
+                for (int i = 0; i < newStatsCount.posStatCount; i++)
+                    parameters.statModifiers.Add(GetPositiveModifierType(characterLevel));
+            if (newStatsCount.negStatCount != 0)
+                for (int i = 0; i < newStatsCount.negStatCount; i++)
+                    parameters.statModifiers.Add(GetNegativeModifierType(characterLevel));
+            return parameters;
+        }
+        private static ItemParameters GetAmmoParameters(StatsCount newStatsCount, int characterLevel)
+        {
+            ItemParameters parameters = Initialize();
+            if (newStatsCount.weaponCount != 0)
+                for (int i = 0; i < newStatsCount.weaponCount; i++)
+                    parameters.weaponModifiers.Add(GetWeaponModifierType(characterLevel));
+            return parameters;
+        }
 
         private static ModifierType GetNegativeModifierType(int characterLevel)
         {
-            throw new NotImplementedException();
+            // 1 lvl - -1
+            // 2 lvl - -1 - -2
+            // 5 lvl - -1 - -5
+            // 10 lvl - -1 - -10
+            // 20 lvl - -1 - -10
+            // 30 lvl - -1 - -10
+            // 54 lvl - -1 - -10
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersStatListSO.modifiersStatList.Count);
+            int value = characterLevel <= 10 ? UnityEngine.Random.Range(1, characterLevel + 1) : UnityEngine.Random.Range(1, 11);
+            return new ModifierType(GameManager.Instance.ModifiersListSO.modifiersStatListSO.modifiersStatList[index], -value);
         }
         private static ModifierType GetPositiveModifierType(int characterLevel)
         {
-            throw new NotImplementedException();
+            // 1 lvl - +1
+            // 2 lvl - +1 - +2
+            // 5 lvl - +1 - +5
+            // 10 lvl - +1 - +10
+            // 20 lvl - +1 - +10
+            // 30 lvl - +1 - +10
+            // 54 lvl - +1 - +10
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersStatListSO.modifiersStatList.Count);
+            int value = characterLevel <= 10 ? UnityEngine.Random.Range(1, characterLevel + 1) : UnityEngine.Random.Range(1, 11);
+            return new ModifierType(GameManager.Instance.ModifiersListSO.modifiersStatListSO.modifiersStatList[index], value);
         }
         private static WeaponStatModifierType GetWeaponStatModifiers(int characterLevel)
         {
+            // 1 lvl - +2% - +22%
+            // 2 lvl - +4% - +24%
+            // 10 lvl - +20% - +40%
+            // 20 lvl - +40% - +60%
+            // 30 lvl - +60% - +80%
+            // 54 lvl - +108% - +128%
             int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersWeaponStatListSO.modifiersStatWeaponList.Count);
             int value = UnityEngine.Random.Range(characterLevel * 2, (characterLevel + 10) * 2);
             return new WeaponStatModifierType(GameManager.Instance.ModifiersListSO.modifiersWeaponStatListSO.modifiersStatWeaponList[index], value);
         }
         private static WeaponModifierType GetWeaponModifierType(int characterLevel)
         {
+            // 1 lvl - 10 - 30 dmg
+            // 2 lvl - 20 - 40 dmg
+            // 10 lvl - 100 - 120 dmg
+            // 20 lvl - 200 - 220 dmg
+            // 30 lvl - 300 - 320 dmg
+            // 54 lvl - 540 - 560 dmg
             int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersWeaponListSO.modifiersWeaponList.Count);
             int value = UnityEngine.Random.Range(characterLevel * 10, (characterLevel + 2) * 10);
+            Debug.Log("index and value are " + index + " " + value + " starting return");
             return new WeaponModifierType(GameManager.Instance.ModifiersListSO.modifiersWeaponListSO.modifiersWeaponList[index], value);
         }
+        private static EquipmentModifierType GetEquipmentModifierType(int characterLevel)
+        {
+            // Character HP Scale: lvl*100
+            // 1 lvl - 100hp
+            // 2 lvl - 200hp
+            // 10 lvl - 1000hp
+            // 54 lvl - 5400hp
 
+            // 1 lvl - 2hp
+            // 2 lvl - 4hp
+            // 10 lvl - 20hp
+            // 20 lvl - 40hp
+            // 54 lvl - 108hp
+
+            //ARMOR AND MR
+            // 1 lvl - +1
+            // 2 lvl - +1-2
+            // 10 lvl - +1-10
+            // 54 lvl - +1-54
+            // 54*8*4 = 1728AR & MR - 54% RESIST
+            // 32p is 1% Resistance.
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersEquipmentListSO.modifiersStatList.Count);
+            int value;
+            if (GameManager.Instance.ModifiersListSO.modifiersEquipmentListSO.modifiersStatList[index].modifierType == EquipmentModifierSO.ModifierType.HEALTH)
+                value = UnityEngine.Random.Range(1, (characterLevel * 2) + 1);
+            else
+                value = UnityEngine.Random.Range(1, characterLevel + 1);
+            return new EquipmentModifierType(GameManager.Instance.ModifiersListSO.modifiersEquipmentListSO.modifiersStatList[index], value);
+        }
+        private static ResistModifierType GetResistModifierType(int characterLevel)
+        {
+            // Resists
+            // 1 lvl - 1
+            // 2 lvl - 1 - 2
+            // 10 lvl - 1 - 10
+            // 54 lvl - 1 - 54
+            // Max OF 8*5*54 = 2160p =  67.5%
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersResistListSO.modifiersResistList.Count);
+            int value = UnityEngine.Random.Range(1, characterLevel + 1);
+            return new ResistModifierType(GameManager.Instance.ModifiersListSO.modifiersResistListSO.modifiersResistList[index], value);
+        }
+        private static VulnerabilityModifierType GetVulnerabilityModifierType(int characterLevel)
+        {
+            // Vulnerability 
+            // 1 lvl - 1
+            // 2 lvl - 1 - 2
+            // 10 lvl - 1 - 10
+            // 54 lvl - 1 - 54
+            // Max OF 8*5*54 = 2160p =  67.5%
+            int index = UnityEngine.Random.Range(0, GameManager.Instance.ModifiersListSO.modifiersVulnerabilityListSO.modifiersVulnerabilityList.Count);
+            int value = UnityEngine.Random.Range(1, characterLevel + 1);
+            return new VulnerabilityModifierType(GameManager.Instance.ModifiersListSO.modifiersVulnerabilityListSO.modifiersVulnerabilityList[index], -value);
+        }
     }
     [Serializable]
     public struct InventoryItem
@@ -1303,7 +1430,7 @@ namespace Inventory.SO
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
             this.itemRarity = GetItemRarity();
-            this.itemParameters = ItemParameters.GetRandomItemParameters(item, 4, itemRarity);
+            this.itemParameters = ItemParameters.GetRandomItemParameters(item, 20, itemRarity);
         }
         public InventoryItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, ItemParameters itemParameters)
         {
@@ -1313,59 +1440,6 @@ namespace Inventory.SO
             this.itemContainer = ItemContainer.Container;
             this.itemRarity = itemRarity;
             this.itemParameters = itemParameters;
-        }
-        public static List<ModifierType> GetBaseModifiersList(ItemSO itemSO, ItemRarities itemRarity)
-        {
-            if (itemSO.ItemType == ItemSO.ItemTypes.SHIELD)
-            {
-                EquipmentSO equipmentSO = itemSO as EquipmentSO;
-                if (equipmentSO.itemParameters.statModifiers.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, true);
-                else
-                    return equipmentSO.itemParameters.statModifiers;
-            }
-            else if (itemSO.ItemType != ItemSO.ItemTypes.POTION
-               && itemSO.ItemType != ItemSO.ItemTypes.INGREDIENT
-               && itemSO.ItemType != ItemSO.ItemTypes.RANGED_AMMO
-               && itemSO.ItemType != ItemSO.ItemTypes.QUEST_ITEM
-               && itemSO.ItemType != ItemSO.ItemTypes.MISC)
-            {
-                if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
-                {
-                    WeaponSO weaponSO = itemSO as WeaponSO;
-                    if (weaponSO.itemParameters.statModifiers.Count == 0)
-                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
-                    else
-                        return weaponSO.itemParameters.statModifiers;
-                }
-                else
-                {
-                    EquipmentSO equipmentSO = itemSO as EquipmentSO;
-                    if (equipmentSO.itemParameters.statModifiers.Count == 0)
-                        return GameManager.Instance.ModifiersListSO.GenerateStatModifiersList(4, itemRarity, false);
-                    else
-                        return equipmentSO.itemParameters.statModifiers;
-                }
-            }
-            return new List<ModifierType>();
-        }
-        public static List<WeaponModifierType> GetWeaponModifiersList(ItemSO itemSO, ItemRarities itemRarity)
-        {
-            if (itemSO.ItemType == ItemSO.ItemTypes.WEAPON || itemSO.ItemType == ItemSO.ItemTypes.RANGED_WEAPON)
-            {
-                WeaponSO weaponSO = itemSO as WeaponSO;
-                if (weaponSO.itemParameters.weaponModifiers.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, false);
-                return weaponSO.itemParameters.weaponModifiers;
-            }
-            else if (itemSO.ItemType == ItemSO.ItemTypes.RANGED_AMMO)
-            {
-                WeaponSO weaponSO = itemSO as WeaponSO;
-                if (weaponSO.itemParameters.weaponModifiers.Count == 0)
-                    return GameManager.Instance.ModifiersListSO.GenerateWeaponModifiersList(4, itemRarity, true);
-                return weaponSO.itemParameters.weaponModifiers;
-            }
-            return new List<WeaponModifierType>();
         }
         public static ItemRarities GetItemRarity()
         {

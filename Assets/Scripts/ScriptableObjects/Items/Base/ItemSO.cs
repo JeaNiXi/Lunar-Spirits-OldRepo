@@ -58,6 +58,11 @@ namespace Inventory.SO
     {
         public ModifiersSO Modifier;
         public int Value;
+        public ModifierType(ModifiersSO modifiersSO, int value)
+        {
+            this.Modifier = modifiersSO;
+            this.Value = value;
+        }
     }
     [Serializable] 
     public struct WeaponModifierType
@@ -87,17 +92,32 @@ namespace Inventory.SO
     {
         public EquipmentModifierSO Modifier;
         public int Value;
+        public EquipmentModifierType(EquipmentModifierSO equipmentModifierSO, int value)
+        {
+            this.Modifier = equipmentModifierSO;
+            this.Value = value;
+        }
     }
     [Serializable]
     public struct ResistModifierType
     {
         public ResistModifierSO Modifier;
         public int Value;
+        public ResistModifierType(ResistModifierSO resistModifierSO, int value)
+        {
+            this.Modifier = resistModifierSO;
+            this.Value = value;
+        }
     }
     [Serializable]
     public struct VulnerabilityModifierType
     {
         public VulnerabilityModifierSO Modifier;
         public int Value;
+        public VulnerabilityModifierType(VulnerabilityModifierSO vulnerabilityModifierSO, int value)
+        {
+            this.Modifier = vulnerabilityModifierSO;
+            this.Value = value;
+        }
     }
 }

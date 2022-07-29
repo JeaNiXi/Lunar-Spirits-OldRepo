@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiersStatListSO: {fileID: 11400000, guid: 93fa44e950cf5ea419b0f0a083225e65, type: 2}
   modifiersWeaponListSO: {fileID: 11400000, guid: 64406c20f2f058547a58db34a835c22b, type: 2}
+  modifiersWeaponStatListSO: {fileID: 11400000, guid: 3f4672d0b1712c248a24f10f311554ec, type: 2}
   modifiersEquipmentListSO: {fileID: 11400000, guid: e06facaddefa8d94bbac4454ce868d79, type: 2}
   modifiersResistListSO: {fileID: 11400000, guid: e2f5fe60f4aa5134ea97cbb6bc9d443a, type: 2}
   modifiersVulnerabilityListSO: {fileID: 11400000, guid: c64f539ff12b08d4285bc890691655c8, type: 2}

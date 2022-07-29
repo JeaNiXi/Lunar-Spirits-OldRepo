@@ -20,12 +20,9 @@ MonoBehaviour:
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
   itemParameters:
-    statModifiers:
-    - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
-      Value: 260
-    weaponModifiers:
-    - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
-      Value: 12
+    statModifiers: []
+    weaponModifiers: []
+    weaponStatModifiers: []
     equipmentModifiers: []
     resistModifiers: []
     vulnerabilityModifiers: []

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5b5dbdc9dd83f499094144976ec8b2, type: 3}
   m_Name: ModifiersListResist
   m_EditorClassIdentifier: 
-  modifiersWeaponList: []
+  modifiersResistList:
+  - {fileID: 11400000, guid: a9d60f0f7f179a947ab57e893d4f6a42, type: 2}

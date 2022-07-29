@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d2d34cc917d124596c70669daeed4c, type: 3}
   m_Name: ModifiersListVelnerability
   m_EditorClassIdentifier: 
-  modifiersWeaponList:
-  - {fileID: 0}
+  modifiersVulnerabilityList:
+  - {fileID: 11400000, guid: 8d2d54dc5c5416948bf291fa5fa34321, type: 2}

@@ -8,6 +8,6 @@ namespace Helpers.SO
     [CreateAssetMenu(fileName = "ModifiersListResist", menuName = "Helpers/MainModifiersListResist")]
     public class ModifiersResistChildSO : ScriptableObject
     {
-        [NonReorderable] public List<ResistModifierSO> modifiersWeaponList = new List<ResistModifierSO>();
+        [NonReorderable] public List<ResistModifierSO> modifiersResistList = new List<ResistModifierSO>();
     }
 }
