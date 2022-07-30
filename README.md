@@ -3,6 +3,8 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
+29.07.2022
+ - Random item modificator system finished.
 
 27.07.2022
  - Reworked item parameters.
