@@ -7,6 +7,7 @@ namespace Inventory.SO
 {
     public abstract class WeaponModifiersSO : ScriptableObject
     {
+        public string ModifierName;
         public abstract void ApplyModifier(ActorManager character, int value);
     }
 }

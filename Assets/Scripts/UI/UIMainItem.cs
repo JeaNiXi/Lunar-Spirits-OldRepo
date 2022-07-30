@@ -5,19 +5,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using UnityEngine.InputSystem;
 
 using Inventory.SO;
 
 namespace Inventory.UI
 {
-    public class UIMainItem : MonoBehaviour, 
-        IPointerClickHandler, 
-        IBeginDragHandler, 
-        IEndDragHandler, 
-        IDragHandler, 
+    public class UIMainItem : MonoBehaviour,
+        IPointerClickHandler,
+        IBeginDragHandler,
+        IEndDragHandler,
+        IDragHandler,
         IDropHandler,
-        IPointerEnterHandler
+        IPointerEnterHandler,
+        IPointerExitHandler
     {
         [SerializeField] private Component imageComponent;
         [SerializeField] private Component quantityComponent;
@@ -26,6 +27,7 @@ namespace Inventory.UI
         [SerializeField] private Image borderImage;
         public bool IsEmpty { get; set; }
 
+        private const float DESCRIPTION_DELAY = 0.5f;
 
         public event Action<UIMainItem>
             OnItemRMBClicked,
@@ -34,7 +36,8 @@ namespace Inventory.UI
             OnItemDrag,
             OnItemDragEnd,
             OnItemDroppedOn,
-            OnPointerHoveringOver;
+            OnPointerHoveringOver,
+            OnPointerStopHoveringOver;
 
         public enum UIItemSlots
         {
@@ -57,6 +60,7 @@ namespace Inventory.UI
             Container,
             QSContainer,
             EquipmentContainer,
+            LootContainer,
         }
 
 
@@ -64,7 +68,7 @@ namespace Inventory.UI
         public ItemContainer ItemSlotContainer;
 
         public List<ItemSO.ItemSlots> ItemSlots = new List<ItemSO.ItemSlots>();
-        
+
         public void SelectItem()
         {
             borderImage.enabled = true;
@@ -111,10 +115,10 @@ namespace Inventory.UI
             ItemSlotContainer = (ItemContainer)Enum.Parse(typeof(ItemContainer), itemContainer);
             if (ItemSlots.Count > 0)
                 ItemSlots.Clear();
-            foreach(ItemSO.ItemSlots slot in itemSlotList)
+            foreach (ItemSO.ItemSlots slot in itemSlotList)
             {
                 ItemSlots.Add(slot);
-            }    
+            }
             ToggleQuantityPanel(true);
         }
 
@@ -152,7 +156,19 @@ namespace Inventory.UI
         }
         public void OnPointerEnter(PointerEventData eventData)
         {
+            Debug.Log("Pointer enter called");
+            StartCoroutine(DescriptionDelay(DESCRIPTION_DELAY));
+        }
+        private IEnumerator DescriptionDelay(float time)
+        {
+            yield return new WaitForSeconds(time);
             OnPointerHoveringOver?.Invoke(this);
+        }
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Debug.Log("Pointer exit called");
+            StopAllCoroutines();
+            OnPointerStopHoveringOver?.Invoke(this);
         }
         #endregion
 

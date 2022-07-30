@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db026031c4802b345b0d0dacf56a33a3, type: 3}
   m_Name: Resist Fire Modifier
   m_EditorClassIdentifier: 
+  ModifierName: Fire Resistance

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287f039385879b34ba7ce9ba89d20b53, type: 3}
   m_Name: BaseHealthModifier
   m_EditorClassIdentifier: 
+  ModifierName: BASE TEST

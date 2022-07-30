@@ -5,5 +5,6 @@ using UnityEngine;
 
 public abstract class WeaponStatModifiersSO : ScriptableObject
 {
+    public string ModifierName;
     public abstract void ApplyModifier(ActorManager character, int value);
 }

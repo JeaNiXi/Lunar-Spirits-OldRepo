@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Inventory.SO
 {
-    [CreateAssetMenu(fileName = "Stat Health Modifier", menuName = "Character/Modifiers/Stat/Health")]
-    public class StatHealthModifierSO : ModifiersSO
+    [CreateAssetMenu(fileName = "Stat Strength Modifier", menuName = "Character/Modifiers/Stat/Strength")]
+    public class StatStrengthModifierSO : ModifiersSO
     {
         public override void ApplyModifier(CharacterManager character, int value)
         {
-            character.ActorParams.AddHealthBonus(value);
+            throw new System.NotImplementedException();
         }
     }
 }

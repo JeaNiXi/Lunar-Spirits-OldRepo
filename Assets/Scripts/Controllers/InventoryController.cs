@@ -64,6 +64,7 @@ namespace Inventory
 
             UIMainInventory.OnItemRMBClicked += HandleItemRMBClick;
 
+            UIMainInventory.OnItemDescriptionRequested += HandleItemDescriptionRequest;
             UIMainInventory.OnItemDragStarted += HandleItemDragStart;
             UIMainInventory.OnItemDropRequest += HandleItemDropRequest;
 
@@ -76,6 +77,8 @@ namespace Inventory
 
             //MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
         }
+
+
 
 
 
@@ -137,6 +140,11 @@ namespace Inventory
             UIMainInventory.ClearLootPanel();
             UIMainInventory.ToggleLootPanel(false);
         }
+        public void DisableDescriptionPanel()
+        {
+            UIMainInventory.ClearLootPanel();
+            UIMainInventory.ToggleDescriptionPanel(false);
+        }
         #endregion
 
         #region Handlers
@@ -160,7 +168,25 @@ namespace Inventory
                     break;
             }
         }
-
+        private void HandleItemDescriptionRequest(int itemIndex, int containerType)
+        {
+            switch(containerType)
+            {
+                case 0:
+                    InventoryItem inventoryItem = MainInventorySO.GetItemAt(itemIndex);
+                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+                    break;
+                case 3:
+                    InventoryItem lootItem = MainInventorySO.GetLootItemAt(itemIndex);
+                    UIMainInventory.InitializeDescriptionPanel(lootItem.item.name, lootItem.itemRarity.ToString(), lootItem.item.Description, lootItem.itemParameters);
+                    break;
+                //case 1:
+                //    QuickSlotItem qsItem = MainInventorySO.GetQuickSlotItemAt(itemIndex);
+                //    InventoryItem newItem = new InventoryItem(qsItem.item,qsItem.quantity, InventoryItem.SlotType.MAIN_SLOT)
+                default:
+                    break;
+            }
+        }
         private void HandleItemDragStart(int itemIndex, int containerType)
         {
             switch (containerType)

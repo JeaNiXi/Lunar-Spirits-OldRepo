@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ModifiersListStat
   m_EditorClassIdentifier: 
   modifiersStatList:
-  - {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+  - {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}

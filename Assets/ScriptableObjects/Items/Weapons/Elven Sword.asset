@@ -19,8 +19,12 @@ MonoBehaviour:
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: -21522807587195298, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  modifierTypes: []
-  weaponModifierTypes: []
-  isTwoHanded: 1
+  itemParameters:
+    statModifiers: []
+    weaponModifiers: []
+    weaponStatModifiers: []
+    equipmentModifiers: []
+    resistModifiers: []
+    vulnerabilityModifiers: []
   scaleType: 0
   KnockbackStrength: 0

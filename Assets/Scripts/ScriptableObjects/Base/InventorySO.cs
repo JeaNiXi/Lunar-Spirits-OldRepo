@@ -1054,18 +1054,10 @@ namespace Inventory.SO
         #endregion
 
 
-        public InventoryItem GetItemAt(int index)
-        {
-            return Container[index];
-        }
-        public QuickSlotItem GetQuickSlotItemAt(int index)
-        {
-            return QSContainer[index];
-        }
-        public EquipmentItem GetEquipmentItemAt(int index)
-        {
-            return EquipContainer[index];
-        }
+        public InventoryItem GetItemAt(int index) => Container[index];
+        public QuickSlotItem GetQuickSlotItemAt(int index) => QSContainer[index];
+        public EquipmentItem GetEquipmentItemAt(int index) => EquipContainer[index];
+        public InventoryItem GetLootItemAt(int index) => LootContainer[index];
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
         {
             Dictionary<int, InventoryItem> dictionary = new Dictionary<int, InventoryItem>();

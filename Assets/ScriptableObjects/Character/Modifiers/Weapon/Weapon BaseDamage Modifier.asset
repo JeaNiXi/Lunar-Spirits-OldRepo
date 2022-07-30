@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58a6691f21e82547bb4c14520bccdff, type: 3}
   m_Name: Weapon BaseDamage Modifier
   m_EditorClassIdentifier: 
+  ModifierName: Base Weapon Damage

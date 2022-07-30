@@ -23,6 +23,9 @@ namespace Managers
             MousePointer,
             OpenInventory,
             Use;
+
+        private Vector2 oldMousePosition;
+
         private void Awake()
         {
             if (Instance != null && Instance != this)

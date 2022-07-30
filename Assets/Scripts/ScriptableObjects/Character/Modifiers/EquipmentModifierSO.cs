@@ -13,6 +13,7 @@ namespace Inventory.SO
             ARMOR,
             MR,
         }
+        public string ModifierName;
         public ModifierType modifierType;
         public abstract void ApplyModifier(CharacterManager character, int value);
     }

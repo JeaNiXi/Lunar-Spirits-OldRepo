@@ -20,7 +20,7 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers:
-      - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
         Value: 260
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
@@ -36,7 +36,9 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers: []
-      weaponModifiers: []
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 222
       weaponStatModifiers: []
       equipmentModifiers: []
       resistModifiers: []
@@ -48,7 +50,7 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers:
-      - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      - Modifier: {fileID: 11400000, guid: 3569220e83e464749894625b8775a43d, type: 2}
         Value: 15
       weaponModifiers: []
       weaponStatModifiers: []
@@ -62,7 +64,7 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers:
-      - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
         Value: 260
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
@@ -83,10 +85,10 @@ MonoBehaviour:
       equipmentModifiers: []
       resistModifiers: []
       vulnerabilityModifiers: []
-  - item: {fileID: 0}
-    quantity: 0
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity: 3
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -210,7 +212,7 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers:
-      - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
         Value: 260
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
@@ -238,7 +240,7 @@ MonoBehaviour:
     itemContainer: 0
     itemParameters:
       statModifiers:
-      - Modifier: {fileID: 11400000, guid: 43105abc2d548814d8f6370b548c623b, type: 2}
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
         Value: 260
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
@@ -283,8 +285,8 @@ MonoBehaviour:
       equipmentModifiers: []
       resistModifiers: []
       vulnerabilityModifiers: []
-  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
-    quantity: 55
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 0
     itemRarity: 0
     itemContainer: 0
@@ -391,6 +393,150 @@ MonoBehaviour:
       equipmentModifiers: []
       resistModifiers: []
       vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
+    quantity: 55
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
+    slotType: 0
+    itemRarity: 0
+    itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   QSContainer:
   - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
     quantity: 99
@@ -445,4 +591,128 @@ MonoBehaviour:
     quantity: 4
     slotType: 10
     itemContainer: 0
-  LootContainer: []
+  LootContainer:
+  - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 2
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 4
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: -1
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 205
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 2
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 4
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: -1
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 206
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 1
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: -6
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: -10
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 219
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 4
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 10
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 217
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 208
+      weaponStatModifiers:
+      - Modifier: {fileID: 11400000, guid: 126df4d27ca66cd47a4cd798e47e34d1, type: 2}
+        Value: 57
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 4
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 5
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 201
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 205
+      weaponStatModifiers:
+      - Modifier: {fileID: 11400000, guid: 126df4d27ca66cd47a4cd798e47e34d1, type: 2}
+        Value: 50
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
+    quantity: 1
+    slotType: 0
+    itemRarity: 7
+    itemContainer: 0
+    itemParameters:
+      statModifiers:
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 8
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 2
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 4
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 6
+      weaponModifiers:
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 200
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 209
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 219
+      weaponStatModifiers:
+      - Modifier: {fileID: 11400000, guid: 126df4d27ca66cd47a4cd798e47e34d1, type: 2}
+        Value: 44
+      - Modifier: {fileID: 11400000, guid: 126df4d27ca66cd47a4cd798e47e34d1, type: 2}
+        Value: 49
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []

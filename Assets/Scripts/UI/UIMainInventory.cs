@@ -33,7 +33,8 @@ namespace Inventory.UI
             OnWeaponEquipRequst;
         public event Action<int, int>
             OnItemRMBClicked,
-            OnItemDragStarted;
+            OnItemDragStarted,
+            OnItemDescriptionRequested;
         public event Action<int, string>
             OnRemoveAllConfirmed;
         public event Action<int, int, string>
@@ -86,6 +87,8 @@ namespace Inventory.UI
         public void SetInventoryActive(bool value)
         {
             //Ramake.
+            if (value == false && uiDescriptionPanel.isActiveAndEnabled)
+                uiDescriptionPanel.ClearPanel();
             characterScreen.gameObject.SetActive(value);
             inventoryScreen.gameObject.SetActive(value);
             IsInventoryActive = value;
@@ -177,10 +180,6 @@ namespace Inventory.UI
                 uiItem.ToggleQuantityPanel(false);
             uiEquipmentItems.Add(uiItem);
         }
-        //public void InitializeStatsUI(ActorSO actor)
-        //{
-        //    uiStatsScreen.UpdateStatsUI(actor);
-        //}
         private void InitializeActions(UIMainItem uiItem)
         {
             uiItem.OnItemRMBClicked += HandleRMBClick;
@@ -189,8 +188,16 @@ namespace Inventory.UI
             uiItem.OnItemDragEnd += HandleDragEnd;
             uiItem.OnItemDroppedOn += HandleItemDroppedOn;
             uiItem.OnPointerHoveringOver += HandleItemDescriptionRequest;
+            uiItem.OnPointerStopHoveringOver += HandlePointerStopHovering;
         }
 
+
+
+        private void InitializeLootActions(UIMainItem uiItem)
+        {
+            uiItem.OnPointerHoveringOver += HandleItemDescriptionRequest;
+            uiItem.OnPointerStopHoveringOver += HandlePointerStopHovering;
+        }
 
 
         private void DeleteActions(UIMainItem uiItem)
@@ -200,6 +207,13 @@ namespace Inventory.UI
             uiItem.OnItemDragStart -= HandleDragStart;
             uiItem.OnItemDragEnd -= HandleDragEnd;
             uiItem.OnItemDroppedOn -= HandleItemDroppedOn;
+            uiItem.OnPointerHoveringOver -= HandleItemDescriptionRequest;
+            uiItem.OnPointerStopHoveringOver -= HandlePointerStopHovering;
+        }
+        private void DeleteLootActions(UIMainItem uiItem)
+        {
+            uiItem.OnPointerHoveringOver -= HandleItemDescriptionRequest;
+            uiItem.OnPointerStopHoveringOver -= HandlePointerStopHovering;
         }
         #endregion
 
@@ -319,10 +333,6 @@ namespace Inventory.UI
                     uiEquipmentItems[i].ToggleQuantityPanel(false);
             }
         }
-        //public void UpdateStatsUI(ActorSO actor)
-        //{
-        //    uiStatsScreen.UpdateStatsUI(actor);
-        //}
         private void UpdateCurrentEquip()
         {
             Debug.Log("UPDATE EQUIP UIINVE CALLEd");
@@ -338,7 +348,8 @@ namespace Inventory.UI
             {
                 UIMainItem uiLootItem = CreateItem();
                 uiLootItem.transform.SetParent(lootContentPanel);
-                uiLootItem.InitItem(lootList[i].item.ItemImage, lootList[i].quantity, lootList[i].slotType.ToString(), lootList[i].item.CanBeInSlots, lootList[i].itemContainer.ToString());
+                uiLootItem.InitItem(lootList[i].item.ItemImage, lootList[i].quantity, lootList[i].slotType.ToString(), lootList[i].item.CanBeInSlots, "LootContainer");
+                InitializeLootActions(uiLootItem);
                 uiLootPanelList.Add(uiLootItem);
                 generatedLootList.Add(lootList[i]);
             }
@@ -348,10 +359,23 @@ namespace Inventory.UI
         {
             for (int i = uiLootPanelList.Count - 1; i >= 0; i--)
             {
+                DeleteLootActions(uiLootPanelList[i]);
                 uiLootPanelList[i].DeleteUIObject();
             }
             uiLootPanelList.Clear();
             generatedLootList.Clear();
+        }
+        public void ToggleDescriptionPanel(bool value)
+        {
+            uiDescriptionPanel.TogglePanel(value);
+        }
+        public void InitializeDescriptionPanel(string itemName, string itemRarity, string itemDescription, ItemParameters itemParametres)
+        {
+            ToggleDescriptionPanel(true);
+            uiDescriptionPanel.SetName(itemName);
+            uiDescriptionPanel.SetRarity(itemRarity);
+            uiDescriptionPanel.SetDescription(itemDescription);
+            uiDescriptionPanel.CreateItemParameters(itemParametres);
         }
         #endregion
 
@@ -505,7 +529,33 @@ namespace Inventory.UI
         }
         private void HandleItemDescriptionRequest(UIMainItem obj)
         {
-            //throw new NotImplementedException();
+            if (obj.IsEmpty)
+                return;
+            if (IsActionPanelActive())
+                return;
+            if (IsAnyPanelActive())
+                return;
+            switch(obj.ItemSlotContainer)
+            {
+                case UIMainItem.ItemContainer.Container:
+                    OnItemDescriptionRequested?.Invoke(uiItemsList.IndexOf(obj), 0);
+                    break;
+                case UIMainItem.ItemContainer.QSContainer:
+                    OnItemDescriptionRequested?.Invoke(uiQuickSlotsItems.IndexOf(obj), 1);
+                    break;
+                case UIMainItem.ItemContainer.EquipmentContainer:
+                    OnItemDescriptionRequested?.Invoke(uiEquipmentItems.IndexOf(obj), 2);
+                    break;
+                case UIMainItem.ItemContainer.LootContainer:
+                    OnItemDescriptionRequested?.Invoke(uiLootPanelList.IndexOf(obj), 3);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void HandlePointerStopHovering(UIMainItem obj)
+        {
+            uiDescriptionPanel.ClearPanel();
         }
         #endregion
 
