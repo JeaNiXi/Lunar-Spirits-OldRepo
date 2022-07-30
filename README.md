@@ -3,6 +3,10 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
+
+30.07.2022
+ - Base Description Panel Finished.
+
 29.07.2022
  - Random item modificator system finished.
 
