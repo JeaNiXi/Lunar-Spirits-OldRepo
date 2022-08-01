@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 using Inventory.SO;
 using Actor.SO;
+using Character;
 
 namespace Inventory.UI
 {
@@ -190,16 +191,11 @@ namespace Inventory.UI
             uiItem.OnPointerHoveringOver += HandleItemDescriptionRequest;
             uiItem.OnPointerStopHoveringOver += HandlePointerStopHovering;
         }
-
-
-
         private void InitializeLootActions(UIMainItem uiItem)
         {
             uiItem.OnPointerHoveringOver += HandleItemDescriptionRequest;
             uiItem.OnPointerStopHoveringOver += HandlePointerStopHovering;
         }
-
-
         private void DeleteActions(UIMainItem uiItem)
         {
             uiItem.OnItemRMBClicked -= HandleRMBClick;
@@ -214,6 +210,10 @@ namespace Inventory.UI
         {
             uiItem.OnPointerHoveringOver -= HandleItemDescriptionRequest;
             uiItem.OnPointerStopHoveringOver -= HandlePointerStopHovering;
+        }
+        public void InitializeStatsUI(CharacterManager character, List<InventoryItem> equippedItemsList)
+        {
+            uiStatsScreen.InitializeStatsUI(character, equippedItemsList);
         }
         #endregion
 
@@ -377,6 +377,10 @@ namespace Inventory.UI
             uiDescriptionPanel.SetDescription(itemDescription);
             uiDescriptionPanel.CreateItemParameters(itemParametres);
         }
+        //public void InititalizeStatsScreen(List<InventoryItem> itemsList, CharacterManager character)
+        //{
+
+        //}
         #endregion
 
         #region Handlers

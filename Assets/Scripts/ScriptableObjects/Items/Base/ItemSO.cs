@@ -51,7 +51,7 @@ namespace Inventory.SO
         [field: SerializeField] public Sprite ItemImage { get; set; }
 
         public List<ItemSlots> CanBeInSlots;
-        public ItemParameters itemParameters;
+        [field: SerializeField] public ItemParameters ItemParameters { get; set; }
     }
     [Serializable]
     public struct ModifierType

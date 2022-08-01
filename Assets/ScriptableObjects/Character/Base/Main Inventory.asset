@@ -16,23 +16,31 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 5
     itemContainer: 0
     itemParameters:
       statModifiers:
       - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
-        Value: 260
+        Value: 3
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: 7
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
-        Value: 12
-      weaponStatModifiers: []
+        Value: 217
+      - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+        Value: 213
+      weaponStatModifiers:
+      - Modifier: {fileID: 11400000, guid: 126df4d27ca66cd47a4cd798e47e34d1, type: 2}
+        Value: 55
       equipmentModifiers: []
       resistModifiers: []
       vulnerabilityModifiers: []
   - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 2
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -46,7 +54,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 82946683455c79644bf44b8de8a8cafe, type: 2}
     quantity: 8
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -60,15 +69,18 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
       - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
-        Value: 260
+        Value: 3
+      - Modifier: {fileID: 11400000, guid: 5bb87d17d44994949b7e5bfc5ed16ea1, type: 2}
+        Value: -6
       weaponModifiers:
       - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
-        Value: 12
+        Value: 207
       weaponStatModifiers: []
       equipmentModifiers: []
       resistModifiers: []
@@ -76,7 +88,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: eb82f309dc389e441a767f6fc582784e, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -88,7 +101,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 3
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -100,7 +114,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -112,7 +127,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -124,7 +140,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -136,7 +153,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -148,7 +166,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -160,7 +179,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -172,7 +192,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -184,7 +205,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -196,7 +218,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -208,7 +231,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -224,7 +248,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -236,7 +261,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -252,7 +278,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -264,7 +291,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -276,7 +304,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -288,7 +317,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -300,7 +330,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
     quantity: 13
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -312,7 +343,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -324,7 +356,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -336,7 +369,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -348,7 +382,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -360,7 +395,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -372,7 +408,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -384,7 +421,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -396,7 +434,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -408,7 +447,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -420,7 +460,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -432,7 +473,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -444,7 +486,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -456,7 +499,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -468,7 +512,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -480,7 +525,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -492,7 +538,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -504,7 +551,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
     quantity: 55
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -516,7 +564,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -528,7 +577,8 @@ MonoBehaviour:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
-    itemRarity: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers: []
@@ -541,61 +591,177 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 8d6dd15b0272e864b9166353d15d3321, type: 2}
     quantity: 99
     slotType: 0
+    itemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
+    itemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   EquipContainer:
   - item: {fileID: 0}
     quantity: 0
     slotType: 0
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 1
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 2
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 3
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 7755e85c95c401c41a7fb9018f2cdbe4, type: 2}
-    quantity: 1
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 4
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 5
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 6
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
-    quantity: 1
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 7
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 8
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   - item: {fileID: 0}
     quantity: 0
     slotType: 9
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
-  - item: {fileID: 11400000, guid: 963e13f3df40b914ab6dac83eaacb1f6, type: 2}
-    quantity: 4
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
+  - item: {fileID: 0}
+    quantity: 0
     slotType: 10
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
+    itemParameters:
+      statModifiers: []
+      weaponModifiers: []
+      weaponStatModifiers: []
+      equipmentModifiers: []
+      resistModifiers: []
+      vulnerabilityModifiers: []
   LootContainer:
   - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 2
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -613,7 +779,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 2
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -631,7 +798,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 1
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -649,7 +817,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 4
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -669,7 +838,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 6432bac778a35de43993651faa638882, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 4
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:
@@ -689,7 +859,8 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5b2d7f220388d764a9e17aec1ac76215, type: 2}
     quantity: 1
     slotType: 0
-    itemRarity: 7
+    itemRarity:
+      ItemRarity: 0
     itemContainer: 0
     itemParameters:
       statModifiers:

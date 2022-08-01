@@ -44,7 +44,6 @@ namespace Inventory
                 Instance = this;
                 DontDestroyOnLoad(this);
             }
-            Debug.Log(UnityEngine.Random.Range(0, 1));
         }
         private void Start()
         {
@@ -53,7 +52,7 @@ namespace Inventory
             InitializeMainUI();
             InitializeQuickSlotUI();
             InitializeEqipmentUI();
-            //InitializeStatsUI();
+            InitializeStatsUI();
             ToggleUIComponents(false);
             MainInventorySO.OnInventoryUpdated += HandleInventoryChange;
             MainInventorySO.OnQuickSlotUpdated += HandleQuickSlotChange;
@@ -75,7 +74,7 @@ namespace Inventory
             UIMainInventory.OnWeaponEquipRequst += HandleWeaponEquipRequest;
             UIMainInventory.OnLootListUpdated += HandleLootListUpdateRequest;
 
-            //MainCharacter.GetActorSO().OnStatUpdate += HandleStatUIUpdateRequest;
+            MainCharacter.OnStatUpdateRequested += HandleStatUIUpdateRequest;
         }
 
 
@@ -114,10 +113,10 @@ namespace Inventory
             UIMainInventory.InitializeEquipmentSlotsData(MainInventorySO.GetEquipmentItemsList());
             HandleWeaponEquipRequest();
         }
-        //private void InitializeStatsUI()
-        //{
-        //    UIMainInventory.InitializeStatsUI(MainCharacter.GetActorSO());
-        //}
+        private void InitializeStatsUI()
+        {
+            UIMainInventory.InitializeStatsUI(MainCharacter, MainInventorySO.GetEquippedInventoryItemList());
+        }
         #endregion
 
         #region ToggleUI
@@ -174,11 +173,11 @@ namespace Inventory
             {
                 case 0:
                     InventoryItem inventoryItem = MainInventorySO.GetItemAt(itemIndex);
-                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
                     break;
                 case 3:
                     InventoryItem lootItem = MainInventorySO.GetLootItemAt(itemIndex);
-                    UIMainInventory.InitializeDescriptionPanel(lootItem.item.name, lootItem.itemRarity.ToString(), lootItem.item.Description, lootItem.itemParameters);
+                    UIMainInventory.InitializeDescriptionPanel(lootItem.item.name, lootItem.itemRarity.ItemRarity.ToString(), lootItem.item.Description, lootItem.itemParameters); ;
                     break;
                 //case 1:
                 //    QuickSlotItem qsItem = MainInventorySO.GetQuickSlotItemAt(itemIndex);
@@ -325,10 +324,10 @@ namespace Inventory
         {
             UIMainInventory.ThrowNotification(notification);
         }
-        //private void HandleStatUIUpdateRequest()
-        //{
-        //    UIMainInventory.UpdateStatsUI(MainCharacter.GetActorSO());
-        //}
+        private void HandleStatUIUpdateRequest()
+        {
+            //UIMainInventory.InititalizeStatsScreen()
+        }
         private void HandleWeaponEquipRequest()
         {
             MainCharacter.SetUpEquipment(MainInventorySO.GetEquipmentItemsList());

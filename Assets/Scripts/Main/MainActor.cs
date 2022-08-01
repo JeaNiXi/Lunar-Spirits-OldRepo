@@ -63,13 +63,13 @@ namespace Actor
         [Serializable]
         public struct Strength
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
 
             public Strength(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
-            public float ScaleBonus => level * 0.1f;
+            public float ScaleBonus => Level * 0.1f;
         }
         [Serializable]
         public struct Dexterity
@@ -137,6 +137,12 @@ namespace Actor
             return 0;
         }
         #endregion
+
+
+
+
+
+
         [field: Space]
         [field: Header("Monster Settings")]
         [field: SerializeField] public float JumpStrength { get; set; }

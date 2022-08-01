@@ -14,7 +14,7 @@ namespace Inventory.SO
         {
             if (mainInventory.EquipItemHandler(index, containerType))
             {
-                foreach (ModifierType modifier in itemParameters.statModifiers)
+                foreach (ModifierType modifier in ItemParameters.statModifiers)
                 {
                     modifier.Modifier.ApplyModifier(character, modifier.Value);
                 }

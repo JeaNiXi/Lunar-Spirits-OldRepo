@@ -32,7 +32,7 @@ namespace Inventory.SO
         }
         private void ApplyModifier(CharacterManager character)
         {
-            foreach (ModifierType modifier in itemParameters.statModifiers)
+            foreach (ModifierType modifier in ItemParameters.statModifiers)
             {
                 modifier.Modifier.ApplyModifier(character, modifier.Value);
             }

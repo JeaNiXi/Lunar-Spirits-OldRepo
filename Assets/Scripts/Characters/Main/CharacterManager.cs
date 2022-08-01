@@ -17,6 +17,8 @@ namespace Character
     {
         public static CharacterManager Instance;
 
+        public event Action
+            OnStatUpdateRequested;
         public event Action<BattlerSO, GameObject>
             OnBattlerTriggerEnter;
 
@@ -85,7 +87,12 @@ namespace Character
             if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
                 UpdateCharacterState();
         }
+        #region StatMethods
+        public void UpdateStats()
+        {
 
+        }
+        #endregion
 
 
 
@@ -108,12 +115,6 @@ namespace Character
             UpdateAttackState();
         }
         #endregion
-
-
-
-
-
-
 
         #region AnimationControllers
         private void UpdateCharacterState()
@@ -151,11 +152,6 @@ namespace Character
             mainAnimator.SetBool("isAttacking", IsAttacking);
         }
         #endregion
-
-
-
-
-
 
         #region EquipmentHandler
         public void SetUpEquipment(List<EquipmentItem> equipmentList)
@@ -230,7 +226,7 @@ namespace Character
                     {
                         if (MainWeapon.item is WeaponSO weaponSO)
                         {
-                            foreach (var modifier in MainWeapon.item.itemParameters.weaponModifiers)
+                            foreach (var modifier in MainWeapon.item.ItemParameters.weaponModifiers)
                             {
                                 modifier.Modifier.ApplyModifier(actor, modifier.Value + (int)(modifier.Value * GetScalingBonus(weaponSO.scaleType.ToString())));
                             }

@@ -35,6 +35,17 @@ namespace Inventory.SO
         public List<InventoryItem> GetItemList() => Container;
         public List<QuickSlotItem> GetQuickSlotList() => QSContainer;
         public List<EquipmentItem> GetEquipmentItemsList() => EquipContainer;
+        public List<InventoryItem> GetEquippedInventoryItemList()
+        {
+            List<InventoryItem> newList = new List<InventoryItem>();
+            for (int i = 0; i < EquipContainer.Count; i++)
+            {
+                if (EquipContainer[i].IsEmpty)
+                    continue;
+                newList.Add(new InventoryItem(EquipContainer[i].item, 1, InventoryItem.SlotType.MAIN_SLOT, EquipContainer[i].itemRarity, EquipContainer[i].itemParameters));
+            }
+            return newList;
+        }
         public void SetLootContainer(List<InventoryItem> lootList) => LootContainer = lootList;
         public List<InventoryItem> GetLootList() => LootContainer;
 
@@ -323,7 +334,7 @@ namespace Inventory.SO
                     IsFound = true;
                     if (EquipContainer[destIndex].IsEmpty)
                     {
-                        EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType);
+                        EquipContainer[destIndex] = new EquipmentItem(Container[originIndex].item, Container[originIndex].quantity, EquipContainer[destIndex].slotType, Container[originIndex].itemRarity, Container[originIndex].itemParameters);
                         Container[originIndex] = InventoryItem.GetEmptyItem();
                         OnItemEquipped?.Invoke(EquipContainer[destIndex]);
                         InformUI();
@@ -984,7 +995,10 @@ namespace Inventory.SO
             //Correcting Type of Slot
             for (int i = 0; i < MAX_EQUIPMENT_SLOTS; i++)
             {
-                EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].quantity, (EquipmentItem.SlotType)i);
+                if(EquipContainer[i].IsEmpty)
+                    EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].quantity, (EquipmentItem.SlotType)i);
+                else
+                    EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].quantity, (EquipmentItem.SlotType)i, EquipContainer[i].itemRarity, EquipContainer[i].itemParameters);
             }
 
             // Checking for Allowed Slot Item and Correcting quantity.
@@ -1006,13 +1020,13 @@ namespace Inventory.SO
                             ItemFound = true;
                             if (EquipContainer[i].slotType != EquipmentItem.SlotType.AMMO)
                             {
-                                EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, 1, EquipContainer[i].slotType);
+                                EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, 1, EquipContainer[i].slotType, EquipContainer[i].itemRarity,EquipContainer[i].itemParameters);
                                 break;
                             }
                             else
                             if (EquipContainer[i].quantity > EquipContainer[i].item.MaxStackSize)
                             {
-                                EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].item.MaxStackSize, EquipContainer[i].slotType);
+                                EquipContainer[i] = new EquipmentItem(EquipContainer[i].item, EquipContainer[i].item.MaxStackSize, EquipContainer[i].slotType, EquipContainer[i].itemRarity, EquipContainer[i].itemParameters);
                                 break;
                             }
                             break;
@@ -1030,13 +1044,12 @@ namespace Inventory.SO
                 if (!Container[i].IsEmpty)
                     if (AllStatParamsAreNull(Container[i]))
                     {
-                        Debug.Log(i + "is " + "empty");
                         Container[i] = new InventoryItem(
                             Container[i].item,
                             Container[i].quantity,
                             Container[i].slotType,
                             Container[i].itemRarity,
-                            Container[i].item.itemParameters);
+                            Container[i].item.ItemParameters);
                     }
             }
 
@@ -1092,11 +1105,11 @@ namespace Inventory.SO
             public int weaponStatCount;
             public int resistCount;
             public int vulnerabilityCount;
-            public StatsCount(InventoryItem.ItemRarities itemRarity)
+            public StatsCount(ItemRarities.ItemRaritiesEnum itemRarity)
             {
                 switch(itemRarity)
                 {
-                    case InventoryItem.ItemRarities.BAD:
+                    case ItemRarities.ItemRaritiesEnum.BAD:
                         {
                             posStatCount = 0;
                             negStatCount = 2;
@@ -1107,7 +1120,7 @@ namespace Inventory.SO
                             vulnerabilityCount = 2;
                             break;
                         }
-                    case InventoryItem.ItemRarities.COMMON:
+                    case ItemRarities.ItemRaritiesEnum.COMMON:
                         {
                             posStatCount = 1;
                             negStatCount = 1;
@@ -1118,7 +1131,7 @@ namespace Inventory.SO
                             vulnerabilityCount = 1;
                             break;
                         }
-                    case InventoryItem.ItemRarities.UNCOMMON:
+                    case ItemRarities.ItemRaritiesEnum.UNCOMMON:
                         {
                             posStatCount = 1;
                             negStatCount = UnityEngine.Random.Range(0, 2);
@@ -1129,7 +1142,7 @@ namespace Inventory.SO
                             vulnerabilityCount = UnityEngine.Random.Range(0, 2);
                             break;
                         }
-                    case InventoryItem.ItemRarities.RARE:
+                    case ItemRarities.ItemRaritiesEnum.RARE:
                         {
                             posStatCount = 1;
                             negStatCount = 0;
@@ -1140,7 +1153,7 @@ namespace Inventory.SO
                             vulnerabilityCount = 0;
                             break;
                         }
-                    case InventoryItem.ItemRarities.EPIC:
+                    case ItemRarities.ItemRaritiesEnum.EPIC:
                         {
                             posStatCount = 2;
                             negStatCount = UnityEngine.Random.Range(0, 2);
@@ -1151,7 +1164,7 @@ namespace Inventory.SO
                             vulnerabilityCount = UnityEngine.Random.Range(0, 2);
                             break;
                         }
-                    case InventoryItem.ItemRarities.LEGENDARY:
+                    case ItemRarities.ItemRaritiesEnum.LEGENDARY:
                         {
                             posStatCount = 3;
                             negStatCount = UnityEngine.Random.Range(0, 3);
@@ -1162,7 +1175,7 @@ namespace Inventory.SO
                             vulnerabilityCount = UnityEngine.Random.Range(0, 3);
                             break;
                         }
-                    case InventoryItem.ItemRarities.MITHYCAL:
+                    case ItemRarities.ItemRaritiesEnum.MITHYCAL:
                         {
                             posStatCount = 4;
                             negStatCount = UnityEngine.Random.Range(0, 4);
@@ -1173,7 +1186,7 @@ namespace Inventory.SO
                             vulnerabilityCount = UnityEngine.Random.Range(0, 4);
                             break;
                         }
-                    case InventoryItem.ItemRarities.ETERNAL:
+                    case ItemRarities.ItemRaritiesEnum.ETERNAL:
                         {
                             posStatCount = 5;
                             negStatCount = UnityEngine.Random.Range(0, 5);
@@ -1209,9 +1222,9 @@ namespace Inventory.SO
             parameters.vulnerabilityModifiers = new List<VulnerabilityModifierType>();
             return parameters;
         }
-        public static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, InventoryItem.ItemRarities itemRarity)
+        public static ItemParameters GetRandomItemParameters(ItemSO item, int characterLevel, ItemRarities itemRarity)
         {
-            StatsCount newStatsCount = new StatsCount(itemRarity);
+            StatsCount newStatsCount = new StatsCount(itemRarity.ItemRarity);
 
             switch (item.ItemType)
             {
@@ -1384,15 +1397,9 @@ namespace Inventory.SO
         }
     }
     [Serializable]
-    public struct InventoryItem
+    public struct ItemRarities
     {
-        // Is a property. Returning True if item==null, or False if not.
-        public bool IsEmpty => item == null || quantity <= 0;
-        public enum SlotType
-        {
-            MAIN_SLOT,
-        }
-        public enum ItemRarities
+        public enum ItemRaritiesEnum
         {
             DEFAULT,
             BAD,        // 15%  86-100  W1
@@ -1404,6 +1411,42 @@ namespace Inventory.SO
             MITHYCAL,   // 6%   4-9     W4
             ETERNAL,    // 3%   1-3     W4
         }
+        public ItemRaritiesEnum ItemRarity;
+
+        public ItemRarities(ItemRaritiesEnum itemRarity)
+        {
+            this.ItemRarity = itemRarity;
+        }
+
+        public static ItemRaritiesEnum GetItemRarity()
+        {
+            int index = UnityEngine.Random.Range(1, 101);
+            return index > 45 ? index <= 63
+                                ? ItemRarities.ItemRaritiesEnum.UNCOMMON
+                                : index > 85
+                                    ? ItemRarities.ItemRaritiesEnum.BAD
+                                    : ItemRarities.ItemRaritiesEnum.COMMON
+                              : index <= 18
+                                ? index <= 9
+                                    ? index > 3
+                                        ? ItemRarities.ItemRaritiesEnum.MITHYCAL
+                                        : ItemRarities.ItemRaritiesEnum.ETERNAL
+                                    : ItemRarities.ItemRaritiesEnum.LEGENDARY
+                                : index > 30
+                                    ? ItemRarities.ItemRaritiesEnum.RARE
+                                    : ItemRarities.ItemRaritiesEnum.EPIC;
+        }
+    }
+    [Serializable]
+    public struct InventoryItem
+    {
+        // Is a property. Returning True if item==null, or False if not.
+        public bool IsEmpty => item == null || quantity <= 0;
+        public enum SlotType
+        {
+            MAIN_SLOT,
+        }
+
         public enum ItemContainer
         {
             Container,
@@ -1421,7 +1464,7 @@ namespace Inventory.SO
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.Container;
-            this.itemRarity = GetItemRarity();
+            this.itemRarity = new ItemRarities(ItemRarities.GetItemRarity());
             this.itemParameters = ItemParameters.GetRandomItemParameters(item, 20, itemRarity);
         }
         public InventoryItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, ItemParameters itemParameters)
@@ -1433,24 +1476,7 @@ namespace Inventory.SO
             this.itemRarity = itemRarity;
             this.itemParameters = itemParameters;
         }
-        public static ItemRarities GetItemRarity()
-        {
-            int index = UnityEngine.Random.Range(1, 101);
-            return index > 45 ? index <= 63
-                                ? ItemRarities.UNCOMMON
-                                : index > 85
-                                    ? ItemRarities.BAD
-                                    : ItemRarities.COMMON
-                              : index <= 18
-                                ? index <= 9
-                                    ? index > 3
-                                        ? ItemRarities.MITHYCAL
-                                        : ItemRarities.ETERNAL
-                                    : ItemRarities.LEGENDARY
-                                : index > 30
-                                    ? ItemRarities.RARE
-                                    : ItemRarities.EPIC;
-        }
+
         public static InventoryItem GetEmptyItem()
         {
             return new InventoryItem
@@ -1459,7 +1485,7 @@ namespace Inventory.SO
                 quantity = 0,
                 slotType = SlotType.MAIN_SLOT,
                 itemContainer = ItemContainer.Container,
-                itemRarity = ItemRarities.DEFAULT,
+                itemRarity =  new ItemRarities(ItemRarities.ItemRaritiesEnum.DEFAULT),
             };
         }
     }
@@ -1471,6 +1497,18 @@ namespace Inventory.SO
         {
             QUICK_SLOT
         }
+        public enum ItemRarities
+        {
+            DEFAULT,
+            BAD,        // 15%  86-100  W1
+            COMMON,     // 22%  64-85   W1
+            UNCOMMON,   // 18%  46-63   W2
+            RARE,       // 15%  31-45   W2
+            EPIC,       // 12%  19-30   W3
+            LEGENDARY,  // 9%   10-18   W3
+            MITHYCAL,   // 6%   4-9     W4
+            ETERNAL,    // 3%   1-3     W4
+        }
         public enum ItemContainer
         {
             QSContainer,
@@ -1478,7 +1516,9 @@ namespace Inventory.SO
         public ItemSO item;
         public int quantity;
         public SlotType slotType;
+        public ItemRarities itemRarity;
         public ItemContainer itemContainer;
+        public ItemParameters itemParameters;
 
         public QuickSlotItem(ItemSO item, int quantity, SlotType slotType)
         {
@@ -1486,6 +1526,8 @@ namespace Inventory.SO
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.QSContainer;
+            this.itemRarity = ItemRarities.DEFAULT;
+            this.itemParameters = new ItemParameters();
         }
         public static QuickSlotItem GetEmptyQuickSlotItem()
         {
@@ -1495,6 +1537,8 @@ namespace Inventory.SO
                 quantity = 0,
                 slotType = SlotType.QUICK_SLOT,
                 itemContainer = ItemContainer.QSContainer,
+                itemRarity = ItemRarities.DEFAULT,
+                itemParameters = new ItemParameters(),
             };
         }
     }
@@ -1526,7 +1570,9 @@ namespace Inventory.SO
         public ItemSO item;
         public int quantity;
         public SlotType slotType;
+        public ItemRarities itemRarity;
         public ItemContainer itemContainer;
+        public ItemParameters itemParameters;
 
         public EquipmentItem(ItemSO item, int quantity, SlotType slotType)
         {
@@ -1534,6 +1580,8 @@ namespace Inventory.SO
             this.quantity = quantity;
             this.slotType = slotType;
             this.itemContainer = ItemContainer.EquipmentContainer;
+            this.itemRarity = new ItemRarities(ItemRarities.ItemRaritiesEnum.DEFAULT);
+            this.itemParameters = new ItemParameters();
         }
         public EquipmentItem(SlotType type)
         {
@@ -1541,6 +1589,17 @@ namespace Inventory.SO
             quantity = 0;
             slotType = type;
             itemContainer = ItemContainer.EquipmentContainer;
+            itemRarity = new ItemRarities(ItemRarities.ItemRaritiesEnum.DEFAULT);
+            itemParameters = new ItemParameters();
+        }
+        public EquipmentItem(ItemSO item, int quantity, SlotType slotType, ItemRarities itemRarity, ItemParameters itemParameters)
+        {
+            this.item = item;
+            this.quantity = quantity;
+            this.slotType = slotType;
+            this.itemContainer = ItemContainer.EquipmentContainer;
+            this.itemRarity = itemRarity;
+            this.itemParameters = itemParameters;
         }
         public static EquipmentItem GetEmptyEquipmentItem()
         {
@@ -1550,7 +1609,9 @@ namespace Inventory.SO
                 quantity = 0,
                 slotType = SlotType.DEFAULT,
                 itemContainer = ItemContainer.EquipmentContainer,
-            };
+                itemRarity = new ItemRarities(ItemRarities.ItemRaritiesEnum.DEFAULT),
+                itemParameters = new ItemParameters(),
+        };
         }
     }
 }

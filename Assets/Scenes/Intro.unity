@@ -1898,6 +1898,10 @@ PrefabInstance:
       propertyPath: ActorParams.mainStrength.level
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
+      propertyPath: ActorParams.<MainStrength>k__BackingField.<Level>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6767027704927214191, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3373,7 +3377,7 @@ MonoBehaviour:
     <TotalHealth>k__BackingField: 0
     <CurrentHealth>k__BackingField: 0
     <MainStrength>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
       level: 0
     <MainConstitution>k__BackingField:
@@ -5053,7 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 136
+  m_MinHeight: 130
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -10907,7 +10911,7 @@ MonoBehaviour:
     <TotalHealth>k__BackingField: 0
     <CurrentHealth>k__BackingField: 0
     <MainStrength>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
       level: 0
     <MainConstitution>k__BackingField:
@@ -22424,7 +22428,7 @@ MonoBehaviour:
     <TotalHealth>k__BackingField: 0
     <CurrentHealth>k__BackingField: 0
     <MainStrength>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
       level: 0
     <MainConstitution>k__BackingField:
@@ -49798,8 +49802,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 5
     m_Right: 5
-    m_Top: 10
-    m_Bottom: 10
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
@@ -53982,7 +53986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d5e7b862be53e41b19e9a06751a629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthText: {fileID: 0}
+  StrengthText: {fileID: 309017317}
 --- !u!1 &4240593370068790121
 GameObject:
   m_ObjectHideFlags: 0
