@@ -201,7 +201,7 @@ namespace Character
             switch (scaleType)
             {
                 case "Strength":
-                    return ActorParams.mainStrength.ScaleBonus;
+                    return ActorParams.MainStrength.ScaleBonus;
                 default:
                     return 0;
             }

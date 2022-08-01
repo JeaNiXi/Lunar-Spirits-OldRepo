@@ -10,7 +10,7 @@ namespace Inventory.SO
     {
         public override void ApplyModifier(CharacterManager character, int value)
         {
-            throw new System.NotImplementedException();
+            character.ActorParams.HealthBonus += value;
         }
     }
 }
