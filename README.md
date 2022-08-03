@@ -3,7 +3,10 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
-
+03.08.2022
+ - Character panel finished.
+ - Stats are displaying for items/weapons.
+ - Added armor to loot lists.
 30.07.2022
  - Base Description Panel Finished.
 
