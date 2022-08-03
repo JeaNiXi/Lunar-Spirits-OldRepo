@@ -7,6 +7,7 @@ Development Dairy:
  - Character panel finished.
  - Stats are displaying for items/weapons.
  - Added armor to loot lists.
+ 
 30.07.2022
  - Base Description Panel Finished.
 
