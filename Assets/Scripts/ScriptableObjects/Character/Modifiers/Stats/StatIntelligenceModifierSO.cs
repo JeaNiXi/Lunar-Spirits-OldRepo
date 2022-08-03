@@ -1,18 +1,16 @@
+using Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatIntelligenceModifierSO : MonoBehaviour
+namespace Inventory.SO
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "Stat Intelligence Modifier", menuName = "Character/Modifiers/Stat/Intelligence")]
+    public class StatIntelligenceModifierSO : ModifiersSO
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void ApplyModifier(CharacterManager character, int value)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

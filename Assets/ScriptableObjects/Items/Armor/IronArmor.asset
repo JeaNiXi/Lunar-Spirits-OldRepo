@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ca27f00f380564994ae66e43226c23, type: 3}
-  m_Name: Leather Armor
+  m_Name: IronArmor
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Leather Armor
+  <Name>k__BackingField: Iron Armor
   <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: Leather Armor
+  <Description>k__BackingField: Base Iron Armor
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 6
-  <ItemImage>k__BackingField: {fileID: 5064720189575774579, guid: 7a5806d11e28c4a4992cd2ec0e193899, type: 3}
+  <ItemImage>k__BackingField: {fileID: 3754165416665315865, guid: 7a5806d11e28c4a4992cd2ec0e193899, type: 3}
   CanBeInSlots: 0000000005000000
   <ItemParameters>k__BackingField:
     statModifiers: []

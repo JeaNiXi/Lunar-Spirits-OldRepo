@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 38706002}
   - component: {fileID: 38706001}
   m_Layer: 5
-  m_Name: AirResText
+  m_Name: AirVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 101029190}
   - component: {fileID: 101029189}
   m_Layer: 5
-  m_Name: DarkResText
+  m_Name: DarkVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,19 +1887,31 @@ PrefabInstance:
       value: Joriyah Johns
       objectReference: {fileID: 0}
     - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: ActorParams.Name
-      value: Joriyah Johns
-      objectReference: {fileID: 0}
+      propertyPath: <MainInventorySO>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bc2fe11ea1610e48971e964a71e7dd0, type: 2}
     - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: ActorParams.BaseHealth
+      propertyPath: ActorParams.<BaseHealth>k__BackingField
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: ActorParams.mainStrength.level
-      value: 2
+      propertyPath: ActorParams.<MainWisdom>k__BackingField.<Level>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: ActorParams.<MainStrength>k__BackingField.<Level>k__BackingField
+      propertyPath: ActorParams.<MainCharisma>k__BackingField.<Level>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
+      propertyPath: ActorParams.<MainDexterity>k__BackingField.<Level>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
+      propertyPath: ActorParams.<MainConstitution>k__BackingField.<Level>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767027704927214188, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
+      propertyPath: ActorParams.<MainIntelligence>k__BackingField.<Level>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6767027704927214191, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
@@ -1945,14 +1957,6 @@ PrefabInstance:
     - target: {fileID: 6767027704927214191, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6767027705368558072, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6767027705368558074, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a422047b9f5d04d800bc9b1a70e459, type: 3}
@@ -2174,7 +2178,7 @@ GameObject:
   - component: {fileID: 197871762}
   - component: {fileID: 197871761}
   m_Layer: 5
-  m_Name: LightningResText
+  m_Name: LightningVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3370,7 +3374,6 @@ MonoBehaviour:
     <Name>k__BackingField: 
     <IsLevelDependant>k__BackingField: 0
     <Level>k__BackingField: 0
-    <BaseHealth>k__BackingField: 0
     <Armor>k__BackingField: 0
     <MagicResist>k__BackingField: 0
     <HealthBonus>k__BackingField: 0
@@ -3379,15 +3382,15 @@ MonoBehaviour:
     <MainStrength>k__BackingField:
       <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainConstitution>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainIntelligence>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainWisdom>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainCharisma>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <FireResistance>k__BackingField: 0
     <WaterResistance>k__BackingField: 0
     <EarthResistance>k__BackingField: 0
@@ -4689,7 +4692,7 @@ GameObject:
   - component: {fileID: 459385153}
   - component: {fileID: 459385152}
   m_Layer: 5
-  m_Name: FireResText
+  m_Name: FireVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8035,7 +8038,7 @@ GameObject:
   - component: {fileID: 655212482}
   - component: {fileID: 655212481}
   m_Layer: 5
-  m_Name: WaterResText
+  m_Name: WaterVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8860,7 +8863,7 @@ GameObject:
   - component: {fileID: 822139759}
   - component: {fileID: 822139758}
   m_Layer: 5
-  m_Name: PoisonResText
+  m_Name: PoisonVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10430,7 +10433,7 @@ GameObject:
   - component: {fileID: 945814681}
   - component: {fileID: 945814680}
   m_Layer: 5
-  m_Name: LightResPanel
+  m_Name: LightVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10450,7 +10453,7 @@ RectTransform:
   - {fileID: 374700232}
   - {fileID: 1642016351}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10904,7 +10907,6 @@ MonoBehaviour:
     <Name>k__BackingField: 
     <IsLevelDependant>k__BackingField: 0
     <Level>k__BackingField: 0
-    <BaseHealth>k__BackingField: 0
     <Armor>k__BackingField: 0
     <MagicResist>k__BackingField: 0
     <HealthBonus>k__BackingField: 0
@@ -10913,15 +10915,15 @@ MonoBehaviour:
     <MainStrength>k__BackingField:
       <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainConstitution>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainIntelligence>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainWisdom>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainCharisma>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <FireResistance>k__BackingField: 0
     <WaterResistance>k__BackingField: 0
     <EarthResistance>k__BackingField: 0
@@ -11429,7 +11431,7 @@ GameObject:
   - component: {fileID: 1063541131}
   - component: {fileID: 1063541130}
   m_Layer: 5
-  m_Name: EarthResText
+  m_Name: EarthVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19319,7 +19321,7 @@ GameObject:
   - component: {fileID: 1156643067}
   - component: {fileID: 1156643066}
   m_Layer: 5
-  m_Name: AirResPanel
+  m_Name: AirVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19339,7 +19341,7 @@ RectTransform:
   - {fileID: 559441227}
   - {fileID: 644838575}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19423,7 +19425,7 @@ GameObject:
   - component: {fileID: 1172907986}
   - component: {fileID: 1172907985}
   m_Layer: 5
-  m_Name: EarthResPanel
+  m_Name: EarthVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19443,7 +19445,7 @@ RectTransform:
   - {fileID: 1972194074}
   - {fileID: 1115790266}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20622,7 +20624,7 @@ GameObject:
   - component: {fileID: 1320394599}
   - component: {fileID: 1320394598}
   m_Layer: 5
-  m_Name: PoisonResPanel
+  m_Name: PoisonVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20642,7 +20644,7 @@ RectTransform:
   - {fileID: 440049017}
   - {fileID: 8601751}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20802,7 +20804,7 @@ GameObject:
   - component: {fileID: 1342898519}
   - component: {fileID: 1342898518}
   m_Layer: 5
-  m_Name: LightningResPanel
+  m_Name: LightningVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20822,7 +20824,7 @@ RectTransform:
   - {fileID: 1955136847}
   - {fileID: 536621818}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21057,7 +21059,7 @@ GameObject:
   - component: {fileID: 1374834496}
   - component: {fileID: 1374834495}
   m_Layer: 5
-  m_Name: PhysicalResText
+  m_Name: PhysicalVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22128,7 +22130,7 @@ GameObject:
   - component: {fileID: 1484429391}
   - component: {fileID: 1484429390}
   m_Layer: 5
-  m_Name: LightResText
+  m_Name: LightVulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22421,7 +22423,6 @@ MonoBehaviour:
     <Name>k__BackingField: 
     <IsLevelDependant>k__BackingField: 0
     <Level>k__BackingField: 0
-    <BaseHealth>k__BackingField: 0
     <Armor>k__BackingField: 0
     <MagicResist>k__BackingField: 0
     <HealthBonus>k__BackingField: 0
@@ -22430,15 +22431,15 @@ MonoBehaviour:
     <MainStrength>k__BackingField:
       <Level>k__BackingField: 0
     <MainDexterity>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainConstitution>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainIntelligence>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainWisdom>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <MainCharisma>k__BackingField:
-      level: 0
+      <Level>k__BackingField: 0
     <FireResistance>k__BackingField: 0
     <WaterResistance>k__BackingField: 0
     <EarthResistance>k__BackingField: 0
@@ -23685,7 +23686,7 @@ GameObject:
   - component: {fileID: 1648656262}
   - component: {fileID: 1648656261}
   m_Layer: 5
-  m_Name: FireResPanel
+  m_Name: FireVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23705,7 +23706,7 @@ RectTransform:
   - {fileID: 131457256}
   - {fileID: 448487052}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37705,7 +37706,7 @@ GameObject:
   - component: {fileID: 1820861824}
   - component: {fileID: 1820861823}
   m_Layer: 5
-  m_Name: DarkResPanel
+  m_Name: DarkVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38502,7 +38503,7 @@ GameObject:
   - component: {fileID: 1921271737}
   - component: {fileID: 1921271736}
   m_Layer: 5
-  m_Name: PhysicalResPanel
+  m_Name: PhysicalVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38522,7 +38523,7 @@ RectTransform:
   - {fileID: 1883723923}
   - {fileID: 630900717}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39055,7 +39056,7 @@ GameObject:
   - component: {fileID: 1957091308}
   - component: {fileID: 1957091307}
   m_Layer: 5
-  m_Name: WaterResPanel
+  m_Name: WaterVulPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39075,7 +39076,7 @@ RectTransform:
   - {fileID: 1803444567}
   - {fileID: 1748164030}
   m_Father: {fileID: 1976598688}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39582,14 +39583,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 149947195}
-  - {fileID: 1957091306}
-  - {fileID: 1156643065}
-  - {fileID: 1342898517}
-  - {fileID: 945814679}
   - {fileID: 1648656260}
+  - {fileID: 1957091306}
   - {fileID: 1172907984}
+  - {fileID: 1156643065}
   - {fileID: 1320394597}
+  - {fileID: 1342898517}
   - {fileID: 1921271735}
+  - {fileID: 945814679}
   - {fileID: 1820861822}
   m_Father: {fileID: 584161656}
   m_RootOrder: 1
@@ -52704,10 +52705,10 @@ RectTransform:
   m_Father: {fileID: 4240593370084386060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 686.7976, y: 834}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4240593369803232505
 MonoBehaviour:
@@ -53987,6 +53988,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StrengthText: {fileID: 309017317}
+  DexterityText: {fileID: 354708856}
+  ConstitutionText: {fileID: 446563692}
+  IntelligenceText: {fileID: 861985950}
+  WisdomText: {fileID: 592414396}
+  CharismaText: {fileID: 2067841304}
+  CharacterLevel: {fileID: 2023601232}
+  HealthText: {fileID: 142269154}
+  ArmorText: {fileID: 885111566}
+  MagicResText: {fileID: 2030597699}
+  FireRes: {fileID: 569068441}
+  WaterRes: {fileID: 0}
+  EarthRes: {fileID: 0}
+  AirRes: {fileID: 0}
+  PoisonRes: {fileID: 0}
+  LightningRes: {fileID: 0}
+  PhysicalRes: {fileID: 0}
+  LightRes: {fileID: 0}
+  DarkRes: {fileID: 0}
+  FireVulnerability: {fileID: 459385152}
+  WaterVulnerability: {fileID: 0}
+  EarthVulnerability: {fileID: 0}
+  AirVulnerability: {fileID: 0}
+  PoisonVulnerability: {fileID: 0}
+  LightningVulnerability: {fileID: 0}
+  PhysicalVulnerability: {fileID: 0}
+  LightVulnerability: {fileID: 0}
+  DarkVulnerability: {fileID: 0}
 --- !u!1 &4240593370068790121
 GameObject:
   m_ObjectHideFlags: 0

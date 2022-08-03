@@ -1,18 +1,16 @@
+using Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatConstitutionModifierSO : MonoBehaviour
+namespace Inventory.SO
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "Stat Constitution Modifier", menuName = "Character/Modifiers/Stat/Constitution")]
+    public class StatConstitutionModifierSO : ModifiersSO
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void ApplyModifier(CharacterManager character, int value)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

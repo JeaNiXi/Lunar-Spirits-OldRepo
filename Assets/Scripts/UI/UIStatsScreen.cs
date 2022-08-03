@@ -99,6 +99,16 @@ namespace Inventory.UI
             IntelligenceText.text = tmpIntelligence.ToString();
             WisdomText.text = tmpIntelligence.ToString();
             CharismaText.text = tmpCharisma.ToString();
+
+            CharacterLevel.text = character.ActorParams.Level.ToString();
+            HealthText.text = character.ActorParams.TotalHealth.ToString();
+            float tmpAPercent = character.ActorParams.Armor / 32;
+            ArmorText.text = $"{character.ActorParams.Armor} ({tmpAPercent}%)";
+            float tmpMRPercent = character.ActorParams.MagicResist / 32;
+            MagicResText.text = $"{character.ActorParams.MagicResist} ({tmpMRPercent}%)";
+
+            FireRes.text = character.ActorParams.FireResistance.ToString();
+            FireVulnerability.text = character.ActorParams.FireVulnerability.ToString();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Inventory.SO
     {
         [SerializeField] [NonReorderable] private List<PotionsSO> potions = new List<PotionsSO>();
         [SerializeField] [NonReorderable] private List<WeaponSO> weapons = new List<WeaponSO>();
+        [SerializeField] [NonReorderable] private List<EquipmentSO> armor = new List<EquipmentSO>();
         private enum LootTypes
         {
             POTION,
@@ -31,7 +32,11 @@ namespace Inventory.SO
         {
             LootTypes lootType = (LootTypes)Random.Range(0, LOOT_TYPE_COUNT+1);
             //
-            lootType = (LootTypes)2;
+            int test = Random.Range(0, 2);
+            if (test == 0)
+                lootType = (LootTypes)2;
+            else
+                lootType = (LootTypes)6;
             //
             switch(lootType)
             {
@@ -39,6 +44,11 @@ namespace Inventory.SO
                     {
                         WeaponSO weapon = GetRandomWeapon();
                         return new InventoryItem((ItemSO)weapon, 1, InventoryItem.SlotType.MAIN_SLOT);
+                    }
+                case (LootTypes)6:
+                    {
+                        EquipmentSO equipment = GetRandomArmor();
+                        return new InventoryItem((ItemSO)equipment, 1, InventoryItem.SlotType.MAIN_SLOT);
                     }
                 default:
                     return new InventoryItem();
@@ -50,6 +60,12 @@ namespace Inventory.SO
             int count = weapons.Count;
             int index = Random.Range(0, count - 1);
             return weapons[index];
+        }
+        public EquipmentSO GetRandomArmor()
+        {
+            int count = armor.Count;
+            int index = Random.Range(0, count - 1);
+            return armor[index];
         }
     }
 }

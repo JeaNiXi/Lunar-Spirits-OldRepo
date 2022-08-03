@@ -148,9 +148,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d552c61dbe91f04f93d97c6465bc147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainActorSO: {fileID: 11400000, guid: 331ea50fc8db4a646adac724859f5428, type: 2}
   mainRB2D: {fileID: 6767027704927214184}
   mainAnimator: {fileID: 6767027704927214178}
+  ActorParams:
+    <Name>k__BackingField: Joriah Johns
+    <IsLevelDependant>k__BackingField: 0
+    <Level>k__BackingField: 1
+    <BaseHealth>k__BackingField: 0
+    <Armor>k__BackingField: 0
+    <MagicResist>k__BackingField: 0
+    <HealthBonus>k__BackingField: 0
+    <TotalHealth>k__BackingField: 0
+    <CurrentHealth>k__BackingField: 0
+    <MainStrength>k__BackingField:
+      <Level>k__BackingField: 1
+    <MainDexterity>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainConstitution>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainIntelligence>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainWisdom>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainCharisma>k__BackingField:
+      <Level>k__BackingField: 0
+    <FireResistance>k__BackingField: 0
+    <WaterResistance>k__BackingField: 0
+    <EarthResistance>k__BackingField: 0
+    <AirResistance>k__BackingField: 0
+    <PoisonResistance>k__BackingField: 0
+    <LightningResistance>k__BackingField: 0
+    <PhysicalResistance>k__BackingField: 0
+    <LightResistance>k__BackingField: 0
+    <DarkResistance>k__BackingField: 0
+    <FireVulnerability>k__BackingField: 0
+    <WaterVulnerability>k__BackingField: 0
+    <EarthVulnerability>k__BackingField: 0
+    <AirVulnerability>k__BackingField: 0
+    <PoisonVulnerability>k__BackingField: 0
+    <LightningVulnerability>k__BackingField: 0
+    <PhysicalVulnerability>k__BackingField: 0
+    <LightVulnerability>k__BackingField: 0
+    <DarkVulnerability>k__BackingField: 0
+    <JumpStrength>k__BackingField: 0
+    <JumpDelay>k__BackingField: 0
   mainWeaponSlot: {fileID: 6767027705267619812}
   equipItemPrefab: {fileID: 4159204747204107816, guid: f8a73e541f941e14d8c699f055c154eb, type: 3}
   WeaponCircleOrigin: {fileID: 6767027705267619812}
@@ -229,7 +270,7 @@ GameObject:
   - component: {fileID: 6767027705368558072}
   m_Layer: 7
   m_Name: ObjectCollider
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

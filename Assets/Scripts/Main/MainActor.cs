@@ -16,9 +16,9 @@ namespace Actor
 
         [field: Space]
         [field: Header("Base Settings")]
-        [field: SerializeField] public float BaseHealth { get; set; }
-        [field: SerializeField] public float Armor { get; set; }
-        [field: SerializeField] public float MagicResist { get; set; }
+        //[field: SerializeField] public float BaseHealth { get; set; }
+        [field: SerializeField] public int Armor { get; set; }
+        [field: SerializeField] public int MagicResist { get; set; }
 
         [field: Space]
         [field: Header("Base Settings Helpers")]
@@ -88,14 +88,7 @@ namespace Actor
             {
                 this.Level = level;
             }
-            public float GetHealthBonus => Level switch
-            {
-                1 => 200,
-                2 => 400,
-                3 => 600,
-                4 => 800,
-                _ => 0,
-            };
+            public float GetHealthBonusValue => Level * 10;
         }
         [Serializable]
         public struct Intelligence
@@ -126,15 +119,117 @@ namespace Actor
         }
         #endregion
         #region Base Methods
+        public void InitActor(List<InventoryItem> itemsList)
+        {
+            HealthBonus = GetHealthLevelBonus() + GetHealthEquipmentBonus(itemsList);
+            TotalHealth = HealthBonus + (HealthBonus/100 * MainConstitution.GetHealthBonusValue);
+            CurrentHealth = TotalHealth;
+
+            Armor = GetArmorEquipmentBonus(itemsList);
+            MagicResist = GetMagicResEquipmentBonus(itemsList);
+
+            FireResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.FIRE_RES);
+            FireVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.FIRE_VUL);
+        }
         public void InitActor()
         {
-            CurrentHealth = BaseHealth;
-            TotalHealth = BaseHealth + GetHealthBonus();
-        }
-        private int GetHealthBonus()
-        {
 
-            return 0;
+        }
+        private int GetHealthEquipmentBonus(List<InventoryItem> itemsList)
+        {
+            int tmpHealth = 0;
+            if (itemsList.Count != 0) 
+                foreach(InventoryItem item in itemsList)
+                {
+                    if (item.IsEmpty)
+                        continue;
+                    if (item.itemParameters.equipmentModifiers.Count != 0)
+                    {
+                        for (int i = 0; i < item.itemParameters.equipmentModifiers.Count; i++)
+                        {
+                            if (item.itemParameters.equipmentModifiers[i].Modifier.modifierType == EquipmentModifierSO.ModifierType.HEALTH)
+                                tmpHealth += item.itemParameters.equipmentModifiers[i].Value;
+                        }
+                    }
+                }
+            return tmpHealth;
+        }
+        private int GetArmorEquipmentBonus(List<InventoryItem> itemsList)
+        {
+            int tmpArmor = 0;
+            if (itemsList.Count != 0)
+                foreach (InventoryItem item in itemsList)
+                {
+                    if (item.IsEmpty)
+                        continue;
+                    if (item.itemParameters.equipmentModifiers.Count != 0)
+                    {
+                        for (int i = 0; i < item.itemParameters.equipmentModifiers.Count; i++)
+                        {
+                            if (item.itemParameters.equipmentModifiers[i].Modifier.modifierType == EquipmentModifierSO.ModifierType.ARMOR)
+                                tmpArmor += item.itemParameters.equipmentModifiers[i].Value;
+                        }
+                    }
+                }
+            return tmpArmor;
+        }
+        private int GetMagicResEquipmentBonus(List<InventoryItem> itemsList)
+        {
+            int tmpMRes = 0;
+            if (itemsList.Count != 0)
+                foreach (InventoryItem item in itemsList)
+                {
+                    if (item.IsEmpty)
+                        continue;
+                    if (item.itemParameters.equipmentModifiers.Count != 0)
+                    {
+                        for (int i = 0; i < item.itemParameters.equipmentModifiers.Count; i++)
+                        {
+                            if (item.itemParameters.equipmentModifiers[i].Modifier.modifierType == EquipmentModifierSO.ModifierType.MR)
+                                tmpMRes += item.itemParameters.equipmentModifiers[i].Value;
+                        }
+                    }
+                }
+            return tmpMRes;
+        }
+        private int GetHealthLevelBonus() => Level * 100;
+        private int GetResistanceModifier(List<InventoryItem> itemList, ResistModifierSO.ModifierType modifierType)
+        {
+            int tmpModifier = 0;
+            if (itemList.Count != 0)
+                foreach (InventoryItem item in itemList)
+                {
+                    if (item.IsEmpty)
+                        continue;
+                    if (item.itemParameters.resistModifiers.Count != 0)
+                    {
+                        for (int i = 0; i < item.itemParameters.resistModifiers.Count; i++)
+                        {
+                            if (item.itemParameters.resistModifiers[i].Modifier.modifierType == modifierType)
+                                tmpModifier += item.itemParameters.resistModifiers[i].Value;
+                        }
+                    }
+                }
+            return tmpModifier;
+        }
+        private int GetVulnerabilityModifier(List<InventoryItem> itemList, VulnerabilityModifierSO.ModifierType modifierType)
+        {
+            int tmpModifier = 0;
+            if (itemList.Count != 0)
+                foreach (InventoryItem item in itemList)
+                {
+                    if (item.IsEmpty)
+                        continue;
+                    if (item.itemParameters.vulnerabilityModifiers.Count != 0)
+                    {
+                        for (int i = 0; i < item.itemParameters.vulnerabilityModifiers.Count; i++)
+                        {
+                            if (item.itemParameters.vulnerabilityModifiers[i].Modifier.modifierType == modifierType)
+                                tmpModifier += item.itemParameters.vulnerabilityModifiers[i].Value;
+                        }
+                    }
+                }
+            return tmpModifier;
         }
         #endregion
 

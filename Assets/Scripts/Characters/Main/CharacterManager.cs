@@ -22,7 +22,7 @@ namespace Character
         public event Action<BattlerSO, GameObject>
             OnBattlerTriggerEnter;
 
-        public InventorySO MainInventorySO { get; private set; }
+        [field: SerializeField] public InventorySO MainInventorySO { get; private set; }
         public void SetMainInventorySO(InventorySO inventory)
         {
             MainInventorySO = inventory;
@@ -68,6 +68,7 @@ namespace Character
                 Instance = this;
                 DontDestroyOnLoad(this);
             }
+            ActorParams.InitActor(MainInventorySO.GetEquippedInventoryItemList());
         }
         private void Start()
         {

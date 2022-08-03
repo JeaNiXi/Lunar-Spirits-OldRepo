@@ -66,7 +66,11 @@ namespace Inventory.UI
             if (parameters.equipmentModifiers.Count != 0)
                 for (int i = 0; i < parameters.equipmentModifiers.Count; i++)
                 {
-
+                    UIDescriptionElement descriptionElement = CreateDescriptionElement();
+                    descriptionElement.transform.SetParent(leftStatPanel);
+                    descriptionElement.SetValue(parameters.equipmentModifiers[i].Value.ToString());
+                    descriptionElement.SetStatText(parameters.equipmentModifiers[i].Modifier.ModifierName);
+                    elementsList.Add(descriptionElement);
                 }
             if (parameters.statModifiers.Count != 0)
                 for (int i = 0; i < parameters.statModifiers.Count; i++)
@@ -84,6 +88,24 @@ namespace Inventory.UI
                     descriptionElement.transform.SetParent(rightStatPanel);
                     descriptionElement.SetValue(parameters.weaponStatModifiers[i].Value.ToString());
                     descriptionElement.SetStatText(parameters.weaponStatModifiers[i].Modifier.ModifierName);
+                    elementsList.Add(descriptionElement);
+                }
+            if (parameters.resistModifiers.Count != 0)
+                for (int i = 0; i < parameters.resistModifiers.Count; i++)
+                {
+                    UIDescriptionElement descriptionElement = CreateDescriptionElement();
+                    descriptionElement.transform.SetParent(rightStatPanel);
+                    descriptionElement.SetValue(parameters.resistModifiers[i].Value.ToString());
+                    descriptionElement.SetStatText(parameters.resistModifiers[i].Modifier.ModifierName);
+                    elementsList.Add(descriptionElement);
+                }
+            if (parameters.vulnerabilityModifiers.Count != 0)
+                for (int i = 0; i < parameters.vulnerabilityModifiers.Count; i++)
+                {
+                    UIDescriptionElement descriptionElement = CreateDescriptionElement();
+                    descriptionElement.transform.SetParent(rightStatPanel);
+                    descriptionElement.SetValue(parameters.vulnerabilityModifiers[i].Value.ToString());
+                    descriptionElement.SetStatText(parameters.vulnerabilityModifiers[i].Modifier.ModifierName);
                     elementsList.Add(descriptionElement);
                 }
         }
