@@ -74,21 +74,21 @@ namespace Actor
         [Serializable]
         public struct Dexterity
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
             public Dexterity(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
         }
         [Serializable]
         public struct Constitution
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
             public Constitution(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
-            public float GetHealthBonus => level switch
+            public float GetHealthBonus => Level switch
             {
                 1 => 200,
                 2 => 400,
@@ -100,28 +100,28 @@ namespace Actor
         [Serializable]
         public struct Intelligence
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
             public Intelligence(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
         }
         [Serializable]
         public struct Wisdom
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
             public Wisdom(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
         }
         [Serializable]
         public struct Charisma
         {
-            [SerializeField] private int level;
+            [field: SerializeField] public int Level { get; private set; }
             public Charisma(int level)
             {
-                this.level = level;
+                this.Level = level;
             }
         }
         #endregion
