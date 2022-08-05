@@ -10,6 +10,8 @@ namespace Inventory.UI
 {
     public class UIStatsScreen : MonoBehaviour
     {
+        private const int STAT_MODIFIER = 32;
+
         public TMP_Text StrengthText;
         public TMP_Text DexterityText;
         public TMP_Text ConstitutionText;
@@ -43,6 +45,11 @@ namespace Inventory.UI
         public TMP_Text DarkVulnerability;
 
         public void InitializeStatsUI(CharacterManager character, List<InventoryItem> equippedItemsList)
+        {
+            UpdateStatsUI(character, equippedItemsList);
+        }
+
+        private void UpdateStatsUI(CharacterManager character, List<InventoryItem> equippedItemsList)
         {
             int tmpStrength = character.ActorParams.MainStrength.Level;
             int tmpDexterity = character.ActorParams.MainDexterity.Level;
@@ -81,7 +88,7 @@ namespace Inventory.UI
                                 continue;
                             }
                             if (item.itemParameters.statModifiers[i].Modifier.modifierType == ModifiersSO.ModifierType.WISDOM)
-                            {  
+                            {
                                 tmpWisdom += item.itemParameters.statModifiers[i].Value;
                                 continue;
                             }
@@ -102,13 +109,29 @@ namespace Inventory.UI
 
             CharacterLevel.text = character.ActorParams.Level.ToString();
             HealthText.text = character.ActorParams.TotalHealth.ToString();
-            float tmpAPercent = character.ActorParams.Armor / 32;
-            ArmorText.text = $"{character.ActorParams.Armor} ({tmpAPercent}%)";
-            float tmpMRPercent = character.ActorParams.MagicResist / 32;
-            MagicResText.text = $"{character.ActorParams.MagicResist} ({tmpMRPercent}%)";
 
-            FireRes.text = character.ActorParams.FireResistance.ToString();
-            FireVulnerability.text = character.ActorParams.FireVulnerability.ToString();
+            ArmorText.text = GetValueText(character.ActorParams.Armor);
+            MagicResText.text = GetValueText(character.ActorParams.MagicResist);
+            FireRes.text = GetValueText(character.ActorParams.FireResistance);
+            FireVulnerability.text = GetValueText(character.ActorParams.FireVulnerability);
+            WaterRes.text = GetValueText(character.ActorParams.WaterResistance);
+            WaterVulnerability.text = GetValueText(character.ActorParams.WaterVulnerability);
+            EarthRes.text = GetValueText(character.ActorParams.EarthResistance);
+            EarthVulnerability.text = GetValueText(character.ActorParams.EarthVulnerability);
+            AirRes.text = GetValueText(character.ActorParams.AirResistance);
+            AirVulnerability.text = GetValueText(character.ActorParams.AirVulnerability);
+            PoisonRes.text = GetValueText(character.ActorParams.PoisonResistance);
+            PoisonVulnerability.text = GetValueText(character.ActorParams.PoisonVulnerability);
+            LightningRes.text = GetValueText(character.ActorParams.LightningResistance);
+            LightningVulnerability.text = GetValueText(character.ActorParams.LightningVulnerability);
+            PhysicalRes.text = GetValueText(character.ActorParams.PhysicalResistance);
+            PhysicalVulnerability.text = GetValueText(character.ActorParams.PhysicalVulnerability);
+            LightRes.text = GetValueText(character.ActorParams.LightResistance);
+            LightVulnerability.text = GetValueText(character.ActorParams.LightVulnerability);
+            DarkRes.text = GetValueText(character.ActorParams.DarkResistance);
+            DarkVulnerability.text = GetValueText(character.ActorParams.DarkVulnerability);
         }
+
+        private string GetValueText(int type) => $"{type} ({type / STAT_MODIFIER}%)";
     }
 }

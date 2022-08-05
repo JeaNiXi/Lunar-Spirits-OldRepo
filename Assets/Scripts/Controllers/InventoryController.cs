@@ -173,7 +173,9 @@ namespace Inventory
             {
                 case 0:
                     InventoryItem inventoryItem = MainInventorySO.GetItemAt(itemIndex);
-                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+                    //UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.Name.GetLocalizedString(), inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+
                     break;
                 case 3:
                     InventoryItem lootItem = MainInventorySO.GetLootItemAt(itemIndex);

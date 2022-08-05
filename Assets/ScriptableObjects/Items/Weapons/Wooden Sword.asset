@@ -12,14 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
   m_Name: Wooden Sword
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Wooden Sword
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <MaxStackSize>k__BackingField: 1
   <Description>k__BackingField: Just for training.
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  itemParameters:
+  <ItemParameters>k__BackingField:
     statModifiers: []
     weaponModifiers: []
     weaponStatModifiers: []
@@ -28,3 +36,5 @@ MonoBehaviour:
     vulnerabilityModifiers: []
   scaleType: 0
   KnockbackStrength: 6
+  references:
+    version: 1

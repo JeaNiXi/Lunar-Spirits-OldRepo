@@ -45,11 +45,6 @@ namespace Inventory.UI
             ContainerString = itemContainer.ToString();
             //InvCont = itemContainer;
             Index = index;
-            Debug.Log("Started 1 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + ContainerString + " and index is " + index);
-            foreach(var slot in item.item.CanBeInSlots)
-            {
-                Debug.Log("Can Be Equipped in : " + slot);
-            }
         }
         public void InitFollower(QuickSlotItem item, QuickSlotItem.SlotType slotType, QuickSlotItem.ItemContainer itemContainer, int index)
         {
@@ -60,11 +55,6 @@ namespace Inventory.UI
             ContainerString = itemContainer.ToString();
             //QSCont = itemContainer;
             Index = index;
-            Debug.Log("Started 2 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + itemContainer + " and index is " + index);
-            foreach (var slot in item.item.CanBeInSlots)
-            {
-                Debug.Log("Can Be Equipped in : " + slot);
-            }
         }
         public void InitFollower(EquipmentItem item, EquipmentItem.SlotType slotType, EquipmentItem.ItemContainer itemContainer, int index)
         {
@@ -75,11 +65,6 @@ namespace Inventory.UI
             ContainerString = itemContainer.ToString();
             //ECont = itemContainer;
             Index = index;
-            Debug.Log("Started 3 and Inited Follower for : " + item.item.Name + " which slot type is : " + slotType + " and container is " + itemContainer + " and index is " + index);
-            foreach (var slot in item.item.CanBeInSlots)
-            {
-                Debug.Log("Can Be Equipped in : " + slot);
-            }
         }
 
         private void Update()

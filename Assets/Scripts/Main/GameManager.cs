@@ -13,6 +13,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 
 namespace Managers
@@ -25,6 +26,7 @@ namespace Managers
 
         [field: SerializeField] public ModifiersListSO ModifiersListSO { get; set; }
 
+        public LocalizedStringTable RarityTable = new LocalizedStringTable();
 
         [field: SerializeField] public GameManagerSO MainGMSO { get; private set; }
         [field: SerializeField] public SpawnPointsSO MainSpawnPoints { get; private set; }

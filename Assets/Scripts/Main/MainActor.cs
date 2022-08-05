@@ -130,6 +130,22 @@ namespace Actor
 
             FireResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.FIRE_RES);
             FireVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.FIRE_VUL);
+            WaterResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.WATER_RES);
+            WaterVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.WATER_VUL);
+            EarthResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.EARTH_RES);
+            EarthVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.EARTH_VUL);
+            AirResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.AIR_RES);
+            AirVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.AIR_VUL);
+            PoisonResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.POISON_RES);
+            PoisonVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.POISON_VUL);
+            LightningResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.LIGHTNING_RES);
+            LightningVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.LIGHTNING_VUL);
+            PhysicalResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.PHYSICAL_RES);
+            PhysicalVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.PHYSICAL_VUL);
+            LightResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.LIGHT_RES);
+            LightVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.LIGHT_VUL);
+            DarkResistance = GetResistanceModifier(itemsList, ResistModifierSO.ModifierType.DARK_RES);
+            DarkVulnerability = GetVulnerabilityModifier(itemsList, VulnerabilityModifierSO.ModifierType.DARK_VUL);
         }
         public void InitActor()
         {

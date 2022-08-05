@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StatsUI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StatsUI
+  m_TableCollectionNameGuidString: 81ecbd66ad2ece14cbc42f274a2f308d
+  m_Entries:
+  - m_Id: 2881178947584
+    m_Key: StatsTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3168320999424
+    m_Key: StrengthStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3205633527808
+    m_Key: DexterityStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3218996580352
+    m_Key: ConstitutionStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4086131183616
+    m_Key: IntelligenceStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4112848900096
+    m_Key: WisdomStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4147418353664
+    m_Key: CharismaStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5285744070656
+    m_Key: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5295881703424
+    m_Key: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298087907328
+    m_Key: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5299652382720
+    m_Key: MRes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5300340248576
+    m_Key: Res
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5301049085952
+    m_Key: Vul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5301866975232
+    m_Key: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5302621949952
+    m_Key: Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5303393701888
+    m_Key: Earth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5304106733568
+    m_Key: Air
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5304966565888
+    m_Key: Poison
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6773828603904
+    m_Key: Lightning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6774529052672
+    m_Key: Physical
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6775439216640
+    m_Key: Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6776454238208
+    m_Key: Dark
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1659697778836

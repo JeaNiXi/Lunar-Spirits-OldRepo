@@ -5,6 +5,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Metadata;
 
 namespace Inventory.SO
 {
@@ -20,10 +24,13 @@ namespace Inventory.SO
         public event Action<EquipmentItem>
             OnItemEquipped,
             OnItemUnequipped;
+
         [SerializeField] [NonReorderable] private List<InventoryItem> Container = new List<InventoryItem>(24);
         [SerializeField] [NonReorderable] private List<QuickSlotItem> QSContainer = new List<QuickSlotItem>(2);
         [SerializeField] [NonReorderable] private List<EquipmentItem> EquipContainer = new List<EquipmentItem>(11);
         [SerializeField] [NonReorderable] private List<InventoryItem> LootContainer = new List<InventoryItem>();
+
+        public LocalizedStringTable RaritiesTable = new LocalizedStringTable();
 
         private int Rows { get => Container.Count / 6; }
         private const int MAX_ITEM_SLOTS = 42;
@@ -1457,6 +1464,7 @@ namespace Inventory.SO
         public ItemRarities itemRarity;
         public ItemContainer itemContainer;
         public ItemParameters itemParameters;
+
 
         public InventoryItem(ItemSO item, int quantity, SlotType slotType)
         {

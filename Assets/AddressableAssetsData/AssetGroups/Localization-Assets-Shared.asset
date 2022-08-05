@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: acf05e869dc72e94ea0c7a8cc35dde4f
+  m_SerializeEntries:
+  - m_GUID: 81ecbd66ad2ece14cbc42f274a2f308d
+    m_Address: Assets/Localization/Tables/StatsUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 3d6ded304695ed34ab5dad4602bada7d
+    m_Address: Assets/Localization/Tables/WeaponItemsUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 519c01bd5a31e504ea21ef023f4276c5
+    m_Address: Assets/Localization/Asset Tables/WeaponUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 90f46be2800725f49a75cccec20cc22a
+    m_Address: Assets/Localization/Tables/ItemDefaultsUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: d1b2d314ad998614386a04c0ea0cec9e
+    m_Address: Assets/Localization/Tables/RaritiesTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4d77091fbc9a3cd43a251293354ef0c4, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c4f6319db25d8fd48b7aef1dc2d229c4, type: 2}
+    - {fileID: 11400000, guid: 2b68883e5c76fe64a8a5f663fd1a267d, type: 2}

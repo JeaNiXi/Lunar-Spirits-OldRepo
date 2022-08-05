@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: WeaponNamesUI
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 3d6ded304695ed34ab5dad4602bada7d, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 640e167396fe7fb40aa6604028be2b7e, type: 2}
+  - {fileID: 11400000, guid: f1342d211f8d652448f7702491e04798, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 1
