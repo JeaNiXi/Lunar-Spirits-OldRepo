@@ -21992,6 +21992,10 @@ PrefabInstance:
       propertyPath: <modifiersListSO>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: e3eaa04cf3b340f48848f90ae86c224d, type: 2}
+    - target: {fileID: 358236644887661370, guid: 2d4a27809d740824bbcd964abeecf56c, type: 3}
+      propertyPath: rarityTable.m_TableReference.m_TableCollectionName
+      value: GUID:d1b2d314ad998614386a04c0ea0cec9e
+      objectReference: {fileID: 0}
     - target: {fileID: 358236644887661371, guid: 2d4a27809d740824bbcd964abeecf56c, type: 3}
       propertyPath: m_Name
       value: GameManager

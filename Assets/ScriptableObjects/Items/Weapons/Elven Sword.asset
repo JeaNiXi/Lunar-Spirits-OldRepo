@@ -12,14 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
   m_Name: Elven Sword
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Elven Sword
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:3d6ded304695ed34ab5dad4602bada7d
+    m_TableEntryReference:
+      m_KeyId: 715897201610752
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: From Elves with Love
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:007a45d531c1ee0489e1019302a9a387
+    m_TableEntryReference:
+      m_KeyId: 6889998241792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: -21522807587195298, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  itemParameters:
+  <ItemParameters>k__BackingField:
     statModifiers: []
     weaponModifiers: []
     weaponStatModifiers: []
@@ -28,3 +44,5 @@ MonoBehaviour:
     vulnerabilityModifiers: []
   scaleType: 0
   KnockbackStrength: 0
+  references:
+    version: 1

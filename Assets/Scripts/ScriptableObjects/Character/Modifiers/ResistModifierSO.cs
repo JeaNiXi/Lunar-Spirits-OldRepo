@@ -2,6 +2,7 @@ using Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Inventory.SO
 {
@@ -19,7 +20,7 @@ namespace Inventory.SO
             LIGHT_RES,
             DARK_RES,
         }
-        public string ModifierName;
+        public LocalizedString ModifierLocalizedName;
         public ModifierType modifierType;
         public abstract void ApplyModifier(CharacterManager character, int value);
     }

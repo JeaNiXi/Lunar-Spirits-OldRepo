@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db026031c4802b345b0d0dacf56a33a3, type: 3}
   m_Name: Resist Fire Modifier
   m_EditorClassIdentifier: 
-  ModifierName: Fire Resistance
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:bba6d9b458a9338408dd14b726c777a6
+    m_TableEntryReference:
+      m_KeyId: 46576029696
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  modifierType: 0
+  references:
+    version: 1

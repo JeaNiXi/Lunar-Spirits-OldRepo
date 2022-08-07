@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: WeaponNamesUI_en-US
+  m_Name: mWeaponModifier_ru-RU
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en-US
-  m_SharedData: {fileID: 11400000, guid: 3d6ded304695ed34ab5dad4602bada7d, type: 2}
+    m_Code: ru-RU
+  m_SharedData: {fileID: 11400000, guid: 1ee1534ff2f71a647846789fcd206799, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 75604807680
-    m_Localized: Wooden Sword
+  - m_Id: 4888842240
+    m_Localized: "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0423\u0440\u043E\u043D\u0430"
     m_Metadata:
       m_Items: []
   references:

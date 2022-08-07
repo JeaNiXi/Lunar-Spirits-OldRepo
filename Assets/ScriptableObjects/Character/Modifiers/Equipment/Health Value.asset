@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d83bec6f776404c8e0eb055de3d5e2, type: 3}
   m_Name: Health Value
   m_EditorClassIdentifier: 
-  ModifierName: Health
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:845c0e1d1a18ffe47afee8e70f546be2
+    m_TableEntryReference:
+      m_KeyId: 85637582848
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   modifierType: 0
+  references:
+    version: 1

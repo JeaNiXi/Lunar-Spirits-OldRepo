@@ -24,13 +24,12 @@ MonoBehaviour:
     - Locale-en-US
     - Preload
   - m_GUID: 640e167396fe7fb40aa6604028be2b7e
-    m_Address: WeaponNamesUI_en-US
+    m_Address: NamesWeaponUI_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    - Preload
   - m_GUID: 51376b0550c4ad244acbdf08c9b898d7
-    m_Address: ItemDefaultsUI_en-US
+    m_Address: _test_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -40,7 +39,46 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    - Preload
+  - m_GUID: 121ecfaf322eda14295d134839fe6aa5
+    m_Address: WeaponDescriptionUI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 0c4124d2833d07444b7a81f867a15d00
+    m_Address: mStatModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 37188af42c73f1945aef72300db30325
+    m_Address: mEquipModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: b80c18800e417814686b9c61f9ed53bf
+    m_Address: mResistModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: a6e26d7f1cbd8084eaf22541a8b23f08
+    m_Address: mVulnerabilityModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 22374614d0c53c149a337ec971b36756
+    m_Address: mWeaponModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 11ca65d3e6c224e4983d3203d9e1a918
+    m_Address: mWeaponStatModifier_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+  - m_GUID: 6141a615453202e4c905e9f17ba9a5f7
+    m_Address: NamesArmorUI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 4d77091fbc9a3cd43a251293354ef0c4, type: 2}
   m_SchemaSet:

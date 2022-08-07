@@ -14,15 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:3d6ded304695ed34ab5dad4602bada7d
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 75604807680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: Just for training.
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:007a45d531c1ee0489e1019302a9a387
+    m_TableEntryReference:
+      m_KeyId: 6892942643200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
   <ItemImage>k__BackingField: {fileID: 5601323976189978565, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}

@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa2f1c0a90300641ade369dd8105282, type: 3}
   m_Name: Stat Intelligence Modifier
   m_EditorClassIdentifier: 
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:7520cdc6c63bc5741aef6607a47f486d
+    m_TableEntryReference:
+      m_KeyId: 16481898496
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   ModifierName: Intelligence
   modifierType: 3
+  references:
+    version: 1

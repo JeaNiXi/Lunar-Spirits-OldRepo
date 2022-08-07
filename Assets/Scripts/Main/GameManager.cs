@@ -14,6 +14,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 using UnityEngine.SceneManagement;
 
 namespace Managers
@@ -26,7 +27,7 @@ namespace Managers
 
         [field: SerializeField] public ModifiersListSO ModifiersListSO { get; set; }
 
-        public LocalizedStringTable RarityTable = new LocalizedStringTable();
+        public LocalizedStringTable rarityTable;
 
         [field: SerializeField] public GameManagerSO MainGMSO { get; private set; }
         [field: SerializeField] public SpawnPointsSO MainSpawnPoints { get; private set; }
@@ -53,7 +54,6 @@ namespace Managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-
             //Application.targetFrameRate = 60;
             //Initialize();
             //MainCharacter.OnBattlerTriggerEnter += HandleBattleStart;

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: mStatModifier Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: mStatModifier
+  m_TableCollectionNameGuidString: 7520cdc6c63bc5741aef6607a47f486d
+  m_Entries:
+  - m_Id: 6579146752
+    m_Key: m_strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9993310208
+    m_Key: m_dexterity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13822709760
+    m_Key: m_constitution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16481898496
+    m_Key: m_intelligence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19053006848
+    m_Key: m_wisdom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21854801920
+    m_Key: m_charisma
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1659874831256

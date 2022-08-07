@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7fa4a5128b260478d06b0f55c1a8a1, type: 3}
   m_Name: MR Value
   m_EditorClassIdentifier: 
-  ModifierName: Magic Resistance
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:845c0e1d1a18ffe47afee8e70f546be2
+    m_TableEntryReference:
+      m_KeyId: 91186647040
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   modifierType: 2
+  references:
+    version: 1

@@ -10,13 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ItemDefaultsUI_en-US
+  m_Name: mEquipModifier_en-US
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en-US
-  m_SharedData: {fileID: 11400000, guid: 90f46be2800725f49a75cccec20cc22a, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 845c0e1d1a18ffe47afee8e70f546be2, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 85637582848
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88405823488
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91186647040
+    m_Localized: Magic Resist
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

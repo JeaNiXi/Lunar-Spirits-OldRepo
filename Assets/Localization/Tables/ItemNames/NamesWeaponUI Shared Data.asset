@@ -10,13 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: ItemDefaultsUI Shared Data
+  m_Name: NamesWeaponUI Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: ItemDefaultsUI
-  m_TableCollectionNameGuidString: 90f46be2800725f49a75cccec20cc22a
+  m_TableCollectionName: NamesWeaponUI
+  m_TableCollectionNameGuidString: 3d6ded304695ed34ab5dad4602bada7d
   m_Entries:
-  - m_Id: 7896158208
-    m_Key: New Entry
+  - m_Id: 75604807680
+    m_Key: Wooden Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 715897201610752
+    m_Key: Elven Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 715899957268480
+    m_Key: Iron Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 715904688443392
+    m_Key: New Entry 2
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -28,4 +40,4 @@ MonoBehaviour:
     00000000:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1659708602591
+        m_CustomEpoch: 1659703129867

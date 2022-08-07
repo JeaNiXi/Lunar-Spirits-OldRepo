@@ -17,6 +17,42 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: d1b2d314ad998614386a04c0ea0cec9e, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 9892646912
+    m_Localized: Bad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97339691008
+    m_Localized: Common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114754441216
+    m_Localized: Uncommon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690931026481152
+    m_Localized: Mythical
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690946285359104
+    m_Localized: Eternal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690906649186304
+    m_Localized: Legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690895328759808
+    m_Localized: Epic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690693326884864
+    m_Localized: Rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 693337097359360
+    m_Localized: Unique
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -1182,7 +1182,7 @@ namespace Inventory.SO
                             vulnerabilityCount = UnityEngine.Random.Range(0, 3);
                             break;
                         }
-                    case ItemRarities.ItemRaritiesEnum.MITHYCAL:
+                    case ItemRarities.ItemRaritiesEnum.MYTHICAL:
                         {
                             posStatCount = 4;
                             negStatCount = UnityEngine.Random.Range(0, 4);
@@ -1415,7 +1415,7 @@ namespace Inventory.SO
             RARE,       // 15%  31-45   W2
             EPIC,       // 12%  19-30   W3
             LEGENDARY,  // 9%   10-18   W3
-            MITHYCAL,   // 6%   4-9     W4
+            MYTHICAL,   // 6%   4-9     W4
             ETERNAL,    // 3%   1-3     W4
         }
         public ItemRaritiesEnum ItemRarity;
@@ -1436,7 +1436,7 @@ namespace Inventory.SO
                               : index <= 18
                                 ? index <= 9
                                     ? index > 3
-                                        ? ItemRarities.ItemRaritiesEnum.MITHYCAL
+                                        ? ItemRarities.ItemRaritiesEnum.MYTHICAL
                                         : ItemRarities.ItemRaritiesEnum.ETERNAL
                                     : ItemRarities.ItemRaritiesEnum.LEGENDARY
                                 : index > 30

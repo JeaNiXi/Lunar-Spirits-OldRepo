@@ -12,15 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
   m_Name: Iron Sword
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Iron Sword
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:3d6ded304695ed34ab5dad4602bada7d
+    m_TableEntryReference:
+      m_KeyId: 715899957268480
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <MaxStackSize>k__BackingField: 1
-  <Description>k__BackingField: Well, sharp, I guess.
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:007a45d531c1ee0489e1019302a9a387
+    m_TableEntryReference:
+      m_KeyId: 6724214181888
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <IsQuestItem>k__BackingField: 0
   <ItemType>k__BackingField: 2
-  <ItemRarity>k__BackingField: 0
   <ItemImage>k__BackingField: {fileID: -761887118410055393, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
   CanBeInSlots: 0000000008000000
-  modifierTypes: []
-  weaponModifierTypes: []
+  <ItemParameters>k__BackingField:
+    statModifiers: []
+    weaponModifiers: []
+    weaponStatModifiers: []
+    equipmentModifiers: []
+    resistModifiers: []
+    vulnerabilityModifiers: []
   scaleType: 0
   KnockbackStrength: 0
+  references:
+    version: 1

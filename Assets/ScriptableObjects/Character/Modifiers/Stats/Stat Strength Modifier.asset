@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4840d13a6eea7b649b1dd5de0252f51a, type: 3}
   m_Name: Stat Strength Modifier
   m_EditorClassIdentifier: 
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:7520cdc6c63bc5741aef6607a47f486d
+    m_TableEntryReference:
+      m_KeyId: 6579146752
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   ModifierName: Strength
+  modifierType: 0
+  references:
+    version: 1

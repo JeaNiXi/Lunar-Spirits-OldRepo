@@ -37,6 +37,39 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/RaritiesTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 007a45d531c1ee0489e1019302a9a387
+    m_Address: Assets/Localization/Tables/WeaponDescriptionUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 7520cdc6c63bc5741aef6607a47f486d
+    m_Address: Assets/Localization/Tables/mStatModifier Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 845c0e1d1a18ffe47afee8e70f546be2
+    m_Address: Assets/Localization/Tables/Modifiers/mEquipModifier Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: bba6d9b458a9338408dd14b726c777a6
+    m_Address: Assets/Localization/Tables/Modifiers/mResistModifiers Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: f5798b4b9b5441d4aa6a1e273f14ccce
+    m_Address: Assets/Localization/Tables/Modifiers/mVulnerabilityModifier Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 1ee1534ff2f71a647846789fcd206799
+    m_Address: Assets/Localization/Tables/Modifiers/mWeaponModifier Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 8c3300d54b91c914086c883603075276
+    m_Address: Assets/Localization/Tables/Modifiers/mWeaponStatModifier Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 1ff2667b35e655c43a145245c2fae118
+    m_Address: Assets/Localization/Tables/ItemNames/NamesArmorUI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 4d77091fbc9a3cd43a251293354ef0c4, type: 2}
   m_SchemaSet:

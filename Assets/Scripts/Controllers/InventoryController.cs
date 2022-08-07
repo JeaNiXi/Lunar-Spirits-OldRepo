@@ -7,6 +7,7 @@ using Inventory.SO;
 using Inventory.UI;
 using Interfaces;
 using Character;
+using Managers;
 
 namespace Inventory
 {
@@ -174,12 +175,12 @@ namespace Inventory
                 case 0:
                     InventoryItem inventoryItem = MainInventorySO.GetItemAt(itemIndex);
                     //UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.name, inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
-                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.Name.GetLocalizedString(), inventoryItem.itemRarity.ItemRarity.ToString(), inventoryItem.item.Description, inventoryItem.itemParameters);
+                    UIMainInventory.InitializeDescriptionPanel(inventoryItem.item.Name.GetLocalizedString(), HandleRarityTextRequest(inventoryItem), inventoryItem.item.Description.GetLocalizedString(), inventoryItem.itemParameters);
 
                     break;
                 case 3:
                     InventoryItem lootItem = MainInventorySO.GetLootItemAt(itemIndex);
-                    UIMainInventory.InitializeDescriptionPanel(lootItem.item.name, lootItem.itemRarity.ItemRarity.ToString(), lootItem.item.Description, lootItem.itemParameters); ;
+                    UIMainInventory.InitializeDescriptionPanel(lootItem.item.Name.GetLocalizedString(), HandleRarityTextRequest(lootItem), lootItem.item.Description.GetLocalizedString(), lootItem.itemParameters); ;
                     break;
                 //case 1:
                 //    QuickSlotItem qsItem = MainInventorySO.GetQuickSlotItemAt(itemIndex);
@@ -187,6 +188,11 @@ namespace Inventory
                 default:
                     break;
             }
+        }
+        private string HandleRarityTextRequest(InventoryItem item)
+        {
+            Debug.Log(item.itemRarity.ItemRarity.ToString());
+            return GameManager.Instance.rarityTable.GetTable().GetEntry(item.itemRarity.ItemRarity.ToString()).GetLocalizedString();
         }
         private void HandleItemDragStart(int itemIndex, int containerType)
         {

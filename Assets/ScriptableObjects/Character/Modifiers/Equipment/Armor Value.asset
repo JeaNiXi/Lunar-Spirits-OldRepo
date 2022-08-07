@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cc5f5ac25a12e43a5b4d33b1be4a4c, type: 3}
   m_Name: Armor Value
   m_EditorClassIdentifier: 
-  ModifierName: Armor
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:845c0e1d1a18ffe47afee8e70f546be2
+    m_TableEntryReference:
+      m_KeyId: 88405823488
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   modifierType: 1
+  references:
+    version: 1

@@ -16,15 +16,39 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: d1b2d314ad998614386a04c0ea0cec9e
   m_Entries:
   - m_Id: 9892646912
-    m_Key: Bad
+    m_Key: BAD
     m_Metadata:
       m_Items: []
   - m_Id: 97339691008
-    m_Key: Common
+    m_Key: COMMON
     m_Metadata:
       m_Items: []
   - m_Id: 114754441216
-    m_Key: Uncommon
+    m_Key: UNCOMMON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690693326884864
+    m_Key: RARE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690895328759808
+    m_Key: EPIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690906649186304
+    m_Key: LEGENDARY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690931026481152
+    m_Key: MYTHICAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 690946285359104
+    m_Key: ETERNAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 693337097359360
+    m_Key: DEFAULT
     m_Metadata:
       m_Items: []
   m_Metadata:

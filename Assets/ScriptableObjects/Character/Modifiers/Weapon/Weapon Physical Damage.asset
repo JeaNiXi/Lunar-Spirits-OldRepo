@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58a6691f21e82547bb4c14520bccdff, type: 3}
+  m_Name: Weapon Physical Damage
+  m_EditorClassIdentifier: 
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:1ee1534ff2f71a647846789fcd206799
+    m_TableEntryReference:
+      m_KeyId: 4888842240
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 1

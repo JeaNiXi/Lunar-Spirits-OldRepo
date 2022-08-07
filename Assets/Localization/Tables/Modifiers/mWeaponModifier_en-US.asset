@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ItemDefaultsUI_ru-RU
+  m_Name: mWeaponModifier_en-US
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: ru-RU
-  m_SharedData: {fileID: 11400000, guid: 90f46be2800725f49a75cccec20cc22a, type: 2}
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 1ee1534ff2f71a647846789fcd206799, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 4888842240
+    m_Localized: Physical Damage
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

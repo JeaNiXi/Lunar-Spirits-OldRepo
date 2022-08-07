@@ -60,7 +60,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(leftStatPanel);
                     descriptionElement.SetValue(parameters.weaponModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.weaponModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.weaponModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
             if (parameters.equipmentModifiers.Count != 0)
@@ -69,7 +69,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(leftStatPanel);
                     descriptionElement.SetValue(parameters.equipmentModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.equipmentModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.equipmentModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
             if (parameters.statModifiers.Count != 0)
@@ -78,7 +78,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(leftStatPanel);
                     descriptionElement.SetValue(parameters.statModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.statModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.statModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
             if (parameters.weaponStatModifiers.Count != 0)
@@ -87,7 +87,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(rightStatPanel);
                     descriptionElement.SetValue(parameters.weaponStatModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.weaponStatModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.weaponStatModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
             if (parameters.resistModifiers.Count != 0)
@@ -96,7 +96,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(rightStatPanel);
                     descriptionElement.SetValue(parameters.resistModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.resistModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.resistModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
             if (parameters.vulnerabilityModifiers.Count != 0)
@@ -105,7 +105,7 @@ namespace Inventory.UI
                     UIDescriptionElement descriptionElement = CreateDescriptionElement();
                     descriptionElement.transform.SetParent(rightStatPanel);
                     descriptionElement.SetValue(parameters.vulnerabilityModifiers[i].Value.ToString());
-                    descriptionElement.SetStatText(parameters.vulnerabilityModifiers[i].Modifier.ModifierName);
+                    descriptionElement.SetStatText(parameters.vulnerabilityModifiers[i].Modifier.ModifierLocalizedName.GetLocalizedString());
                     elementsList.Add(descriptionElement);
                 }
         }

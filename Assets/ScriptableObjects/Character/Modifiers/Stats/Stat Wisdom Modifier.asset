@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba778c57f3694d408b9bcd7e4b516f3, type: 3}
   m_Name: Stat Wisdom Modifier
   m_EditorClassIdentifier: 
+  ModifierLocalizedName:
+    m_TableReference:
+      m_TableCollectionName: GUID:7520cdc6c63bc5741aef6607a47f486d
+    m_TableEntryReference:
+      m_KeyId: 19053006848
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   ModifierName: Wisdom
   modifierType: 4
+  references:
+    version: 1
