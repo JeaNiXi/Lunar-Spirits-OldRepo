@@ -3,6 +3,9 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
+07.08.2022
+ - Added Russian Localization
+ 
 03.08.2022
  - Character panel finished.
  - Stats are displaying for items/weapons.
