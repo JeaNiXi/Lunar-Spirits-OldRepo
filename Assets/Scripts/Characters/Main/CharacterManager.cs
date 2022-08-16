@@ -36,8 +36,8 @@ namespace Character
         public EquipmentItem MainWeapon { get; private set; }
         public EquipmentItem SecondaryWeapon { get; private set; }
 
-        private float lastX = 1;
-        private float lastY = 0;
+        private float lastX = 0;
+        private float lastY = -1;
 
         private const float KNOCKBACK_STRENGTH = 20f;
         private const float KNOCKBACK_DELAY = 0.1f;

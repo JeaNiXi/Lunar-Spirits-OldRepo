@@ -1,0 +1,30 @@
+Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn (makrohn), William.Thompsonj, Mandi Paugh, bluecarrot16, ElizaWy, Nila122, David Conway Jr. (JaidynReiman), Joe White, Dr. Jamgo
+
+- body/female/human/white.png: by Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn (makrohn). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+    - https://opengameart.org/content/lpc-ladies
+
+- eyes/female/brown.png: by Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+
+- hair/sara/female/light_brown.png: by Stephen Challener (Redshrike), William.Thompsonj, Mandi Paugh, bluecarrot16. License(s): OGA-BY 3.0, CC-BY 3.0. 
+    - https://opengameart.org/content/lpc-sara
+    - https://opengameart.org/content/lpc-hair
+
+- torso/clothes/corset/female/white.png: by ElizaWy, Nila122. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-clothes-and-hair
+    - https://opengameart.org/content/lpc-7-womens-shirts
+
+- torso/clothes/longsleeve/female/white.png: by ElizaWy. License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-7-womens-shirts
+
+- legs/pants/female/leather.png: by bluecarrot16, David Conway Jr. (JaidynReiman), Joe White, Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+
+- feet/shoes/female/maroon.png: by David Conway Jr. (JaidynReiman), Joe White, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
+    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+
+- weapon/thrust/female/simple_staff.png: by Dr. Jamgo. License(s): CC0. 
+    - https://opengameart.org/content/lpc-simple-staff

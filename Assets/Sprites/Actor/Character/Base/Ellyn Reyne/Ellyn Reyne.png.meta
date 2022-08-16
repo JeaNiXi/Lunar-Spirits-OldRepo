@@ -1,0 +1,5409 @@
+fileFormatVersion: 2
+guid: 4ab1a5ab811465f40bf1405243deb2e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6059244581636116009
+    second: TestCharacter_0
+  - first:
+      213: 8542860682012196573
+    second: TestCharacter_1
+  - first:
+      213: -6407492045113807828
+    second: TestCharacter_2
+  - first:
+      213: 6202973738586629008
+    second: TestCharacter_3
+  - first:
+      213: -2910838694113797271
+    second: TestCharacter_4
+  - first:
+      213: 4125241528186435698
+    second: TestCharacter_5
+  - first:
+      213: -6429633311793196407
+    second: TestCharacter_6
+  - first:
+      213: 2405869510193159891
+    second: TestCharacter_7
+  - first:
+      213: 5246949741664924263
+    second: TestCharacter_8
+  - first:
+      213: 2550111744662144550
+    second: TestCharacter_9
+  - first:
+      213: 3090802220057516997
+    second: TestCharacter_10
+  - first:
+      213: -6025821406778048456
+    second: TestCharacter_11
+  - first:
+      213: -3239791118807429172
+    second: TestCharacter_12
+  - first:
+      213: -893405447411079134
+    second: TestCharacter_13
+  - first:
+      213: 1070361960035834247
+    second: TestCharacter_14
+  - first:
+      213: 1157340574481356980
+    second: TestCharacter_15
+  - first:
+      213: -2244499344952567165
+    second: TestCharacter_16
+  - first:
+      213: 2448303665422860174
+    second: TestCharacter_17
+  - first:
+      213: 8909935581069227433
+    second: TestCharacter_18
+  - first:
+      213: 870145247427950536
+    second: TestCharacter_19
+  - first:
+      213: 1370428576817454322
+    second: TestCharacter_20
+  - first:
+      213: 127494536567440742
+    second: TestCharacter_21
+  - first:
+      213: -7219008956253850118
+    second: TestCharacter_22
+  - first:
+      213: 1502417448996504166
+    second: TestCharacter_23
+  - first:
+      213: -8859242150668101332
+    second: TestCharacter_24
+  - first:
+      213: -4160128557880335469
+    second: TestCharacter_25
+  - first:
+      213: -5321636181595651151
+    second: TestCharacter_26
+  - first:
+      213: 6383632951812663
+    second: TestCharacter_27
+  - first:
+      213: 5443816789543947285
+    second: TestCharacter_28
+  - first:
+      213: 675024243888325380
+    second: TestCharacter_29
+  - first:
+      213: -7644802361224894607
+    second: TestCharacter_30
+  - first:
+      213: -2646433813100299082
+    second: TestCharacter_31
+  - first:
+      213: -8161960951637740654
+    second: TestCharacter_32
+  - first:
+      213: -3767093222017930607
+    second: TestCharacter_33
+  - first:
+      213: -6527906604017435652
+    second: TestCharacter_34
+  - first:
+      213: 9175664988915004006
+    second: TestCharacter_35
+  - first:
+      213: 8641688997004016533
+    second: TestCharacter_36
+  - first:
+      213: 3809968817829896258
+    second: TestCharacter_37
+  - first:
+      213: 733039257990199063
+    second: TestCharacter_38
+  - first:
+      213: 5984917147861042130
+    second: TestCharacter_39
+  - first:
+      213: 4308682017311963555
+    second: TestCharacter_40
+  - first:
+      213: -3301730862901372050
+    second: TestCharacter_41
+  - first:
+      213: 4696813274027405663
+    second: TestCharacter_42
+  - first:
+      213: -7605960042893806699
+    second: TestCharacter_43
+  - first:
+      213: 5672420654887774359
+    second: TestCharacter_44
+  - first:
+      213: -5530542553668927839
+    second: TestCharacter_45
+  - first:
+      213: 307402304577254416
+    second: TestCharacter_46
+  - first:
+      213: -7772588199654492991
+    second: TestCharacter_47
+  - first:
+      213: 3496422908578234724
+    second: TestCharacter_48
+  - first:
+      213: -5376994668766856140
+    second: TestCharacter_49
+  - first:
+      213: 4123406086791306739
+    second: TestCharacter_50
+  - first:
+      213: -8247266191647106521
+    second: TestCharacter_51
+  - first:
+      213: -1496165858692723764
+    second: TestCharacter_52
+  - first:
+      213: -2633611029498382596
+    second: TestCharacter_53
+  - first:
+      213: 7813532588691255886
+    second: TestCharacter_54
+  - first:
+      213: 3679962258039906940
+    second: TestCharacter_55
+  - first:
+      213: 1894856862394997772
+    second: TestCharacter_56
+  - first:
+      213: 6301402159990420016
+    second: TestCharacter_57
+  - first:
+      213: -6348568224052713456
+    second: TestCharacter_58
+  - first:
+      213: 7025070081623615257
+    second: TestCharacter_59
+  - first:
+      213: -3426414461315054343
+    second: TestCharacter_60
+  - first:
+      213: -2552414150290612231
+    second: TestCharacter_61
+  - first:
+      213: 6959159163772713480
+    second: TestCharacter_62
+  - first:
+      213: -8246525548290688344
+    second: TestCharacter_63
+  - first:
+      213: 8842648883187988311
+    second: TestCharacter_64
+  - first:
+      213: 5376702356484989395
+    second: TestCharacter_65
+  - first:
+      213: 2056511605096623606
+    second: TestCharacter_66
+  - first:
+      213: -1237866710426439824
+    second: TestCharacter_67
+  - first:
+      213: 161157501648233245
+    second: TestCharacter_68
+  - first:
+      213: -4779665648640682114
+    second: TestCharacter_69
+  - first:
+      213: -7973145349134755282
+    second: TestCharacter_70
+  - first:
+      213: 1520848403338070985
+    second: TestCharacter_71
+  - first:
+      213: 2912447530744898776
+    second: TestCharacter_72
+  - first:
+      213: 2743677024722313796
+    second: TestCharacter_73
+  - first:
+      213: -4791380619577886497
+    second: TestCharacter_74
+  - first:
+      213: -23417552205570706
+    second: TestCharacter_75
+  - first:
+      213: 7814631178017840277
+    second: TestCharacter_76
+  - first:
+      213: 5256079667691100900
+    second: TestCharacter_77
+  - first:
+      213: -2686984390501432721
+    second: TestCharacter_78
+  - first:
+      213: 8199785523046353489
+    second: TestCharacter_79
+  - first:
+      213: -5896166040410856192
+    second: TestCharacter_80
+  - first:
+      213: -1121948146399296326
+    second: TestCharacter_81
+  - first:
+      213: 5232294068271642257
+    second: TestCharacter_82
+  - first:
+      213: 6595626414294884949
+    second: TestCharacter_83
+  - first:
+      213: 1487676660088653973
+    second: TestCharacter_84
+  - first:
+      213: 7280022003527132903
+    second: TestCharacter_85
+  - first:
+      213: -2200757957402762630
+    second: TestCharacter_86
+  - first:
+      213: -5034090893163354246
+    second: TestCharacter_87
+  - first:
+      213: 8618088571184962310
+    second: TestCharacter_88
+  - first:
+      213: -6612876527253213456
+    second: TestCharacter_89
+  - first:
+      213: 2950722761238090318
+    second: TestCharacter_90
+  - first:
+      213: -4395836399753027296
+    second: TestCharacter_91
+  - first:
+      213: 4259001212280311004
+    second: TestCharacter_92
+  - first:
+      213: -6383000491089696602
+    second: TestCharacter_93
+  - first:
+      213: -8052853293958179993
+    second: TestCharacter_94
+  - first:
+      213: 2113492568249916765
+    second: TestCharacter_95
+  - first:
+      213: 4816463106474632415
+    second: TestCharacter_96
+  - first:
+      213: -1522577775322504944
+    second: TestCharacter_97
+  - first:
+      213: -8972990494022608103
+    second: TestCharacter_98
+  - first:
+      213: -9164449788435186243
+    second: TestCharacter_99
+  - first:
+      213: 3197728900189421130
+    second: TestCharacter_100
+  - first:
+      213: -8310820135517083440
+    second: TestCharacter_101
+  - first:
+      213: 8141379423144845772
+    second: TestCharacter_102
+  - first:
+      213: -2706166804509043476
+    second: TestCharacter_103
+  - first:
+      213: -2727023623820806149
+    second: TestCharacter_104
+  - first:
+      213: 7297637012378270079
+    second: TestCharacter_105
+  - first:
+      213: 6098787031730461376
+    second: TestCharacter_106
+  - first:
+      213: -440728572124544296
+    second: TestCharacter_107
+  - first:
+      213: -8063873257929951677
+    second: TestCharacter_108
+  - first:
+      213: 8136691452509733158
+    second: TestCharacter_109
+  - first:
+      213: 1632141228976256119
+    second: TestCharacter_110
+  - first:
+      213: 4023601047319413577
+    second: TestCharacter_111
+  - first:
+      213: 6990321495059741223
+    second: TestCharacter_112
+  - first:
+      213: 6188747854828715842
+    second: TestCharacter_113
+  - first:
+      213: 8917203316842491244
+    second: TestCharacter_114
+  - first:
+      213: 3971605886396868172
+    second: TestCharacter_115
+  - first:
+      213: -575064670442020163
+    second: TestCharacter_116
+  - first:
+      213: -6256680636715578329
+    second: TestCharacter_117
+  - first:
+      213: 8737005216532819088
+    second: TestCharacter_118
+  - first:
+      213: -1793801053027750724
+    second: TestCharacter_119
+  - first:
+      213: -7307619360127694519
+    second: TestCharacter_120
+  - first:
+      213: -3677966802103881415
+    second: TestCharacter_121
+  - first:
+      213: -7535435323605587049
+    second: TestCharacter_122
+  - first:
+      213: 3693775207857361022
+    second: TestCharacter_123
+  - first:
+      213: 3045383838584607847
+    second: TestCharacter_124
+  - first:
+      213: -6090338574337980931
+    second: TestCharacter_125
+  - first:
+      213: 6895087211926316924
+    second: TestCharacter_126
+  - first:
+      213: -9199760448565778017
+    second: TestCharacter_127
+  - first:
+      213: -2039738109822452141
+    second: TestCharacter_128
+  - first:
+      213: 9166901468713443175
+    second: TestCharacter_129
+  - first:
+      213: 3939126125357911418
+    second: TestCharacter_130
+  - first:
+      213: 5580510890269283947
+    second: TestCharacter_131
+  - first:
+      213: -8354829053551165165
+    second: TestCharacter_132
+  - first:
+      213: 3324823868975716687
+    second: TestCharacter_133
+  - first:
+      213: 4133754571589143311
+    second: TestCharacter_134
+  - first:
+      213: 1162915215214654412
+    second: TestCharacter_135
+  - first:
+      213: 7052865631719228633
+    second: TestCharacter_136
+  - first:
+      213: -3263437727202293027
+    second: TestCharacter_137
+  - first:
+      213: 2072917495479149616
+    second: TestCharacter_138
+  - first:
+      213: -4439122654937957081
+    second: TestCharacter_139
+  - first:
+      213: -4099608736442807208
+    second: TestCharacter_140
+  - first:
+      213: -3315203096166191426
+    second: TestCharacter_141
+  - first:
+      213: 1533096615944973082
+    second: TestCharacter_142
+  - first:
+      213: -8570742205213935843
+    second: TestCharacter_143
+  - first:
+      213: 2952662810760535629
+    second: TestCharacter_144
+  - first:
+      213: -6078652430902200006
+    second: TestCharacter_145
+  - first:
+      213: 2423516702936170420
+    second: TestCharacter_146
+  - first:
+      213: -9185198975433150935
+    second: TestCharacter_147
+  - first:
+      213: 3867106241236910061
+    second: TestCharacter_148
+  - first:
+      213: 7509962098707926376
+    second: TestCharacter_149
+  - first:
+      213: -2168045847715311885
+    second: TestCharacter_150
+  - first:
+      213: 5409919420801659952
+    second: TestCharacter_151
+  - first:
+      213: 7806943630906772043
+    second: TestCharacter_152
+  - first:
+      213: 5039911804569009236
+    second: TestCharacter_153
+  - first:
+      213: -6405141597341111469
+    second: TestCharacter_154
+  - first:
+      213: 4613331670204686634
+    second: TestCharacter_155
+  - first:
+      213: -905506926766618800
+    second: TestCharacter_156
+  - first:
+      213: -1978823803200296835
+    second: TestCharacter_157
+  - first:
+      213: -2968645968148012199
+    second: TestCharacter_158
+  - first:
+      213: 4882526400139796685
+    second: TestCharacter_159
+  - first:
+      213: -7005481061508298490
+    second: TestCharacter_160
+  - first:
+      213: 2058897310074629602
+    second: TestCharacter_161
+  - first:
+      213: -8939584583349107998
+    second: TestCharacter_162
+  - first:
+      213: -5679768654320907140
+    second: TestCharacter_163
+  - first:
+      213: -7219649289998782402
+    second: TestCharacter_164
+  - first:
+      213: 5869443249926180455
+    second: TestCharacter_165
+  - first:
+      213: -3396048075899947108
+    second: TestCharacter_166
+  - first:
+      213: 8386295192631346911
+    second: TestCharacter_167
+  - first:
+      213: 4016385203927879151
+    second: TestCharacter_168
+  - first:
+      213: 9074881141588700051
+    second: TestCharacter_169
+  - first:
+      213: -6185796255634225123
+    second: TestCharacter_170
+  - first:
+      213: -4415389809196169174
+    second: TestCharacter_171
+  - first:
+      213: -8227134025361340424
+    second: TestCharacter_172
+  - first:
+      213: 5435770435963489021
+    second: TestCharacter_173
+  - first:
+      213: 378467682093013896
+    second: TestCharacter_174
+  - first:
+      213: -4778689752253691694
+    second: TestCharacter_175
+  - first:
+      213: 2122967880692302500
+    second: TestCharacter_176
+  - first:
+      213: -1954700907497622393
+    second: TestCharacter_177
+  - first:
+      213: 7117192851269763974
+    second: TestCharacter_178
+  - first:
+      213: 3394033094580327670
+    second: TestCharacter_179
+  - first:
+      213: 2151270247820104431
+    second: TestCharacter_180
+  - first:
+      213: -1261992952290235163
+    second: TestCharacter_181
+  - first:
+      213: 8001103526614528986
+    second: TestCharacter_182
+  - first:
+      213: 8835094343798676019
+    second: TestCharacter_183
+  - first:
+      213: 6806393502082831052
+    second: TestCharacter_184
+  - first:
+      213: 1869111255453279568
+    second: TestCharacter_185
+  - first:
+      213: -3120846452980356939
+    second: TestCharacter_186
+  - first:
+      213: -4438416672251727524
+    second: TestCharacter_187
+  - first:
+      213: -7134674083142527694
+    second: TestCharacter_188
+  - first:
+      213: -2083316826279929459
+    second: TestCharacter_189
+  - first:
+      213: 7691614020522162072
+    second: TestCharacter_190
+  - first:
+      213: -5939618396845818337
+    second: TestCharacter_191
+  - first:
+      213: 408874881528671403
+    second: TestCharacter_192
+  - first:
+      213: 411865774233187903
+    second: TestCharacter_193
+  - first:
+      213: 8843241754762631205
+    second: TestCharacter_194
+  - first:
+      213: -6788814857339972407
+    second: Ellyn Reyne_0
+  - first:
+      213: 5179556134810347761
+    second: Ellyn Reyne_1
+  - first:
+      213: 4714543820278589493
+    second: Ellyn Reyne_2
+  - first:
+      213: 1073782656481787039
+    second: Ellyn Reyne_3
+  - first:
+      213: -4122921203253357364
+    second: Ellyn Reyne_4
+  - first:
+      213: -6038104315988116605
+    second: Ellyn Reyne_5
+  - first:
+      213: 5464561370143708837
+    second: Ellyn Reyne_6
+  - first:
+      213: -3819029764874812688
+    second: Ellyn Reyne_7
+  - first:
+      213: 863823717985472810
+    second: Ellyn Reyne_8
+  - first:
+      213: -7726852070764390447
+    second: Ellyn Reyne_9
+  - first:
+      213: 7651454594190962797
+    second: Ellyn Reyne_10
+  - first:
+      213: 1279157632719976571
+    second: Ellyn Reyne_11
+  - first:
+      213: -1384755419442885656
+    second: Ellyn Reyne_12
+  - first:
+      213: -5056508237054894083
+    second: Ellyn Reyne_13
+  - first:
+      213: 7123384112594794071
+    second: Ellyn Reyne_14
+  - first:
+      213: -8943731746547342426
+    second: Ellyn Reyne_15
+  - first:
+      213: -4635691208437484106
+    second: Ellyn Reyne_16
+  - first:
+      213: 1664332164631677849
+    second: Ellyn Reyne_17
+  - first:
+      213: 5844888594595040347
+    second: Ellyn Reyne_18
+  - first:
+      213: -7709636260365314377
+    second: Ellyn Reyne_19
+  - first:
+      213: -5649038981664712694
+    second: Ellyn Reyne_20
+  - first:
+      213: -7688319059981090309
+    second: Ellyn Reyne_21
+  - first:
+      213: -3768386120892295877
+    second: Ellyn Reyne_22
+  - first:
+      213: 8238585935997873124
+    second: Ellyn Reyne_23
+  - first:
+      213: -7664965426126560331
+    second: Ellyn Reyne_24
+  - first:
+      213: -8376997304635907191
+    second: Ellyn Reyne_25
+  - first:
+      213: -1260938989100703216
+    second: Ellyn Reyne_26
+  - first:
+      213: -1917589809127250018
+    second: Ellyn Reyne_27
+  - first:
+      213: -5207976305605436573
+    second: Ellyn Reyne_28
+  - first:
+      213: -1668393577576444013
+    second: Ellyn Reyne_29
+  - first:
+      213: 1539437341562695401
+    second: Ellyn Reyne_30
+  - first:
+      213: 7090439858925901548
+    second: Ellyn Reyne_31
+  - first:
+      213: 1547138255753491867
+    second: Ellyn Reyne_32
+  - first:
+      213: 6706155951510903793
+    second: Ellyn Reyne_33
+  - first:
+      213: 808274353596684989
+    second: Ellyn Reyne_34
+  - first:
+      213: -4140655469368442019
+    second: Ellyn Reyne_35
+  - first:
+      213: 4114076734564394146
+    second: Ellyn Reyne_36
+  - first:
+      213: 6573914500694459249
+    second: Ellyn Reyne_37
+  - first:
+      213: -4433231478613088096
+    second: Ellyn Reyne_38
+  - first:
+      213: 2598918464478014876
+    second: Ellyn Reyne_39
+  - first:
+      213: -3157488356495729434
+    second: Ellyn Reyne_40
+  - first:
+      213: -753655162871133962
+    second: Ellyn Reyne_41
+  - first:
+      213: 4163592443876459815
+    second: Ellyn Reyne_42
+  - first:
+      213: 1750389981467203251
+    second: Ellyn Reyne_43
+  - first:
+      213: 138949553683986208
+    second: Ellyn Reyne_44
+  - first:
+      213: 3267052012308088930
+    second: Ellyn Reyne_45
+  - first:
+      213: -3654962539500823659
+    second: Ellyn Reyne_46
+  - first:
+      213: -2727633408229667104
+    second: Ellyn Reyne_47
+  - first:
+      213: -7674114719330020562
+    second: Ellyn Reyne_48
+  - first:
+      213: 2139263865882041657
+    second: Ellyn Reyne_49
+  - first:
+      213: 3878993318051930614
+    second: Ellyn Reyne_50
+  - first:
+      213: -257060873133451433
+    second: Ellyn Reyne_51
+  - first:
+      213: -4846766028350385231
+    second: Ellyn Reyne_52
+  - first:
+      213: -1125257565061594853
+    second: Ellyn Reyne_53
+  - first:
+      213: 828010549607575706
+    second: Ellyn Reyne_54
+  - first:
+      213: 6443457979330831092
+    second: Ellyn Reyne_55
+  - first:
+      213: 6752879535806399154
+    second: Ellyn Reyne_56
+  - first:
+      213: 3047018355253057093
+    second: Ellyn Reyne_57
+  - first:
+      213: -6584408536761408066
+    second: Ellyn Reyne_58
+  - first:
+      213: -2241257319189444410
+    second: Ellyn Reyne_59
+  - first:
+      213: -2694117538879535891
+    second: Ellyn Reyne_60
+  - first:
+      213: 3850903234939521793
+    second: Ellyn Reyne_61
+  - first:
+      213: 7135325964578883162
+    second: Ellyn Reyne_62
+  - first:
+      213: 2329429775660093938
+    second: Ellyn Reyne_63
+  - first:
+      213: -517296984990717848
+    second: Ellyn Reyne_64
+  - first:
+      213: -7206438124516651056
+    second: Ellyn Reyne_65
+  - first:
+      213: 4325437835070321823
+    second: Ellyn Reyne_66
+  - first:
+      213: 1976608721860701538
+    second: Ellyn Reyne_67
+  - first:
+      213: -8137967489720791146
+    second: Ellyn Reyne_68
+  - first:
+      213: 5840719826587935133
+    second: Ellyn Reyne_69
+  - first:
+      213: 6153054016570208985
+    second: Ellyn Reyne_70
+  - first:
+      213: 7959139634204455798
+    second: Ellyn Reyne_71
+  - first:
+      213: -2711512179846344830
+    second: Ellyn Reyne_72
+  - first:
+      213: 6684876219148516043
+    second: Ellyn Reyne_73
+  - first:
+      213: 4630162325668008973
+    second: Ellyn Reyne_74
+  - first:
+      213: -9101241710659975004
+    second: Ellyn Reyne_75
+  - first:
+      213: 3131372430871893672
+    second: Ellyn Reyne_76
+  - first:
+      213: 2870069009389117316
+    second: Ellyn Reyne_77
+  - first:
+      213: -3248295825532688973
+    second: Ellyn Reyne_78
+  - first:
+      213: -4389344685110599
+    second: Ellyn Reyne_79
+  - first:
+      213: -8048507052877041687
+    second: Ellyn Reyne_80
+  - first:
+      213: -4281972293951026256
+    second: Ellyn Reyne_81
+  - first:
+      213: 8201516698353416589
+    second: Ellyn Reyne_82
+  - first:
+      213: -6899579910745277431
+    second: Ellyn Reyne_83
+  - first:
+      213: 7904789712780982886
+    second: Ellyn Reyne_84
+  - first:
+      213: 1744730607069707499
+    second: Ellyn Reyne_85
+  - first:
+      213: 835945432393816655
+    second: Ellyn Reyne_86
+  - first:
+      213: 4551486982230475231
+    second: Ellyn Reyne_87
+  - first:
+      213: -4404086754787191639
+    second: Ellyn Reyne_88
+  - first:
+      213: 775544034035322630
+    second: Ellyn Reyne_89
+  - first:
+      213: 3615942900957713477
+    second: Ellyn Reyne_90
+  - first:
+      213: 8110632919713942007
+    second: Ellyn Reyne_91
+  - first:
+      213: 637453678151023202
+    second: Ellyn Reyne_92
+  - first:
+      213: -8007799996211620077
+    second: Ellyn Reyne_93
+  - first:
+      213: -576623577531039840
+    second: Ellyn Reyne_94
+  - first:
+      213: 9009790228202138956
+    second: Ellyn Reyne_95
+  - first:
+      213: 3792547158336394781
+    second: Ellyn Reyne_96
+  - first:
+      213: 8032924621383921891
+    second: Ellyn Reyne_97
+  - first:
+      213: -5125261104620730519
+    second: Ellyn Reyne_98
+  - first:
+      213: 756602029713430418
+    second: Ellyn Reyne_99
+  - first:
+      213: 2141780778208066291
+    second: Ellyn Reyne_100
+  - first:
+      213: -5731627750623580740
+    second: Ellyn Reyne_101
+  - first:
+      213: -3449664110805003360
+    second: Ellyn Reyne_102
+  - first:
+      213: 7194584280473484967
+    second: Ellyn Reyne_103
+  - first:
+      213: 7463300365741391798
+    second: Ellyn Reyne_104
+  - first:
+      213: 185827975251358378
+    second: Ellyn Reyne_105
+  - first:
+      213: -4823345826350302265
+    second: Ellyn Reyne_106
+  - first:
+      213: 604500192488849012
+    second: Ellyn Reyne_107
+  - first:
+      213: -7944847056108078121
+    second: Ellyn Reyne_108
+  - first:
+      213: 3329025509672214220
+    second: Ellyn Reyne_109
+  - first:
+      213: -2991537333920748539
+    second: Ellyn Reyne_110
+  - first:
+      213: -882126523227035219
+    second: Ellyn Reyne_111
+  - first:
+      213: 4992186081418751487
+    second: Ellyn Reyne_112
+  - first:
+      213: -869694577315373323
+    second: Ellyn Reyne_113
+  - first:
+      213: 8648204835692095848
+    second: Ellyn Reyne_114
+  - first:
+      213: 7663761422664218880
+    second: Ellyn Reyne_115
+  - first:
+      213: 4097612882415607002
+    second: Ellyn Reyne_116
+  - first:
+      213: -6441063217123709544
+    second: Ellyn Reyne_117
+  - first:
+      213: 8442957513337925645
+    second: Ellyn Reyne_118
+  - first:
+      213: 7234081268194666021
+    second: Ellyn Reyne_119
+  - first:
+      213: -7944321028064633534
+    second: Ellyn Reyne_120
+  - first:
+      213: 1484533138060178504
+    second: Ellyn Reyne_121
+  - first:
+      213: 4852877442341386623
+    second: Ellyn Reyne_122
+  - first:
+      213: -5325496999520611458
+    second: Ellyn Reyne_123
+  - first:
+      213: 5471708605472369231
+    second: Ellyn Reyne_124
+  - first:
+      213: -7022735846483527600
+    second: Ellyn Reyne_125
+  - first:
+      213: 662947203011129437
+    second: Ellyn Reyne_126
+  - first:
+      213: -428310225458147252
+    second: Ellyn Reyne_127
+  - first:
+      213: 2922874591290208037
+    second: Ellyn Reyne_128
+  - first:
+      213: -3316207703849496025
+    second: Ellyn Reyne_129
+  - first:
+      213: -8497741452158894318
+    second: Ellyn Reyne_130
+  - first:
+      213: -5114663671046459061
+    second: Ellyn Reyne_131
+  - first:
+      213: 1027285851921596663
+    second: Ellyn Reyne_132
+  - first:
+      213: -6810445688746363693
+    second: Ellyn Reyne_133
+  - first:
+      213: -9033308791627381344
+    second: Ellyn Reyne_134
+  - first:
+      213: 3467844660693120181
+    second: Ellyn Reyne_135
+  - first:
+      213: -1253705683785283763
+    second: Ellyn Reyne_136
+  - first:
+      213: 555079431354637776
+    second: Ellyn Reyne_137
+  - first:
+      213: 6795261252116734505
+    second: Ellyn Reyne_138
+  - first:
+      213: 1573700841459220633
+    second: Ellyn Reyne_139
+  - first:
+      213: -6560091956217818769
+    second: Ellyn Reyne_140
+  - first:
+      213: -970598834763670024
+    second: Ellyn Reyne_141
+  - first:
+      213: -4528112325750584641
+    second: Ellyn Reyne_142
+  - first:
+      213: 83622821654299993
+    second: Ellyn Reyne_143
+  - first:
+      213: -817687271167008863
+    second: Ellyn Reyne_144
+  - first:
+      213: -8782673153733208761
+    second: Ellyn Reyne_145
+  - first:
+      213: -5873569881199699362
+    second: Ellyn Reyne_146
+  - first:
+      213: 2251596117989949041
+    second: Ellyn Reyne_147
+  - first:
+      213: -2934074845992895619
+    second: Ellyn Reyne_148
+  - first:
+      213: -5079653690850094941
+    second: Ellyn Reyne_149
+  - first:
+      213: -4506137719007995054
+    second: Ellyn Reyne_150
+  - first:
+      213: -9017327921290899652
+    second: Ellyn Reyne_151
+  - first:
+      213: 5981357721421390252
+    second: Ellyn Reyne_152
+  - first:
+      213: -5353740354926795396
+    second: Ellyn Reyne_153
+  - first:
+      213: 2796044230621672698
+    second: Ellyn Reyne_154
+  - first:
+      213: -2305371833907279682
+    second: Ellyn Reyne_155
+  - first:
+      213: -685881778561496083
+    second: Ellyn Reyne_156
+  - first:
+      213: -4422662847517272003
+    second: Ellyn Reyne_157
+  - first:
+      213: 4644090850796776637
+    second: Ellyn Reyne_158
+  - first:
+      213: -5547105342750726454
+    second: Ellyn Reyne_159
+  - first:
+      213: -6603563534255556583
+    second: Ellyn Reyne_160
+  - first:
+      213: 128298459632293218
+    second: Ellyn Reyne_161
+  - first:
+      213: -6206935038988798826
+    second: Ellyn Reyne_162
+  - first:
+      213: 7210025072436121178
+    second: Ellyn Reyne_163
+  - first:
+      213: -1658501385078986879
+    second: Ellyn Reyne_164
+  - first:
+      213: 1343022030775329462
+    second: Ellyn Reyne_165
+  - first:
+      213: -1980912871938373781
+    second: Ellyn Reyne_166
+  - first:
+      213: 5014619266570591333
+    second: Ellyn Reyne_167
+  - first:
+      213: -7645821245362007446
+    second: Ellyn Reyne_168
+  - first:
+      213: 8021858548433262837
+    second: Ellyn Reyne_169
+  - first:
+      213: -3102624066624841517
+    second: Ellyn Reyne_170
+  - first:
+      213: -3112393599101105517
+    second: Ellyn Reyne_171
+  - first:
+      213: 749406066301268989
+    second: Ellyn Reyne_172
+  - first:
+      213: -1017654881974973262
+    second: Ellyn Reyne_173
+  - first:
+      213: -1903950807801297219
+    second: Ellyn Reyne_174
+  - first:
+      213: -534817862828517021
+    second: Ellyn Reyne_175
+  - first:
+      213: -2186599853161435179
+    second: Ellyn Reyne_176
+  - first:
+      213: 1736053509939831242
+    second: Ellyn Reyne_177
+  - first:
+      213: 7420723348589052825
+    second: Ellyn Reyne_178
+  - first:
+      213: 2400251842680378578
+    second: Ellyn Reyne_179
+  - first:
+      213: 6318378815570119425
+    second: Ellyn Reyne_180
+  - first:
+      213: 1134670751665287589
+    second: Ellyn Reyne_181
+  - first:
+      213: 5661422912870264387
+    second: Ellyn Reyne_182
+  - first:
+      213: -1849839584914683110
+    second: Ellyn Reyne_183
+  - first:
+      213: -2150216254567858972
+    second: Ellyn Reyne_184
+  - first:
+      213: 6988755643051113492
+    second: Ellyn Reyne_185
+  - first:
+      213: 4085474834579752681
+    second: Ellyn Reyne_186
+  - first:
+      213: -1998584792671730461
+    second: Ellyn Reyne_187
+  - first:
+      213: -4870941610935353933
+    second: Ellyn Reyne_188
+  - first:
+      213: 3958804856547842024
+    second: Ellyn Reyne_189
+  - first:
+      213: 3510551289461670834
+    second: Ellyn Reyne_190
+  - first:
+      213: -3804163775990358743
+    second: Ellyn Reyne_191
+  - first:
+      213: -4180362007802004320
+    second: Ellyn Reyne_192
+  - first:
+      213: 4057934918919039882
+    second: Ellyn Reyne_193
+  - first:
+      213: -4208311140025806938
+    second: Ellyn Reyne_194
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ellyn Reyne_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c45b5e1bd849c1a0800000000000000
+      internalID: -6788814857339972407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8e095bcda71e740800000000000000
+      internalID: 5179556134810347761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538e7b530ac6d6140800000000000000
+      internalID: 4714543820278589493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c729d03a7d6ee00800000000000000
+      internalID: 1073782656481787039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc45823820178c6c0800000000000000
+      internalID: -4122921203253357364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b76c8ad18543ca0800000000000000
+      internalID: -6038104315988116605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6dcb81d9506db40800000000000000
+      internalID: 5464561370143708837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f24ef5b9a4100bc0800000000000000
+      internalID: -3819029764874812688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21d413481becfb00800000000000000
+      internalID: 863823717985472810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7d812faf4b4c490800000000000000
+      internalID: -7726852070764390447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6078cd0a6d6f2a60800000000000000
+      internalID: 7651454594190962797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78f006f61b70c110800000000000000
+      internalID: 1279157632719976571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb4f43684c58cce0800000000000000
+      internalID: -1384755419442885656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff91868c8ca3d9b0800000000000000
+      internalID: -5056508237054894083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756bfddeb185bd260800000000000000
+      internalID: 7123384112594794071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a369a8cc5b71e380800000000000000
+      internalID: -8943731746547342426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5bea82867baafb0800000000000000
+      internalID: -4635691208437484106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bc0252945e81710800000000000000
+      internalID: 1664332164631677849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cc19095373d1150800000000000000
+      internalID: 5844888594595040347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b654792baed10590800000000000000
+      internalID: -7709636260365314377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a085a8fd9f49a91b0800000000000000
+      internalID: -5649038981664712694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf146f5ac8a9d4590800000000000000
+      internalID: -7688319059981090309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35d3bfe9c004bbc0800000000000000
+      internalID: -3768386120892295877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebaea64246555270800000000000000
+      internalID: 8238585935997873124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b363104e8290a590800000000000000
+      internalID: -7664965426126560331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983a5cca55deebb80800000000000000
+      internalID: -8376997304635907191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012663f8bae308ee0800000000000000
+      internalID: -1260938989100703216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97af0a7a3a5365e0800000000000000
+      internalID: -1917589809127250018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b9cb1a42d89b7b0800000000000000
+      internalID: -5207976305605436573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f430771eca8d8e0800000000000000
+      internalID: -1668393577576444013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eee0d91b1e2d5510800000000000000
+      internalID: 1539437341562695401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_31
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce69c842c7d466260800000000000000
+      internalID: 7090439858925901548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95ba98eb0a887510800000000000000
+      internalID: 1547138255753491867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbdd22ae4d011d50800000000000000
+      internalID: 6706155951510903793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba503ffd31973b00800000000000000
+      internalID: 808274353596684989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53040be9cf6986c0800000000000000
+      internalID: -4140655469368442019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4e8662ef2281930800000000000000
+      internalID: 4114076734564394146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173cea5886c3b3b50800000000000000
+      internalID: 6573914500694459249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8ef2e557ff972c0800000000000000
+      internalID: -4433231478613088096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d6a63e296311420800000000000000
+      internalID: 2598918464478014876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecd3a0a1195e24d0800000000000000
+      internalID: -3157488356495729434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f84de55f9a7a85f0800000000000000
+      internalID: -753655162871133962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725c1ce944d08c930800000000000000
+      internalID: 4163592443876459815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b651c70a62aa4810800000000000000
+      internalID: 1750389981467203251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027780502e5ade100800000000000000
+      internalID: 138949553683986208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_45
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2684950ee76e65d20800000000000000
+      internalID: 3267052012308088930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_46
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b91b56fe6f64dc0800000000000000
+      internalID: -3654962539500823659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_47
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee8bf8eddf752ad0800000000000000
+      internalID: -2727633408229667104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_48
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23dcbc6251108590800000000000000
+      internalID: -7674114719330020562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_49
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d5ab6d62130bd10800000000000000
+      internalID: 2139263865882041657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f16998fed3f4d530800000000000000
+      internalID: 3878993318051930614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7579a337f7cbe6cf0800000000000000
+      internalID: -257060873133451433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b39ebaf9f3dcbcb0800000000000000
+      internalID: -4846766028350385231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_53
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11cea9d4384260f0800000000000000
+      internalID: -1125257565061594853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_54
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90b2a7353fad7b00800000000000000
+      internalID: 828010549607575706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_55
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2ab2fa4e2cb6950800000000000000
+      internalID: 6443457979330831092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_56
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2ceb6d82c07bd50800000000000000
+      internalID: 6752879535806399154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_57
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54614f0ec0f294a20800000000000000
+      internalID: 3047018355253057093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_58
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5694e425b7f94a0800000000000000
+      internalID: -6584408536761408066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c80877c75475e0e0800000000000000
+      internalID: -2241257319189444410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de48fe75f529c9ad0800000000000000
+      internalID: -2694117538879535891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b09f6d618217530800000000000000
+      internalID: 3850903234939521793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_62
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5688530925c50360800000000000000
+      internalID: 7135325964578883162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_63
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f110730a0cc35020800000000000000
+      internalID: 2329429775660093938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_64
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8686f36022132d8f0800000000000000
+      internalID: -517296984990717848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_65
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df4a5405b69dfb90800000000000000
+      internalID: -7206438124516651056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_66
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94b6693bca070c30800000000000000
+      internalID: 4325437835070321823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_67
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d2276f8235e6b10800000000000000
+      internalID: 1976608721860701538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fc3855fa1201f80800000000000000
+      internalID: -8137967489720791146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91ea50acb76e0150800000000000000
+      internalID: 5840719826587935133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_70
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2357d170a046550800000000000000
+      internalID: 6153054016570208985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_71
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6733d76f35b847e60800000000000000
+      internalID: 7959139634204455798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_72
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f0d14e906ce5ad0800000000000000
+      internalID: -2711512179846344830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_73
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcabdc9d08375cc50800000000000000
+      internalID: 6684876219148516043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_74
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0496d18a14a14040800000000000000
+      internalID: 4630162325668008973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_75
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8c42572e4e1b180800000000000000
+      internalID: -9101241710659975004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_76
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6129992aed47b20800000000000000
+      internalID: 3131372430871893672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_77
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fde79ce8884d720800000000000000
+      internalID: 2870069009389117316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b56db9282cbbe2d0800000000000000
+      internalID: -3248295825532688973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_79
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba4f3d0ae760fff0800000000000000
+      internalID: -4389344685110599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_80
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efa90d6a75fd4090800000000000000
+      internalID: -8048507052877041687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_81
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb0cf0b2e06394c0800000000000000
+      internalID: -4281972293951026256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d893ac0dbf3a1d170800000000000000
+      internalID: 8201516698353416589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c3b9070a4cf30a0800000000000000
+      internalID: -6899579910745277431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_84
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66af876cc5473bd60800000000000000
+      internalID: 7904789712780982886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_85
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec342f3e37863810800000000000000
+      internalID: 1744730607069707499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_86
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a917511ffd99b00800000000000000
+      internalID: 835945432393816655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_87
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd189a7ab412a2f30800000000000000
+      internalID: 4551486982230475231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a418ec2e6a81e2c0800000000000000
+      internalID: -4404086754787191639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_89
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f4950a03943ca00800000000000000
+      internalID: 775544034035322630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_90
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5441eab09e86e2230800000000000000
+      internalID: 3615942900957713477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_91
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f983232ba1ce8070800000000000000
+      internalID: 8110632919713942007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a35fe2eb0b8d800800000000000000
+      internalID: 637453678151023202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_93
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3179e61a4549ed090800000000000000
+      internalID: -8007799996211620077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_94
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afb52c49eb6ff7f0800000000000000
+      internalID: -576623577531039840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_95
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d26c40a74390d70800000000000000
+      internalID: 9009790228202138956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_96
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16de86fb85d1a430800000000000000
+      internalID: 3792547158336394781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_97
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0f315026eaa7f60800000000000000
+      internalID: 8032924621383921891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96784fd1e2a6fd8b0800000000000000
+      internalID: -5125261104620730519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_99
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2979861998dff7a00800000000000000
+      internalID: 756602029713430418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_100
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faf9d7254229bd10800000000000000
+      internalID: 2141780778208066291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_101
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd6f43adea2570b0800000000000000
+      internalID: -5731627750623580740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_102
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3dd01b4c45020d0800000000000000
+      internalID: -3449664110805003360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_103
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae3b38d84c48d360800000000000000
+      internalID: 7194584280473484967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_104
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bffe00f328f29760800000000000000
+      internalID: 7463300365741391798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_105
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2ff261f81349200800000000000000
+      internalID: 185827975251358378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_106
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cbf68fa688001db0800000000000000
+      internalID: -4823345826350302265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_107
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ef3f7e8bd936800800000000000000
+      internalID: 604500192488849012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbbed132bb3eb190800000000000000
+      internalID: -7944847056108078121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_109
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cced9382013133e20800000000000000
+      internalID: 3329025509672214220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_110
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ca55705aceb76d0800000000000000
+      internalID: -2991537333920748539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_111
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da92a10d99e02c3f0800000000000000
+      internalID: -882126523227035219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_112
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd2d939acec74540800000000000000
+      internalID: 4992186081418751487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_113
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe9808c3693ee3f0800000000000000
+      internalID: -869694577315373323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_114
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8692e385a78940870800000000000000
+      internalID: 8648204835692095848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0093e39d8662b5a60800000000000000
+      internalID: 7663761422664218880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_116
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc527bd435add830800000000000000
+      internalID: 4097612882415607002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_117
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89da187512fbc96a0800000000000000
+      internalID: -6441063217123709544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_118
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00f83c20296b2570800000000000000
+      internalID: 8442957513337925645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_119
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526ec0be59e946460800000000000000
+      internalID: 7234081268194666021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_120
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d9a84ad1a10c190800000000000000
+      internalID: -7944321028064633534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_121
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8447f5f060f1a9410800000000000000
+      internalID: 1484533138060178504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_122
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79b3497252e85340800000000000000
+      internalID: 4852877442341386623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_123
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e735a23d1b80816b0800000000000000
+      internalID: -5325496999520611458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_124
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ae0af7cf96feb40800000000000000
+      internalID: 5471708605472369231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_125
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05872f6a4fa3a8e90800000000000000
+      internalID: -7022735846483527600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_126
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50315cf7f2433900800000000000000
+      internalID: 662947203011129437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_127
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4056e58e165e0af0800000000000000
+      internalID: -428310225458147252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_128
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f2ed864f2209820800000000000000
+      internalID: 2922874591290208037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_129
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72213a2d9a67af1d0800000000000000
+      internalID: -3316207703849496025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_130
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ff4f61c25f11a80800000000000000
+      internalID: -8497741452158894318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_131
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b413ea56d701509b0800000000000000
+      internalID: -5114663671046459061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_132
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0429e1a07a14e00800000000000000
+      internalID: 1027285851921596663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_133
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4be28babf6c71a0800000000000000
+      internalID: -6810445688746363693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_134
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a503a8b38d33a280800000000000000
+      internalID: -9033308791627381344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_135
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b439d07852402030800000000000000
+      internalID: 3467844660693120181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_136
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d470711b251f99ee0800000000000000
+      internalID: -1253705683785283763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_137
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ddd4084dc904b700800000000000000
+      internalID: 555079431354637776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_138
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922e4602b1e9d4e50800000000000000
+      internalID: 6795261252116734505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_139
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99009e5d398e6d510800000000000000
+      internalID: 1573700841459220633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_140
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f615db76f1fd5f4a0800000000000000
+      internalID: -6560091956217818769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_141
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdd082908db782f0800000000000000
+      internalID: -970598834763670024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_142
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba8198a4d9e821c0800000000000000
+      internalID: -4528112325750584641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_143
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95502d36386192100800000000000000
+      internalID: 83622821654299993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_144
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af5bb852cdf6a4f0800000000000000
+      internalID: -817687271167008863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_145
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7455f5d9c4dad1680800000000000000
+      internalID: -8782673153733208761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_146
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a98a30053ec7ea0800000000000000
+      internalID: -5873569881199699362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_147
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e70766db64f3f10800000000000000
+      internalID: 2251596117989949041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_148
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b3f2419721847d0800000000000000
+      internalID: -2934074845992895619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_149
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0d0ee91e17189b0800000000000000
+      internalID: -5079653690850094941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_150
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b1a8d7e9bf671c0800000000000000
+      internalID: -4506137719007995054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_151
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f8e3c08040cd280800000000000000
+      internalID: -9017327921290899652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_152
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1acd3382d020350800000000000000
+      internalID: 5981357721421390252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_153
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c752ae43381b3b5b0800000000000000
+      internalID: -5353740354926795396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_154
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af43c76e96b8dc620800000000000000
+      internalID: 2796044230621672698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_155
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb804cc088ca100e0800000000000000
+      internalID: -2305371833907279682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_156
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debcde608224b76f0800000000000000
+      internalID: -685881778561496083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_157
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d385a6c829b8f92c0800000000000000
+      internalID: -4422662847517272003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_158
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc226af500237040800000000000000
+      internalID: 4644090850796776637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_159
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6eba1a419b403b0800000000000000
+      internalID: -5547105342750726454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_160
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91879f8e3fd6b54a0800000000000000
+      internalID: -6603563534255556583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_161
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265dc9fe4cec7c100800000000000000
+      internalID: 128298459632293218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_162
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694b521c7798cd9a0800000000000000
+      internalID: -6206935038988798826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_163
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e07306a972f0460800000000000000
+      internalID: 7210025072436121178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_164
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187afd207c1dbf8e0800000000000000
+      internalID: -1658501385078986879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_165
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b223eddb6f53a210800000000000000
+      internalID: 1343022030775329462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_166
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b674d110d326284e0800000000000000
+      internalID: -1980912871938373781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_167
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c15c387a1879540800000000000000
+      internalID: 5014619266570591333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_168
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62101e261694e590800000000000000
+      internalID: -7645821245362007446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_169
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f89bc129dd535f60800000000000000
+      internalID: 8021858548433262837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_170
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d89f3d89d341f4d0800000000000000
+      internalID: -3102624066624841517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_171
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a0164038e8ec4d0800000000000000
+      internalID: -3112393599101105517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_172
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3f866c8dc666a00800000000000000
+      internalID: 749406066301268989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_173
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc80ffc64090e1f0800000000000000
+      internalID: -1017654881974973262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_174
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db68f2fe3dec395e0800000000000000
+      internalID: -1903950807801297219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3699292ccf1f398f0800000000000000
+      internalID: -534817862828517021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_176
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df2466c403a7a1e0800000000000000
+      internalID: -2186599853161435179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_177
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1a8032873b71810800000000000000
+      internalID: 1736053509939831242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_178
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9930911a194bbf660800000000000000
+      internalID: 7420723348589052825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_179
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4d07675586f4120800000000000000
+      internalID: 2400251842680378578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_180
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b096a7e046fa750800000000000000
+      internalID: 6318378815570119425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_181
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1f80279092fbf00800000000000000
+      internalID: 1134670751665287589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_182
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ea3ecc42a619e40800000000000000
+      internalID: 5661422912870264387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_183
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b44b9c2bc0456e0800000000000000
+      internalID: -1849839584914683110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_184
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec363475b5e822e0800000000000000
+      internalID: -2150216254567858972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_185
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c7116ba3c0df060800000000000000
+      internalID: 6988755643051113492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_186
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e68ced57b582b830800000000000000
+      internalID: 4085474834579752681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_187
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4cd4358b99344e0800000000000000
+      internalID: -1998584792671730461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_188
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd77868960f66cb0800000000000000
+      internalID: -4870941610935353933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_189
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e710a9da0080f630800000000000000
+      internalID: 3958804856547842024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_190
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3072e4ccbf7b030800000000000000
+      internalID: 3510551289461670834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_191
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d9fa87335e43bc0800000000000000
+      internalID: -3804163775990358743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_192
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac3c6407ee5cf5c0800000000000000
+      internalID: -4180362007802004320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_193
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ba2d31f4ea05830800000000000000
+      internalID: 4057934918919039882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellyn Reyne_194
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af417290531995c0800000000000000
+      internalID: -4208311140025806938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
