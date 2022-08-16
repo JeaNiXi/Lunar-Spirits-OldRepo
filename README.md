@@ -3,6 +3,9 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
+16.08.2022
+ - Added Basic Dialogue System.
+ 
 07.08.2022
  - Added Russian Localization
  
