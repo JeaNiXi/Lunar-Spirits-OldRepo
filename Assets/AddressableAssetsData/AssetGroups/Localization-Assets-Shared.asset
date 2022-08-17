@@ -70,6 +70,10 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/ItemNames/NamesArmorUI Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 12347a0ae7721914abc0ece91cdc8260
+    m_Address: Assets/Localization/Tables/Levels/Intro/level_intro Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 4d77091fbc9a3cd43a251293354ef0c4, type: 2}
   m_SchemaSet:

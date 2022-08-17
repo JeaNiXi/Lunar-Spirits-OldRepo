@@ -30,7 +30,7 @@ namespace Inventory.SO
         [SerializeField] [NonReorderable] private List<EquipmentItem> EquipContainer = new List<EquipmentItem>(11);
         [SerializeField] [NonReorderable] private List<InventoryItem> LootContainer = new List<InventoryItem>();
 
-        public LocalizedStringTable RaritiesTable = new LocalizedStringTable();
+        //public LocalizedStringTable RaritiesTable = new LocalizedStringTable();
 
         private int Rows { get => Container.Count / 6; }
         private const int MAX_ITEM_SLOTS = 42;

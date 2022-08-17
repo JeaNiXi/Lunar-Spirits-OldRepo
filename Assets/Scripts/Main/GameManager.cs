@@ -71,7 +71,7 @@ namespace Managers
         public void LoadNewGameIntro()
         {
             SceneManager.LoadScene(1);
-            GameState = GameStates.PLAYING;
+            //GameState = GameStates.PLAYING;
             InitializeGameCharacter();
         }
         #endregion
