@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Managers.UI
@@ -23,7 +24,14 @@ namespace Managers.UI
         [SerializeField] private Color colorFullAlpha;
         [SerializeField] private Color colorZeroAlpha;
 
-        private const float DIALOGUE_FADE_TIME = 5f;
+
+
+        public event Action
+            OnDialogueTextFinished;
+
+        private const float DIALOGUE_FADE_TIME = 4f;
+
+
         public void ToggleDialogueUI(RectTransform transform, Image image, bool value)
         {
             if (value)
@@ -48,14 +56,34 @@ namespace Managers.UI
         
         public UIDialogueElement CreateDialogueElement() => Instantiate(dialoguePrefab, Vector3.zero, Quaternion.identity);
         public bool IsDialogueUIActive => upperDialogueScreen.gameObject.activeSelf || lowerDialogueScreen.gameObject.activeSelf;
-        
+
         public void WriteDialogueText(string text)
         {
             UIDialogueElement dialogueElement = CreateDialogueElement();
             dialogueElement.transform.SetParent(dialogueParentTransform);
+            EnableActions(dialogueElement);
             dialogueElement.SetDialogueText(text);
         }
-
+        public void WriteDialogueText(string text, UnityEvent eventAction)
+        {
+            UIDialogueElement dialogueElement = CreateDialogueElement();
+            dialogueElement.transform.SetParent(dialogueParentTransform);
+            dialogueElement.SetAsButton();
+            dialogueElement.SetDialogueText(text, eventAction);
+            DialogueManager.Instance.GetNextDialogueSequence();
+        }
+        private void EnableActions(UIDialogueElement dialogueElement)
+        {
+            dialogueElement.OnDialogueInitFinished += HandleDialogueWritingFinishing;
+        }
+        private void DisableAction(UIDialogueElement dialogueElement)
+        {
+            dialogueElement.OnDialogueInitFinished -= HandleDialogueWritingFinishing;
+        }
+        private void HandleDialogueWritingFinishing()
+        {
+            OnDialogueTextFinished?.Invoke();
+        }
         private IEnumerator FadeDialoguePanelToFullAlpha(RectTransform transform, Image image, float animationTime)
         {
             if(!transform.gameObject.activeSelf)

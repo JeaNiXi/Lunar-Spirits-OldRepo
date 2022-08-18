@@ -23,7 +23,37 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 38488848584704
-    m_Localized: Second Dialogue in English
+    m_Localized: <b>Lorem ipsum</b> dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
+      sit...dolor sit...dolor sit...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349617260974080
+    m_Localized: First Choise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365072491073536
+    m_Localized: second choise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386925599248384
+    m_Localized: test
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386928161968128
+    m_Localized: test
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386930200399872
+    m_Localized: test
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386931982979072
+    m_Localized: test
     m_Metadata:
       m_Items: []
   references:
