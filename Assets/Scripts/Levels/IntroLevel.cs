@@ -14,7 +14,7 @@ namespace Levels
     public class IntroLevel : MonoBehaviour
     {
         [SerializeField] public CharacterManager MainCharacter;
-
+        [SerializeField] public bool SkipIntro = false;
         [SerializeField] LevelDialoguesSO A01;
         [SerializeField] DialogueHelperSO A01Helper;
 
@@ -22,6 +22,9 @@ namespace Levels
 
         private void Start()
         {
+            if (SkipIntro)
+                GameManager.Instance.GameState = GameManager.GameStates.PLAYING;
+                return;
             MainCharacter = GameManager.Instance.MainCharacter;
             if (DialogueManager.Instance.IsDialogueScreenActive)
                 DialogueManager.Instance.ClearDialogue();

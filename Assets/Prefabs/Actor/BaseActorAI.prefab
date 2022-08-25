@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,7 +123,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05be89c9d6cc02449b25d4aafb0868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorSO: {fileID: 11400000, guid: 62ed772813e4d4e4b9f952c98c591bbc, type: 2}
+  mainCharacter: {fileID: 0}
+  animator: {fileID: 0}
+  rigidBody: {fileID: 0}
+  colliderMain: {fileID: 0}
+  ActorParams:
+    <Name>k__BackingField: 
+    <IsLevelDependant>k__BackingField: 0
+    <Level>k__BackingField: 0
+    <Armor>k__BackingField: 0
+    <MagicResist>k__BackingField: 0
+    <HealthBonus>k__BackingField: 0
+    <TotalHealth>k__BackingField: 0
+    <CurrentHealth>k__BackingField: 0
+    <MainStrength>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainDexterity>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainConstitution>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainIntelligence>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainWisdom>k__BackingField:
+      <Level>k__BackingField: 0
+    <MainCharisma>k__BackingField:
+      <Level>k__BackingField: 0
+    <FireResistance>k__BackingField: 0
+    <WaterResistance>k__BackingField: 0
+    <EarthResistance>k__BackingField: 0
+    <AirResistance>k__BackingField: 0
+    <PoisonResistance>k__BackingField: 0
+    <LightningResistance>k__BackingField: 0
+    <PhysicalResistance>k__BackingField: 0
+    <LightResistance>k__BackingField: 0
+    <DarkResistance>k__BackingField: 0
+    <FireVulnerability>k__BackingField: 0
+    <WaterVulnerability>k__BackingField: 0
+    <EarthVulnerability>k__BackingField: 0
+    <AirVulnerability>k__BackingField: 0
+    <PoisonVulnerability>k__BackingField: 0
+    <LightningVulnerability>k__BackingField: 0
+    <PhysicalVulnerability>k__BackingField: 0
+    <LightVulnerability>k__BackingField: 0
+    <DarkVulnerability>k__BackingField: 0
+    <JumpStrength>k__BackingField: 0
+    <JumpDelay>k__BackingField: 0
+  enemyModifiersList: []
+  ActorState: 0
 --- !u!50 &4001880918681305035
 Rigidbody2D:
   serializedVersion: 4

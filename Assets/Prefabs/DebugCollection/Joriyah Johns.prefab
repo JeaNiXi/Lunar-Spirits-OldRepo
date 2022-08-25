@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6767027704927214188}
   - component: {fileID: 6767027704927214189}
   - component: {fileID: 6767027704927214178}
+  - component: {fileID: 1068933784}
   m_Layer: 11
   m_Name: Joriyah Johns
   m_TagString: Player
@@ -46,8 +47,8 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6767027704927214187}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -57,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 752179cd5a0740943a78069a5b3d1a1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -710987840238062128, guid: 220d9b52e2650b94c99e32c7ef8b7d4a, type: 3}
+  m_Sprite: {fileID: -5883054759941261799, guid: 220d9b52e2650b94c99e32c7ef8b7d4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,10 +103,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00826323, y: -0.41879058}
+  m_Offset: {x: -0.00826323, y: 1.6616533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 4, y: 4}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
@@ -113,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0190532, y: 2.7632608}
+  m_Size: {x: 1.0190532, y: 2.8787951}
   m_EdgeRadius: 0
 --- !u!50 &6767027704927214184
 Rigidbody2D:
@@ -148,13 +149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d552c61dbe91f04f93d97c6465bc147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MainInventorySO>k__BackingField: {fileID: 11400000, guid: 4bc2fe11ea1610e48971e964a71e7dd0, type: 2}
   mainRB2D: {fileID: 6767027704927214184}
   mainAnimator: {fileID: 6767027704927214178}
   ActorParams:
     <Name>k__BackingField: Joriah Johns
     <IsLevelDependant>k__BackingField: 0
     <Level>k__BackingField: 1
-    <BaseHealth>k__BackingField: 0
     <Armor>k__BackingField: 0
     <MagicResist>k__BackingField: 0
     <HealthBonus>k__BackingField: 0
@@ -163,15 +164,15 @@ MonoBehaviour:
     <MainStrength>k__BackingField:
       <Level>k__BackingField: 1
     <MainDexterity>k__BackingField:
-      <Level>k__BackingField: 0
+      <Level>k__BackingField: 1
     <MainConstitution>k__BackingField:
-      <Level>k__BackingField: 0
+      <Level>k__BackingField: 1
     <MainIntelligence>k__BackingField:
-      <Level>k__BackingField: 0
+      <Level>k__BackingField: 1
     <MainWisdom>k__BackingField:
-      <Level>k__BackingField: 0
+      <Level>k__BackingField: 1
     <MainCharisma>k__BackingField:
-      <Level>k__BackingField: 0
+      <Level>k__BackingField: 1
     <FireResistance>k__BackingField: 0
     <WaterResistance>k__BackingField: 0
     <EarthResistance>k__BackingField: 0
@@ -228,6 +229,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1068933784
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767027704927214187}
+  m_Enabled: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 15
 --- !u!1 &6767027705267619815
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6767027705267619815}
   m_LocalRotation: {x: 0, y: 0, z: -0.21643952, w: 0.97629607}
-  m_LocalPosition: {x: -0.31, y: -0.68, z: 0}
+  m_LocalPosition: {x: -0.31, y: 1.27, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 6767027704927214191}
@@ -302,7 +314,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008263111, y: -1.6278406}
+  m_Offset: {x: 0.008263111, y: 0.43162036}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -313,5 +325,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1817894, y: 0.45463204}
+  m_Size: {x: 1.1817894, y: 0.54159355}
   m_EdgeRadius: 0
