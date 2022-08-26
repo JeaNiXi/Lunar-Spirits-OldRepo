@@ -1,6 +1,8 @@
+using Helpers.SO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,64 +16,147 @@ namespace Managers.UI
         [SerializeField] private Image upperDialogueLeftImage;
         [SerializeField] private Image upperDialogueRightImage;
         [SerializeField] private Image lowerDialogueImage;
-        [SerializeField] private Image leftImageSprite;
-        [SerializeField] private Image rightImageSprite;
+        [SerializeField] private Image scrollbarImage;
+        [SerializeField] private Image scrollbarHandlerImage;
+
+        [SerializeField] private RectTransform mainEmoteParent;
+        [SerializeField] private RectTransform listenerEmotePanel;
+        [SerializeField] private TMP_Text mainName;
+        [SerializeField] private TMP_Text listenerName;
 
         [SerializeField] private RectTransform dialogueParentTransform;
 
         [SerializeField] private UIDialogueElement dialoguePrefab;
+        [SerializeField] private UIEmoteRenderer emotePrefab;
 
         [SerializeField] private Color colorFullAlpha;
         [SerializeField] private Color colorZeroAlpha;
 
+        private List<UIDialogueElement> currentDialogueElements = new List<UIDialogueElement>();
 
+        public enum DIALOGUE_TYPE
+        {
+            MAIN,
+            LISTENER,
+        }
 
         public event Action
             OnDialogueTextFinished;
 
-        private const float DIALOGUE_FADE_TIME = 4f;
+        private const float DIALOGUE_FADE_TIME = 2f;
+        private const float CHARACTER_SPRITE_FADE_TIME = 2f;
 
-
-        public void ToggleDialogueUI(RectTransform transform, Image image, bool value)
+        public void EnableDialoguePanel()
         {
-            if (value)
-                StartCoroutine(FadeDialoguePanelToFullAlpha(transform, image, DIALOGUE_FADE_TIME));
-            else
-                StartCoroutine(FadeDialoguePanelToZeroAlpha(transform, image, DIALOGUE_FADE_TIME));
+            StartCoroutine(FadeDialoguePanelToFullAlpha(lowerDialogueImage, DIALOGUE_FADE_TIME));
+            StartCoroutine(FadeDialoguePanelToFullAlpha(scrollbarImage, DIALOGUE_FADE_TIME));
+            StartCoroutine(FadeDialoguePanelToFullAlpha(scrollbarHandlerImage, DIALOGUE_FADE_TIME));
         }
-        public void ToggleFullDialogueUI(bool value)
+        public void DisableDialoguePanel()
         {
-            ToggleDialogueUI(upperDialogueScreen, upperDialogueLeftImage, value);
-            ToggleDialogueUI(upperDialogueScreen, upperDialogueRightImage, value);
-            ToggleDialogueUI(lowerDialogueScreen, lowerDialogueImage, value);
+            StartCoroutine(FadeDialoguePanelToZeroAlpha(lowerDialogueImage, DIALOGUE_FADE_TIME));
+            StartCoroutine(FadeDialoguePanelToZeroAlpha(scrollbarImage, DIALOGUE_FADE_TIME));
+            StartCoroutine(FadeDialoguePanelToZeroAlpha(scrollbarHandlerImage, DIALOGUE_FADE_TIME));
         }
         public void ClearDialogueUI()
         {
-            upperDialogueLeftImage.color = colorZeroAlpha;
-            upperDialogueRightImage.color = colorZeroAlpha;
-            upperDialogueScreen.gameObject.SetActive(false);
-            lowerDialogueImage.color = colorZeroAlpha;
-            lowerDialogueScreen.gameObject.SetActive(false);
+            for (int i = 0; i < currentDialogueElements.Count; i++)
+            {
+                DisableAction(currentDialogueElements[i]);
+                currentDialogueElements[i].DeleteElement();
+            }
+            DisableDialoguePanel();
+            ClearCharacterSprites();
         }
-        
+        public void ClearCharacterSprites()
+        {
+            ClearMainSprite();
+            ClearListenerSprite();
+        }
+        public void ClearMainSprite()
+        {
+            if (upperDialogueLeftImage.color.a != 0)
+                StartCoroutine(FadeCharacterSpriteToZeroAlpha(upperDialogueLeftImage, CHARACTER_SPRITE_FADE_TIME));
+        }
+        public void ClearListenerSprite()
+        {
+            if (upperDialogueRightImage.color.a != 0) 
+                StartCoroutine(FadeCharacterSpriteToZeroAlpha(upperDialogueRightImage, CHARACTER_SPRITE_FADE_TIME));
+        }
+
         public UIDialogueElement CreateDialogueElement() => Instantiate(dialoguePrefab, Vector3.zero, Quaternion.identity);
+        public UIEmoteRenderer CreateEmoteElement() => Instantiate(emotePrefab, Vector3.zero, Quaternion.identity);
         public bool IsDialogueUIActive => upperDialogueScreen.gameObject.activeSelf || lowerDialogueScreen.gameObject.activeSelf;
 
-        public void WriteDialogueText(string text)
+        public void UpdateDialogueScreen(DialogueHelperSO.DialogueHelper currentDialogue)
         {
-            UIDialogueElement dialogueElement = CreateDialogueElement();
-            dialogueElement.transform.SetParent(dialogueParentTransform);
-            EnableActions(dialogueElement);
-            dialogueElement.SetDialogueText(text);
+            if (lowerDialogueImage.color.a == 0) 
+                EnableDialoguePanel();
+            switch (currentDialogue.dialogueType)
+            {
+                case DialogueHelperSO.DialogueType.A:
+                    //Skipping Audio Step
+                    if(currentDialogue.clearMainSprite)
+                    {
+                        //Clear Sprite
+                    }
+                    else
+                    {
+                        if (currentDialogue.mainExpression != null)
+                        {
+                            if (upperDialogueLeftImage.sprite != null)
+                            {
+                                if (upperDialogueLeftImage.sprite == currentDialogue.mainExpression)
+                                    return;
+                                else
+                                {
+                                    //Swap Sprites
+                                }
+                            }
+                            else
+                            {
+                                upperDialogueLeftImage.sprite = currentDialogue.mainExpression;
+                                StartCoroutine(FadeCharacterSpriteToFullAlpha(upperDialogueLeftImage, currentDialogue.spriteChangeAnimationTime));
+                            }
+                        }
+                    }
+                    if(currentDialogue.clearListenerSprite)
+                    {
+
+                    }
+                    else
+                    {
+                        
+                    }
+                    UIDialogueElement dialogueElement = CreateDialogueElement();
+                    dialogueElement.transform.SetParent(dialogueParentTransform);
+                    currentDialogueElements.Add(dialogueElement);
+                    EnableActions(dialogueElement);
+                    dialogueElement.SetDialogueText(currentDialogue.localizedString.GetLocalizedString());
+                    break;
+                case DialogueHelperSO.DialogueType.B:
+                    //Skipping Audio Step
+                    break;
+                default:
+                    break;
+            }
         }
-        public void WriteDialogueText(string text, UnityEvent eventAction)
-        {
-            UIDialogueElement dialogueElement = CreateDialogueElement();
-            dialogueElement.transform.SetParent(dialogueParentTransform);
-            dialogueElement.SetAsButton();
-            dialogueElement.SetDialogueText(text, eventAction);
-            DialogueManager.Instance.GetNextDialogueSequence();
-        }
+
+        //public void WriteDialogueText(string text)
+        //{
+        //    UIDialogueElement dialogueElement = CreateDialogueElement();
+        //    dialogueElement.transform.SetParent(dialogueParentTransform);
+        //    EnableActions(dialogueElement);
+        //    dialogueElement.SetDialogueText(text);
+        //}
+        //public void WriteDialogueText(string text, UnityEvent eventAction)
+        //{
+        //    UIDialogueElement dialogueElement = CreateDialogueElement();
+        //    dialogueElement.transform.SetParent(dialogueParentTransform);
+        //    dialogueElement.SetAsButton();
+        //    dialogueElement.SetDialogueText(text, eventAction);
+        //    //DialogueManager.Instance.GetNextDialogueSequence();
+        //}
         private void EnableActions(UIDialogueElement dialogueElement)
         {
             dialogueElement.OnDialogueInitFinished += HandleDialogueWritingFinishing;
@@ -84,10 +169,24 @@ namespace Managers.UI
         {
             OnDialogueTextFinished?.Invoke();
         }
-        private IEnumerator FadeDialoguePanelToFullAlpha(RectTransform transform, Image image, float animationTime)
+        public void EnableEmote(EmotesSO emoteType, DIALOGUE_TYPE dialogueType)
         {
-            if(!transform.gameObject.activeSelf)
-                transform.gameObject.SetActive(true);
+            UIEmoteRenderer newEmote = CreateEmoteElement();
+            switch(dialogueType)
+            {
+                case DIALOGUE_TYPE.MAIN:
+                    newEmote.transform.SetParent(mainEmoteParent);
+                    break;
+                case DIALOGUE_TYPE.LISTENER:
+                    newEmote.transform.SetParent(listenerEmotePanel);
+                    break;
+                default:
+                    break;
+            }
+            newEmote.PlayEmote(emoteType);
+        }
+        private IEnumerator FadeDialoguePanelToFullAlpha(Image image, float animationTime)
+        {
             while (lowerDialogueImage.color.a < 1.0f)
             {
                 image.color = new Color(
@@ -99,7 +198,7 @@ namespace Managers.UI
             }
             yield break;
         }
-        private IEnumerator FadeDialoguePanelToZeroAlpha(RectTransform transform, Image image, float animationTime)
+        private IEnumerator FadeDialoguePanelToZeroAlpha(Image image, float animationTime)
         {
             while (image.color.a > 0)
             {
@@ -110,10 +209,44 @@ namespace Managers.UI
                     image.color.a - Time.deltaTime / animationTime);
                 yield return null;
             }
-            if (transform.gameObject.activeSelf)
-                transform.gameObject.SetActive(false);
             yield break;
         }
-        
+        private IEnumerator FadeCharacterSpriteToFullAlpha(Image image, float animationTime)
+        {
+            float aTime;
+            if (animationTime != 0)
+                aTime = animationTime;
+            else
+                aTime = CHARACTER_SPRITE_FADE_TIME;
+            while (image.color.a < 1.0f)
+            {
+                image.color = new Color(
+                    image.color.r,
+                    image.color.g,
+                    image.color.b,
+                    image.color.a + Time.deltaTime / aTime);
+                yield return null;
+            }
+            yield break;
+        }
+        private IEnumerator FadeCharacterSpriteToZeroAlpha(Image image, float animationTime)
+        {
+            float aTime;
+            if (animationTime != 0)
+                aTime = animationTime;
+            else
+                aTime = CHARACTER_SPRITE_FADE_TIME;
+            while (image.color.a > 0)
+            {
+                image.color = new Color(
+                    image.color.r,
+                    image.color.g,
+                    image.color.b,
+                    image.color.a - Time.deltaTime / aTime);
+                yield return null;
+            }
+            image.sprite = null;
+            yield break;
+        }
     }
 }

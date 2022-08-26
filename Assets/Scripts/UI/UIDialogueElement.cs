@@ -18,7 +18,7 @@ namespace Managers.UI
         [SerializeField] private TMP_Text dialogueText;
 
 
-        private const float TEXT_DELAY = 0.0002f;
+        private const float TEXT_DELAY = 0.02f;
         private const float DIALOGUE_DELAY = 0.02f;
         public void SetAsButton()
         {
@@ -67,9 +67,13 @@ namespace Managers.UI
                 if (c == '>')
                     isPayload = true;
             }
-
             OnDialogueInitFinished?.Invoke();
         }
+        public void DeleteElement()
+        {
+            Destroy(gameObject);
+        }
+
         //private int GetPayloadLength(string s)
         //{
         //    int count = 0;

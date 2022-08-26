@@ -17,55 +17,43 @@ namespace Managers.UI
 
         AudioSource audioSource;
 
-        public EmotesSO currentEmote;
-        public bool isPlaying;
         public void Start()
         {
             audioSource = GetComponent<AudioSource>();
-            image.enabled = true;
-            image.sprite = currentEmote.spritesList[0];
-        }
-        private void Update()
-        {
-            if(Keyboard.current.eKey.wasPressedThisFrame && !isPlaying)
-            {
-                isPlaying = true;
-                StartCoroutine(PlayFadeInAnimation());
-
-            }
-
         }
         public void PlayEmote(EmotesSO emote)
         {
-
+            image.enabled = true;
+            image.sprite = emote.spritesList[0];
+            StartCoroutine(PlayFadeInAnimation(emote));
         }
 
-        private IEnumerator PlayEmoteAnimation()
+        private IEnumerator PlayEmoteAnimation(EmotesSO emote)
         {
             for (int i = 0; i < REPEAT_INT; i++)
             {
-                for (int j = 0; j < currentEmote.spritesList.Count; j++)
+                for (int j = 0; j < emote.spritesList.Count; j++)
                 {
-                    image.sprite = currentEmote.spritesList[j];
+                    image.sprite = emote.spritesList[j];
                     yield return new WaitForSeconds(ANIMATION_DELAY);
                 }
             }
             StartCoroutine(PlayFadeOutAnimation());
             yield break;
         }
-        private IEnumerator PlayFadeInAnimation()
+        private IEnumerator PlayFadeInAnimation(EmotesSO emote)
         {
             Vector3 startScale = Vector3.zero;
             Vector3 endScale = Vector3.one;
             float currentTime = 0;
-            audioSource.Play();
+            audioSource.PlayOneShot(emote.emoteSound);
             while (currentTime < FADE_ANIM_DURATION)
             {
                 currentTime += Time.deltaTime;
                 transform.localScale = Vector3.Lerp(startScale, endScale, currentTime / FADE_ANIM_DURATION);
                 yield return null;
             }
-            StartCoroutine(PlayEmoteAnimation());
+            StartCoroutine(PlayEmoteAnimation(emote));
             yield break;
         }
         private IEnumerator PlayFadeOutAnimation()

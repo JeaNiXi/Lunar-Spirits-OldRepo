@@ -33,6 +33,7 @@ namespace Managers
         [field: SerializeField] public SpawnPointsSO MainSpawnPoints { get; private set; }
         [field: SerializeField] public SaveSystem MainSaveSystem { get; private set; }
         [field: SerializeField] public CharacterManager MainCharacter { get; private set; }
+        [field: SerializeField] public EmotesManagerSO EmoteManager { get; private set; }
         public enum GameStates
         {
             DISABLED,
@@ -64,6 +65,9 @@ namespace Managers
         //    if (Keyboard.current.shiftKey.wasPressedThisFrame)
         //        Debug.Log(UnityEngine.Random.Range(0, 1));
         //}
+
+        public void SetPlayingGameState() =>
+            GameState = GameStates.PLAYING;
         public void SetSaveSlotIndex(int index) => MainGMSO.SetSaveSlot(index);
 
 

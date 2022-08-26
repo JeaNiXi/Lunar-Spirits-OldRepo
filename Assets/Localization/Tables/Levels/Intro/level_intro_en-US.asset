@@ -19,41 +19,28 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 8152010752
-    m_Localized: First dialogue in <b>english</b>.
+    m_Localized: ...
     m_Metadata:
       m_Items: []
   - m_Id: 38488848584704
-    m_Localized: <b>Lorem ipsum</b> dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor sit...dolor
-      sit...dolor sit...dolor sit...
+    m_Localized: Stone floor, stone walls.
     m_Metadata:
       m_Items: []
   - m_Id: 349617260974080
-    m_Localized: First Choise
+    m_Localized: Low ceilings and an unpleasant, musty smell, which, for some reason,
+      I had not noticed before ...
     m_Metadata:
       m_Items: []
   - m_Id: 365072491073536
-    m_Localized: second choise
+    m_Localized: '- Where am I?'
     m_Metadata:
       m_Items: []
   - m_Id: 386925599248384
-    m_Localized: test
+    m_Localized: A question that cannot be answered.
     m_Metadata:
       m_Items: []
   - m_Id: 386928161968128
-    m_Localized: test
-    m_Metadata:
-      m_Items: []
-  - m_Id: 386930200399872
-    m_Localized: test
-    m_Metadata:
-      m_Items: []
-  - m_Id: 386931982979072
-    m_Localized: test
+    m_Localized: I have to try to get up...
     m_Metadata:
       m_Items: []
   references:

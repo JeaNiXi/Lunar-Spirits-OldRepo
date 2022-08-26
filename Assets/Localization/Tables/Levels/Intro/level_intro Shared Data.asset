@@ -16,35 +16,27 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 12347a0ae7721914abc0ece91cdc8260
   m_Entries:
   - m_Id: 8152010752
-    m_Key: A01_00001
+    m_Key: A01_00000
     m_Metadata:
       m_Items: []
   - m_Id: 38488848584704
-    m_Key: A01_00002
+    m_Key: A01_00001
     m_Metadata:
       m_Items: []
   - m_Id: 349617260974080
-    m_Key: B01_00001
+    m_Key: A01_00002
     m_Metadata:
       m_Items: []
   - m_Id: 365072491073536
-    m_Key: B01_00002
+    m_Key: A01_00003
     m_Metadata:
       m_Items: []
   - m_Id: 386925599248384
-    m_Key: New Entry
+    m_Key: A01_00004
     m_Metadata:
       m_Items: []
   - m_Id: 386928161968128
-    m_Key: New Entry 1
-    m_Metadata:
-      m_Items: []
-  - m_Id: 386930200399872
-    m_Key: New Entry 2
-    m_Metadata:
-      m_Items: []
-  - m_Id: 386931982979072
-    m_Key: New Entry 3
+    m_Key: A01_00005
     m_Metadata:
       m_Items: []
   m_Metadata:

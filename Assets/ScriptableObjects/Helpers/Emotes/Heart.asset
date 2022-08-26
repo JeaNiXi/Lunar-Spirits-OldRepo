@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 9112659955076536468, guid: e084aa89362b72248aec75d14b133d03, type: 3}
   - {fileID: 7249339525839336759, guid: e084aa89362b72248aec75d14b133d03, type: 3}
   - {fileID: -5946631889570222359, guid: e084aa89362b72248aec75d14b133d03, type: 3}
+  emoteSound: {fileID: 8300000, guid: 92e6d00c8fe43284a88397833fa120a9, type: 3}

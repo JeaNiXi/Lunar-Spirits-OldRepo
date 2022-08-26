@@ -88,6 +88,8 @@ namespace Character
             if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
                 UpdateCharacterState();
         }
+        public void SetPlayingGameState() =>
+            GameManager.Instance.SetPlayingGameState();
         #region StatMethods
         public void UpdateStats()
         {

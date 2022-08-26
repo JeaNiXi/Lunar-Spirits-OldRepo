@@ -13,7 +13,20 @@ MonoBehaviour:
   m_Name: A01
   m_EditorClassIdentifier: 
   DialogueHelpersList:
-  - localizedString:
+  - dialogueType: 0
+    dialogueAction:
+      m_PersistentCalls:
+        m_Calls: []
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -22,11 +35,23 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 0
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
     dialogueAction:
       m_PersistentCalls:
         m_Calls: []
-  - localizedString:
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -35,11 +60,23 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 0
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
     dialogueAction:
       m_PersistentCalls:
         m_Calls: []
-  - localizedString:
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 21300000, guid: e9504c869808429419cf4160146a4b0f, type: 3}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -48,23 +85,23 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 1
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
     dialogueAction:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 902626978021259490, guid: 972e8a80a6ed90f4bb3628a65fb36cad, type: 3}
-          m_TargetAssemblyTypeName: Levels.IntroLevel, Assembly-CSharp
-          m_MethodName: hahah
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - localizedString:
+        m_Calls: []
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -73,23 +110,23 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 1
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
     dialogueAction:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 902626978021259490, guid: 972e8a80a6ed90f4bb3628a65fb36cad, type: 3}
-          m_TargetAssemblyTypeName: Levels.IntroLevel, Assembly-CSharp
-          m_MethodName: hahahsds
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - localizedString:
+        m_Calls: []
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -98,11 +135,23 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 0
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
     dialogueAction:
       m_PersistentCalls:
         m_Calls: []
-  - localizedString:
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    speakerType: 0
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
@@ -111,256 +160,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
-  - localizedString:
-      m_TableReference:
-        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
-      m_TableEntryReference:
-        m_KeyId: 365072491073536
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
   references:
     version: 1

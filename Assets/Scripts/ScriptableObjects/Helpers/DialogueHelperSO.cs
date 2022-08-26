@@ -1,3 +1,5 @@
+using Managers.SO;
+using Managers.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,14 +17,40 @@ namespace Helpers.SO
             A,
             B,
         }
+        public enum SpeakerType
+        {
+            MAIN,
+            LISTENER,
+        }
         [NonReorderable] public List<DialogueHelper> DialogueHelpersList = new List<DialogueHelper>();
 
         [Serializable]
         public struct DialogueHelper
         {
-            public LocalizedString localizedString;
+            [Header("DIALOGUE TYPE")]
             public DialogueType dialogueType;
+            [Space]
+            [Header("DIALOGUE EVENTS")]
             public UnityEvent dialogueAction;
+            public AudioClip dialogueAudioClip;
+            public AudioClip backgroundMusic;
+            [Space]
+            [Header("UI CHARACTER PARAMETERS")]
+            public ActorManagerSO mainActor;
+            public ActorManagerSO listenerActor;
+            public SpeakerType speakerType;
+            public Sprite mainExpression;
+            public Sprite listenerExpression;
+            public UIEmoteRenderer mainEmoteToPlay;
+            public UIEmoteRenderer listenerEmoteToPlay;
+            public LocalizedString localizedString;
+            [Space]
+            [Header("SCREEN EDIT")]
+            public bool clearMainSprite;
+            public bool clearListenerSprite;
+            [Space]
+            [Header("OPTIONAL PARAMS")]
+            public float spriteChangeAnimationTime;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Helpers.SO
     [CreateAssetMenu(fileName = "Emotes Helper", menuName = "Helpers/Emotes Helper")]
     public class EmotesSO : ScriptableObject
     {
-        [SerializeField] [NonReorderable] public List<Sprite> spritesList = new List<Sprite>();
+        [NonReorderable] public List<Sprite> spritesList = new List<Sprite>();
+        public AudioClip emoteSound;
     }
 }
