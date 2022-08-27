@@ -9,5 +9,6 @@ namespace Helpers.SO
     public class EmotesManagerSO : ScriptableObject
     {
         public EmotesSO heartEmote;
+        public EmotesSO confusionEmote;
     }
 }

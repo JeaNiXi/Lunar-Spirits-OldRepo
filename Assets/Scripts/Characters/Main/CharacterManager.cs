@@ -87,6 +87,8 @@ namespace Character
         {
             if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING)
                 UpdateCharacterState();
+            if (GameManager.Instance.GameState == GameManager.GameStates.ENABLED)
+                StopMovementAnimation();
         }
         public void SetPlayingGameState() =>
             GameManager.Instance.SetPlayingGameState();
@@ -142,6 +144,11 @@ namespace Character
             {
                 SetUpMoveAnim(moveInput.x, moveInput.y);
             }
+        }
+        private void StopMovementAnimation()
+        {
+            IsWalking = false;
+            mainAnimator.SetBool("isWalking", IsWalking);
         }
         private void SetUpMoveAnim(float X, float Y)
         {

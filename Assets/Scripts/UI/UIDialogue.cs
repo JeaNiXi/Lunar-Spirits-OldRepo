@@ -32,6 +32,8 @@ namespace Managers.UI
         [SerializeField] private Color colorFullAlpha;
         [SerializeField] private Color colorZeroAlpha;
 
+        public AudioSource audioSource;
+
         private List<UIDialogueElement> currentDialogueElements = new List<UIDialogueElement>();
 
         public enum DIALOGUE_TYPE
@@ -126,7 +128,34 @@ namespace Managers.UI
                     }
                     else
                     {
-                        
+                        if (currentDialogue.listenerExpression != null)
+                        {
+                            if (upperDialogueRightImage.sprite != null)
+                            {
+                                if (upperDialogueRightImage.sprite == currentDialogue.listenerExpression)
+                                    return;
+                                else
+                                {
+                                    upperDialogueRightImage.sprite = currentDialogue.listenerExpression;
+                                }
+                            }
+                            {
+                                upperDialogueRightImage.sprite = currentDialogue.listenerExpression;
+                                StartCoroutine(FadeCharacterSpriteToFullAlpha(upperDialogueRightImage, currentDialogue.spriteChangeAnimationTime));
+                            }
+                        }
+                    }
+                    if (currentDialogue.dialogueAudioClip != null)
+                    {
+                        if (audioSource.isPlaying)
+                            audioSource.Stop();
+                        audioSource.PlayOneShot(currentDialogue.dialogueAudioClip);
+                    }
+                    if (currentDialogue.listenerEmoteToPlay != null)
+                    {
+                        UIEmoteRenderer newEmote = CreateEmoteElement();
+                        newEmote.transform.SetParent(listenerEmotePanel);
+                        newEmote.PlayEmote(currentDialogue.listenerEmoteToPlay);
                     }
                     UIDialogueElement dialogueElement = CreateDialogueElement();
                     dialogueElement.transform.SetParent(dialogueParentTransform);
@@ -169,22 +198,22 @@ namespace Managers.UI
         {
             OnDialogueTextFinished?.Invoke();
         }
-        public void EnableEmote(EmotesSO emoteType, DIALOGUE_TYPE dialogueType)
-        {
-            UIEmoteRenderer newEmote = CreateEmoteElement();
-            switch(dialogueType)
-            {
-                case DIALOGUE_TYPE.MAIN:
-                    newEmote.transform.SetParent(mainEmoteParent);
-                    break;
-                case DIALOGUE_TYPE.LISTENER:
-                    newEmote.transform.SetParent(listenerEmotePanel);
-                    break;
-                default:
-                    break;
-            }
-            newEmote.PlayEmote(emoteType);
-        }
+        //public void EnableEmote(EmotesSO emoteType, DIALOGUE_TYPE dialogueType)
+        //{
+        //    UIEmoteRenderer newEmote = CreateEmoteElement();
+        //    switch(dialogueType)
+        //    {
+        //        case DIALOGUE_TYPE.MAIN:
+        //            newEmote.transform.SetParent(mainEmoteParent);
+        //            break;
+        //        case DIALOGUE_TYPE.LISTENER:
+        //            newEmote.transform.SetParent(listenerEmotePanel);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    newEmote.PlayEmote(emoteType);
+        //}
         private IEnumerator FadeDialoguePanelToFullAlpha(Image image, float animationTime)
         {
             while (lowerDialogueImage.color.a < 1.0f)
@@ -213,6 +242,8 @@ namespace Managers.UI
         }
         private IEnumerator FadeCharacterSpriteToFullAlpha(Image image, float animationTime)
         {
+            if (image.color.a == 1.0f)
+                yield break;
             float aTime;
             if (animationTime != 0)
                 aTime = animationTime;

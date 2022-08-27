@@ -1,3 +1,4 @@
+using Character;
 using Helpers.SO;
 using Managers.UI;
 using System.Collections;
@@ -44,6 +45,9 @@ namespace Managers
 
         public void InitDialogueScreen(DialogueHelperSO helperListSO)
         {
+            if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING) 
+                GameManager.Instance.GameState = GameManager.GameStates.ENABLED;
+            //GameManager.Instance.MakeCharactersIdle();
             if (DialogueState != DialogueStates.RUNNING)
             {
                 currentDialogueIndex = 0;

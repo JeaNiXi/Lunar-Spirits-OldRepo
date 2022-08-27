@@ -17,11 +17,11 @@ namespace Helpers.SO
             A,
             B,
         }
-        public enum SpeakerType
-        {
-            MAIN,
-            LISTENER,
-        }
+        //public enum SpeakerType
+        //{
+        //    MAIN,
+        //    LISTENER,
+        //}
         [NonReorderable] public List<DialogueHelper> DialogueHelpersList = new List<DialogueHelper>();
 
         [Serializable]
@@ -38,11 +38,11 @@ namespace Helpers.SO
             [Header("UI CHARACTER PARAMETERS")]
             public ActorManagerSO mainActor;
             public ActorManagerSO listenerActor;
-            public SpeakerType speakerType;
+            //public SpeakerType speakerType;
             public Sprite mainExpression;
             public Sprite listenerExpression;
-            public UIEmoteRenderer mainEmoteToPlay;
-            public UIEmoteRenderer listenerEmoteToPlay;
+            public EmotesSO mainEmoteToPlay;
+            public EmotesSO listenerEmoteToPlay;
             public LocalizedString localizedString;
             [Space]
             [Header("SCREEN EDIT")]

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Emotes Manager
   m_EditorClassIdentifier: 
   heartEmote: {fileID: 11400000, guid: 133ddd1f0281ac041bed45f7e600b523, type: 2}
+  confusionEmote: {fileID: 11400000, guid: a716665cae1c2fb42922aec9269eb8c6, type: 2}

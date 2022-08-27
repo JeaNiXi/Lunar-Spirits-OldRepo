@@ -46,7 +46,8 @@ namespace Managers.UI
             Vector3 startScale = Vector3.zero;
             Vector3 endScale = Vector3.one;
             float currentTime = 0;
-            audioSource.PlayOneShot(emote.emoteSound);
+            if (emote.emoteSound != null)
+                audioSource.PlayOneShot(emote.emoteSound);
             while (currentTime < FADE_ANIM_DURATION)
             {
                 currentTime += Time.deltaTime;

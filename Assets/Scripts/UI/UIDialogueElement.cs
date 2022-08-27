@@ -18,8 +18,8 @@ namespace Managers.UI
         [SerializeField] private TMP_Text dialogueText;
 
 
-        private const float TEXT_DELAY = 0.02f;
-        private const float DIALOGUE_DELAY = 0.02f;
+        private const float TEXT_DELAY = 0.05f;
+        private const float DIALOGUE_DELAY = 0.0002f;
         public void SetAsButton()
         {
             dialogueButton.interactable = true;

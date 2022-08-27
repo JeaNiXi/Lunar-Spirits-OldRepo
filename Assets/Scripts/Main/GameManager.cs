@@ -69,7 +69,8 @@ namespace Managers
         public void SetPlayingGameState() =>
             GameState = GameStates.PLAYING;
         public void SetSaveSlotIndex(int index) => MainGMSO.SetSaveSlot(index);
-
+        public void MakeCharactersIdle() =>
+            MainCharacter.GetComponent<Animator>().Play("Idle");
 
         #region SceneManagement
         public void LoadNewGameIntro()
