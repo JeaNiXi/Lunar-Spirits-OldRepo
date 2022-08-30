@@ -34,7 +34,8 @@ namespace Managers.UI
 
         public AudioSource audioSource;
 
-        private List<UIDialogueElement> currentDialogueElements = new List<UIDialogueElement>();
+        public List<UIDialogueElement> currentDialogueElements = new List<UIDialogueElement>();
+        public List<UIDialogueElement> currentOptionsElements = new List<UIDialogueElement>();
 
         public enum DIALOGUE_TYPE
         {
@@ -164,7 +165,11 @@ namespace Managers.UI
                     dialogueElement.SetDialogueText(currentDialogue.localizedString.GetLocalizedString());
                     break;
                 case DialogueHelperSO.DialogueType.B:
-                    //Skipping Audio Step
+                    UIDialogueElement dialogueOptionElement = CreateDialogueElement();
+                    dialogueOptionElement.transform.SetParent(dialogueParentTransform);
+                    currentOptionsElements.Add(dialogueOptionElement);
+                    dialogueOptionElement.SetDialogueText(currentDialogue.localizedString.GetLocalizedString(), currentDialogue.dialogueActionHelper);
+                    DialogueManager.Instance.GetNextDialogue();
                     break;
                 default:
                     break;

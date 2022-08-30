@@ -62,8 +62,15 @@ namespace Managers
         //debug.
         //private void Update()
         //{
-        //    if (Keyboard.current.shiftKey.wasPressedThisFrame)
-        //        Debug.Log(UnityEngine.Random.Range(0, 1));
+        //    if (Mouse.current.leftButton.wasPressedThisFrame)
+        //    {
+        //        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        //        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        //        if (hit.collider != null) 
+        //        {
+        //            Debug.Log(hit.collider.gameObject.name);
+        //        }
+        //    }
         //}
 
         public void SetPlayingGameState() =>

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.Events;
+using Helpers.SO;
 
 namespace Managers.UI
 {
@@ -18,23 +19,29 @@ namespace Managers.UI
         [SerializeField] private TMP_Text dialogueText;
 
 
-        private const float TEXT_DELAY = 0.05f;
+        private const float TEXT_DELAY = 0.02f;
         private const float DIALOGUE_DELAY = 0.0002f;
         public void SetAsButton()
         {
             dialogueButton.interactable = true;
         }
-        public void SetButtonAction(UnityEvent actionEvent)
+        public void DisableButton()
         {
-            dialogueButton.onClick.AddListener(actionEvent.Invoke);
+            dialogueButton.interactable = false;
+        }
+        public void SetButtonAction(DialogueHelperSO dialogueActionHelper)
+        {
+            //dialogueButton.onClick.AddListener(() => Instantiate(dialogueActionPrefab, Vector3.zero, Quaternion.identity));
+            dialogueButton.onClick.AddListener(() => DialogueManager.Instance.InitDialogueScreen(dialogueActionHelper));
         }
         public void SetDialogueText(string text)
         {
             StartCoroutine(DialogueWriter(text, TEXT_DELAY));
         }
-        public void SetDialogueText(string text, UnityEvent actionEvent)
+        public void SetDialogueText(string text, DialogueHelperSO dialogueActionHelper)
         {
-            SetButtonAction(actionEvent);
+            SetAsButton();
+            SetButtonAction(dialogueActionHelper);
             StartCoroutine(DialogueWriter(text, DIALOGUE_DELAY));
         }
         public void PrepareLayout(string tmpText)

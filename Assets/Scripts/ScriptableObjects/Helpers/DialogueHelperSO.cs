@@ -31,7 +31,7 @@ namespace Helpers.SO
             public DialogueType dialogueType;
             [Space]
             [Header("DIALOGUE EVENTS")]
-            public UnityEvent dialogueAction;
+            public DialogueHelperSO dialogueActionHelper;
             public AudioClip dialogueAudioClip;
             public AudioClip backgroundMusic;
             [Space]

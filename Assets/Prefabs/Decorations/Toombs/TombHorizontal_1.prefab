@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1887597685310462964}
   - component: {fileID: 5734503400344127749}
   - component: {fileID: 3904678449038688597}
-  m_Layer: 0
+  - component: {fileID: 5850932822904496632}
+  m_Layer: 9
   m_Name: TombHorizontal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1365442551
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 4740802034022322910, guid: 6f82b3cd7fc3b4a46929a03293ddf90b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,4 +109,30 @@ MonoBehaviour:
   - {x: -1.096354, y: 0.15794979, z: 0}
   m_ShapePathHash: -1375863706
   m_Mesh: {fileID: 0}
-  m_InstanceId: -587640
+  m_InstanceId: 151736
+--- !u!61 &5850932822904496632
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040000174663643824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.38901347}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.3125, y: 1.6875}
+    newSize: {x: 2.3125, y: 1.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3125, y: 0.90947306}
+  m_EdgeRadius: 0

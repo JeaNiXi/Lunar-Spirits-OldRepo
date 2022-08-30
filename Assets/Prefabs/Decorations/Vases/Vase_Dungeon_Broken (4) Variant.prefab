@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2284486138856998276, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
       propertyPath: m_Name
-      value: Vase_Dungeon_Broken (4)
+      value: Vase_Dungeon_Broken (4) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6185343287280664937, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
       propertyPath: m_RootOrder
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6367101243799884439, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
       propertyPath: m_InstanceId
-      value: -552058
+      value: -224776
       objectReference: {fileID: 0}
     - target: {fileID: 6367101243799884439, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
       propertyPath: m_ShapePathHash
@@ -103,5 +103,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7277684666704881511, guid: 6f82b3cd7fc3b4a46929a03293ddf90b, type: 3}
+    - target: {fileID: 8547182486891711334, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
+      propertyPath: m_Radius
+      value: 0.23120996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547182486891711334, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.008426249
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547182486891711334, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.045452803
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfaa232656cfe046a77843bd5e98ff5, type: 3}

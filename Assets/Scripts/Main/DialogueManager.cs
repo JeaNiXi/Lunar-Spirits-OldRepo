@@ -45,6 +45,9 @@ namespace Managers
 
         public void InitDialogueScreen(DialogueHelperSO helperListSO)
         {
+            if (currentDialogueHelperSO != helperListSO && DialogueUI.currentOptionsElements.Count > 0)   
+                foreach (var element in DialogueUI.currentOptionsElements)
+                    element.DisableButton();
             if (GameManager.Instance.GameState == GameManager.GameStates.PLAYING) 
                 GameManager.Instance.GameState = GameManager.GameStates.ENABLED;
             //GameManager.Instance.MakeCharactersIdle();
@@ -70,12 +73,17 @@ namespace Managers
                 isAwaitingInput = false;
                 InitDialogueScreen(currentDialogueHelperSO);
             }
-            else
+            else if (EndingReference != null) 
             {
                 DialogueState = DialogueStates.DISABLED;
                 isAwaitingInput = false;
                 DialogueUI.ClearDialogueUI();
                 EndingReference.SetActive(true);
+            }
+            else
+            {
+                DialogueState = DialogueStates.DISABLED;
+                isAwaitingInput = false;
             }
         }
         public void SetEndingReferance(GameObject referance) =>

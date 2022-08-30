@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueHelpersList:
   - dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    dialogueActionHelper: {fileID: 0}
     dialogueAudioClip: {fileID: 0}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
@@ -38,9 +36,7 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    dialogueActionHelper: {fileID: 0}
     dialogueAudioClip: {fileID: 0}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
@@ -62,9 +58,7 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    dialogueActionHelper: {fileID: 0}
     dialogueAudioClip: {fileID: 0}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
@@ -86,9 +80,7 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    dialogueActionHelper: {fileID: 0}
     dialogueAudioClip: {fileID: 8300000, guid: e12ca8a0f93e5cd43982ce1456140a28, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
@@ -110,15 +102,13 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 0
-    dialogueAction:
-      m_PersistentCalls:
-        m_Calls: []
+    dialogueActionHelper: {fileID: 0}
     dialogueAudioClip: {fileID: 8300000, guid: 72fe57942b48ea444a527bf5bec83c77, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
     mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 21300000, guid: ac7b50be78f8dfe40b0e74a3519342b0, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 6fada3fd08d0fc0408d379f74288dec6, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 11400000, guid: a716665cae1c2fb42922aec9269eb8c6, type: 2}
     localizedString:
@@ -126,6 +116,72 @@ MonoBehaviour:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
       m_TableEntryReference:
         m_KeyId: 3589417585725440
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 11400000, guid: 25045a84d63779d4d87fd3c1f2ce153e, type: 2}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 4641417865842688
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 4641420013326336
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 4641421934317568
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

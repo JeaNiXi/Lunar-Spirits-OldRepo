@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2073469918556724209, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
+      propertyPath: m_Radius
+      value: 0.3492672
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073469918556724209, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.005400926
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073469918556724209, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.117194355
+      objectReference: {fileID: 0}
     - target: {fileID: 2707755198469275182, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
       propertyPath: m_Name
       value: Vase_Dungeon Variant
@@ -21,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096474353301825853, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
       propertyPath: m_InstanceId
-      value: -416548
+      value: -220198
       objectReference: {fileID: 0}
     - target: {fileID: 7096474353301825853, guid: 1aecb3274d96ada4b98aba91c206a039, type: 3}
       propertyPath: m_ShapePathHash

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6767027704927214188}
   - component: {fileID: 6767027704927214189}
   - component: {fileID: 6767027704927214178}
-  - component: {fileID: 1068933784}
   m_Layer: 11
   m_Name: Joriyah Johns
   m_TagString: Player
@@ -58,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 752179cd5a0740943a78069a5b3d1a1d, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1365442551
+  m_SortingLayer: -1
   m_SortingOrder: 15
   m_Sprite: {fileID: -5883054759941261799, guid: 220d9b52e2650b94c99e32c7ef8b7d4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -229,17 +228,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!210 &1068933784
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6767027704927214187}
-  m_Enabled: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 15
 --- !u!1 &6767027705267619815
 GameObject:
   m_ObjectHideFlags: 0
