@@ -126,17 +126,17 @@ namespace Managers.UI
         public void DisableInGameDialoguePanelFull()
         {
             DisableInGameDialogueMainSprite();
-            //DisableInGameDialoguePanelSprite();
+            DisableInGameDialoguePanelSprite();
         }
         public void DisableInGameDialogueMainSprite()
         {
             StartCoroutine(FadeInGameDialogueCharacterToZeroAlpha(InGameDSprite, IN_GAME_DIALOGUE_TIME));
         }
-        //public void DisableInGameDialoguePanelSprite()
-        //{
-        //    StartCoroutine(FadeDialoguePanelToZeroAlpha(PanelImage, IN_GAME_DIALOGUE_TIME));
-        //    StartCoroutine(FadeTextToZeroAlpha(InGameDText, IN_GAME_DIALOGUE_TEXT_TIME));
-        //}
+        public void DisableInGameDialoguePanelSprite()
+        {
+            StartCoroutine(FadeInGameDialoguePanelToZeroAlpha(PanelImage, IN_GAME_DIALOGUE_TIME));
+            StartCoroutine(FadeTextToZeroAlpha(InGameDText, IN_GAME_DIALOGUE_TEXT_TIME));
+        }
 
 
 
