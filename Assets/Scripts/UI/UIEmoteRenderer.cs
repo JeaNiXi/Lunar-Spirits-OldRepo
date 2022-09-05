@@ -15,9 +15,9 @@ namespace Managers.UI
         private const float FADE_ANIM_DURATION = 0.3f;
         private const int REPEAT_INT = 3;
 
-        AudioSource audioSource;
+        [SerializeField] AudioSource audioSource;
 
-        public void Start()
+        public void OnEnable()
         {
             audioSource = GetComponent<AudioSource>();
         }
@@ -47,7 +47,12 @@ namespace Managers.UI
             Vector3 endScale = Vector3.one;
             float currentTime = 0;
             if (emote.emoteSound != null)
-                audioSource.PlayOneShot(emote.emoteSound);
+            {
+                Debug.Log(emote.emoteSound);
+
+                audioSource.clip = emote.emoteSound;
+                audioSource.Play();
+            }
             while (currentTime < FADE_ANIM_DURATION)
             {
                 currentTime += Time.deltaTime;

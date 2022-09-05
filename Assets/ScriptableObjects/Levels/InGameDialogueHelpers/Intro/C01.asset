@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf53a71cbd45684194e0dfe1d423823, type: 3}
+  m_Name: C01
+  m_EditorClassIdentifier: 
+  InGameDialogueHelpersList:
+  - inGameSprite: {fileID: 21300000, guid: 7f7fe179af5650049afb2d494b493d44, type: 3}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6903737304338432
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    emoteToPlay: {fileID: 0}
+    clipToPlay: {fileID: 0}
+    clearSprite: 0
+    clearTextPanel: 0
+    existTime: 0
+  - inGameSprite: {fileID: 21300000, guid: deee31879dd32d84badf0b7e405d68fa, type: 3}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6903766899347456
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    emoteToPlay: {fileID: 11400000, guid: 133ddd1f0281ac041bed45f7e600b523, type: 2}
+    clipToPlay: {fileID: 0}
+    clearSprite: 0
+    clearTextPanel: 0
+    existTime: 0
+  references:
+    version: 1

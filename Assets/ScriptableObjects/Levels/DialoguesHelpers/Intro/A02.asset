@@ -146,7 +146,7 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 1
-    dialogueActionHelper: {fileID: 0}
+    dialogueActionHelper: {fileID: 11400000, guid: 3afbd83198e85a34e9e30922f8f7075b, type: 2}
     dialogueAudioClip: {fileID: 0}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
   - dialogueType: 1
-    dialogueActionHelper: {fileID: 0}
+    dialogueActionHelper: {fileID: 11400000, guid: 087f92ac1e772c64bb13b902c7c1dad2, type: 2}
     dialogueAudioClip: {fileID: 0}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}

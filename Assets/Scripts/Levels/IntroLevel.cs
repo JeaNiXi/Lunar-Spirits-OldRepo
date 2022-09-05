@@ -31,7 +31,7 @@ namespace Levels
                 return;
             }
             MainCharacter = GameManager.Instance.MainCharacter;
-
+            MainCharacter.gameObject.transform.position = new Vector3(-6.8f, -0.16f, 0);
             cAnim = MainCharacter.GetComponent<Animator>();
             cAnim.Play("BeingDowned");
             StartCoroutine(SetEnabledGameState(2f));

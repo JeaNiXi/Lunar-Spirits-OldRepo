@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a5aed50f912ed44bd4bc88f96df238, type: 3}
+  m_Name: B08
+  m_EditorClassIdentifier: 
+  DialogueHelpersList:
+  - dialogueType: 0
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6804159020257280
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6805531593658368
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6805574216175616
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 0
+    dialogueActionHelper: {fileID: 0}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6805613684576256
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 11400000, guid: 4c72db58a6fab0c49a8c3364e5c61eb3, type: 2}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6805661415755776
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 11400000, guid: c8d53ed8853ea1d43bfd54c7da899293, type: 2}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6805761378603008
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  references:
+    version: 1

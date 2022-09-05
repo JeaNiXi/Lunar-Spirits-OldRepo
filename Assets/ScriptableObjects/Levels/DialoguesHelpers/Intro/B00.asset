@@ -57,5 +57,49 @@ MonoBehaviour:
     clearMainSprite: 0
     clearListenerSprite: 0
     spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 11400000, guid: 969dc5a190bc83844beeaa7f3be9e8cb, type: 2}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6796037761388544
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
+  - dialogueType: 1
+    dialogueActionHelper: {fileID: 11400000, guid: e2852c314d63c6441a6d16fff074c45f, type: 2}
+    dialogueAudioClip: {fileID: 0}
+    backgroundMusic: {fileID: 0}
+    mainActor: {fileID: 0}
+    listenerActor: {fileID: 0}
+    mainExpression: {fileID: 0}
+    listenerExpression: {fileID: 0}
+    mainEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 0}
+    localizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260
+      m_TableEntryReference:
+        m_KeyId: 6796039879512064
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    clearMainSprite: 0
+    clearListenerSprite: 0
+    spriteChangeAnimationTime: 0
   references:
     version: 1

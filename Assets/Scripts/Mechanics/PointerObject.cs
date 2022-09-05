@@ -19,9 +19,9 @@ namespace Mechanics
         {
             StartCoroutine(PlayFadeInAnimation());
         }
-
         public void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log("Clicked");
             onClickEvent.Invoke();
             StartCoroutine(PlayFadeOutAnimation());
         }

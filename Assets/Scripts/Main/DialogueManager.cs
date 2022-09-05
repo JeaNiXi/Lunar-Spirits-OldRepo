@@ -16,7 +16,9 @@ namespace Managers
 
         private bool isAwaitingInput;
         private int currentDialogueIndex;
+        private int currentInGameDialogueIndex;
         private DialogueHelperSO currentDialogueHelperSO;
+        private DialogueInGameHelperSO currentDialogueInGameHelperSO;
         private GameObject EndingReference;
 
         private void Awake()
@@ -35,7 +37,15 @@ namespace Managers
             DISABLED,
             RUNNING,
         }
+        public enum InGameDialogueStates
+        {
+            DISABLED,
+            RUNNING,
+        }
+
         public DialogueStates DialogueState = DialogueStates.DISABLED;
+        public InGameDialogueStates InGameDialogueState = InGameDialogueStates.DISABLED;
+
         private void Update()
         {
             if (DialogueState == DialogueStates.RUNNING && isAwaitingInput)
@@ -61,6 +71,18 @@ namespace Managers
                 return;
             currentDialogueHelperSO = helperListSO;
         }
+        public void InitInGameDialogueScreen(DialogueInGameHelperSO dialogueInGameHelperSO)
+        {
+            if(InGameDialogueState != InGameDialogueStates.RUNNING)
+            {
+                currentInGameDialogueIndex = 0;
+                InGameDialogueState = InGameDialogueStates.RUNNING;
+            }
+            DialogueUI.UpdateInGameDialogueScreen(dialogueInGameHelperSO.InGameDialogueHelpersList[currentInGameDialogueIndex]);
+            if (currentDialogueInGameHelperSO == dialogueInGameHelperSO)
+                return;
+            currentDialogueInGameHelperSO = dialogueInGameHelperSO;
+        }
         public void SetAwaitingInput()
         {
             isAwaitingInput = true;
@@ -73,72 +95,37 @@ namespace Managers
                 isAwaitingInput = false;
                 InitDialogueScreen(currentDialogueHelperSO);
             }
-            else if (EndingReference != null) 
+            else if (DialogueUI.GetLastDialogueType() == DialogueHelperSO.DialogueType.B) 
             {
                 DialogueState = DialogueStates.DISABLED;
                 isAwaitingInput = false;
-                DialogueUI.ClearDialogueUI();
-                EndingReference.SetActive(true);
             }
             else
             {
-                DialogueState = DialogueStates.DISABLED;
-                isAwaitingInput = false;
+                if (EndingReference != null)
+                {
+                    DialogueState = DialogueStates.DISABLED;
+                    isAwaitingInput = false;
+                    DialogueUI.ClearDialogueUI();
+                    EndingReference.SetActive(true);
+                    EndingReference = null;
+                }
+            }
+        }
+        public void GetNextInGameDialogue()
+        {
+            if (currentDialogueInGameHelperSO.InGameDialogueHelpersList.Count > currentInGameDialogueIndex + 1)
+            {
+                currentInGameDialogueIndex++;
+                InitInGameDialogueScreen(currentDialogueInGameHelperSO);
+            }
+            else
+            {
+                Debug.Log("should disable now");
+                DialogueUI.DisableInGameDialoguePanelFull();
             }
         }
         public void SetEndingReferance(GameObject referance) =>
             EndingReference = referance;
-
-
-        //public bool IsDialogueScreenActive => DialogueUI.IsDialogueUIActive;
-        //public void ClearDialogue() => DialogueUI.ClearDialogueUI();
-
-
-
-
-
-        //public void ToggleFullDialogueView(bool value) => DialogueUI.ToggleFullDialogueUI(value);
-        //public void WriteLine(string text)
-        //{
-        //    DialogueUI.WriteDialogueText(text);
-        //}
-        //public void InitText(DialogueHelperSO helperListSO)
-        //{
-        //    var stringsList = helperListSO.DialogueHelpersList;
-        //    if (DialogueState != DialogueStates.RUNNING)
-        //    {
-        //        currentDialogueIndex = 0;
-        //        DialogueState = DialogueStates.RUNNING;
-        //    }
-        //    if (helperListSO.DialogueHelpersList[currentDialogueIndex].dialogueType == DialogueHelperSO.DialogueType.A)
-        //    {
-        //        DialogueUI.WriteDialogueText(stringsList[currentDialogueIndex].localizedString.GetLocalizedString());
-        //    }
-        //    else
-        //    {
-        //        DialogueUI.WriteDialogueText(stringsList[currentDialogueIndex].localizedString.GetLocalizedString(), helperListSO.DialogueHelpersList[currentDialogueIndex].dialogueAction);
-        //    }
-        //    if (currentDialogueHelperSO == helperListSO)
-        //        return;
-        //    currentDialogueHelperSO = helperListSO;
-        //}
-        //public void GetNextDialogueSequence()
-        //{
-        //    if (currentDialogueHelperSO.DialogueHelpersList.Count > currentDialogueIndex + 1) 
-        //    {
-        //        currentDialogueIndex++;
-        //        isAwaitingInput = false;
-        //        InitText(currentDialogueHelperSO);
-        //    }
-        //    else
-        //    {
-        //        DialogueState = DialogueStates.DISABLED;
-        //        isAwaitingInput = false;
-        //        Debug.Log("No More Dialogue");
-        //    }
-        //}
-
-        //public void ShowUpperDialogueScreen(bool value) => DialogueUI.ToggleUpperDialogueUI(value);
-        //public void ShowLowerDialogueScreen(bool value) => DialogueUI.ToggleLowerDialogueUI(value);
     }
 }
