@@ -17,6 +17,7 @@ namespace Inventory.UI
             CAN_INTERACT_WITH_OBJECT,
             SAVE_SLOT_EMPTY,
             CHEST_NEARBY,
+            ITEM_ADDED,
         }
         private readonly string[] NotificationsStrings =
         {
@@ -26,6 +27,7 @@ namespace Inventory.UI
             "This is an object I can interact with!",
             "This save slot is empty!",
             "I sense something nearby!",
+            "Item Added: "
         };
         public Notifications Notification = Notifications.WRONG_ITEM_TYPE;
         public void ThrowNotification(Notifications notificationType)
@@ -33,6 +35,13 @@ namespace Inventory.UI
             UINotificationText notification = CreateNotification();
             notification.transform.SetParent(notificationPanel);
             notification.SetText(NotificationsStrings[Convert.ToInt32(notificationType)]);
+            notification.StartDisplay();
+        }
+        public void ThrowNotification(Notifications notificationType, string itemName)
+        {
+            UINotificationText notification = CreateNotification();
+            notification.transform.SetParent(notificationPanel);
+            notification.SetText(NotificationsStrings[Convert.ToInt32(notificationType)] + itemName);
             notification.StartDisplay();
         }
 

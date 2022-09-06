@@ -587,6 +587,10 @@ namespace Inventory.UI
         {
             uiNotifications.ThrowNotification(notificationType);
         }
+        public void ThrowNotification(UINotifications.Notifications notificationType, string itemName)
+        {
+            uiNotifications.ThrowNotification(notificationType, itemName);
+        }
         public void DeselectAllItems()
         {
             for (int i = 0; i < uiItemsList.Count; i++)

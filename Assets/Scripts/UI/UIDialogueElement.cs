@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.Events;
 using Helpers.SO;
+using UnityEngine.InputSystem;
 
 namespace Managers.UI
 {
@@ -18,9 +19,18 @@ namespace Managers.UI
         [SerializeField] private Button dialogueButton;
         [SerializeField] private TMP_Text dialogueText;
 
+        private bool isDialogueSkipped = false;
+        private bool isWritingDialogue = false;
+
+        public void Update()
+        {
+            if (!isDialogueSkipped && isWritingDialogue && Keyboard.current.spaceKey.wasPressedThisFrame)
+                isDialogueSkipped = true;
+
+        }
 
         private const float TEXT_DELAY = 0.02f;
-        private const float DIALOGUE_DELAY = 0.0002f;
+        private const float DIALOGUE_DELAY = 0.02f;
         public void SetAsButton()
         {
             dialogueButton.interactable = true;
@@ -57,7 +67,7 @@ namespace Managers.UI
             //PrepareLayout(stringText);
             bool isPayload = true;
             var newString = new System.Text.StringBuilder(stringText.Length);
-
+            isWritingDialogue = true;
             for (int i = 0; i < stringText.Length; i++)
             {
                 char c = stringText[i];
@@ -67,13 +77,17 @@ namespace Managers.UI
                 {
                     newString.Append(c);
                     dialogueText.text = newString.ToString();
-                    yield return new WaitForSeconds(delay);
+                    if (!isDialogueSkipped)
+                        yield return new WaitForSeconds(delay);
+                    else
+                        yield return null;
                 }
                 else
                     newString.Append(c);
                 if (c == '>')
                     isPayload = true;
             }
+            isWritingDialogue = false;
             OnDialogueInitFinished?.Invoke();
         }
         public void DeleteElement()

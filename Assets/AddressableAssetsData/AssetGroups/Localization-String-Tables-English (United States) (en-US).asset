@@ -85,6 +85,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     - Preload
+  - m_GUID: b98366c3facff0d458de4be3f2f39629
+    m_Address: NamesWeaponUniqueUI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
+  - m_GUID: 08d4696d7e440d24cb103207aefce4ee
+    m_Address: WeaponUniqueDescriptionUI_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 4d77091fbc9a3cd43a251293354ef0c4, type: 2}
   m_SchemaSet:

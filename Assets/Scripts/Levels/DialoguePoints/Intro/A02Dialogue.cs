@@ -13,12 +13,22 @@ namespace Levels
         public Animator cutsceneAnimator;
         public GameObject helperEnding;
 
+        public bool TriggerEntered;
+        public bool SkipCutscene;
+
         bool isDialogueCalled;
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            //mainAnimator.SetBool("cutscene_one", true);
-            //cutsceneAnimator.Play("EllynWalkingDown");
-            StartDialogueAfterIntroAnim();
+            if (TriggerEntered)
+                return;
+            if (!SkipCutscene)
+            {
+                mainAnimator.SetBool("cutscene_one", true);
+                cutsceneAnimator.Play("EllynWalkingDown");
+            }
+            else
+                StartDialogueAfterIntroAnim();
+            TriggerEntered = true;
         }
         public void StartDialogueAfterIntroAnim()
         {

@@ -89,7 +89,12 @@ namespace Inventory
 
 
 
-
+        #region ItemManagement
+        public void AddItem(ItemSO itemToAdd, int quantity)
+        {
+            MainInventorySO.AddItem(itemToAdd, quantity);
+        }
+        #endregion
 
         #region Initializations
         private void InitializeInventorySO()

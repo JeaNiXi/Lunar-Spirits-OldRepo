@@ -335,6 +335,14 @@ MonoBehaviour:
     m_Key: C01_00002
     m_Metadata:
       m_Items: []
+  - m_Id: 7163311030652928
+    m_Key: C01_00003
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7163533169381376
+    m_Key: "\u042101_00004"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

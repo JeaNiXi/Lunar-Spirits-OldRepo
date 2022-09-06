@@ -117,7 +117,8 @@ namespace Inventory.SO
                 {
                     if (SearchForEmptySlot(out index))
                     {
-                        Container[index] = new InventoryItem(item, item.MaxStackSize, Container[index].slotType);
+                        Container[index] = new InventoryItem(item, item.MaxStackSize, Container[index].slotType, item.ItemRarity, item.ItemParameters);
+                        GameManager.Instance.ThrowNotification(Inventory.UI.UINotifications.Notifications.ITEM_ADDED, item.Name.GetLocalizedString());
                         sizeToAdd -= item.MaxStackSize;
                     }
                     else

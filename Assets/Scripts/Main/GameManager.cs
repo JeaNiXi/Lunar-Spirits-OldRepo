@@ -168,6 +168,10 @@ namespace Managers
         {
             InventoryController.Instance.UIMainInventory.ThrowNotification(notification);
         }
+        public void ThrowNotification(UINotifications.Notifications notification, string itemName)
+        {
+            InventoryController.Instance.UIMainInventory.ThrowNotification(notification, itemName);
+        }
         private string GetSaveName(int index) => index switch
         {
             1 => "Slot1",

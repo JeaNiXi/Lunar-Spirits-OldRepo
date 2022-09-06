@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89301f134dcd4154d8ce8677bef8de22, type: 3}
+  m_Name: Intro Wooden Sword
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:fefb19e2adfc3f742a0722771a44c1ba
+    m_TableEntryReference:
+      m_KeyId: 52397723648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <MaxStackSize>k__BackingField: 1
+  <Description>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:85d8a6829f07f844c9183aff6b9ecc8e
+    m_TableEntryReference:
+      m_KeyId: 90247122944
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <IsQuestItem>k__BackingField: 0
+  <ItemType>k__BackingField: 2
+  <ItemImage>k__BackingField: {fileID: -6238440442334815089, guid: 003b90fcb4f2c09429ce50caf264ebd2, type: 3}
+  CanBeInSlots: 0000000008000000
+  <ItemRarity>k__BackingField:
+    ItemRarity: 1
+  <ItemParameters>k__BackingField:
+    statModifiers: []
+    weaponModifiers:
+    - Modifier: {fileID: 11400000, guid: de031341208291e4aaed31559ee22998, type: 2}
+      Value: 12
+    weaponStatModifiers: []
+    equipmentModifiers: []
+    resistModifiers: []
+    vulnerabilityModifiers: []
+  scaleType: 0
+  KnockbackStrength: 0
+  references:
+    version: 1

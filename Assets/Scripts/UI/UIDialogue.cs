@@ -57,7 +57,7 @@ namespace Managers.UI
         private const float DIALOGUE_FADE_TIME = 2.0f;
         private const float IN_GAME_DIALOGUE_TIME = 1.5f;
         private const float IN_GAME_DIALOGUE_TEXT_TIME = 1.5f;
-        private const float IN_GAME_DIALOGUE_EXIST_TIME = 4.0f;
+        private const float IN_GAME_DIALOGUE_EXIST_TIME = 8.0f;
         private const float CHARACTER_SPRITE_FADE_TIME = 2.0f;
 
         public DialogueHelperSO.DialogueType GetLastDialogueType() => LastDialogueType;

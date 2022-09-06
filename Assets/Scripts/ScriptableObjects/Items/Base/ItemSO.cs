@@ -52,6 +52,7 @@ namespace Inventory.SO
         [field: SerializeField] public Sprite ItemImage { get; set; }
 
         public List<ItemSlots> CanBeInSlots;
+        [field: SerializeField] public ItemRarities ItemRarity { get; set; }
         [field: SerializeField] public ItemParameters ItemParameters { get; set; }
     }
     [Serializable]
