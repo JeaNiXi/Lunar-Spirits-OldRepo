@@ -21,14 +21,17 @@ namespace Levels
         {
             if (TriggerEntered)
                 return;
-            if (!SkipCutscene)
+            if(collision.gameObject.CompareTag("Player"))
             {
-                mainAnimator.SetBool("cutscene_one", true);
-                cutsceneAnimator.Play("EllynWalkingDown");
+                if (!SkipCutscene)
+                {
+                    mainAnimator.SetBool("cutscene_one", true);
+                    cutsceneAnimator.Play("EllynWalkingDown");
+                }
+                else
+                    StartDialogueAfterIntroAnim();
+                TriggerEntered = true;
             }
-            else
-                StartDialogueAfterIntroAnim();
-            TriggerEntered = true;
         }
         public void StartDialogueAfterIntroAnim()
         {

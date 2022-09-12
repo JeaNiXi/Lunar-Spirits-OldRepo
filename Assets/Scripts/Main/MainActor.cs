@@ -149,7 +149,7 @@ namespace Actor
         }
         public void InitActor()
         {
-
+            CurrentHealth = TotalHealth;
         }
         private int GetHealthEquipmentBonus(List<InventoryItem> itemsList)
         {

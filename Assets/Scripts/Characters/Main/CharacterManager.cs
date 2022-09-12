@@ -145,6 +145,11 @@ namespace Character
                 SetUpMoveAnim(moveInput.x, moveInput.y);
             }
         }
+        public void SetIdleUpAnimation()
+        {
+            mainAnimator.SetFloat("XInput", 0);
+            mainAnimator.SetFloat("YInput", 1);
+        }
         private void StopMovementAnimation()
         {
             IsWalking = false;

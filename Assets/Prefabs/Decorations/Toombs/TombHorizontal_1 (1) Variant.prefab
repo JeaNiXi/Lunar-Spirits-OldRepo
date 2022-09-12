@@ -61,15 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040000174663643824, guid: 18eb383fe22b7c8458ec9b97e9ecad48, type: 3}
       propertyPath: m_Name
-      value: TombHorizontal_1 (1)
+      value: TombHorizontal_1 (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5734503400344127749, guid: 18eb383fe22b7c8458ec9b97e9ecad48, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1080376308590110095, guid: 6f82b3cd7fc3b4a46929a03293ddf90b, type: 3}
-    - target: {fileID: 5734503400344127749, guid: 18eb383fe22b7c8458ec9b97e9ecad48, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eb383fe22b7c8458ec9b97e9ecad48, type: 3}
