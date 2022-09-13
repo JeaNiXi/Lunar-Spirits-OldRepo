@@ -3,11 +3,22 @@
  Starting Date: 02.06.2022  
 
 Development Dairy:  
+13.09.2022
+ - Updated ui
+ - Fixed dialogue and in game dialogue.
+ - Updated intro dialogue and added sprites and vo.
+ - Fixed input bugs.
+ - Added skip option.
+ - Added cutscenes.
+ - Added dialogue choices.
+ - Added localization options.
+ - Added dialogue triggers and scriptable objects for them.
+
 16.08.2022
  - Added Basic Dialogue System.
  
 07.08.2022
- - Added Russian Localization
+ - Added Russian Localization.
  
 03.08.2022
  - Character panel finished.
