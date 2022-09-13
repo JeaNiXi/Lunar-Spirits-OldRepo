@@ -21,8 +21,8 @@ public class HydroSlime : Slimes
         if (ActorState == STATE.ALIVE)
         {
             ChasePlayer();
-            UpdateDirection();
-            UpdateActorHP();
+            //UpdateDirection();
+            //UpdateActorHP();
         }
     }
 }

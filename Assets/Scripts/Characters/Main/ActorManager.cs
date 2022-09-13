@@ -121,6 +121,7 @@ namespace Character
         }
         protected void GetJumpDirection()
         {
+            Debug.Log("getting jump direction");
             if (!JumpDirectionFound)
             {
                 if (isPlayerInRange)

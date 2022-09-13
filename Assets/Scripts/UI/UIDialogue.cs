@@ -78,15 +78,26 @@ namespace Managers.UI
 
         public void ClearDialogueUI()
         {
-            for (int i = 0; i < currentDialogueElements.Count; i++)
+            foreach(var dialogueElement in currentDialogueElements)
             {
-                DisableAction(currentDialogueElements[i]);
-                currentDialogueElements[i].DeleteElement();
+                DisableAction(dialogueElement);
+                dialogueElement.DeleteElement();
             }
-            for (int i = 0; i < currentOptionsElements.Count; i++)
+            foreach(var optionElement in currentOptionsElements)
             {
-                currentOptionsElements[i].DeleteElement();
+                optionElement.DeleteElement();
             }
+            //for (int i = 0; i < currentDialogueElements.Count; i++)
+            //{
+            //    DisableAction(currentDialogueElements[i]);
+            //    currentDialogueElements[i].DeleteElement();
+            //}
+            //for (int i = 0; i < currentOptionsElements.Count; i++)
+            //{
+            //    currentOptionsElements[i].DeleteElement();
+            //}
+            currentDialogueElements.Clear();
+            currentOptionsElements.Clear();
             DisableDialoguePanel();
             ClearCharacterSprites();
         }
@@ -164,7 +175,7 @@ namespace Managers.UI
                         {
                             if (upperDialogueLeftImage.sprite != null)
                             {
-                                    //Swap Sprites
+                                upperDialogueLeftImage.sprite = currentDialogue.mainExpression;
                             }
                             else
                             {
@@ -374,7 +385,6 @@ namespace Managers.UI
         {
             while (image.color.a < 1.0f)
             {
-                Debug.Log(image.color.a);
                 image.color = new Color(
                     image.color.r,
                     image.color.g,
@@ -389,7 +399,6 @@ namespace Managers.UI
             Debug.Log("so color is = " + image.color.a);
             while (image.color.a > 0)
             {
-                Debug.Log(image.color.a);
                 image.color = new Color(
                     image.color.r,
                     image.color.g,
@@ -404,7 +413,6 @@ namespace Managers.UI
         {
             while (image.color.a < 1.0f)
             {
-                Debug.Log(image.color.a);
                 image.color = new Color(
                     image.color.r,
                     image.color.g,
@@ -419,7 +427,6 @@ namespace Managers.UI
             Debug.Log("so color is = " + image.color.a);
             while (image.color.a > 0)
             {
-                Debug.Log(image.color.a);
                 image.color = new Color(
                     image.color.r,
                     image.color.g,
@@ -431,9 +438,7 @@ namespace Managers.UI
         }
         private IEnumerator InGameDialogueTimer(float time)
         {
-            Debug.Log("EXIST CORO STARTED");
             yield return new WaitForSeconds(time);
-            Debug.Log("EXIST CORO STOPPING");
             DialogueManager.Instance.GetNextInGameDialogue();
             yield break;
         }    

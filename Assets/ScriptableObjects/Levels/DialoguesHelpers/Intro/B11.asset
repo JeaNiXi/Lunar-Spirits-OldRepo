@@ -15,12 +15,12 @@ MonoBehaviour:
   DialogueHelpersList:
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: e22d8267436bd4f4aaaf40e29affa02a, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 808ec6d3642e5d74592622c4f05dacc0, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 1a60cebba75ee6d4197af27b6c3fa4f5, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:

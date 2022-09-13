@@ -19,8 +19,8 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 907d6cc49a3d2a24da9bb376c25430e7, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 14e1256dba0377d44a67641929058014, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -41,7 +41,7 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: bf0135fb892f6e54ca1413a807d04588, type: 3}
     listenerExpression: {fileID: 0}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
@@ -63,8 +63,8 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 3d7561a6ea556664582783251b4230c3, type: 3}
+    listenerExpression: {fileID: 21300000, guid: d68bb645ed9b0964eb493e303c11437c, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -81,14 +81,14 @@ MonoBehaviour:
     spriteChangeAnimationTime: 0
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: 288d7cc5e1d45254d9f4ed5dc2856c0b, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 3d7561a6ea556664582783251b4230c3, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 42faa199f1ff71a41b7f1375dd248e21, type: 3}
     mainEmoteToPlay: {fileID: 0}
-    listenerEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 11400000, guid: 4729e6bf8ee40ab499d08927321930e4, type: 2}
     localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260

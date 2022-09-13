@@ -82,6 +82,11 @@ namespace Managers
             if (currentDialogueInGameHelperSO == dialogueInGameHelperSO)
                 return;
             currentDialogueInGameHelperSO = dialogueInGameHelperSO;
+            if (EndingReference != null)
+            {
+                EndingReference.SetActive(true);
+                EndingReference = null;
+            }
         }
         public void SetAwaitingInput()
         {
@@ -121,7 +126,6 @@ namespace Managers
             }
             else
             {
-                Debug.Log("should disable now");
                 DialogueUI.DisableInGameDialoguePanelFull();
             }
         }

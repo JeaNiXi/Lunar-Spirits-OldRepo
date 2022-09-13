@@ -19,9 +19,9 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
-    mainEmoteToPlay: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 3db3a774c3a0f4240b9bde5114a26a9e, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 552bc55fd2e28444db644841388f627f, type: 3}
+    mainEmoteToPlay: {fileID: 11400000, guid: 4729e6bf8ee40ab499d08927321930e4, type: 2}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
       m_TableReference:
@@ -37,12 +37,12 @@ MonoBehaviour:
     spriteChangeAnimationTime: 0
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: 27e8740392f2f4d4ebf8f40fb954f86b, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: dd85c84368489ac4dbcab62ddcc784c1, type: 3}
+    listenerExpression: {fileID: 21300000, guid: aa8a1de0db804154ebce4e4dc84f10e5, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -59,12 +59,12 @@ MonoBehaviour:
     spriteChangeAnimationTime: 0
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: 4360a408bbb6649478f1469ae9d2a688, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: fbcfeba2aa4560449b2d804e22826b91, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 73a27dfa76f753f40b7ee2c7ca219a2e, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -85,8 +85,8 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 808ec6d3642e5d74592622c4f05dacc0, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 552bc55fd2e28444db644841388f627f, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -107,7 +107,7 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 907d6cc49a3d2a24da9bb376c25430e7, type: 3}
     listenerExpression: {fileID: 0}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
@@ -125,12 +125,12 @@ MonoBehaviour:
     spriteChangeAnimationTime: 0
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: f652d9228d31a3749819a7a97bb230ef, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 808ec6d3642e5d74592622c4f05dacc0, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 42faa199f1ff71a41b7f1375dd248e21, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:

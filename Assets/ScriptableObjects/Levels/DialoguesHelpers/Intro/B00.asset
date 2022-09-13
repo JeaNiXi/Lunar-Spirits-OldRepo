@@ -15,14 +15,14 @@ MonoBehaviour:
   DialogueHelpersList:
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: 9e5f122a1ebca50428ecd4b7c5a94a14, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
     mainExpression: {fileID: 0}
     listenerExpression: {fileID: 21300000, guid: b1fb14103d276ed48989d04aed4df8ae, type: 3}
     mainEmoteToPlay: {fileID: 0}
-    listenerEmoteToPlay: {fileID: 0}
+    listenerEmoteToPlay: {fileID: 11400000, guid: 92b7f6d28ec37424092194ae00d25dea, type: 2}
     localizedString:
       m_TableReference:
         m_TableCollectionName: GUID:12347a0ae7721914abc0ece91cdc8260

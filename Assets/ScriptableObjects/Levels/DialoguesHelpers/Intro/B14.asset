@@ -19,8 +19,8 @@ MonoBehaviour:
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 1e1cc9026e4eca34ea0cad8a2c4f35c7, type: 3}
+    listenerExpression: {fileID: 21300000, guid: 1a60cebba75ee6d4197af27b6c3fa4f5, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:
@@ -37,12 +37,12 @@ MonoBehaviour:
     spriteChangeAnimationTime: 0
   - dialogueType: 0
     dialogueActionHelper: {fileID: 0}
-    dialogueAudioClip: {fileID: 0}
+    dialogueAudioClip: {fileID: 8300000, guid: a3338ae3a24fa6543bae90e926310e36, type: 3}
     backgroundMusic: {fileID: 0}
     mainActor: {fileID: 0}
     listenerActor: {fileID: 0}
-    mainExpression: {fileID: 0}
-    listenerExpression: {fileID: 0}
+    mainExpression: {fileID: 21300000, guid: 06b72c50d1c0c304e887ad279baf786e, type: 3}
+    listenerExpression: {fileID: 21300000, guid: db52e54622126a14e9dc7451660c286f, type: 3}
     mainEmoteToPlay: {fileID: 0}
     listenerEmoteToPlay: {fileID: 0}
     localizedString:

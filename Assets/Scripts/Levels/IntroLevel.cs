@@ -17,7 +17,8 @@ namespace Levels
         [SerializeField] public bool SkipIntro = false;
         [SerializeField] DialogueHelperSO A01Helper;
         [SerializeField] GameObject HelperEnding;
-
+        [SerializeField] AudioClip introTheme;
+        
         private Animator cAnim;
 
         //LEVEL POINTER OBJECTS
@@ -30,6 +31,7 @@ namespace Levels
                 GameManager.Instance.GameState = GameManager.GameStates.PLAYING;
                 return;
             }
+            AudioManager.Instance.PlayBackgroundAudio(introTheme);
             MainCharacter = GameManager.Instance.MainCharacter;
             MainCharacter.gameObject.transform.position = new Vector3(-6.8f, -0.16f, 0);
             cAnim = MainCharacter.GetComponent<Animator>();

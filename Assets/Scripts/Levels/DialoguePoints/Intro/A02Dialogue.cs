@@ -16,6 +16,8 @@ namespace Levels
         public bool TriggerEntered;
         public bool SkipCutscene;
 
+        public AudioClip dialogueAudio;
+
         bool isDialogueCalled;
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -27,6 +29,7 @@ namespace Levels
                 {
                     mainAnimator.SetBool("cutscene_one", true);
                     cutsceneAnimator.Play("EllynWalkingDown");
+                    AudioManager.Instance.StopAudio();
                 }
                 else
                     StartDialogueAfterIntroAnim();
@@ -39,6 +42,7 @@ namespace Levels
             mainAnimator.SetBool("cutscene_one", false);
             if (!isDialogueCalled)
                 DialogueManager.Instance.InitDialogueScreen(dialogueHelper);
+            AudioManager.Instance.PlayBackgroundAudio(dialogueAudio);
             isDialogueCalled = true;
         }
     }

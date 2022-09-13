@@ -9,8 +9,8 @@ using UnityEngine;
 public class B11B12Ending : MonoBehaviour
 {
     public DialogueInGameHelperSO dialogueHelperSO;
-    public WeaponSO weaponToAdd;
-    public PotionsSO potionToAdd;
+    public GameObject endingRef;
+
 
     public void OnEnable()
     {
@@ -20,8 +20,8 @@ public class B11B12Ending : MonoBehaviour
     private IEnumerator Delay()
     {
         yield return new WaitForSeconds(3.0f);
+        DialogueManager.Instance.SetEndingReferance(endingRef);
         DialogueManager.Instance.InitInGameDialogueScreen(dialogueHelperSO);
-        InventoryController.Instance.AddItem(weaponToAdd, 1);
         yield break;
     }
 }
